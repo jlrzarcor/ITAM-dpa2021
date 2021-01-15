@@ -9,7 +9,7 @@ ______
 | Github User  | Alumno			 |
 |:------------:|:-----------------------:|
 | @Carlosrlpzi | LS, CARLOS ROMAN        |
-| @            | RD, URIEL ABRAHAM   	 |
+| @urieluard   | RD, URIEL ABRAHAM   	 |
 | @            | EMPTY			 |
 | @ZarCorvus   | ZC, JOSE LUIS R.	 |
 
@@ -22,7 +22,7 @@ ______
 * _Qué variables son, qué información tiene:_  
 
 ### Base de Datos:  
-* (Chicago Food Inspections)[https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5]  
+* [Chicago Food Inspections](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5)  
 
 * Pregunta analítica: ¿El establecimiento pasará o no la inspección?  
 
