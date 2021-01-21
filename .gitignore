@@ -132,3 +132,7 @@ dmypy.json
 *.csv
 *.xls
 *.xlsx
+
+# folders to exclude
+/notebooks_2
+/conf/local
