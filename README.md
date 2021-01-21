@@ -46,7 +46,7 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
 ---
 
-***Summary*** de los datos con los que trabajamos:
+***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021):
 
 - **Número de registros**: 215,130.
 
@@ -76,9 +76,9 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
 - **Pregunta analítica a contestar con el modelo predictivo**: ¿El establecimiento pasará o no la inspección?
 
-- **Frecuencia de actualización de los datos**: diaria.
+- **Frecuencia de actualización de los datos**: `diaria`.
 
-- **Frecuencia de actualización del producto de datos**: semanal.
+- **Frecuencia de actualización del producto de datos**: `semanal`.
 
 ---
 
