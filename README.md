@@ -12,9 +12,9 @@ Integrante | Alumno                         | Clave única
 ---------- | ------------------------------ | -----------
 1          | Carlos Román López Sierra      | 197911
 2          | José Luis Zárate               |
-1          | Octavio Fuentes Ortiz          | 150792
-2          | Patricia Urriza Arellano       | 152026
-3          | Uriel Abraham Rangel Díaz      | 193921
+3          | Octavio Fuentes Ortiz          | 150792
+4          | Patricia Urriza Arellano       | 152026
+5          | Uriel Abraham Rangel Díaz      | 193921
 
 ---
 
