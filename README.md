@@ -67,7 +67,7 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
 - **Número de columnas**: 17.
 
-- **Variables con las que contamos**:
+- **Variables con las que contamos inicialmente**:
 
 **Variable**                 | **Tipo de dato**     | **¿Qué contiene?**
 -----------------------------| ---------------------| ------------------------------------------------------------------------------------
