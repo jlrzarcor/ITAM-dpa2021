@@ -1,0 +1,1 @@
+foodinsp_data <- load()
