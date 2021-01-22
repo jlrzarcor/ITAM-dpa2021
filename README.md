@@ -133,6 +133,7 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
     ├── pipeline
 ```
 
+---
 ## ¿Cómo reproducir los resultados de este repositorio?
 
 Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
@@ -163,5 +164,3 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 - En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en este trabajo.
 - En la ruta `notebooks/eda/DPA/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente.
-
-
