@@ -8,6 +8,8 @@
 
 ### M. Sc. Liliana Millán Núñez
 
+### Equipo 5
+
 Integrante | Alumno                         | Clave única
 ---------- | ------------------------------ | -----------
 1          | Carlos Román López Sierra      | 197911
@@ -30,7 +32,7 @@ Trabajaremos con la base de datos de [***Chicago Food Inspections***](https://da
 * **_Descripción:_**  
   * La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en Chicago desde 01/01/2010 hasta la actualidad.
   * Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
-  * Se debe precisar que e1 **01/07/2018 se realizaron modificaciones** a los procedimientos de inspección que afectan a los datos. Estructuralmente el *dataset* no será afectado. No obstante, la columna **_"Violations"_**, si bien aún contiene el número de violación, descripción y comentarios delimitando violaciones independientes con el "*pipe character*", las violaciones actuales se modificaron substancialmente. Debemos ser cuidadosos al analizar los datos en los posibles cambios de tendencia en el largo plazo.
+  * Se debe precisar que el **01/07/2018 se realizaron modificaciones** a los procedimientos de inspección que afectan a los datos. Estructuralmente el *dataset* no será afectado. No obstante, la columna **_"Violations"_**, si bien aún contiene el número de violación, descripción y comentarios delimitando violaciones independientes con el "*pipe character*", las violaciones actuales se modificaron substancialmente. Debemos ser cuidadosos al analizar los datos en los posibles cambios de tendencia en el largo plazo.
 Para consultar las modificaciones: [***Food Inspection Violations Changes***](http://bit.ly/2yWd2JB).
   * En adición, encontramos la modificación a los siguientes términos (**validar en la información**) [_2019 Chicago Food Code Major Changes_](https://www.cityofchicago.org/city/en/depts/cdph/provdrs/healthy_restaurants/svcs/food-protection-services.html.):
      * _Potentially Hazardous Foods (PHF)" has been changed to “Time/Temperature Control for Safety Foods (TCS Foods)_"
@@ -67,7 +69,7 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
 - **Número de columnas**: 17.
 
-- **Variables con las que contamos**:
+- **Variables con las que contamos inicialmente**:
 
 **Variable**                 | **Tipo de dato**     | **¿Qué contiene?**
 -----------------------------| ---------------------| ------------------------------------------------------------------------------------
@@ -75,7 +77,7 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 *DBA Name*.                  | Texto.               | _'Doing business as'_ Nombre legal del establecimiento.
 *AKA Name*.                  | Texto.               | _'Also known as'_ Nombre público como se conoce al establecimiento.
 *Licence*.                   | Número.              | Número único asignado al establecimiento con fines de licenciamiento.
-*Facility Type*.             | Texto.               | Cada establecimiento se etiqueta con alguno de los siguientes: bakery, banquet hall, candy store, caterer, coffee shop, day care center (for ages less than 2), day care center (for ages 2 – 6), day care center (combo, for ages less than 2 and 2 – 6 combined), gas station, Golden Diner, grocery store, hospital, long term care center(nursing home), liquor store, mobile food dispenser, restaurant, paleteria, school,shelter, tavern, social club, wholesaler, or Wrigley Field Rooftop.
+*Facility Type*.             | Texto.               | Cada establecimiento se etiqueta con alguno de los siguientes: *bakery, banquet hall, candy store, caterer, coffee shop, day care center (for ages less than 2), day care center (for ages 2 – 6), day care center (combo, for ages less than 2 and 2 – 6 combined), gas station, Golden Diner, grocery store, hospital, long term care center(nursing home), liquor store, mobile food dispenser, restaurant, paleteria, school,shelter, tavern, social club, wholesaler, or Wrigley Field Rooftop*.
 *Risk*.                      | Texto.               | Cada establecimiento se categoriza de acuerdo al riesgo de afectar la salud pública. 1 el más alto riesgo y 3 el menor. La frecuencia de las inspecciones está ligada a su nivel de riesgo.
 *Address, City, State, Zip*. | Texto.               | Dirección completa donde se localizan las instalaciones.
 *Inspection Date*.           | *Floating Timestamp*.| Fecha de la inspección.
@@ -132,3 +134,35 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
     │
     ├── pipeline
 ```
+
+---
+## ¿Cómo reproducir los resultados de este repositorio?
+
+Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
+
+1. clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`
+
+2. descargar el csv de [esta url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta `/notebooks/eda/DPA/`.
+
+3. **opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando `pyenv virtualenv 3.7.4 nombre_de_tu_environment`
+
+  Activa el ambiente virtual con el siguiente comando: `pyenv activate nombre_de_tu_environment`
+
+  --> instalar ipykernel<br>
+  `pip install ipykernel`
+
+  --> hacer accesible el ambiente virtual al notebook de jupyter<br>
+  `python -m ipykernel install --user --name nombre_de_tu_environment --display-name nombre_de_tu_environment`
+
+4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando: `pip install -r requirements.txt`
+
+5. Abre tu terminal y desde ella entra al directorio raíz de este archivo.
+
+6. Corre el comando `jupyter notebook` (asegúrate de tener activo tu environment).
+
+7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
+
+## ¿Qué archivos son importantes en este repositorio?
+
+- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en este trabajo.
+- En la ruta `notebooks/eda/DPA/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente.
