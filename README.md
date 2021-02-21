@@ -142,7 +142,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 1. clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`
 
-2. descargar el csv de [esta url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta `/notebooks/eda/DPA/`.
+2. descargar el csv de [esta url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta `/notebooks/eda`.
 
 3. **opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando `pyenv virtualenv 3.7.4 nombre_de_tu_environment`
 
