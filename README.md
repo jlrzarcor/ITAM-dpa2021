@@ -178,8 +178,10 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
 
-## ¿Qué archivos son importantes en este repositorio?
-
-Sobre nuestro ***EDA***:
+## Sobre nuestro ***EDA***:
 - En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el primer *checkpoint*** del proyecto.
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
+
+---
+
+### Resumen de cómo funciona nuestro proceso de ingestión
