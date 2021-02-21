@@ -63,7 +63,7 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
 ---
 
-***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021):
+***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
 
 - **Número de registros**: 215,130.
 
@@ -140,11 +140,13 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
 Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
 
-1. clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`
+1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-2. descargar el csv de [esta url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta `/notebooks/eda`.
+**PARA RPRODUCIR LOS RESULTADOS DE NUESTRO** ***EDA**:
 
-3. **opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando `pyenv virtualenv 3.7.4 nombre_de_tu_environment`
+2. Descargar el csv de esta [url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta: `/notebooks/eda`.
+
+3. **Opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando `pyenv virtualenv 3.7.4 nombre_de_tu_environment`.
 
   Activa el ambiente virtual con el siguiente comando: `pyenv activate nombre_de_tu_environment`
 
@@ -153,6 +155,8 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
   --> hacer accesible el ambiente virtual al notebook de jupyter<br>
   `python -m ipykernel install --user --name nombre_de_tu_environment --display-name nombre_de_tu_environment`
+  
+**CÓMO INSTALAR NUESTRO** ***requirements***.**txt**:
 
 4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando: `pip install -r requirements.txt`
 
