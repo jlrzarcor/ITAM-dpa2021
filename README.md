@@ -94,7 +94,13 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 *Longitude*.                 | Número.              | Longitud del negocio.
 *Location*.                  | *Location*.          | Contiene la coordenada (longitud y latitud) del negocio.
 
+---
+
+### Lo que buscamos
+
 - **Pregunta analítica a contestar con el modelo predictivo**: `¿El establecimiento pasará o no la inspección?`
+
+### Tomar en cuenta
 
 - **Frecuencia de actualización de los datos**: `diaria`.
 
