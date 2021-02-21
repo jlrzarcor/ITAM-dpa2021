@@ -142,7 +142,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-**PARA RPRODUCIR LOS RESULTADOS DE NUESTRO** ***EDA**:
+**PARA RPRODUCIR LOS RESULTADOS DE NUESTRO** ***EDA***:
 
 2. Descargar el csv de esta [url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta: `/notebooks/eda`.
 
@@ -168,5 +168,6 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 ## ¿Qué archivos son importantes en este repositorio?
 
-- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en este trabajo.
-- En la ruta `notebooks/eda/DPA/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente.
+Sobre nuestro ***EDA***:
+- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el primer *checkpoint*** del proyecto.
+- En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
