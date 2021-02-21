@@ -8,11 +8,16 @@ from datetime import datetime
 
 from src.utils.general import get_api_token, get_s3_credentials
 
-''' Variables de entorno'''
+''' Variables de entorno que se cargan por default al cargar la librería
+    ingesta_almacenamiento.py
+'''
+
 socrata_domain = "data.cityofchicago.org"
 socrata_ds_id = "4ijn-s7e5"
 path = os.path.realpath('conf/local/credentials.yaml')
 delta_date = '2021-02-15T00:00:00.000'
+my_bucket = 'data-product-architecture-equipo-5.0'
+bucket_path = 'ingestion/consecutive'
 
 # ================================= FUNCTION  ================================= #
 
@@ -89,3 +94,6 @@ def guardar_ingesta(my_bucket, bucket_path):
 
 def ingesta_consecutiva(socrata_ds_id, delta_date = '2021-02-15T00:00:00.000', limit = 1000):
     return client.get(socrata_ds_id, where = "inspection_date > " + "'" + delta_date + "'", limit = limit)
+
+client = get_client()
+#guardar_ingesta(my_bucket, bucket_path)
