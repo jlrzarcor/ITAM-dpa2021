@@ -61,6 +61,10 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 - *Checkpoint* 9:  *API*. 
 - *Checkpoint* 10: *Dashboard*.
 
+---
+
+**¿Qué lenguaje utlizamos?**
+
 El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
 ---
