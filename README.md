@@ -6,6 +6,8 @@
 
 ---
 
+### Maestría en Ciencia de Datos
+
 ### M. Sc. Liliana Millán Núñez
 
 ### Equipo 5
