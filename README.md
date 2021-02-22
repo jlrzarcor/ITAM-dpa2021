@@ -252,7 +252,9 @@ Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositori
 
 6.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
 
-Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la **raíz** de su **repostorio clonado** y posteriormente seguir los siguientes **5 macroprocesos**:
+![Macroprocesos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Macroprocesos-red)
+
+Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la **raíz** de su **repostorio clonado** y seguir los siguientes **macroprocesos**:
 
 1.	**Conexión** ***API*** **con** ***SODAPY***.
 2.	**Generar datos ingesta inicial**.
