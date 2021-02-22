@@ -104,7 +104,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ### Tomar en cuenta
 
-- **Frecuencia de actualización de los datos**: `diaria`.
+![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos%3A-diaria.-important)
 
 - **Frecuencia de actualización del producto de datos**: `semanal`.
 
