@@ -6,6 +6,8 @@
 
 ---
 
+### Maestría en Ciencia de Datos
+
 ### M. Sc. Liliana Millán Núñez
 
 ### Equipo 5
@@ -29,7 +31,7 @@ Trabajaremos con la base de datos de [***Chicago Food Inspections***](https://da
 #### Conocimiento a priori de la información:
 * **_Title:_** *Food Inspections*
 
-* **_Descripción:_**  
+* **Descripción:**  
   * La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en Chicago desde 01/01/2010 hasta la actualidad.
   * Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
   * Se debe precisar que el **01/07/2018 se realizaron modificaciones** a los procedimientos de inspección que afectan a los datos. Estructuralmente el *dataset* no será afectado. No obstante, la columna **_"Violations"_**, si bien aún contiene el número de violación, descripción y comentarios delimitando violaciones independientes con el "*pipe character*", las violaciones actuales se modificaron substancialmente. Debemos ser cuidadosos al analizar los datos en los posibles cambios de tendencia en el largo plazo.
@@ -45,6 +47,10 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 El trabajo será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
+![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual-2-brightgreen)
+![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-23%2F02%2F2021-brightgreen)
+![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-8-brightgreen)
+
 - *Checkpoint* 1:  *Starting point*.
 
 **NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.
@@ -59,15 +65,19 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 - *Checkpoint* 9:  *API*. 
 - *Checkpoint* 10: *Dashboard*.
 
-El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
+---
+
+**¿Qué lenguaje utlizamos?**
+
+![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational)
 
 ---
 
-***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021):
+***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
 
-- **Número de registros**: 215,130.
+![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros%3A-215%2C130.-orange)
 
-- **Número de columnas**: 17.
+![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas%3A-17.-orange)
 
 - **Variables con las que contamos inicialmente**:
 
@@ -88,11 +98,15 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 *Longitude*.                 | Número.              | Longitud del negocio.
 *Location*.                  | *Location*.          | Contiene la coordenada (longitud y latitud) del negocio.
 
-- **Pregunta analítica a contestar con el modelo predictivo**: `¿El establecimiento pasará o no la inspección?`
+---
 
-- **Frecuencia de actualización de los datos**: `diaria`.
+![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo%3A%20-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
 
-- **Frecuencia de actualización del producto de datos**: `semanal`.
+### Tomar en cuenta
+
+![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos%3A-diaria.-important)
+
+![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos%3A-semanal.-important)
 
 ---
 
@@ -140,11 +154,17 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
 Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
 
-1. clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`
+1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando:
+ 
+`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-2. descargar el csv de [esta url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta `/notebooks/eda/DPA/`.
+![Reproducir_EDA](https://img.shields.io/badge/PARA%20REPRODUCIR%20LOS%20RESULTADOS%20DE%20NUESTRO-EDA-inactive)
 
-3. **opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando `pyenv virtualenv 3.7.4 nombre_de_tu_environment`
+2. Descargar el csv de esta [url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta: `/notebooks/eda`.
+
+3. **Opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando:
+
+`pyenv virtualenv 3.7.4 nombre_de_tu_environment`.
 
   Activa el ambiente virtual con el siguiente comando: `pyenv activate nombre_de_tu_environment`
 
@@ -153,8 +173,12 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
   --> hacer accesible el ambiente virtual al notebook de jupyter<br>
   `python -m ipykernel install --user --name nombre_de_tu_environment --display-name nombre_de_tu_environment`
+  
+![Instalar_requirements](https://img.shields.io/badge/C%C3%93MO%20INSTALAR%20NUESTRO-requirements.txt-inactive)
 
-4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando: `pip install -r requirements.txt`
+4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando:
+
+`pip install -r requirements.txt`.
 
 5. Abre tu terminal y desde ella entra al directorio raíz de este archivo.
 
@@ -162,7 +186,43 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
 
-## ¿Qué archivos son importantes en este repositorio?
+## Sobre nuestro ***EDA***:
+- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
+- En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
-- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en este trabajo.
-- En la ruta `notebooks/eda/DPA/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente.
+---
+
+## Resumen de cómo funciona nuestro proceso de ingestión
+
+**Prerrequisitos**
+
+1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un `app token`.
+
+![](./images/app_token.jpg)
+
+2.	Contar con una cuenta activa de ***AWS***. En ésta, se debe tener un *bucket* de ***S3*** exclusivo para almacenar la información del proyecto; **importante** mencionar que se debe conocer el **nombre exacto** del *bucket* y contar con el ***Access Key ID***.
+
+3.	Debe crear un archivo `.yaml` siguiendo la siguiente estructura: 
+
+```
+---
+s3:
+    aws_access_key_id: "de_tu_cuenta_de_AWS"
+    aws_secret_access_key: "de_tu_cuenta_de_AWS"
+food_inspections:
+    api_token: "de_tu app_token_del_prerrquisito_1"
+```
+
+4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. 
+
+Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$pwd`.
+
+6.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
+
+Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la **raíz** de su **repostorio clonado** y posteriormente seguir los siguientes **5 macroprocesos**:
+
+1.	**Conexión** ***API*** **con** ***SODAPY***.
+2.	**Generar datos ingesta inicial**.
+3.	**Generar datos ingesta consecutiva**.
+4.	**Generar conexión con** ***AWS***.
+5.	 **Guardar los datos de ingesta**.
