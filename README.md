@@ -191,7 +191,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 ---
 
-### Resumen de cómo funciona nuestro proceso de ingestión
+## Resumen de cómo funciona nuestro proceso de ingestión
 
 **Prerrequisitos**
 
