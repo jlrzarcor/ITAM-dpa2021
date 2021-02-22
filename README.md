@@ -22,7 +22,7 @@ Integrante | Alumno                         | Clave única
 
 ---
 
-https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen
+![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen)
 
 ---
 
