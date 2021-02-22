@@ -6,12 +6,10 @@ import yaml
 
 def read_yaml(credentials_file):
     """
-    Carga las credenciales que se tengan en el path especificado,
-    para esta  aplicación se debe colocar en la ruta:
-    /conf/local/credentials.yaml
-    
+    Carga las credenciales que se tengan en el archivo especificado.
+        
     inputs: 
-        credentials_file: archivo conextensión .yaml
+        credentials_file: archivo con extensión .yaml
     outputs:
         Diccionario con las credenciales de la API de Chicago y de AWS
     """
@@ -38,7 +36,7 @@ def get_s3_credentials(credentials_file):
       AWSSecretKey= -tu llave-
     
     inputs:
-        credentials_file: archivo conextensión .yaml
+        credentials_file: archivo con extensión .yaml
     outputs:
         Diccionario con las credenciales de AWS
     """
@@ -61,7 +59,7 @@ def get_api_token(credentials_file):
         SecretToken= -tu Token secreto-
     
     inputs:
-        credentials_file: archivo conextensión .yaml
+        credentials_file: archivo con extensión .yaml
     outputs:
         Diccionario con las credenciales de la API de Chicago food inspections
     """

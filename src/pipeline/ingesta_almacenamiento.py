@@ -19,11 +19,12 @@ path = os.path.realpath('conf/local/credentials.yaml')
 
 def get_client():
     '''
-    Función que devuelve el cliente contenido en el archivo credentials.yaml
-    (este cliente será utilizado para conectarse a la App de Chicago Food Inspections)
-    
+    Función que recoge el Token de la API Chicago food inspections (contenida
+    en el archivo credencials.yaml), se conecta a ella y devuelve el cliente
+    con el que se harán las consultas.
+        
     outputs:
-        Cliente de la API de Chicago food inspections contenido en el archivo credentials.yaml
+        Cliente para conectarse a la API Chicago food inspections
     '''
     
     token = get_api_token(path)
@@ -35,15 +36,16 @@ def get_client():
 
 def ingesta_inicial(client, limit = 300000):
     '''
-    Función que se conecta a la App de Chicago Food Inspections y devuelve
-    una consulta histórica de tamaño "limit". Si no hay ese número de registros
-    devolverá el máximo que haya en la Base de datos de la API.
+    Función que utiliza el cliente de la API Chicago food inspections, realiza
+    una consulta histórica de tamaño "limit" y devuelve una lista con los resultados
+    de la consulta. Si no hay ese número de registros devolverá el máximo que 
+    encuentre en la BD.
     
     inputs:
-        client: string con el cliente de la API de Chicago food inspections
+        client: objeto con el cliente para conectarse a la API Chicago food inspections
         limit: integer con el máximo de registros a consultar
     outputs:
-        Consulta inicial a la BD de la API de Chicago food inspections
+        Lista con el resultado de la consulta inicial (histórica) a la BD
     '''
     return client.get(socrata_ds_id, limit = limit)
 
@@ -72,19 +74,19 @@ def get_s3_resource():
 def guardar_ingesta(my_bucket, bucket_path, data):
     '''
     Función que recibe de argumentos el nombre del bucket s3 en el que se quiere 
-    almacenar, la ruta en la que se guardará la información que se consulte 
-    de la API de Chicago food inspections y la consulta que se haya realizado 
+    almacenar la consulta, la ruta en la que se guardará la información que se consulte 
+    de la API Chicago food inspections y la consulta que se haya realizado previamente
     (inicial o consecutiva). Pueden existir dos casos:
     
-        -bucket_path- = ingestion/initial/:
+        bucket_path = ingestion/initial/:
          Se hará la consulta de todo lo que se encuentre en la BD, desde la fecha en
          que se corre la función y hasta el valor de registros que se estableció 
-         en la variable -límite- de la función ingesta_inicial.
+         en la variable -limit- de la función -ingesta_inicial-.
     
-        -bucket_path- = ingestion/consecutive/:
+        bucket_path = ingestion/consecutive/:
          Se hará la consulta de todo lo que se encuentre en la BD, desde la fecha que se
          establezca en la variable -delta_date- y hasta el valor de registros que se estableció 
-         en la variable -límite- de la función -ingesta_consecutiva-.
+         en la variable -limit- de la función -ingesta_consecutiva-.
      
     inputs:
         my_bucket: string con el nombre del bucket
@@ -101,7 +103,7 @@ def guardar_ingesta(my_bucket, bucket_path, data):
     if bucket_path == "ingestion/initial":
         nom_file = "ingestion/initial/" + "historic-inspections-" + fecha + ".pkl"
     else:
-        nom_file =  "ingestion/consecutive/" + "c1000onsecutive-inspections-" + fecha + ".pkl"
+        nom_file =  "ingestion/consecutive/" + "consecutive-inspections-" + fecha + ".pkl"
     
     s3.Object(my_bucket, nom_file).put(Body = pickle_buffer) 
     return
@@ -111,17 +113,18 @@ def guardar_ingesta(my_bucket, bucket_path, data):
 
 def ingesta_consecutiva(client, delta_date = '2021-02-15T00:00:00.000', limit = 1000):
     '''
-    Función que se conecta a la App de Chicago food inspections y devuelve
+    Función que utiliza el cliente de la API Chicago food inspections, realiza 
     una consulta de tamaño "limit" a partir de la fecha establecida en la
-    variable -delta_date-. Si no hay ese número de registros
-    devolverá el máximo que haya en la Base de datos de la API.
+    variable -delta_date- y devuelve una lista con los resultados
+    de la consulta. Si no hay ese número de registros devolverá el máximo que haya
+    en la BD.
     
     inputs:
-        client: string con el cliente de la API Chicago food inspections
+        client: objeto con el cliente para conectarse a la API Chicago food inspections
         delta_date: date con la fecha desde la cual se desea hacer la consulta
         limit: integer con el número de registros que se desean consultar
     outputs:
-        Consulta consecutiva a la BD de la API de Chicago
+        Lista con el resultado de la consulta consecutiva a la BD 
     '''
     
     return client.get(socrata_ds_id, where = "inspection_date > " + "'" + delta_date + "'", limit = limit)
