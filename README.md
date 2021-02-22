@@ -22,7 +22,7 @@ Integrante | Alumno                         | Clave única
 
 ---
 
-https://img.shields.io/static/v1?label=<Checkpoint Actual:>&message=<3.7.4>&color=<brightgreen>
+https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen
 
 ---
 
