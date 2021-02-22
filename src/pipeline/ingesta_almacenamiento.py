@@ -1,19 +1,15 @@
 # ================================= LIBRARIES  ================================= #
 
-import os
 import boto3
 import pickle as pkl
 from sodapy import Socrata
 from datetime import datetime
 
+import src.utils.constants as ks
 from src.utils.general import get_api_token, get_s3_credentials
 
 # Variables de entorno que se cargan por default al cargar la librería
 # ingesta_almacenamiento.py
-
-socrata_domain = "data.cityofchicago.org"
-socrata_ds_id = "4ijn-s7e5"
-path = os.path.realpath('conf/local/credentials.yaml')
 
 # ================================= FUNCTION  ================================= #
 
@@ -27,8 +23,8 @@ def get_client():
         Cliente para conectarse a la API Chicago food inspections
     '''
     
-    token = get_api_token(path)
-    client = Socrata(socrata_domain, token['api_token'])  #timeout=10)
+    token = get_api_token(ks.path)
+    client = Socrata(ks.socrata_domain, token['api_token'])  #timeout=10)
     
     return client
 
@@ -47,7 +43,7 @@ def ingesta_inicial(client, limit = 300000):
     outputs:
         Lista con el resultado de la consulta inicial (histórica) a la BD
     '''
-    return client.get(socrata_ds_id, limit = limit)
+    return client.get(ks.socrata_ds_id, limit = limit)
 
 # ================================= FUNCTION 3 ================================= #
 
@@ -59,7 +55,8 @@ def get_s3_resource():
     outputs:
         Objeto s3 de AWS
     '''
-    s3_credentials = get_s3_credentials(path)
+    
+    s3_credentials = get_s3_credentials(ks.path)
     session = boto3.Session(
         aws_access_key_id = s3_credentials['aws_access_key_id'],
         aws_secret_access_key = s3_credentials['aws_secret_access_key']
@@ -127,4 +124,4 @@ def ingesta_consecutiva(client, delta_date = '2021-02-15T00:00:00.000', limit = 
         Lista con el resultado de la consulta consecutiva a la BD 
     '''
     
-    return client.get(socrata_ds_id, where = "inspection_date > " + "'" + delta_date + "'", limit = limit)
+    return client.get(ks.socrata_ds_id, where = "inspection_date > " + "'" + delta_date + "'", limit = limit)
