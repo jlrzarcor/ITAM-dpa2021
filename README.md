@@ -187,7 +187,9 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
 
 ## Sobre nuestro ***EDA***:
+
 - En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
+
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
 ---
@@ -202,7 +204,7 @@ El proceso **consiste** en descargar la información de inspecciones que está c
 
 Las **funciones** que permiten realizar el proceso de ingesta son `general.py` e `ingesta_almacenamiento.py`.
 
-Se encuentran ubicadas en la carpeta `src` de la siguiente manera:
+Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
 ├── src               
