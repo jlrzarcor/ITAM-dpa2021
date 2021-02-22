@@ -210,7 +210,7 @@ Se encuentran ubicadas en la carpeta `src` de la siguiente manera:
     |   └── general.py    
     │
     │
-    ├── etl       <- Scripts to transform data from raw to intermediate.
+    ├── etl
     │
     │
     ├── pipeline
