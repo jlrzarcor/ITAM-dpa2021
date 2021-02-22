@@ -48,6 +48,7 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 El trabajo será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
 ![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen)
+![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-23%2F02%2F2021-brightgreen)
 
 - *Checkpoint* 1:  *Starting point*.
 
@@ -152,7 +153,8 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
 
-1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: 
+1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando:
+ 
 `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
 ![Reproducir_EDA](https://img.shields.io/badge/PARA%20REPRODUCIR%20LOS%20RESULTADOS%20DE%20NUESTRO-EDA-inactive)
@@ -160,6 +162,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 2. Descargar el csv de esta [url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta: `/notebooks/eda`.
 
 3. **Opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando:
+
 `pyenv virtualenv 3.7.4 nombre_de_tu_environment`.
 
   Activa el ambiente virtual con el siguiente comando: `pyenv activate nombre_de_tu_environment`
@@ -173,6 +176,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 ![Instalar_requirements](https://img.shields.io/badge/C%C3%93MO%20INSTALAR%20NUESTRO-requirements.txt-inactive)
 
 4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando:
+
 `pip install -r requirements.txt`.
 
 5. Abre tu terminal y desde ella entra al directorio raíz de este archivo.
@@ -191,7 +195,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 **Prerrequisitos**
 
-1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un ***‘app token’***.
+1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un ‘app token’.
 
 2.	Contar con una cuenta activa de ***AWS***. En ésta, se debe tener un *bucket* de ***S3*** exclusivo para almacenar la información del proyecto; **importante** mencionar que se debe conocer el **nombre exacto** del *bucket* y contar con el ***Access Key ID***.
 
