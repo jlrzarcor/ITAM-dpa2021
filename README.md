@@ -189,21 +189,27 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 **Prerrequisitos**
 
 1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un ***‘app token’***.
-2.	Contar con una cuenta activa de ***AWS***. En ésta, se debe tener un *bucket* de ***S3*** exclusivo para almacenar la información del proyecto; **importante** mencionar que se debe conocer el ***nombre exacto*** del *bucket* y contar con el ***Access Key ID***.
+
+2.	Contar con una cuenta activa de ***AWS***. En ésta, se debe tener un *bucket* de ***S3*** exclusivo para almacenar la información del proyecto; **importante** mencionar que se debe conocer el **nombre exacto** del *bucket* y contar con el ***Access Key ID***.
+
 3.	Debe crear un archivo `.yaml` siguiendo la siguiente estructura: 
 
-`---
+```
+---
 s3:
     aws_access_key_id: "de_tu_cuenta_de_AWS"
     aws_secret_access_key: "de_tu_cuenta_de_AWS"
 food_inspections:
     api_token: "de_tu app_token_del_prerrquisito_1"
-`
+```
 
-4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositorio y ejecutar el comando ` export PYTHONPATH=$pwd `.
-5.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
+4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. 
 
-Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la **raíz** de su **repostorio clonado** y posteriormente seguir los siguientes 5 macroprocesos:
+Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$pwd`.
+
+6.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
+
+Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la **raíz** de su **repostorio clonado** y posteriormente seguir los siguientes **5 macroprocesos**:
 
 1.	**Conexión** ***API*** **con** ***SODAPY***.
 2.	**Generar datos ingesta inicial**.
