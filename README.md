@@ -67,7 +67,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=compact)](https://github.com/jlrzarcor/ITAM-dpa2021/tree/main/src/utils)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=fuentesortiz&layout=compact)](https://github.com/jlrzarcor/ITAM-dpa2021/tree/main/src/utils)
 
 ---
 
