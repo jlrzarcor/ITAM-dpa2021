@@ -198,6 +198,8 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 El proceso **consiste** en descargar la información de inspecciones que está contenida en la página [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) de **forma programática y automatizada**. Se realiza una **ingesta inicial (descarga)** y posteriormente se realizarán **descargas semanales consecutivas**.
 
+![](./images/cfi.jpeg)
+
 Las **funciones** que permiten realizar el proceso de ingesta son `general.py` e `ingesta_almacenamiento.py`.
 
 Se encuentran ubicadas en la carpeta `src` de la siguiente manera:
@@ -216,8 +218,6 @@ Se encuentran ubicadas en la carpeta `src` de la siguiente manera:
     ├── pipeline
     |   └── ingesta_almacenamiento.py    
 ```
-
-![](./images/cfi.jpeg)
 
 Una vez que se ha realizado la ingesta inicial como la consecutiva, la información será transformada en un archivo compacto (formato *pickle*, *.pkl*) para posteriormente ser almacenada en la nube de [***AWS S3***](https://aws.amazon.com/s3/). De esta forma, **mantendremos nuestro producto de datos actualizado**.
 
