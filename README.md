@@ -47,6 +47,8 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 El trabajo será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
+![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen)
+
 - *Checkpoint* 1:  *Starting point*.
 
 **NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.
@@ -65,7 +67,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 **¿Qué lenguaje utlizamos?**
 
-El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
+![Lenguaje_utilizado](https://img.shields.io/badge/Lenguaje%20utilizado%3A-Python%203.7.4-informational)
 
 ---
 
@@ -94,11 +96,17 @@ El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
 *Longitude*.                 | Número.              | Longitud del negocio.
 *Location*.                  | *Location*.          | Contiene la coordenada (longitud y latitud) del negocio.
 
-- **Pregunta analítica a contestar con el modelo predictivo**: `¿El establecimiento pasará o no la inspección?`
+---
 
-- **Frecuencia de actualización de los datos**: `diaria`.
+### Objetivo
 
-- **Frecuencia de actualización del producto de datos**: `semanal`.
+![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo%3A%20-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
+
+### Tomar en cuenta
+
+![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos%3A-diaria.-important)
+
+![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos%3A-semanal.-important)
 
 ---
 
@@ -172,8 +180,10 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
 
-## ¿Qué archivos son importantes en este repositorio?
-
-Sobre nuestro ***EDA***:
+## Sobre nuestro ***EDA***:
 - En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el primer *checkpoint*** del proyecto.
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
+
+---
+
+### Resumen de cómo funciona nuestro proceso de ingestión
