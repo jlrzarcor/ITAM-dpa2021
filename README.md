@@ -47,7 +47,7 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 El trabajo será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
-**NOTA**: ![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen)
+![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen)
 
 - *Checkpoint* 1:  *Starting point*.
 
