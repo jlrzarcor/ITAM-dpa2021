@@ -152,13 +152,15 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
 
-1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
+1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: 
+`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
 ![Reproducir_EDA](https://img.shields.io/badge/PARA%20REPRODUCIR%20LOS%20RESULTADOS%20DE%20NUESTRO-EDA-inactive)
 
 2. Descargar el csv de esta [url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta: `/notebooks/eda`.
 
-3. **Opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando `pyenv virtualenv 3.7.4 nombre_de_tu_environment`.
+3. **Opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando:
+`pyenv virtualenv 3.7.4 nombre_de_tu_environment`.
 
   Activa el ambiente virtual con el siguiente comando: `pyenv activate nombre_de_tu_environment`
 
@@ -170,7 +172,8 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
   
 ![Instalar_requirements](https://img.shields.io/badge/C%C3%93MO%20INSTALAR%20NUESTRO-requirements.txt-inactive)
 
-4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando: `pip install -r requirements.txt`
+4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando:
+`pip install -r requirements.txt`.
 
 5. Abre tu terminal y desde ella entra al directorio raíz de este archivo.
 
@@ -179,7 +182,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
 
 ## Sobre nuestro ***EDA***:
-- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el primer *checkpoint*** del proyecto.
+- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
 ---
