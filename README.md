@@ -22,6 +22,10 @@ Integrante | Alumno                         | Clave única
 
 ---
 
+https://img.shields.io/static/v1?label=<Checkpoint Actual:>&message=<3.7.4>&color=<brightgreen>
+
+---
+
 ## Acerca de este proyecto
 
 Trabajaremos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
