@@ -73,9 +73,9 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
 
-- **Número de registros**: 215,130.
+![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros%3A-215%2C130.-orange)
 
-- **Número de columnas**: 17.
+![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas%3A-17.-orange)
 
 - **Variables con las que contamos inicialmente**:
 
@@ -156,7 +156,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando: `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-**PARA RPRODUCIR LOS RESULTADOS DE NUESTRO** ***EDA***:
+![Reproducir_EDA](https://img.shields.io/badge/PARA%20REPRODUCIR%20LOS%20RESULTADOS%20DE%20NUESTRO-EDA-inactive)
 
 2. Descargar el csv de esta [url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta: `/notebooks/eda`.
 
@@ -170,7 +170,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
   --> hacer accesible el ambiente virtual al notebook de jupyter<br>
   `python -m ipykernel install --user --name nombre_de_tu_environment --display-name nombre_de_tu_environment`
   
-**CÓMO INSTALAR NUESTRO** ***requirements***.**txt**:
+![Instalar_requirements](https://img.shields.io/badge/C%C3%93MO%20INSTALAR%20NUESTRO-requirements.txt-inactive)
 
 4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando: `pip install -r requirements.txt`
 
