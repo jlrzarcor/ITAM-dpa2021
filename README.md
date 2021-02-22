@@ -22,10 +22,6 @@ Integrante | Alumno                         | Clave única
 
 ---
 
-![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen)
-
----
-
 ## Acerca de este proyecto
 
 Trabajaremos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
@@ -51,6 +47,8 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 El trabajo será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
+**NOTA**: ![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual%3A-2-brightgreen)
+
 - *Checkpoint* 1:  *Starting point*.
 
 **NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.
@@ -69,7 +67,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 **¿Qué lenguaje utlizamos?**
 
-El proyecto es desarrollado utilizando como lenguaje principal `Python 3.7.4`.
+![Lenguaje_utilizado](https://img.shields.io/badge/Lenguaje%20utilizado%3A-Python%203.7.4-informational)
 
 ---
 
