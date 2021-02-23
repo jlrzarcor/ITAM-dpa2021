@@ -141,12 +141,15 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
     ├── __init__.py    <- Makes src a Python module.
     │
     ├── utils      <- Functions used across the project.
+    │   ├── constants.py
+    |   └── general.py 
     │
     │
     ├── etl       <- Scripts to transform data from raw to intermediate.
     │
     │
     ├── pipeline
+    |   └── ingesta_almacenamiento.py 
 ```
 
 ---
