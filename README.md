@@ -260,9 +260,34 @@ Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la *
 
 - Estableceremos una **conexión** tipo "**cliente**" con la *API* del *Chicago Portal* llamando a nuestra función `get_client` (que se encuentra dentro de `ingesta_almacenamiento.py`), utilizamdo la **clase Socrata** de ***SODAPY***). Ésta a su vez llamará a la función `get_api_token` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credential.yaml` (descrito en `prerrequisitos`). Se retorna un cliente que podemos asignar a una variable `client`.
 
-- Análogamente, establecemos una conexión con *AWS* en el servicio de *S3* del tipo `resource service client by name` llamando a nuestra función `get_s3_credentials()` (que se encuentra dentro de `ingesta_almacenamiento.py`), que a su vez llamará a la función `get_S3_credentials` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credential.yaml` y retorna las credenciales necesarias para establecer la conexión (se utiliza la clase `Session de Boto3`). Se retorna un cliente que podemos asignar a una variable "***S3***".
+- Análogamente, establecemos una conexión con *AWS* en el servicio de *S3* del tipo `resource service client by name` llamando a nuestra función `get_s3_credentials()` (que se encuentra dentro de `ingesta_almacenamiento.py`), que a su vez llamará a la función `get_S3_credentials` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credential.yaml` y retorna las credenciales necesarias para establecer la conexión (se utiliza la clase ***Session*** de ***Boto3***). Se retorna un cliente que podemos asignar a una variable "***S3***".
 
 ![M2](https://img.shields.io/badge/Macroproceso%202-Generar%20datos%20ingesta-red)
+
+**Inicial**:
+
+- Se realiza sólo una vez y consiste en descargar toda la información generada hasta cierta fecha específica que sea lo más actual posible, considerando que la actualización de los datos se realiza en el portal los lunes a las 6:00 a.m.
+
+- Solicitamos una descarga con la función `ingesta_inicial(client, limit)`, la cual recibe la variable "***client***" (definida en el macropoceso 1) y la variable "***limit***" (que define el número de registros a ingestar; se recomienda utilizar como **cota superior 300,000** para garantizar que se ingesta la totalidad de registros a la fecha específica).
+
+- Retorna un objeto `list` con los registros generados en la consulta que pueden ser asignados a la variable `data_ii`.
+
+**Consecutiva**:
+
+- Se realizará de **forma automátizada cada semana posterior a la actualización del portal**. Actualmente el proceso de automatización está en desarrollo, por lo que sólo se puede realizar un *test* llamando a la función).
+
+- Solicitamos una descarga con la función `ingesta_consecutiva(client, date, limit)`:
+    - `client`: definida en el macroproceso 1.
+    - `date`: *timestamp (string)* con el siguiente formato '**AAAA-MM-DDT00:00:000**'. Se debe espetar las comillas simples. Donde "AAAA" 4 dígitos del año, "MM" 2 dígitos del mes y "DD" 2 dígitos del día; "T" es un separador para el horario. Por último se deben conservar los dígitos en 0.
+    - `limit`: *numeric* que define el número de registros a ingestar (se recomienda utilizar como **cota superior 1,000** para garantizar la totalidad del diferencial o "*delta* de registros").
+
+- Retorna un objeto `list` con los registros generados en la consulta que pueden ser asignados a la variable `data_ic`.
+
+**NOTA**: Las funciones anteriores invocan a la función `client.get()` de la clase **Socrata** de ***SODAPY***, la cual requiere los parámetros indicados en [***Access Dataset via SODA API***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5):
+    - `socrata_domain`: "data.cityofchicago.org"
+    - `socrata_ds_id`: "4ijn-s7e5"
+    - Por último, estos se cargan de forma automática, no se requiere indicarlos.
+
 
 ![M3](https://img.shields.io/badge/Macroproceso%202-Trasformar%20y%20guardar%20los%20datos%20de%20ingesta%20en%20el%20bucket%20de%20S3-red)
 
