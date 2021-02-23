@@ -332,14 +332,14 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
  
  - `path` = os.path.realpath('conf/local/credentials.yaml')
  
- - `key_1` = 'ingestion/initial'
+ - `key1` = 'ingestion/initial'
  
- - `key_2` = 'ingestion/consecutive'
+ - `key2` = 'ingestion/consecutive'
 
-**NOTA**: Las variables `key_1` y `key_2` determinan el tipo de ingesta que se realiza.
+**NOTA**: Las variables `key1` y `key2` determinan el tipo de ingesta que se realiza.
 
-Con `key_1` se mandará a guardar al *bucket* una consuta que va desde el '2021-02-15T00:00:00.000' y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por *default* que tiene la función). Si se desea hacer una consulta consecutiva que inicie en una fecha distinta, se debe cambiar directamente en la función `ingesta_consecutiva` (en futuros *checkpoints* esto se modificará para que se haga de manera automática de acuerdo a nuestras necesidades de consulta).
+Con `key1` se mandará a guardar al *bucket* una consuta que va desde el '2021-02-15T00:00:00.000' y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por *default* que tiene la función). Si se desea hacer una consulta consecutiva que inicie en una fecha distinta, se debe cambiar directamente en la función `ingesta_consecutiva` (en futuros *checkpoints* esto se modificará para que se haga de manera automática de acuerdo a nuestras necesidades de consulta).
 
-Con `key_2` se mandará a guardar al *bucket* una consuta que va desde la fecha en que se ejecuta la función `ial.guardar_ingesta` y 300,000 registros hacia atrás (este valor es el establecido por *default* y garantiza que se extraigan todos los registros existentes en la BD de *Chicago Food Inspections*).
+Con `key2` se mandará a guardar al *bucket* una consuta que va desde la fecha en que se ejecuta la función `ial.guardar_ingesta` y 300,000 registros hacia atrás (este valor es el establecido por *default* y garantiza que se extraigan todos los registros existentes en la BD de *Chicago Food Inspections*).
 
 ---
