@@ -302,8 +302,8 @@ Una vez que se ha realizado la **ingesta**, los datos generados en el proceso an
 
 Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, bucket_path, data)` que recibe las variables:
    - `my_bucket`: *string* con el nombre de su *bucket* de *S3*.
-   - `bucket_path`: *string* con alguno de los siguientes valores `ingestion/initial` o `ingestion/consecutive` según sea la ingesta a almacenar.
-   - `data`: recibe el objeto `list` generado en el macroproceso 2. Si se declararon las variables `data_ii` o `data_ic`.
+   - `bucket_path`: *string* con alguno de los siguientes valores `ingestion/initial` o `ingestion/consecutive` según sea la ingesta a almacenar. Para estos valores, hemos realizado una declaración previa en las variables de ambiente `constants.py`, como `key1` y `key2` respectivamente.
+   - `data`: recibe el objeto `list` generado en el macroproceso 2. Si se declararon las variables `data_ii` o `data_ic`, debe utilizarlas en lugar de declarar la variable `data`.
  
  ![Ejecución](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Ejecuci%C3%B3n%20del%20pipeline-yellowgreen)
  
@@ -312,15 +312,21 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 3. Ejecutar el comando `python`.
 4. Dentro de la terminal de python (>>>) ejecutar los siguientes comandos:
 ```
+# Declaración de módulos.
 >>> import src.utils.constants as ks
 >>> import src.utils.general as gral
 >>> import src.pipeline.ingesta_almacenamiento as ial
- 
+
+# Declaración de variables auxiliares.
+>>> date = '2020-02-18T00:00:000'  # Ejemplo con declaración de variable date de acuerdo a lo mencionado en el Macroproceso 2.
+>>> my_bucket = "bucket_del_equipo_rocket"  # Ejemplo de declaración de la variable my_bucket de acuerdo a lo indicado en el Macroproceso 3.
+
+# Desarrollo de funciones.
 >>> client = ial.get_client()
->>> data_ii = ial.ingesta_inicial(client,limit=300000)
->>> data_ic = ial.ingesta_consecutiva(client,limit=1000)
->>> ial.guardar_ingesta(ks.my_bucket,ks.key1,data_ii) # Para la ingesta inicial
->>> ial.guardar_ingesta(ks.my_bucket,ks.key2,data_ic) # Para la ingesta consecutiva
+>>> data_ii = ial.ingesta_inicial(client, limit = 300000)
+>>> data_ic = ial.ingesta_consecutiva(client, date , limit=1000)
+>>> ial.guardar_ingesta(my_bucket, ks.key1, data_ii) # Para la ingesta inicial.
+>>> ial.guardar_ingesta(my_bucket, ks.key2, data_ic) # Para la ingesta consecutiva.
 ```
 ![Observaciones](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Observaciones-yellowgreen)
 
@@ -335,11 +341,5 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
  - `key1` = 'ingestion/initial'
  
  - `key2` = 'ingestion/consecutive'
-
-**NOTA**: Las variables `key1` y `key2` determinan el tipo de ingesta que se realiza.
-
-Con `key1` se mandará a guardar al *bucket* una consuta que va desde el '2021-02-15T00:00:00.000' y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por *default* que tiene la función). Si se desea hacer una consulta consecutiva que inicie en una fecha distinta, se debe cambiar directamente en la función `ingesta_consecutiva` (en futuros *checkpoints* esto se modificará para que se haga de manera automática de acuerdo a nuestras necesidades de consulta).
-
-Con `key2` se mandará a guardar al *bucket* una consuta que va desde la fecha en que se ejecuta la función `ial.guardar_ingesta` y 300,000 registros hacia atrás (este valor es el establecido por *default* y garantiza que se extraigan todos los registros existentes en la BD de *Chicago Food Inspections*).
 
 ---
