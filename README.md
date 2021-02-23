@@ -288,6 +288,7 @@ Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la *
     - `socrata_ds_id`: "4ijn-s7e5"
     - Por último, estos se cargan de forma automática, no se requiere indicarlos.
 
+![](./images/access_ds.jpeg)
 
 ![M3](https://img.shields.io/badge/Macroproceso%202-Trasformar%20y%20guardar%20los%20datos%20de%20ingesta%20en%20el%20bucket%20de%20S3-red)
 
