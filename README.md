@@ -77,7 +77,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros%3A-215%2C130.-orange)
 
-![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas%3A-17.-orange)
+![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20variables-17-orange)
 
 - **Variables con las que contamos inicialmente**:
 
