@@ -331,12 +331,14 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
  - `socrata_ds_id` = "4ijn-s7e5"
  
  - `path` = os.path.realpath('conf/local/credentials.yaml')
+ 
+ - `key_1` = 'ingestion/initial'
+ 
+ - `key_2` = 'ingestion/consecutive'
 
-- La variables `key_1` y `key_2` determinan el tipo de ingesta que se realiza.
+**NOTA**: Las variables `key_1` y `key_2` determinan el tipo de ingesta que se realiza.
 
-- Si bucket_path = 'ingestion/consecutive' : mandará a guardar al bucket una consuta que va desde el 2021-02-11T00:00:00.000 y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por default que tiene la función). Si se desea cambiar este parámetro, por ejemplo, para realizar una búsqueda que empieze en otra fecha, deberá escribir el siguiente código:
-  
- - `delta_date = '2021-02-15T00:00:00.000'`
+- Con `key_1` se mandará a guardar al *bucket* una consuta que va desde el '2021-02-15T00:00:00.000' y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por *default* que tiene la función). Si se desea hacer una consulta consecutiva
 
 	en el cual puede especificar fecha y hora a partir de la cual desea obtener información. Este comando debe ser puesto antes de mandar llamar la función:
   
