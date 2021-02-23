@@ -288,11 +288,11 @@ Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la *
 
 **NOTA**: Las funciones anteriores invocan a la función `client.get()` de la clase **Socrata** de ***SODAPY***, la cual requiere los parámetros indicados en [***Access Dataset via SODA API***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5):
 
-    - `socrata_domain`: "data.cityofchicago.org"
+- `socrata_domain` = "data.cityofchicago.org"
+ 
+- `socrata_ds_id` = "4ijn-s7e5"
     
-    - `socrata_ds_id`: "4ijn-s7e5"
-    
-    - Por último, estos se cargan de forma automática, no se requiere indicarlos.
+- Por último, estos se cargan de forma automática, no se requiere indicarlos.
 
 ![](./images/access_ds.jpeg)
 
