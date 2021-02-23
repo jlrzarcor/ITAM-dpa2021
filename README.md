@@ -319,8 +319,8 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 >>> client = ial.get_client()
 >>> data_ii = ial.ingesta_inicial(client,limit=300000)
 >>> data_ic = ial.ingesta_consecutiva(client,limit=1000)
->>> ial.guardar_ingesta(ks.my_bucket,ks.key_1,data_ii) # Para la ingesta inicial
->>> ial.guardar_ingesta(ks.my_bucket,ks.key_2,data_ic) # Para la ingesta consecutiva
+>>> ial.guardar_ingesta(ks.my_bucket,ks.key1,data_ii) # Para la ingesta inicial
+>>> ial.guardar_ingesta(ks.my_bucket,ks.key2,data_ic) # Para la ingesta consecutiva
 ```
 ![Observaciones](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Observaciones-yellowgreen)
 
