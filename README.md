@@ -249,11 +249,9 @@ food_inspections:
     api_token: "de_tu app_token_del_prerrquisito_1"
 ```
 
-4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. 
+4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. Debe abrir su terminal y posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$PWD`.
 
-    Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$PWD`.
-
-5.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
+5.	Para poder generar las conexiones necesarias con los clientes, debe crear la carpeta `conf/local` donde deberá colocar su archivo `.yaml` (del prerrequisito 3). 
 
 ![Macroprocesos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Macroprocesos-yellowgreen)
 
