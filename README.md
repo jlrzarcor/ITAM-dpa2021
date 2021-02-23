@@ -317,8 +317,8 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 >>> import src.pipeline.ingesta_almacenamiento as ial
  
 >>> client = ial.get_client()
->>> data = ial.ingesta_consecutiva(client,limit=1000)
->>> my_bucket = 'data-product-architecture-equipo-5.0'
+>>> data_ii = ial.ingesta_inicial(client,limit=300000)
+>>> data_ic = ial.ingesta_consecutiva(client,limit=1000)
 >>> ial.guardar_ingesta(ks.my_bucket,ks.key_1,data_ii) # Para la ingesta inicial
 >>> ial.guardar_ingesta(ks.my_bucket,ks.key_2,data_ic) # Para la ingesta consecutiva
 ```
