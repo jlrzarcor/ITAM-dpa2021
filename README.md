@@ -232,9 +232,7 @@ Una vez que se ha realizado la ingesta inicial como la consecutiva, la informaci
 
 ![Prerrequisitos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Prerrequisitos-yellowgreen)
 
-1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un
- 
-`app token`.
+1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un `app token`.
 
 ![](./images/app_token.jpg)
 
