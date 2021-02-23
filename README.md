@@ -207,7 +207,9 @@ El proceso **consiste** en descargar la información de inspecciones que está c
 
 ![](./images/cfi.jpeg)
 
-Las **funciones** que permiten realizar el proceso de ingesta son `general.py` e `ingesta_almacenamiento.py`.
+En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
+
+`general.py` e `ingesta_almacenamiento.py`.
 
 Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -342,23 +344,4 @@ Con `key_1` se mandará a guardar al *bucket* una consuta que va desde el '2021-
 
 Con `key_2` se mandará a guardar al *bucket* una consuta que va desde la fecha en que se ejecuta la función `ial.guardar_ingesta` y 300,000 registros hacia atrás (este valor es el establecido por *default* y garantiza que se extraigan todos los registros existentes en la BD de *Chicago Food Inspections*).
 
-- Si solo manda llamar los siguientes comandos:
- - `>>> import os`
- - `>>> import src.utils.general as gral`
- - `>>> import src.pipeline.ingesta_almacenamiento as ial`
- - `>>> ial.guardar_ingesta(my_bucket,bucket_path)`
-
-	Le marcará error porque los valores por default que tomará no coresponderán ni a sus credenciales ni al nombre del bucket asociado a su cuenta de AWS. Sin embargo, puede modificar el código del archivo: -ingesta_almacenamiento.py- para configurar las variables de entorno que se cargan por default de acuerdo a sus necesidades. Esto lo puede realizar en esta parte del código:
-
-`''' Variables de entorno que se cargan por default al cargar la librería
-    ingesta_almacenamiento.py
-'''`  
-
-`socrata_domain = "data.cityofchicago.org" `
-`socrata_ds_id = "4ijn-s7e5"`  
-`path = os.path.realpath('conf/local/credentials.yaml')`  
-`delta_date = '2021-02-15T00:00:00.000'`  
-`my_bucket = 'data-product-architecture-equipo-5.0'`  
-`bucket_path = 'ingestion/consecutive'`  
-`
 ---
