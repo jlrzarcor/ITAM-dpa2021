@@ -207,7 +207,9 @@ El proceso **consiste** en descargar la información de inspecciones que está c
 
 ![](./images/cfi.jpeg)
 
-Las **funciones** que permiten realizar el proceso de ingesta son `general.py` e `ingesta_almacenamiento.py`.
+En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
+
+`general.py` e `ingesta_almacenamiento.py`.
 
 Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -230,9 +232,7 @@ Una vez que se ha realizado la ingesta inicial como la consecutiva, la informaci
 
 ![Prerrequisitos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Prerrequisitos-yellowgreen)
 
-1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un
- 
-`app token`.
+1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un `app token`.
 
 ![](./images/app_token.jpg)
 
@@ -249,11 +249,9 @@ food_inspections:
     api_token: "de_tu app_token_del_prerrquisito_1"
 ```
 
-4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. 
+4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. Debe abrir su terminal y posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$PWD`.
 
-    Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$PWD`.
-
-5.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
+5.	Para poder generar las conexiones necesarias con los clientes, debe crear la carpeta `conf/local` donde deberá colocar su archivo `.yaml` (del prerrequisito 3). 
 
 ![Macroprocesos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Macroprocesos-yellowgreen)
 
@@ -302,8 +300,8 @@ Una vez que se ha realizado la **ingesta**, los datos generados en el proceso an
 
 Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, bucket_path, data)` que recibe las variables:
    - `my_bucket`: *string* con el nombre de su *bucket* de *S3*.
-   - `bucket_path`: *string* con alguno de los siguientes valores `ingestion/initial` o `ingestion/consecutive` según sea la ingesta a almacenar.
-   - `data`: recibe el objeto `list` generado en el macroproceso 2. Si se declararon las variables `data_ii` o `data_ic`.
+   - `bucket_path`: *string* con alguno de los siguientes valores `ingestion/initial` o `ingestion/consecutive` según sea la ingesta a almacenar. Para estos valores, hemos realizado una declaración previa en las variables de ambiente `constants.py`, como `key1` y `key2` respectivamente.
+   - `data`: recibe el objeto `list` generado en el macroproceso 2. Si se declararon las variables `data_ii` o `data_ic`, debe utilizarlas en lugar de declarar la variable `data`.
  
  ![Ejecución](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Ejecuci%C3%B3n%20del%20pipeline-yellowgreen)
  
@@ -312,55 +310,34 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 3. Ejecutar el comando `python`.
 4. Dentro de la terminal de python (>>>) ejecutar los siguientes comandos:
 ```
+# Declaración de módulos.
 >>> import src.utils.constants as ks
 >>> import src.utils.general as gral
 >>> import src.pipeline.ingesta_almacenamiento as ial
- 
+
+# Declaración de variables auxiliares.
+>>> date = '2020-02-18T00:00:000'  # Ejemplo con declaración de variable date de acuerdo a lo mencionado en el Macroproceso 2.
+>>> my_bucket = "bucket_del_equipo_rocket"  # Ejemplo de declaración de la variable my_bucket de acuerdo a lo indicado en el Macroproceso 3.
+
+# Desarrollo de funciones.
 >>> client = ial.get_client()
->>> data = ial.ingesta_consecutiva(client,limit=1000)
->>> my_bucket = 'data-product-architecture-equipo-5.0'
->>> ial.guardar_ingesta(ks.my_bucket,ks.key_1,data_ii) # Para la ingesta inicial
->>> ial.guardar_ingesta(ks.my_bucket,ks.key_2,data_ic) # Para la ingesta consecutiva
+>>> data_ii = ial.ingesta_inicial(client, limit = 300000)
+>>> data_ic = ial.ingesta_consecutiva(client, date , limit=1000)
+>>> ial.guardar_ingesta(my_bucket, ks.key1, data_ii) # Para la ingesta inicial.
+>>> ial.guardar_ingesta(my_bucket, ks.key2, data_ic) # Para la ingesta consecutiva.
 ```
 ![Observaciones](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Observaciones-yellowgreen)
 
-- Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llamar también las siguientes variables de entorno que son utilizadas para realizar la ingesta:
+Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llamar también las siguientes variables de entorno que son utilizadas para realizar la ingesta:
 
  - `socrata_domain` = "data.cityofchicago.org"
  
  - `socrata_ds_id` = "4ijn-s7e5"
  
  - `path` = os.path.realpath('conf/local/credentials.yaml')
+ 
+ - `key1` = 'ingestion/initial'
+ 
+ - `key2` = 'ingestion/consecutive'
 
-- La variables `key_1` y `key_2` determinan el tipo de ingesta que se realiza.
-
-- Si bucket_path = 'ingestion/consecutive' : mandará a guardar al bucket una consuta que va desde el 2021-02-11T00:00:00.000 y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por default que tiene la función). Si se desea cambiar este parámetro, por ejemplo, para realizar una búsqueda que empieze en otra fecha, deberá escribir el siguiente código:
-  
- - `delta_date = '2021-02-15T00:00:00.000'`
-
-	en el cual puede especificar fecha y hora a partir de la cual desea obtener información. Este comando debe ser puesto antes de mandar llamar la función:
-  
- - `ial.guardar_ingesta(my_bucket,bucket_path)`
-  
-- Si bucket_path = 'ingestion/initial': mandará a guardar al bucket una consuta que va desde la fecha en que se ejecuta la función -ial.guardar_ingesta- y 300,000 registros hacia atrás (este valor es el establecido por default y garantiza que se extraigan todos los registros existentes en la BD de Chicago food inspections).
-
-- Si solo manda llamar los siguientes comandos:
- - `>>> import os`
- - `>>> import src.utils.general as gral`
- - `>>> import src.pipeline.ingesta_almacenamiento as ial`
- - `>>> ial.guardar_ingesta(my_bucket,bucket_path)`
-
-	Le marcará error porque los valores por default que tomará no coresponderán ni a sus credenciales ni al nombre del bucket asociado a su cuenta de AWS. Sin embargo, puede modificar el código del archivo: -ingesta_almacenamiento.py- para configurar las variables de entorno que se cargan por default de acuerdo a sus necesidades. Esto lo puede realizar en esta parte del código:
-
-`''' Variables de entorno que se cargan por default al cargar la librería
-    ingesta_almacenamiento.py
-'''`  
-
-`socrata_domain = "data.cityofchicago.org" `
-`socrata_ds_id = "4ijn-s7e5"`  
-`path = os.path.realpath('conf/local/credentials.yaml')`  
-`delta_date = '2021-02-15T00:00:00.000'`  
-`my_bucket = 'data-product-architecture-equipo-5.0'`  
-`bucket_path = 'ingestion/consecutive'`  
-`
 ---
