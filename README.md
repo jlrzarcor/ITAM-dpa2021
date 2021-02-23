@@ -77,7 +77,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros%3A-215%2C130.-orange)
 
-![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas%3A-17.-orange)
+![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20variables%3A-17-orange)
 
 - **Variables con las que contamos inicialmente**:
 
@@ -91,7 +91,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 *Risk*.                      | Texto.               | Cada establecimiento se categoriza de acuerdo al riesgo de afectar la salud pública. 1 el más alto riesgo y 3 el menor. La frecuencia de las inspecciones está ligada a su nivel de riesgo.
 *Address, City, State, Zip*. | Texto.               | Dirección completa donde se localizan las instalaciones.
 *Inspection Date*.           | *Floating Timestamp*.| Fecha de la inspección.
-*Inspection Type*.           | Texto.               | Tipo de inspección, puede ser cualquiera de las siguientes: _canvass_, el tipo de inspección más común realizado con una frecuencia relativa al **riesgo del establecimiento**; _consultation_, es cuando la inspección se realiza por requerimiento del dueño previo a la apertura del establecimiento; _complaint_, se realiza una inspección en respuesta a una queja en contra del establecimiento; _license_, se realiza cuando el establecimiento lo requiere para recibir su lecencia para operar; _suspect food poisoning_, se realiza en respuesta a una o más presonas que presubmiblemente hayan engermado como resultado de haber comiedo en el establecimiento; _task-force inspection_, cuando la inspección se realiza a un bar o taverna.
+*Inspection Type*.           | Texto.               | Tipo de inspección, puede ser cualquiera de las siguientes: _canvass_, el tipo de inspección más común realizado con una frecuencia relativa al **riesgo del establecimiento**; _consultation_, es cuando la inspección se realiza por requerimiento del dueño previo a la apertura del establecimiento; _complaint_, se realiza una inspección en respuesta a una queja en contra del establecimiento; _license_, se realiza cuando el establecimiento lo requiere para recibir su lecencia para operar; _suspect food poisoning_, se realiza en respuesta a una o más presonas que presumiblemente hayan enfermado como resultado de haber comido en el establecimiento; _task-force inspection_, cuando la inspección se realiza a un bar o taverna.
 *Results*.                   | Texto.               | _Pass, pass with conditions, fail, out of business or not located_; '_pass_' implica que no se tienen violaciones críticas o severas (códigos de violación 1-14 y 15-29 respectivamente). '_pass with conditions_', se encontraton violaciones críticas o severas, pero fueron corregidas durante la inspección. '_fail_' implica que se tienen violaciones críticas o severas y que no se corrigieron durante la inspección.
 *Violations*.                | Texto.               |  Un establecimiento puede recibir más de una de las 45 distintas violaciones (código de violación 1 al 44 y 70). Pensar en como analizar esta variable.
 *Latitude*.                  | Número.              | Latitud del negocio.
@@ -141,12 +141,15 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
     ├── __init__.py    <- Makes src a Python module.
     │
     ├── utils      <- Functions used across the project.
+    │   ├── constants.py
+    |   └── general.py 
     │
     │
     ├── etl       <- Scripts to transform data from raw to intermediate.
     │
     │
-    ├── pipeline
+    ├── pipeline  <- Functions used for the pipeline.
+    |   └── ingesta_almacenamiento.py 
 ```
 
 ---
@@ -186,17 +189,50 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
 
+---
+
 ## Sobre nuestro ***EDA***:
+
 - En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
+
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
 ---
 
-## Resumen de cómo funciona nuestro proceso de ingestión
+## Cómo funciona nuestro proceso de ingestión
 
-**Prerrequisitos**
+![Resumen](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Resumen-yellowgreen)
 
-1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un `app token`.
+El proceso **consiste** en descargar la información de inspecciones que está contenida en la página [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) de **forma programática y automatizada**. Se realiza una **ingesta inicial (descarga)** y posteriormente se realizarán **descargas semanales consecutivas**.
+
+![](./images/cfi.jpeg)
+
+Las **funciones** que permiten realizar el proceso de ingesta son `general.py` e `ingesta_almacenamiento.py`.
+
+Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
+
+```
+├── src               
+    ├── __init__.py
+    │
+    ├── utils
+    |   └── general.py    
+    │
+    │
+    ├── etl
+    │
+    │
+    ├── pipeline
+    |   └── ingesta_almacenamiento.py    
+```
+
+Una vez que se ha realizado la ingesta inicial como la consecutiva, la información será transformada en un archivo compacto (formato *pickle*, `.pkl`) para posteriormente ser almacenada en la nube de [***AWS S3***](https://aws.amazon.com/s3/). De esta forma, **mantendremos nuestro producto de datos actualizado**.
+
+![Prerrequisitos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Prerrequisitos-yellowgreen)
+
+1.	Para realizar la ingestión de información de ***Chicago Food Inspections*** es necesario que el usuario se dé de alta [aquí](https://data.cityofchicago.org/login) y genere un
+ 
+`app token`.
 
 ![](./images/app_token.jpg)
 
@@ -215,14 +251,116 @@ food_inspections:
 
 4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. 
 
-Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$pwd`.
+    Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$PWD`.
 
-6.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
+5.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
 
-Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la **raíz** de su **repostorio clonado** y posteriormente seguir los siguientes **5 macroprocesos**:
+![Macroprocesos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Macroprocesos-yellowgreen)
 
-1.	**Conexión** ***API*** **con** ***SODAPY***.
-2.	**Generar datos ingesta inicial**.
-3.	**Generar datos ingesta consecutiva**.
-4.	**Generar conexión con** ***AWS***.
-5.	 **Guardar los datos de ingesta**.
+Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la **raíz** de su **repostorio clonado** y seguir los siguientes **macroprocesos**:
+
+![M1](https://img.shields.io/badge/Macroproceso%201-Conexi%C3%B3n%20a%20la%20API%20con%20SODAPY%20y%20con%20AWS%20S3-red)
+
+- Estableceremos una **conexión** tipo "**cliente**" con la *API* del *Chicago Portal* llamando a nuestra función `get_client` (que se encuentra dentro de `ingesta_almacenamiento.py`), utilizando la **clase Socrata** de ***SODAPY***). Ésta a su vez llamará a la función `get_api_token` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credential.yaml` (descrito en `prerrequisitos`). Se retorna un cliente que podemos asignar a una variable `client`.
+
+- Análogamente, establecemos una conexión con *AWS* en el servicio de *S3* del tipo `resource service client by name` llamando a nuestra función `get_s3_credentials()` (que se encuentra dentro de `ingesta_almacenamiento.py`), que a su vez llamará a la función `get_S3_credentials` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credential.yaml` y retorna las credenciales necesarias para establecer la conexión (se utiliza la clase ***Session*** de ***Boto3***). Se retorna un cliente que podemos asignar a una variable "***S3***".
+
+![M2](https://img.shields.io/badge/Macroproceso%202-Generar%20datos%20ingesta-red)
+
+**Inicial**:
+
+- Se realiza sólo una vez y consiste en descargar toda la información generada hasta cierta fecha específica que sea lo más actual posible, considerando que la actualización de los datos se realiza en el portal los lunes a las 6:00 a.m.
+
+- Solicitamos una descarga con la función `ingesta_inicial(client, limit)`, la cual recibe la variable "***client***" (definida en el macropoceso 1) y la variable "***limit***" (que define el número de registros a ingestar; se recomienda utilizar como **cota superior 300,000** para garantizar que se ingesta la totalidad de registros a la fecha específica).
+
+- Retorna un objeto `list` con los registros generados en la consulta que pueden ser asignados a la variable `data_ii`.
+
+**Consecutiva**:
+
+- Se realizará de **forma automátizada cada semana posterior a la actualización del portal**. Actualmente el proceso de automatización está en desarrollo, por lo que sólo se puede realizar un *test* llamando a la función).
+
+- Solicitamos una descarga con la función `ingesta_consecutiva(client, date, limit)`:
+    - `client`: definida en el macroproceso 1.
+    - `date`: *timestamp (string)* con el siguiente formato '**AAAA-MM-DDT00:00:000**'. Se debe respetar las comillas simples. Donde "AAAA" 4 dígitos del año, "MM" 2 dígitos del mes y "DD" 2 dígitos del día; "T" es un separador para el horario. Por último se deben conservar los dígitos en 0.
+    - `limit`: *numeric* que define el número de registros a ingestar (se recomienda utilizar como **cota superior 1,000** para garantizar la totalidad del diferencial o "*delta* de registros").
+
+- Retorna un objeto `list` con los registros generados en la consulta que pueden ser asignados a la variable `data_ic`.
+
+**NOTA**: Las funciones anteriores invocan a la función `client.get()` de la clase **Socrata** de ***SODAPY***, la cual requiere los parámetros indicados en [***Access Dataset via SODA API***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5):
+
+- `socrata_domain` = "data.cityofchicago.org"
+ 
+- `socrata_ds_id` = "4ijn-s7e5"
+    
+- Por último, estos se cargan de forma automática, no se requiere indicarlos.
+
+![](./images/access_ds.jpeg)
+
+![M3](https://img.shields.io/badge/Macroproceso%203-Trasformar%20y%20guardar%20los%20datos%20de%20ingesta%20en%20el%20bucket%20de%20S3-red)
+
+Una vez que se ha realizado la **ingesta**, los datos generados en el proceso anterior serán transformados en un archivo con formato `pickle` o `.pkl` y serán almacenados en su *bucket* de *S3* de *AWS* con el nombre `historic-inspections-AAAA-MM-DD` o `consecutive-inspections-AAAA-MM-DD` según sea el caso, integrándolos en las subcarpetas denominadas `initial` y `consecutive` que están en una carpeta que se denmominará `ingestion` (mencionamos que no es necesaria tal estructura en el *bucket*, en automático se crea si no existe).
+
+Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, bucket_path, data)` que recibe las variables:
+   - `my_bucket`: *string* con el nombre de su *bucket* de *S3*.
+   - `bucket_path`: *string* con alguno de los siguientes valores `ingestion/initial` o `ingestion/consecutive` según sea la ingesta a almacenar.
+   - `data`: recibe el objeto `list` generado en el macroproceso 2. Si se declararon las variables `data_ii` o `data_ic`.
+ 
+ ![Ejecución](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Ejecuci%C3%B3n%20del%20pipeline-yellowgreen)
+ 
+1. Posicionarse en la carpeta donde se hizo el clon.
+2. Activar el entorno `pyenv` adecuado y exportar la variable de entorno `PYTHONPATH` (mencionado arriba).
+3. Ejecutar el comando `python`.
+4. Dentro de la terminal de python (>>>) ejecutar los siguientes comandos:
+```
+>>> import src.utils.constants as ks
+>>> import src.utils.general as gral
+>>> import src.pipeline.ingesta_almacenamiento as ial
+ 
+>>> client = ial.get_client()
+>>> data = ial.ingesta_consecutiva(client,limit=1000)
+>>> my_bucket = 'data-product-architecture-equipo-5.0'
+>>> ial.guardar_ingesta(ks.my_bucket,ks.key_1,data_ii) # Para la ingesta inicial
+>>> ial.guardar_ingesta(ks.my_bucket,ks.key_2,data_ic) # Para la ingesta consecutiva
+```
+![Observaciones](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Observaciones-yellowgreen)
+
+- Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llamar también las siguientes variables de entorno que son utilizadas para realizar la ingesta:
+
+ - `socrata_domain` = "data.cityofchicago.org"
+ 
+ - `socrata_ds_id` = "4ijn-s7e5"
+ 
+ - `path` = os.path.realpath('conf/local/credentials.yaml')
+
+- La variables `key_1` y `key_2` determinan el tipo de ingesta que se realiza.
+
+- Si bucket_path = 'ingestion/consecutive' : mandará a guardar al bucket una consuta que va desde el 2021-02-11T00:00:00.000 y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por default que tiene la función). Si se desea cambiar este parámetro, por ejemplo, para realizar una búsqueda que empieze en otra fecha, deberá escribir el siguiente código:
+  
+ - `delta_date = '2021-02-15T00:00:00.000'`
+
+	en el cual puede especificar fecha y hora a partir de la cual desea obtener información. Este comando debe ser puesto antes de mandar llamar la función:
+  
+ - `ial.guardar_ingesta(my_bucket,bucket_path)`
+  
+- Si bucket_path = 'ingestion/initial': mandará a guardar al bucket una consuta que va desde la fecha en que se ejecuta la función -ial.guardar_ingesta- y 300,000 registros hacia atrás (este valor es el establecido por default y garantiza que se extraigan todos los registros existentes en la BD de Chicago food inspections).
+
+- Si solo manda llamar los siguientes comandos:
+ - `>>> import os`
+ - `>>> import src.utils.general as gral`
+ - `>>> import src.pipeline.ingesta_almacenamiento as ial`
+ - `>>> ial.guardar_ingesta(my_bucket,bucket_path)`
+
+	Le marcará error porque los valores por default que tomará no coresponderán ni a sus credenciales ni al nombre del bucket asociado a su cuenta de AWS. Sin embargo, puede modificar el código del archivo: -ingesta_almacenamiento.py- para configurar las variables de entorno que se cargan por default de acuerdo a sus necesidades. Esto lo puede realizar en esta parte del código:
+
+`''' Variables de entorno que se cargan por default al cargar la librería
+    ingesta_almacenamiento.py
+'''`  
+
+`socrata_domain = "data.cityofchicago.org" `
+`socrata_ds_id = "4ijn-s7e5"`  
+`path = os.path.realpath('conf/local/credentials.yaml')`  
+`delta_date = '2021-02-15T00:00:00.000'`  
+`my_bucket = 'data-product-architecture-equipo-5.0'`  
+`bucket_path = 'ingestion/consecutive'`  
+`
+---
