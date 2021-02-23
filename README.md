@@ -324,9 +324,7 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 ```
 ![Observaciones](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Observaciones-yellowgreen)
 
-- El nombre del bucket que se puso en la variable -my_bucket- corresponde al que se creó en la cuenta personal AWS del usuario. Tú deberás colocar el nombre del bucket correspondientea a tu usuario. (el valor por default es: 'data-product-architecture-equipo-5.0') 
-
-- Al mandar llamar la librería: -import src.pipeline.ingesta_almacenamiento as ial-, se mandan llamar también las siguientes variables de entorno que son utilizadas para realizar la ingesta:
+- Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llamar también las siguientes variables de entorno que son utilizadas para realizar la ingesta:
 
  - `socrata_domain` = "data.cityofchicago.org"
  
@@ -334,7 +332,7 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
  
  - `path` = os.path.realpath('conf/local/credentials.yaml')
 
-- La variable -bucket_path- determina el tipo de ingesta que se realiza (el valor por default es: 'ingestion/consecutive')
+- La variables `key_1` y `key_2` determinan el tipo de ingesta que se realiza.
 
 - Si bucket_path = 'ingestion/consecutive' : mandará a guardar al bucket una consuta que va desde el 2021-02-11T00:00:00.000 y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por default que tiene la función). Si se desea cambiar este parámetro, por ejemplo, para realizar una búsqueda que empieze en otra fecha, deberá escribir el siguiente código:
   
