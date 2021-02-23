@@ -324,7 +324,7 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 ```
 ![Observaciones](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Observaciones-yellowgreen)
 
-- Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llamar también las siguientes variables de entorno que son utilizadas para realizar la ingesta:
+Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llamar también las siguientes variables de entorno que son utilizadas para realizar la ingesta:
 
  - `socrata_domain` = "data.cityofchicago.org"
  
@@ -338,13 +338,9 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 
 **NOTA**: Las variables `key_1` y `key_2` determinan el tipo de ingesta que se realiza.
 
-- Con `key_1` se mandará a guardar al *bucket* una consuta que va desde el '2021-02-15T00:00:00.000' y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por *default* que tiene la función). Si se desea hacer una consulta consecutiva
+Con `key_1` se mandará a guardar al *bucket* una consuta que va desde el '2021-02-15T00:00:00.000' y cuenta 1,000 registros hacia adelante (la fecha mostrada es el valor por *default* que tiene la función). Si se desea hacer una consulta consecutiva que inicie en una fecha distinta, se debe cambiar directamente en la función `ingesta_consecutiva` (en futuros *checkpoints* esto se modificará para que se haga de manera automática de acuerdo a nuestras necesidades de consulta).
 
-	en el cual puede especificar fecha y hora a partir de la cual desea obtener información. Este comando debe ser puesto antes de mandar llamar la función:
-  
- - `ial.guardar_ingesta(my_bucket,bucket_path)`
-  
-- Si bucket_path = 'ingestion/initial': mandará a guardar al bucket una consuta que va desde la fecha en que se ejecuta la función -ial.guardar_ingesta- y 300,000 registros hacia atrás (este valor es el establecido por default y garantiza que se extraigan todos los registros existentes en la BD de Chicago food inspections).
+Con `key_2` se mandará a guardar al *bucket* una consuta que va desde la fecha en que se ejecuta la función `ial.guardar_ingesta` y 300,000 registros hacia atrás (este valor es el establecido por *default* y garantiza que se extraigan todos los registros existentes en la BD de *Chicago Food Inspections*).
 
 - Si solo manda llamar los siguientes comandos:
  - `>>> import os`
