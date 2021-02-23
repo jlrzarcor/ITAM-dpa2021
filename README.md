@@ -299,6 +299,8 @@ Una vez que se ha realizado la **ingesta**, los datos generados en el proceso an
 
 Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, bucket_path, data)` que recibe las variables:
    - `my_bucket`: *string* con el nombre de su *bucket* de *S3*.
-   - `bucket`: *string* con alguno de los siguientes valores `ingestion/initial` o `ingestion/consecutive` según sea la ingesta a almacenar.
-    
+   - `bucket_path`: *string* con alguno de los siguientes valores `ingestion/initial` o `ingestion/consecutive` según sea la ingesta a almacenar.
+   - `data`: recibe el objeto `list` generado en el macroproceso 2. Si se declararon las variables `data_ii` o `data_ic`.
+ 
+ ![Ejecución](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Ejecuci%C3%B3n-yellowgreen)
 ---
