@@ -287,8 +287,11 @@ Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la *
 - Retorna un objeto `list` con los registros generados en la consulta que pueden ser asignados a la variable `data_ic`.
 
 **NOTA**: Las funciones anteriores invocan a la función `client.get()` de la clase **Socrata** de ***SODAPY***, la cual requiere los parámetros indicados en [***Access Dataset via SODA API***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5):
+
     - `socrata_domain`: "data.cityofchicago.org"
+    
     - `socrata_ds_id`: "4ijn-s7e5"
+    
     - Por último, estos se cargan de forma automática, no se requiere indicarlos.
 
 ![](./images/access_ds.jpeg)
@@ -325,9 +328,11 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 
 - Al mandar llamar la librería: -import src.pipeline.ingesta_almacenamiento as ial-, se mandan llamar también las siguientes variables de entorno que son utilizadas para realizar la ingesta:
 
- - `socrata_domain = "data.cityofchicago.org"`
- - `socrata_ds_id = "4ijn-s7e5"`
- - `path = os.path.realpath('conf/local/credentials.yaml')`
+ - `socrata_domain` = "data.cityofchicago.org"
+ 
+ - `socrata_ds_id` = "4ijn-s7e5"
+ 
+ - `path` = os.path.realpath('conf/local/credentials.yaml')
 
 - La variable -bucket_path- determina el tipo de ingesta que se realiza (el valor por default es: 'ingestion/consecutive')
 
