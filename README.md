@@ -253,7 +253,7 @@ food_inspections:
 
 Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$PWD`.
 
-6.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
+5.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
 
 ![Macroprocesos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Macroprocesos-yellowgreen)
 
