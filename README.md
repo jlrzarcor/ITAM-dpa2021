@@ -252,14 +252,14 @@ Para esto, debe abrir su terminal y debe posicionarse en la raíz del repositori
 
 6.	Para poder generar las conexiones necesarias con los clientes, su archivo `.yaml` (del prerrequisito 3) debe colocarlo en la carpeta `conf/local`.
 
-![Macroprocesos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Macroprocesos-red)
+![Macroprocesos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Macroprocesos-yellowgreen)
 
 Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la **raíz** de su **repostorio clonado** y seguir los siguientes **macroprocesos**:
 
-1.	**Conexión** ***API*** **con** ***SODAPY***.
-2.	**Generar datos ingesta inicial**.
-3.	**Generar datos ingesta consecutiva**.
-4.	**Generar conexión con** ***AWS***.
-5.	 **Guardar los datos de ingesta**.
+![M1](https://img.shields.io/badge/Macroproceso%201-Conexi%C3%B3n%20a%20la%20API%20con%20SODAPY%20y%20con%20AWS%20S3-red)
+
+![M2](https://img.shields.io/badge/Macroproceso%202-Generar%20datos%20ingesta-red)
+
+![M3](https://img.shields.io/badge/Macroproceso%202-Trasformar%20y%20guardar%20los%20datos%20de%20ingesta%20en%20el%20bucket%20de%20S3-red)
 
 ---
