@@ -278,7 +278,7 @@ Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la *
 
 - Solicitamos una descarga con la función `ingesta_consecutiva(client, date, limit)`:
     - `client`: definida en el macroproceso 1.
-    - `date`: *timestamp (string)* con el siguiente formato '**AAAA-MM-DDT00:00:000**'. Se debe espetar las comillas simples. Donde "AAAA" 4 dígitos del año, "MM" 2 dígitos del mes y "DD" 2 dígitos del día; "T" es un separador para el horario. Por último se deben conservar los dígitos en 0.
+    - `date`: *timestamp (string)* con el siguiente formato '**AAAA-MM-DDT00:00:000**'. Se debe respetar las comillas simples. Donde "AAAA" 4 dígitos del año, "MM" 2 dígitos del mes y "DD" 2 dígitos del día; "T" es un separador para el horario. Por último se deben conservar los dígitos en 0.
     - `limit`: *numeric* que define el número de registros a ingestar (se recomienda utilizar como **cota superior 1,000** para garantizar la totalidad del diferencial o "*delta* de registros").
 
 - Retorna un objeto `list` con los registros generados en la consulta que pueden ser asignados a la variable `data_ic`.
