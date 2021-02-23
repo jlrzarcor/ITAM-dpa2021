@@ -148,7 +148,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
     ├── etl       <- Scripts to transform data from raw to intermediate.
     │
     │
-    ├── pipeline
+    ├── pipeline  <- Functions used for the pipeline.
     |   └── ingesta_almacenamiento.py 
 ```
 
