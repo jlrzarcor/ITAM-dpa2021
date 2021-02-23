@@ -309,15 +309,15 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
 3. Ejecutar el comando `python`.
 4. Dentro de la terminal de python (>>>) ejecutar los siguientes comandos:
 ```
-import src.utils.constants as ks
-import src.utils.general as gral
-import src.pipeline.ingesta_almacenamiento as ial
+>>> import src.utils.constants as ks
+>>> import src.utils.general as gral
+>>> import src.pipeline.ingesta_almacenamiento as ial
  
-client = ial.get_client()
-data = ial.ingesta_consecutiva(client,limit=1000)
-my_bucket = 'data-product-architecture-equipo-5.0'
-bucket_path = 'ingestion/consecutive'
-ial.guardar_ingesta(ks.my_bucket,ks.bucket_path,data)
+>>> client = ial.get_client()
+>>> data = ial.ingesta_consecutiva(client,limit=1000)
+>>> my_bucket = 'data-product-architecture-equipo-5.0'
+>>> ial.guardar_ingesta(ks.my_bucket,ks.key_1,data_ii) # Para la ingesta inicial
+>>> ial.guardar_ingesta(ks.my_bucket,ks.key_2,data_ic) # Para la ingesta consecutiva
 ```
 ![Observaciones](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Observaciones-yellowgreen)
 
