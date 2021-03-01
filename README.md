@@ -69,7 +69,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 **¿Qué lenguaje utlizamos?**
 
-![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational)
+![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
 
 ---
 
