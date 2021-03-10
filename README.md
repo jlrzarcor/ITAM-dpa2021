@@ -71,6 +71,8 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
 
+![](./images/python-logo.png)
+
 ---
 
 ***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
