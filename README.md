@@ -56,7 +56,7 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 **NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.
 
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
-- :x:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
+- :soon:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
 - :x:  *Checkpoint* 4:  *Feature engineering*.
 - :x:  *Checkpoint* 5:  Entrenamiento.
 - :x:  *Checkpoint* 6:  *Bias & Fairness*.
@@ -347,3 +347,5 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 ![Luigi_version](https://img.shields.io/badge/Luigi-3.0.2-brightgreen)
 
 ![](./images/luigi.png)
+
+De ser necesario, puede consultar la documentación de [***Luigi***](https://luigi.readthedocs.io/en/stable/) y/o revisar también su [**repositorio**](https://github.com/spotify/luigi).
