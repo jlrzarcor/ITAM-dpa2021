@@ -51,11 +51,11 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 ![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-18%2F03%2F2021-brightgreen)
 ![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-7-brightgreen)
 
-- <mark>*Checkpoint* 1:  *Starting point*.</mark>
+- :white_check_mark:  *Checkpoint* 1:  *Starting point*.
 
 **NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.
 
-- <mark>*Checkpoint* 2:  Ingestión y almacenamiento.</mark>
+- :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
 - *Checkpoint* 3:  Pre-procesamiento y limpieza.
 - *Checkpoint* 4:  *Feature engineering*.
 - *Checkpoint* 5:  Entrenamiento.
@@ -75,9 +75,9 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
 
-![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros%3A-215%2C130.-orange)
+![Registros](https://img.shields.io/badge/N%C3%B9mero%20de%20registros-215%2C130-orange)
 
-![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20variables%3A-17-orange)
+![Columnas](https://img.shields.io/badge/N%C3%B9mero%20de%20variables-17-orange)
 
 - **Variables con las que contamos inicialmente**:
 
@@ -100,13 +100,13 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ---
 
-![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo%3A%20-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
+![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
 
 ### Tomar en cuenta
 
-![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos%3A-diaria.-important)
+![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
 
-![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos%3A-semanal.-important)
+![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos-Semanal-orange)
 
 ---
 
