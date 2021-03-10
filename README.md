@@ -59,13 +59,13 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
 - :soon:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
-- :x:  *Checkpoint* 4:  *Feature engineering*.
-- :x:  *Checkpoint* 5:  Entrenamiento.
-- :x:  *Checkpoint* 6:  *Bias & Fairness*.
-- :x:  *Checkpoint* 7:  Predicción.
-- :x:  *Checkpoint* 8:  Interpretabilidad.
-- :x:  *Checkpoint* 9:  *API*. 
-- :x:  *Checkpoint* 10: *Dashboard*.
+- :heavy_exclamation_mark:  *Checkpoint* 4:  *Feature engineering*.
+- :heavy_exclamation_mark:  *Checkpoint* 5:  Entrenamiento.
+- :heavy_exclamation_mark:  *Checkpoint* 6:  *Bias & Fairness*.
+- :heavy_exclamation_mark:  *Checkpoint* 7:  Predicción.
+- :heavy_exclamation_mark:  *Checkpoint* 8:  Interpretabilidad.
+- :heavy_exclamation_mark:  *Checkpoint* 9:  *API*. 
+- :heavy_exclamation_mark:  *Checkpoint* 10: *Dashboard*.
 
 ---
 
