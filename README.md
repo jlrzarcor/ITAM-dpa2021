@@ -26,6 +26,8 @@ Integrante | Alumno                         | Clave única
 
 Trabajaremos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
+![](./images/cdp.png)
+
 ![](./images/chicago_summary.jpg)
 
 #### Conocimiento a priori de la información:
