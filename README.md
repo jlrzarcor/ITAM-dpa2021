@@ -56,14 +56,14 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 **NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.
 
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
-- *Checkpoint* 3:  Pre-procesamiento y limpieza.
-- *Checkpoint* 4:  *Feature engineering*.
-- *Checkpoint* 5:  Entrenamiento.
-- *Checkpoint* 6:  *Bias & Fairness*.
-- *Checkpoint* 7:  Predicción.
-- *Checkpoint* 8:  Interpretabilidad.
-- *Checkpoint* 9:  *API*. 
-- *Checkpoint* 10: *Dashboard*.
+- :x:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
+- :x:  *Checkpoint* 4:  *Feature engineering*.
+- :x:  *Checkpoint* 5:  Entrenamiento.
+- :x:  *Checkpoint* 6:  *Bias & Fairness*.
+- :x:  *Checkpoint* 7:  Predicción.
+- :x:  *Checkpoint* 8:  Interpretabilidad.
+- :x:  *Checkpoint* 9:  *API*. 
+- :x:  *Checkpoint* 10: *Dashboard*.
 
 ---
 
@@ -341,3 +341,9 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
  - `key2` = 'ingestion/consecutive'
 
 ---
+
+## ¿Con qué orquestador corremos nuestros *tasks*?
+
+![Luigi_version](https://img.shields.io/badge/Luigi-3.0.2-brightgreen)
+
+![](./images/luigi.png)
