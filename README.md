@@ -60,18 +60,20 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
 - :soon:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
 - :yellow_circle:  *Checkpoint* 4:  *Feature engineering*.
-- :heavy_exclamation_mark:  *Checkpoint* 5:  Entrenamiento.
-- :heavy_exclamation_mark:  *Checkpoint* 6:  *Bias & Fairness*.
-- :heavy_exclamation_mark:  *Checkpoint* 7:  Predicción.
-- :heavy_exclamation_mark:  *Checkpoint* 8:  Interpretabilidad.
-- :heavy_exclamation_mark:  *Checkpoint* 9:  *API*. 
-- :heavy_exclamation_mark:  *Checkpoint* 10: *Dashboard*.
+- :red_circle:  *Checkpoint* 5:  Entrenamiento.
+- :red_circle:  *Checkpoint* 6:  *Bias & Fairness*.
+- :red_circle:  *Checkpoint* 7:  Predicción.
+- :red_circle:  *Checkpoint* 8:  Interpretabilidad.
+- :red_circle:  *Checkpoint* 9:  *API*. 
+- :red_circle:  *Checkpoint* 10: *Dashboard*.
 
 ---
 
 **¿Qué lenguaje utlizamos?**
 
 ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
+
+[***Python***](https://www.python.org/)
 
 ![](./images/python-logo.png)
 
@@ -104,9 +106,10 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ---
 
+## ¿Qué buscamos contestar con nuestro modelo?
 ![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
 
-### Tomar en cuenta
+## Tomar en cuenta
 
 ![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
 
