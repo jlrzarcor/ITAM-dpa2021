@@ -73,13 +73,13 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
 
-[***Python***](https://www.python.org/)
+[***Python.org***](https://www.python.org/)
 
 ![](./images/python-logo.png)
 
 ---
 
-## ***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
+***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
 
 ![Registros](https://img.shields.io/badge/N%C3%B9mero%20de%20registros-215%2C130-orange)
 
@@ -353,6 +353,10 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 
 ![Luigi_version](https://img.shields.io/badge/Luigi-3.0.2-brightgreen)
 
+[***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)
+
+[**Luigi's GitHub page**](https://github.com/spotify/luigi)
+
 ![](./images/luigi.png)
 
-De ser necesario, puede consultar la documentación de [***Luigi***](https://luigi.readthedocs.io/en/stable/) y/o revisar también su [**repositorio**](https://github.com/spotify/luigi).
+---
