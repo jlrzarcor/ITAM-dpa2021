@@ -249,11 +249,7 @@ Una vez que se ha realizado la ingesta inicial como la consecutiva, la informaci
 
 2.	Contar con una cuenta activa de ***AWS***. En ésta, se debe tener un *bucket* de ***S3*** exclusivo para almacenar la información del proyecto; **importante** mencionar que se debe conocer el **nombre exacto** del *bucket* y contar con el ***Access Key ID***.
 
-<p align = "center">
-    <img src="images/aws_logo.png" width="300" height="150" />
-<p align = "center">
-    <img src="images/s3_logo.png" width="300" height="150" />
-
+![](./images/aws_s3_logo.jpeg)
 
 3.	Debe crear un archivo `.yaml` siguiendo la siguiente estructura: 
 
