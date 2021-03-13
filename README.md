@@ -201,6 +201,9 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 ## Sobre nuestro ***EDA***:
 
+<p align = "left">
+    <img src="images/eda.png" width="520" height="250" />
+
 - En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el notebook que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
 
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
@@ -363,5 +366,7 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 ### ¿Qué es *Luigi*?
 
 ![](./images/luigi_is.jpeg)
+
+<sub><sup>**Fuente**:[***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)</sup></sub>
 
 ---
