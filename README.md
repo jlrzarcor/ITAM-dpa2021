@@ -82,9 +82,9 @@ El trabajo será desarrollado a lo largo del semestre y será dividido en los si
 
 ***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
 
-![Registros](https://img.shields.io/badge/N%C3%B9mero%20de%20registros-215%2C130-orange)
+![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-215%2C130-important)
 
-![Columnas](https://img.shields.io/badge/N%C3%B9mero%20de%20variables-17-orange)
+![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
 
 - **Variables con las que contamos inicialmente**:
 
