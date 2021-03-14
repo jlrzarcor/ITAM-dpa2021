@@ -358,7 +358,8 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 
 ## Sobre nuestro *Data Pipeline*
 
-![](./images/dp.png)
+<p align = "left">
+    <img src="images/logo_itam.png" width="200" height="200" />
 
 ![Luigi_version](https://img.shields.io/badge/Luigi-3.0.2-brightgreen)
 
