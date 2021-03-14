@@ -58,7 +58,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 - :white_check_mark:  *Checkpoint* 1:  *Starting point*.
 
-**NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.
+<sup><sub>**NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.</sup></sub>
 
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
 - :soon:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
