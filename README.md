@@ -201,7 +201,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 ---
 
-## Sobre nuestro ***EDA***:
+## Sobre nuestro ***EDA***
 
 <p align = "left">
     <img src="images/eda.png" width="520" height="250" />
