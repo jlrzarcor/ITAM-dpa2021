@@ -435,4 +435,3 @@ La tarea que queremos sea administrada. Para declarar un *task* en *Luigi* debem
 
 ![LM4](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-requires%20()-inactive)
 
----
