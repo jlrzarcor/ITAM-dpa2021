@@ -356,7 +356,9 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 
 ---
 
-## ¿Con qué orquestador corremos nuestros *tasks*?
+## Sobre nuestro *Data Pipeline*
+
+![](./images/dp.png)
 
 ![Luigi_version](https://img.shields.io/badge/Luigi-3.0.2-brightgreen)
 
