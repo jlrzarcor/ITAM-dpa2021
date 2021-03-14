@@ -359,7 +359,9 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 ## Sobre nuestro *Data Pipeline*
 
 <p align = "left">
-    <img src="images/dp.png" width="200" height="200" />
+    <img src="images/dp.png" width="220" height="220" />
+    
+Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la secuencia que éstos deben seguir, utilizamos un orquestador llamado [***Luigi***](https://luigi.readthedocs.io/en/stable/).
 
 ![Luigi_version](https://img.shields.io/badge/Luigi-3.0.2-brightgreen)
 
@@ -374,5 +376,7 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 ![](./images/luigi_is.jpeg)
 
 <sub><sup>**Fuente**:[***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)</sup></sub>
+
+Este orquestador es la herramienta que nos permite correr nuestro *data pipeline*, definiendo aspectos importantes como el cómo, el cúando y el con qué se debe correr cada proceso.
 
 ---
