@@ -387,19 +387,23 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 **NOTA: INSERTAR FOTO DE DAG AQUÍ**
 
-### Aspectos importantes a considerar
+### Aspectos importantes a considerar sobre el *DAG*
 
-La estructura de datos, *DAG*, está conformada por:
+- Está conformado por:
 
 ![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet)
 
+Cada arco nodo representa el *task* a ejecutar.
+
 ![EP2](https://img.shields.io/badge/2.-Aristas%2Farcos-blueviolet)
 
-La estructura de datos, *DAG*, sigue 3 principios:
+Cada arista la dirección de flujo.
+
+- Sigue 3 principios:
 
 ![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet)
 
-- Aunque un proceso se corra con los mismos parámetros múltiples ocasiones, la salida que se obtiene siempre es la misma. Esto implica que tampoco se generan salidas repetidas.
+Aunque un proceso se corra con los mismos parámetros múltiples ocasiones, la salida que se obtiene siempre es la misma. Esto implica que tampoco se generan salidas repetidas.
 
 ![DP2](https://img.shields.io/badge/DAG--Principio%202-Direcci%C3%B3n-blueviolet)
 
@@ -408,4 +412,7 @@ La dirección del grafo va en un sólo sentido.
 ![DP3](https://img.shields.io/badge/DAG--Principio%203-Ac%C3%ADclico-blueviolet)
 
 La salida de un nodo no puede regresar a uno que ya fue procesado.
+
+- Se permite tener más de 1 entrada y sólo 1 salida. NO se permite tener ciclos.
+
 ---
