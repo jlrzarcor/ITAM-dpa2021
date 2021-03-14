@@ -389,7 +389,7 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 ![DAG](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-DAG-blue)
 
-- Se permite tener más de 1 entrada y sólo 1 salida. NO se permite tener ciclos.
+- Se permite tener más de 1 entrada y sólo 1 salida. **NO** se permite tener ciclos.
 
 - Está conformado por:
 
@@ -414,5 +414,13 @@ La dirección del grafo va en un sólo sentido.
 ![DP3](https://img.shields.io/badge/DAG--Principio%203-Ac%C3%ADclico-blueviolet)
 
 La salida de un nodo no puede regresar a uno que ya fue procesado.
+
+![L_aspectos](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-Luigi-blue)
+
+***Luigi*** tiene 2 objetos principales para construir su ***DAG***:
+
+![LO1](https://img.shields.io/badge/Luigi--Objeto%201-Target-9cf)
+
+![LO2](https://img.shields.io/badge/Luigi--Objeto%202-Task-9cf)
 
 ---
