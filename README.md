@@ -379,4 +379,9 @@ Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la se
 
 Este orquestador es la herramienta que nos permite correr nuestro *data pipeline*, definiendo aspectos importantes como el cómo, el cúando y el con qué se debe correr cada proceso.
 
+Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correrán) en el *pipeline*, ***Luigi*** utiliza una estructura de datos llamada ***DAG*** (***Directed Acyclic Graph***). Es una herramienta visual útil y que ilustra de manera clara los procesos que nuestro proyecto sigue.
+
+**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***
+
+**NOTA: INSERTAR FOTO DE DAG AQUÍ**
 ---
