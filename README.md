@@ -421,6 +421,18 @@ La salida de un nodo no puede regresar a uno que ya fue procesado.
 
 ![LO1](https://img.shields.io/badge/Luigi--Objeto%201-Target-9cf)
 
+Dónde se sacan los datos que requiere un *task*.
+
 ![LO2](https://img.shields.io/badge/Luigi--Objeto%202-Task-9cf)
+
+La tarea que queremos sea administrada. Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los siguientes 4 métodos requeridos:
+
+![LM1](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%201-run()-inactive)
+
+![LM2](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-input()-inactive)
+
+![LM3](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-output%20()-inactive)
+
+![LM4](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-requires%20()-inactive)
 
 ---
