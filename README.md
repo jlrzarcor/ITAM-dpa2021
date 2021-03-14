@@ -24,9 +24,9 @@ Integrante | Alumno                         | Clave única
 
 ## Acerca de este proyecto
 
-Trabajaremos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
-
 ![](./images/cdp.png)
+
+Trabajaremos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
 ![](./images/chicago_summary.jpg)
 
@@ -47,7 +47,9 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 ---
 
-El trabajo será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
+## ¿Cómo está dividido nuestro proyecto?
+
+El proyecto será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
 ![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual-3-brightgreen)
 ![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-18%2F03%2F2021-brightgreen)
@@ -384,4 +386,26 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 **Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***
 
 **NOTA: INSERTAR FOTO DE DAG AQUÍ**
+
+### Aspectos importantes a considerar
+
+La estructura de datos, *DAG*, está conformada por:
+
+![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet)
+
+![EP2](https://img.shields.io/badge/2.-Aristas%2Farcos-blueviolet)
+
+La estructura de datos, *DAG*, sigue 3 principios:
+
+![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet)
+
+- Aunque un proceso se corra con los mismos parámetros múltiples ocasiones, la salida que se obtiene siempre es la misma. Esto implica que tampoco se generan salidas repetidas.
+
+![DP2](https://img.shields.io/badge/DAG--Principio%202-Direcci%C3%B3n-blueviolet)
+
+La dirección del grafo va en un sólo sentido.
+
+![DP3](https://img.shields.io/badge/DAG--Principio%203-Ac%C3%ADclico-blueviolet)
+
+La salida de un nodo no puede regresar a uno que ya fue procesado.
 ---
