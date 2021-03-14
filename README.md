@@ -26,7 +26,7 @@ Integrante | Alumno                         | Clave única
 
 ![](./images/cdp.png)
 
-Trabajaremos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
+Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
 ![](./images/chicago_summary.jpg)
 
@@ -387,9 +387,13 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 **NOTA: INSERTAR FOTO DE DAG AQUÍ**
 
+##
+
 ![DAG](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-DAG-blue)
 
 - Se permite tener más de 1 entrada y sólo 1 salida. **NO** se permite tener ciclos.
+
+##
 
 - Está conformado por:
 
@@ -400,6 +404,8 @@ Cada arco nodo representa el *task* a ejecutar.
 ![EP2](https://img.shields.io/badge/2.-Aristas%2Farcos-blueviolet)
 
 Cada arista la dirección de flujo.
+
+##
 
 - Sigue 3 principios:
 
@@ -414,6 +420,8 @@ La dirección del grafo va en un sólo sentido.
 ![DP3](https://img.shields.io/badge/DAG--Principio%203-Ac%C3%ADclico-blueviolet)
 
 La salida de un nodo no puede regresar a uno que ya fue procesado.
+
+##
 
 ![L_aspectos](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-Luigi-blue)
 
@@ -435,3 +443,4 @@ La tarea que queremos sea administrada. Para declarar un *task* en *Luigi* debem
 
 ![LM4](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-requires%20()-inactive)
 
+---
