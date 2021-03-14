@@ -437,10 +437,26 @@ La tarea que queremos sea administrada. Para declarar un *task* en *Luigi* debem
 
 ![LM1](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%201-run()-inactive)
 
+El código que se debe correr.
+
+##
+
 ![LM2](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-input()-inactive)
+
+Qué requiere de entrada la tarea y dónde se debe obtener.
+
+##
 
 ![LM3](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-output%20()-inactive)
 
+Qué salida genera la tarea y dónde se queda persistida. Éste siempre regresa un objeto de tipo `target`.
+
+##
+
 ![LM4](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-requires%20()-inactive)
+
+Método con el que se define cómo está formado el grafo de dependencias entre tareas.
+
+<sub><sup>**NOTA: Algunos de estos métodos son opcionales**.</sup></sub>
 
 ---
