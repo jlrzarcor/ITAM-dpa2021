@@ -383,11 +383,13 @@ Este orquestador es la herramienta que nos permite correr nuestro *data pipeline
 
 Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correrán) en el *pipeline*, ***Luigi*** utiliza una estructura de datos llamada ***DAG*** (***Directed Acyclic Graph***). Es una herramienta visual útil y que ilustra de manera clara los procesos que nuestro proyecto sigue.
 
-**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***
+**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
 **NOTA: INSERTAR FOTO DE DAG AQUÍ**
 
-### Aspectos importantes a considerar sobre el *DAG*
+![DAG](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-DAG-blue)
+
+- Se permite tener más de 1 entrada y sólo 1 salida. NO se permite tener ciclos.
 
 - Está conformado por:
 
@@ -412,7 +414,5 @@ La dirección del grafo va en un sólo sentido.
 ![DP3](https://img.shields.io/badge/DAG--Principio%203-Ac%C3%ADclico-blueviolet)
 
 La salida de un nodo no puede regresar a uno que ya fue procesado.
-
-- Se permite tener más de 1 entrada y sólo 1 salida. NO se permite tener ciclos.
 
 ---
