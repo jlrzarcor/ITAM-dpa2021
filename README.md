@@ -23,7 +23,7 @@ Integrante | Alumno                         | Clave única
 
 ---
 
-## Acerca de este proyecto
+## Acerca de este proyecto  :globe_with_meridians:
 
 ![](./images/cdp.png)
 
