@@ -435,6 +435,6 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 - `requires()` : Método con el que se define cómo está formado el grafo de dependencias entre tareas.
 
-<sub><sup>**NOTA**: Algunos de estos métodos son opcionales.</sup></sub>
+<sub><sup>**NOTA**: Estos métodos son opcionales, excepto 'run()'.</sup></sub>
 
 ---
