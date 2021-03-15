@@ -164,7 +164,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ```
 
 ---
-## ¿Cómo reproducir los resultados de este repositorio?
+## ¿Cómo reproducir los resultados de este repositorio?  :computer:
 
 Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
 
