@@ -3,7 +3,6 @@
 <p align = "center">
     <img src="images/logo_itam.png" width="300" height="110" />
 
-
 ---
 
 ### Maestría en Ciencia de Datos
@@ -215,6 +214,9 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 ---
 
 ## Cómo funciona nuestro proceso de ingestión
+
+<p align = "left">
+    <img src="images/di.jpg" width="300" height="300" />
 
 ![Resumen](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Resumen-yellowgreen)
 
