@@ -3,10 +3,9 @@
 <p align = "center">
     <img src="images/logo_itam.png" width="300" height="110" />
 
-
 ---
 
-### Maestría en Ciencia de Datos
+### Maestría en Ciencia de Datos, ITAM
 
 ### M. Sc. Liliana Millán Núñez
 
@@ -15,7 +14,7 @@
 ##
 
 Integrante | Alumno                         | Clave única
----------- | ------------------------------ | -----------
+:--------: | :----------------------------: | :---------:
 1          | Carlos Román López Sierra      | 197911
 2          | José Luis Zárate Cortés        | 183347
 3          | Octavio Fuentes Ortiz          | 150792
@@ -49,7 +48,7 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 ---
 
-## ¿Cómo está dividido nuestro proyecto?
+## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
 
 El proyecto será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
@@ -74,7 +73,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ---
 
-## ¿Qué lenguaje utlizamos?
+## ¿Qué lenguaje utlizamos? :pen:
 
 ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
 
@@ -165,7 +164,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ```
 
 ---
-## ¿Cómo reproducir los resultados de este repositorio?
+## ¿Cómo reproducir los resultados de este repositorio?  :computer:
 
 Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
 
@@ -203,7 +202,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 ---
 
-## Sobre nuestro ***EDA***
+## Sobre nuestro ***EDA***   🔵 🟡 :red_circle: 🟢 🟠
 
 <p align = "left">
     <img src="images/eda.png" width="520" height="250" />
@@ -214,7 +213,10 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 ---
 
-## Cómo funciona nuestro proceso de ingestión
+## Cómo funciona nuestro proceso de ingestión :fork_and_knife:
+
+<p align = "left">
+    <img src="images/di.jpg" width="200" height="200" />
 
 ![Resumen](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Resumen-yellowgreen)
 
@@ -358,9 +360,11 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
  
  - `key2` = 'ingestion/consecutive'
 
+<sub><sup>**NOTA**: A partir del ***Checkpoint*** **3** la función 'guardar_ingesta' queda *depricated*. Debido a que se encuentra contenida en el *pipeline* de *Luigi*.</sup></sub>
+
 ---
 
-## Sobre nuestro *Data Pipeline*
+## Sobre nuestro *Data Pipeline*  :microscope:
 
 <p align = "left">
     <img src="images/dp.png" width="220" height="220" />
@@ -387,7 +391,7 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 **Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
-**NOTA: INSERTAR FOTO DE DAG AQUÍ**
+![](./images/dag.png)
 
 ##
 
@@ -399,29 +403,19 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 - Está conformado por:
 
-![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet)
+![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet) Cada arco nodo representa el *task* a ejecutar.
 
-Cada arco nodo representa el *task* a ejecutar.
-
-![EP2](https://img.shields.io/badge/2.-Aristas%2Farcos-blueviolet)
-
-Cada arista la dirección de flujo.
+![EP2](https://img.shields.io/badge/2.-Aristas%2Farcos-blueviolet) Cada arista la dirección de flujo.
 
 ##
 
 - Sigue 3 principios:
 
-![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet)
+![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet) Aunque un proceso se corra con los mismos parámetros múltiples ocasiones, la salida que se obtiene siempre es la misma. Esto implica que tampoco se generan salidas repetidas.
 
-Aunque un proceso se corra con los mismos parámetros múltiples ocasiones, la salida que se obtiene siempre es la misma. Esto implica que tampoco se generan salidas repetidas.
+![DP2](https://img.shields.io/badge/DAG--Principio%202-Direcci%C3%B3n-blueviolet) La dirección del grafo va en un sólo sentido.
 
-![DP2](https://img.shields.io/badge/DAG--Principio%202-Direcci%C3%B3n-blueviolet)
-
-La dirección del grafo va en un sólo sentido.
-
-![DP3](https://img.shields.io/badge/DAG--Principio%203-Ac%C3%ADclico-blueviolet)
-
-La salida de un nodo no puede regresar a uno que ya fue procesado.
+![DP3](https://img.shields.io/badge/DAG--Principio%203-Ac%C3%ADclico-blueviolet) La salida de un nodo no puede regresar a uno que ya fue procesado.
 
 ##
 
@@ -429,36 +423,20 @@ La salida de un nodo no puede regresar a uno que ya fue procesado.
 
 ***Luigi*** tiene 2 objetos principales para construir su ***DAG***:
 
-![LO1](https://img.shields.io/badge/Luigi--Objeto%201-Target-9cf)
+![LO1](https://img.shields.io/badge/Luigi--Objeto%201-Target-9cf) Dónde se sacan los datos que requiere un *task*.
 
-Dónde se sacan los datos que requiere un *task*.
+![LO2](https://img.shields.io/badge/Luigi--Objeto%202-Task-9cf) La tarea que queremos sea administrada.
 
-![LO2](https://img.shields.io/badge/Luigi--Objeto%202-Task-9cf)
+Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los siguientes 4 métodos requeridos:
 
-La tarea que queremos sea administrada. Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los siguientes 4 métodos requeridos:
+- `run()` : El código que se debe correr.
 
-![LM1](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%201-run()-inactive)
+- `input()` : Qué requiere de entrada la tarea y dónde se debe obtener.
 
-El código que se debe correr.
+- `output()` : Qué salida genera la tarea y dónde se queda persistida. Éste siempre regresa un objeto de tipo `target`.
 
-##
+- `requires()` : Método con el que se define cómo está formado el grafo de dependencias entre tareas.
 
-![LM2](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-input()-inactive)
-
-Qué requiere de entrada la tarea y dónde se debe obtener.
-
-##
-
-![LM3](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-output%20()-inactive)
-
-Qué salida genera la tarea y dónde se queda persistida. Éste siempre regresa un objeto de tipo `target`.
-
-##
-
-![LM4](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-requires%20()-inactive)
-
-Método con el que se define cómo está formado el grafo de dependencias entre tareas.
-
-<sub><sup>**NOTA: Algunos de estos métodos son opcionales**.</sup></sub>
+<sub><sup>**NOTA**: Estos métodos son opcionales, excepto 'run()'.</sup></sub>
 
 ---
