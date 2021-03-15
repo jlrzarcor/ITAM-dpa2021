@@ -1,29 +1,14 @@
 # ================================= LIBRARIES  ================================= #
 
+# importing libraries required.
 import luigi
 import luigi.contrib.s3
 import json
-
-import boto3
 import pickle as pkl
-from sodapy import Socrata
 from datetime import datetime
 
-import src.utils.constants as ks
-from src.utils.general import get_api_token, get_s3_credentials
+# importing custom libraries and modules
 from task_ingesta import TaskIngest
-
-# Variables de entorno que se cargan por default al cargar la librería
-# ingesta_almacenamiento.py
-
-# importing libraries required.
-
-import pandas as pd
-import numpy as np
-
-# importing custom libraries
-import src.utils.general as gral
-import src.utils.constants as ks
 import src.pipeline.ingesta_almacenamiento as ial
 
 
@@ -33,7 +18,6 @@ import src.pipeline.ingesta_almacenamiento as ial
 class TaskStore(luigi.Task):
     
 #    bucket = luigi.Parameter(default = "data-product-architecture-equipo-5")
-    
     bucket = luigi.Parameter(default = "temp-dev-dpa")
     prc_path = luigi.Parameter(default = "ingestion")
     
@@ -45,13 +29,9 @@ class TaskStore(luigi.Task):
     flg_i0_c1 = luigi.IntParameter(default = 1)
 
     def requires(self):
-        return {'a' : TaskIngest(self.flg_i0_c1, self.year, self.month, self.day)}
+        return {'a' : TaskIngest(self.year, self.month, self.day, self.flg_i0_c1)}
     
     def run(self):
-        fecha = (datetime.date(datetime.now()))
-        anio = (datetime.year(datetime.now()))
-        mes = (datetime.mont(datetime.now()))
-        print("==============>>>> Fechas", fecha, anio, mes)
         s3 = ial.get_s3_resource()
         data = json.load(self.input()['a'].open('r'))
 
@@ -60,19 +40,22 @@ class TaskStore(luigi.Task):
                     
         
     def output(self):
+    # Formatting date parameters into date-string
+        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))        
         
         if self.flg_i0_c1 == 0:
             flag = "initial"
-            + "historic-inspections-" + fecha + ".pckl"
+            str_file = "historic-inspections-" + str_date + ".pkl"
             
-            output_path = "s3://{}/{}/{}/YEAR={}/MONTH={}/historic-inspections.pckl".\
-            format(self.bucket, self.path_i, flag, self.year, str(self.month))           
+            output_path = "s3://{}/{}/{}/YEAR={}/MONTH={}/DAY={}/{}".\
+            format(self.bucket, self.prc_path, flag, self.year, self.month, self.day, str_file)
+            
         else:
-            bucket_path = "consecutive"
-            + "consecutive-inspections-" + fecha + ".pckl"
+            flag = "consecutive"
+            str_file = "consecutive-inspections-" + str_date + ".pkl"
             
-            output_path = "s3://{}/{}/{}/YEAR={}/MONTH={}/historic-inspections.pckl".\
-            format(self.bucket, self.prc_path, flag, self.year, str(self.month))
+            output_path = "s3://{}/{}/{}/YEAR={}/MONTH={}/DAY={}/{}".\
+            format(self.bucket, self.prc_path, flag, self.year, self.month, self.day, str_file)
 
 
         
