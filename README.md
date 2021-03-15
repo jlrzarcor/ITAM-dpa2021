@@ -459,4 +459,12 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │
 ```
 
+##
+
+![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf)
+
+##
+
+![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf)
+
 ---
