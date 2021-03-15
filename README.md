@@ -439,28 +439,12 @@ Dónde se sacan los datos que requiere un *task*.
 
 La tarea que queremos sea administrada. Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los siguientes 4 métodos requeridos:
 
-![LM1](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%201-run()-inactive)
+- `run()` : El código que se debe correr.
 
-El código que se debe correr.
+- `input()` : Qué requiere de entrada la tarea y dónde se debe obtener.
 
-##
+- `output()` : Qué salida genera la tarea y dónde se queda persistida. Éste siempre regresa un objeto de tipo `target`.
 
-![LM2](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%202-input()-inactive)
-
-Qué requiere de entrada la tarea y dónde se debe obtener.
-
-##
-
-![LM3](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%203-output%20()-inactive)
-
-Qué salida genera la tarea y dónde se queda persistida. Éste siempre regresa un objeto de tipo `target`.
-
-##
-
-![LM4](https://img.shields.io/badge/Luigi--Task--M%C3%A9todo%204-requires%20()-inactive)
-
-Método con el que se define cómo está formado el grafo de dependencias entre tareas.
-
-<sub><sup>**NOTA: Algunos de estos métodos son opcionales**.</sup></sub>
+- `requires()` : Método con el que se define cómo está formado el grafo de dependencias entre tareas.
 
 ---
