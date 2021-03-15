@@ -48,7 +48,7 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 ---
 
-## ¿Cómo está dividido nuestro proyecto?
+## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
 
 El proyecto será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
