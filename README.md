@@ -121,7 +121,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ---
 
-## Estructura básica del proyecto
+## Estructura básica del proyecto  :file_folder:
 
 ```
 ├── README.md          <- The top-level README for developers using this project.
@@ -228,7 +228,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 `general.py` e `ingesta_almacenamiento.py`.
 
-Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
+ :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
 ├── src               
@@ -439,9 +439,9 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
 
-`task_almacenamiento.py` e `task_ingesta.py`.
+`task_almacenamiento.py` y `task_ingesta.py`.
 
-Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
+ :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
 ├── src               
