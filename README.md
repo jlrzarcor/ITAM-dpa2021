@@ -391,7 +391,7 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 **Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
-**NOTA: INSERTAR FOTO DE DAG AQUÍ**
+![](./images/dag.png)
 
 ##
 
