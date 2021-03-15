@@ -213,7 +213,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 ---
 
-## Cómo funciona nuestro proceso de ingestión :fork_and_knife:
+## ¿Cómo funciona nuestro proceso de ingestión? :fork_and_knife:
 
 <p align = "left">
     <img src="images/di.jpg" width="200" height="200" />
