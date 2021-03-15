@@ -216,7 +216,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 ## Cómo funciona nuestro proceso de ingestión
 
 <p align = "left">
-    <img src="images/di.jpg" width="300" height="300" />
+    <img src="images/di.jpg" width="200" height="200" />
 
 ![Resumen](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Resumen-yellowgreen)
 
