@@ -73,7 +73,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ---
 
-## ¿Qué lenguaje utlizamos?
+## ¿Qué lenguaje utlizamos? :pen:
 
 ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
 
