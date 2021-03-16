@@ -475,9 +475,9 @@ Es un ***Luigi Task*** que contiene una clase `class TaskStore(luigi.Task)` y é
 
 Y también manda a llamar las funciones:
 
-- `requires(self)`: Recibe año, mes, día y el *flag* obtenido en `flg_i0_c1`.
-- `run(self)`: Obtiene los datos almacenados en *S*3, los convierte en un archivo *json* y después los convierte en un archivo formato *pickle*.
-- `output(self)`: Le da formato a los parámetros de fecha y los convierte en *date-strings*.
+- `requires(self)` : Recibe año, mes, día y el *flag* obtenido en `flg_i0_c1`.
+- `run(self)` : Obtiene los datos almacenados en *S*3, los convierte en un archivo *json* y después los convierte en un archivo formato *pickle*.
+- `output(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings*.
 
 ##
 
@@ -493,7 +493,7 @@ Es un ***Luigi Task*** que contiene una clase `class TaskIngest(luigi.Task)` y �
     
 Y también manda a llamar las funciones:
 
-- `run(self)`: Le da formato a los parámetros de fecha y los convierte en *date-strings*.
-- `output(self)`: Regresa el *output path* que *Luigi* lee en su *local target*.
+- `run(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings*.
+- `output(self)` : Regresa el *output path* que *Luigi* lee en su *local target*.
 
 ---
