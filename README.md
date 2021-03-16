@@ -125,6 +125,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ```
 ├── README.md          <- The top-level README for developers using this project.
+│
 ├── conf
 │   ├── base           <- Space for shared configurations like parameters.
 │   └── local          <- Space for local configurations, usually credentials.
@@ -135,7 +136,6 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 │   └── eda
 │
 ├── images             <- Contains images used in the repository.
-│
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
@@ -158,9 +158,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
     │   ├── constants.py
     |   └── general.py 
     │
-    │
     ├── etl       <- Scripts to transform data from raw to intermediate.
-    │
     │
     ├── pipeline  <- Functions used for the pipeline.
     |   └── ingesta_almacenamiento.py 
