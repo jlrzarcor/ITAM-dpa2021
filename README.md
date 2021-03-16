@@ -463,6 +463,22 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 ![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf)
 
+Es un ***Luigi Task*** que contiene una clase `class TaskStore(luigi.Task)` y ésta a su vez contiene:
+
+- `bucket` = luigi.Parameter(default = "temp-dev-dpa")
+- `prc_path` = luigi.Parameter(default = "ingestion")
+- `todate` = datetime.date(datetime.today())
+- `year` = luigi.IntParameter(default = todate.year)
+- `month` = luigi.IntParameter(default = todate.month)
+- `day` = luigi.IntParameter(default = todate.day)
+- `flg_i0_c1` = luigi.IntParameter(default = 1)
+
+Y también manda a llamar las funciones:
+
+- `requires(self)`: Recibe año, mes, día y el *flag* obtenido en `flg_i0_c1`.
+- `run(self)`: Obtiene los datos almacenados en *S*3, los convierte en un archivo *json* y después los convierte en un archivo formato *pickle*.
+- `output(self)`: Le da formato a los parámetros de fecha y los convierte en *date-strings*.
+
 ##
 
 ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf)
