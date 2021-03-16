@@ -23,6 +23,12 @@ Integrante | Alumno                         | Clave única
 
 ---
 
+👀: ![Watching](https://img.shields.io/badge/Watching-3-blue/?logo=GitHub&style=social)
+🌟: ![Stars](https://img.shields.io/badge/Stars-3-blue/?logo=GitHub&style=social)
+🔌: ![fork](https://img.shields.io/badge/Fork-2-blue/?logo=GitHub&style=social)
+
+##
+
 ## Acerca de este proyecto  :globe_with_meridians:
 
 ![](./images/cdp.png)
