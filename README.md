@@ -146,8 +146,11 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ├── .gitignore         <- Avoids uploading data, credentials, outputs, system files etc.
 │
 ├── infrastructure
+│
 ├── sql
+│
 ├── setup.py
+│
 └── src                <- Source code for use in this project.
     ├── __init__.py    <- Makes src a Python module.
     │
