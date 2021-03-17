@@ -484,7 +484,7 @@ Y también manda a llamar las funciones:
 
 - `requires(self)` : Recibe año, mes, día y el *flag* obtenido en `flg_i0_c1`.
 - `run(self)` : Obtiene los datos almacenados en *S*3, los convierte en un archivo *json* y después los convierte en un archivo formato *pickle*.
-- `output(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings*.
+- `output(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings* para almacenarlos de manera ordenada en el *S*3.
 
 ##
 
