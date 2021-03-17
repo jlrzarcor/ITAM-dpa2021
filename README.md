@@ -367,7 +367,7 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
  
  - `key2` = 'ingestion/consecutive'
 
-<sub><sup>**NOTA**: A partir del ***Checkpoint*** **3** la función 'guardar_ingesta' queda *depricated*. Debido a que se encuentra contenida en el *pipeline* de *Luigi*.</sup></sub>
+<sub><sup>**NOTA**: A partir del ***Checkpoint*** **3** la función 'guardar_ingesta' queda *deprecated*. Debido a que se encuentra contenida en el *pipeline* de *Luigi*.</sup></sub>
 
 ---
 
