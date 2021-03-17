@@ -404,17 +404,17 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 ![DAG](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-DAG-blue)
 
-- Se permite tener más de 1 entrada y sólo 1 salida. **NO** se permite tener ciclos.
+- Se permite tener más de 1 entrada y sólo 1 salida al final del proceso. **NO** se permite tener ciclos.
 
 - Está conformado por:
 
-![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet) Cada arco nodo representa el *task* a ejecutar.
+![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet) Cada nodo representa el *task* a ejecutar.
 
 ![EP2](https://img.shields.io/badge/2.-Aristas%2Farcos-blueviolet) Cada arista la dirección de flujo.
 
 - Sigue 3 principios:
 
-![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet) Aunque un proceso se corra con los mismos parámetros múltiples ocasiones, la salida que se obtiene siempre es la misma. Esto implica que tampoco se generan salidas repetidas.
+![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet) Aunque un proceso se corra con los mismos parámetros en múltiples ocasiones, la salida que se obtiene siempre será la misma. Esto implica que tampoco se generan salidas repetidas.
 
 ![DP2](https://img.shields.io/badge/DAG--Principio%202-Direcci%C3%B3n-blueviolet) La dirección del grafo va en un sólo sentido.
 
@@ -434,9 +434,9 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 - `run()` : El código que se debe correr.
 
-- `input()` : Qué requiere de entrada la tarea y dónde se debe obtener.
+- `input()` : Qué requiere de entrada la tarea y de dónde se debe obtener.
 
-- `output()` : Qué salida genera la tarea y dónde se queda persistida. Éste siempre regresa un objeto de tipo `target`.
+- `output()` : Qué salida genera la tarea y dónde se queda persistida o guardada. Éste siempre regresa un objeto de tipo `target`.
 
 - `requires()` : Método con el que se define cómo está formado el grafo de dependencias entre tareas.
 
@@ -470,15 +470,15 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 ![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf)
 
-Es un ***Luigi Task*** que contiene una clase `class TaskStore(luigi.Task)` y ésta a su vez contiene:
+Es un ***Luigi Task*** que contiene una clase `class TaskStore(luigi.Task)` y ésta a su vez contiene los siguientes parámetros:
 
-- `bucket` = luigi.Parameter(default = "temp-dev-dpa")
-- `prc_path` = luigi.Parameter(default = "ingestion")
-- `todate` = datetime.date(datetime.today())
-- `year` = luigi.IntParameter(default = todate.year)
-- `month` = luigi.IntParameter(default = todate.month)
-- `day` = luigi.IntParameter(default = todate.day)
-- `flg_i0_c1` = luigi.IntParameter(default = 1)
+- `bucket = luigi.Parameter(default = "temp-dev-dpa")`
+- `prc_path = luigi.Parameter(default = "ingestion")`
+- `todate = datetime.date(datetime.today())`
+- `year = luigi.IntParameter(default = todate.year)` 
+- `month = luigi.IntParameter(default = todate.month)`
+- `day = luigi.IntParameter(default = todate.day)`
+- `flg_i0_c1 = luigi.IntParameter(default = 1)`
 
 Y también manda a llamar las funciones:
 
