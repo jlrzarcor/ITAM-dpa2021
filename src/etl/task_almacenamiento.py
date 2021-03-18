@@ -17,7 +17,7 @@ import src.pipeline.ingesta_almacenamiento as ial
 
 class TaskStore(luigi.Task):
     
-#    bucket = luigi.Parameter(default = "data-product-architecture-equipo-5")
+#   bucket = luigi.Parameter(default = "data-product-architecture-equipo-5")
     bucket = luigi.Parameter(default = "temp-dev-dpa")
     prc_path = luigi.Parameter(default = "ingestion")
     
@@ -32,7 +32,6 @@ class TaskStore(luigi.Task):
         return {'a' : TaskIngest(self.year, self.month, self.day, self.flg_i0_c1)}
     
     def run(self):
-        s3 = ial.get_s3_resource()
         data = json.load(self.input()['a'].open('r'))
 
         with self.output().open('w') as f:
@@ -41,22 +40,20 @@ class TaskStore(luigi.Task):
         
     def output(self):
     # Formatting date parameters into date-string
-        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))        
+        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
         
         if self.flg_i0_c1 == 0:
             flag = "initial"
             str_file = "historic-inspections-" + str_date + ".pkl"
-            
             output_path = "s3://{}/{}/{}/YEAR={}/MONTH={}/DAY={}/{}".\
             format(self.bucket, self.prc_path, flag, self.year, self.month, self.day, str_file)
             
         else:
             flag = "consecutive"
             str_file = "consecutive-inspections-" + str_date + ".pkl"
-            
             output_path = "s3://{}/{}/{}/YEAR={}/MONTH={}/DAY={}/{}".\
             format(self.bucket, self.prc_path, flag, self.year, self.month, self.day, str_file)
-
-
-        
-        return luigi.contrib.s3.S3Target(path = output_path, format = luigi.format.Nop)
+            
+        s3 = ial.get_luigi_s3client()
+        print(type(s3))
+        return luigi.contrib.s3.S3Target(path = output_path, client = s3, format = luigi.format.Nop)
