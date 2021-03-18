@@ -8,7 +8,7 @@ import pickle as pkl
 from datetime import datetime
 
 # importing custom libraries and modules
-from task_ingesta import TaskIngest
+from src.etl.task_ingesta import TaskIngest
 import src.pipeline.ingesta_almacenamiento as ial
 
 
