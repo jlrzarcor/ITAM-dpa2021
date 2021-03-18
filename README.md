@@ -510,10 +510,14 @@ Y también manda a llamar las funciones:
 10. Correr: `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1`.
 
 Tomar en cuenta:
-    - Tanto los meses como los días, no llevan un cero antes.
-    - Después del *flag* se puede escribir 0 ó 1. Si se escribe un 0, nos referimos a "ingesta inicial" y si se escribe un 1, nos referimos a "ingesta consecutiva".
-    *e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
-    `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
+
+- Tanto los meses como los días, no llevan un cero antes.
+
+- Después del *flag* se puede escribir 0 ó 1. Si se escribe un 0, nos referimos a "ingesta inicial" y si se escribe un 1, nos referimos a "ingesta consecutiva".
+
+*e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
+
+`PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
 
 ##
 
