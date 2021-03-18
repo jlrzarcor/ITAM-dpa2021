@@ -472,13 +472,12 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 Es un ***Luigi Task*** que contiene una clase `class TaskStore(luigi.Task)` y ésta a su vez contiene los siguientes parámetros:
 
-- `bucket = luigi.Parameter(default = "temp-dev-dpa")`
-- `prc_path = luigi.Parameter(default = "ingestion")`
-- `todate = datetime.date(datetime.today())`
-- `year = luigi.IntParameter(default = todate.year)` 
-- `month = luigi.IntParameter(default = todate.month)`
-- `day = luigi.IntParameter(default = todate.day)`
-- `flg_i0_c1 = luigi.IntParameter(default = 1)`
+- `bucket` = luigi.Parameter(default = "temp-dev-dpa")
+- `prc_path` = luigi.Parameter(default = "ingestion")
+- `year` = luigi.IntParameter(default = todate.year) 
+- `month` = luigi.IntParameter(default = todate.month)
+- `day` = luigi.IntParameter(default = todate.day)
+- `flg_i0_c1` = luigi.IntParameter(default = 1)
 
 Y también manda a llamar las funciones:
 
@@ -492,7 +491,6 @@ Y también manda a llamar las funciones:
 
 Es un ***Luigi Task*** que contiene una clase `class TaskIngest(luigi.Task)` y ésta a su vez contiene:
 
-- `todate` = datetime.date(datetime.today())
 - `year` = luigi.IntParameter(default = todate.year)
 - `month` = luigi.IntParameter(default = todate.month)
 - `day` = luigi.IntParameter(default = todate.day)
