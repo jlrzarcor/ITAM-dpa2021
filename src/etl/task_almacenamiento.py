@@ -17,8 +17,8 @@ import src.pipeline.ingesta_almacenamiento as ial
 
 class TaskStore(luigi.Task):
     
-#   bucket = luigi.Parameter(default = "data-product-architecture-equipo-5")
-    bucket = luigi.Parameter(default = "temp-dev-dpa")
+    bucket = luigi.Parameter(default = "data-product-architecture-equipo-5")
+#    bucket = luigi.Parameter(default = "temp-dev-dpa")
     prc_path = luigi.Parameter(default = "ingestion")
     
     todate = datetime.date(datetime.today())
@@ -55,5 +55,4 @@ class TaskStore(luigi.Task):
             format(self.bucket, self.prc_path, flag, self.year, self.month, self.day, str_file)
             
         s3 = ial.get_luigi_s3client()
-        print(type(s3))
         return luigi.contrib.s3.S3Target(path = output_path, client = s3, format = luigi.format.Nop)
