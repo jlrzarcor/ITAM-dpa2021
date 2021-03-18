@@ -487,7 +487,11 @@ Y también manda a llamar las funciones:
 
 ![Lt1_2](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20correr%20el%20pipeline%20orquestado%20por%20Luigi%3F-task__almacenamiento.py-important)
 
-1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr `ssh -i id_rsa su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
+1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
+
+`ssh -i id_rsa su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` 
+
+para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
 2. Clonar el repositorio del proyecto: 
 
@@ -513,7 +517,7 @@ Tomar en cuenta:
 
 - Tanto los meses como los días, no llevan un cero antes.
 
-- Después del *flag* se puede escribir 0 ó 1. Si se escribe un 0, nos referimos a "ingesta inicial" y si se escribe un 1, nos referimos a "ingesta consecutiva".
+- Después del *flag* se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
 
 *e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
 
