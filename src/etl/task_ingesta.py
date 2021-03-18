@@ -29,9 +29,9 @@ class TaskIngest(luigi.Task):
         client = ial.get_client()
 
         if self.flg_i0_c1 == 0:
-            data_i = ial.ingesta_inicial(client, delta_date = str_date , limit = 300)
+            data_i = ial.ingesta_inicial(client, delta_date = str_date , limit = 300000)
         else:
-            data_i = ial.ingesta_consecutiva(client, delta_date = str_date, limit = 3)
+            data_i = ial.ingesta_consecutiva(client, delta_date = str_date, limit = 1000)
         
         json_data = json.dumps(data_i, indent=4)
         
