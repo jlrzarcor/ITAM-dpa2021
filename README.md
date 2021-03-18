@@ -485,6 +485,37 @@ Y también manda a llamar las funciones:
 - `run(self)` : Obtiene los datos almacenados en *S*3, los convierte en un archivo *json* y después los convierte en un archivo formato *pickle*.
 - `output(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings* para almacenarlos de manera ordenada en el *S*3.
 
+![Lt1_2](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20correr%20el%20pipeline%20orquestado%20por%20Luigi%3F-task__almacenamiento.py-important)
+
+1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr `ssh -i id_rsa su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
+
+2. Clonar el repositorio del proyecto: 
+
+`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
+
+3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga *Python* 3.7.4: `pyenv install 3.7.4`.
+
+4. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
+
+5. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
+
+6. Posicionarse en la carpeta del repositorio clonado en el paso 2.
+
+7. Activar su ambiente virtual: `pyenv activate itam_dpa`.
+
+8. De ser necesario actualizar el repositorio clonado: `git pull`.
+
+9. Correr: `export PYTHONPATH=$PWD`.
+
+10. Correr: `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1`.
+
+Tomar en cuenta:
+
+    - Tanto los meses como los días, no llevan un cero antes.
+    - Después del *flag* se puede escribir 0 ó 1. Si se escribe un 0, nos referimos a "ingesta inicial" y si se escribe un 1, nos referimos a "ingesta consecutiva".
+    *e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
+    `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
+
 ##
 
 ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf)
