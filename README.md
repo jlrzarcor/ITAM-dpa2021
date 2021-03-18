@@ -489,9 +489,7 @@ Y también manda a llamar las funciones:
 
 1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
 
-`ssh -i id_rsa su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` 
-
-para conectarse a la instancia *EC2* (*i.e.* su bastión).
+`ssh -i id_rsa su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
 2. Clonar el repositorio del proyecto: 
 
