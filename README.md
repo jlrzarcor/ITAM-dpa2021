@@ -489,7 +489,7 @@ Y también manda a llamar las funciones:
 
 ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf)
 
-Es un ***Luigi Task*** que contiene una clase `class TaskIngest(luigi.Task)` y ésta a su vez contiene:
+Es un ***Luigi Task*** que contiene una clase `class TaskIngest(luigi.Task)` y ésta a su vez contiene los siguientes parámetros:
 
 - `year` = luigi.IntParameter(default = todate.year)
 - `month` = luigi.IntParameter(default = todate.month)
