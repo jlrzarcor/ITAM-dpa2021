@@ -513,7 +513,9 @@ Y también manda a llamar las funciones:
 
 `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga *Python* 3.7.4: `pyenv install 3.7.4`.
+3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga *Python* 3.7.4: 
+
+`pyenv install 3.7.4`.
 
 4. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
 
