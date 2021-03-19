@@ -68,9 +68,9 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 <sup><sub>**NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.</sup></sub>
 
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
-- :soon:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
-- :yellow_circle:  *Checkpoint* 4:  *Feature engineering*.
-- :red_circle:  *Checkpoint* 5:  Entrenamiento.
+- :white_check_mark:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
+- :soon:  *Checkpoint* 4:  *Feature engineering*.
+- :yellow_circle:  *Checkpoint* 5:  Entrenamiento.
 - :red_circle:  *Checkpoint* 6:  *Bias & Fairness*.
 - :red_circle:  *Checkpoint* 7:  Predicción.
 - :red_circle:  *Checkpoint* 8:  Interpretabilidad.
@@ -513,7 +513,7 @@ Y también manda a llamar las funciones:
 
 `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga *Python* 3.7.4: 
+3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
 
 `pyenv install 3.7.4`.
 
