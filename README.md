@@ -126,7 +126,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ---
 
-## ¿Qué buscamos contestar con nuestro modelo?
+## ¿Qué buscamos contestar con nuestro modelo? 🧐
 ![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
 
 ## Tomar en cuenta
@@ -240,6 +240,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
     │   ├── chicomm.shx
     |   └── itam_logo.png
     │
+    │
     ├── feature_engineering 
     │
 ```
@@ -266,8 +267,10 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
-├── src               
+├── src
+    │
     ├── __init__.py
+    │
     │
     ├── utils
     |   └── general.py    
@@ -479,8 +482,10 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
-├── src               
+├── src
+    │
     ├── __init__.py
+    │
     │
     ├── utils    
     │
@@ -588,8 +593,9 @@ Si el task corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ```
 ├── notebooks
-    │ 
+    │
     ├── eda
+    │
     │
     ├── feature_engineering
     |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Checkpoint 4
