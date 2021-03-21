@@ -58,10 +58,10 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 El proyecto será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
-![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual-3-brightgreen)
-![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-18%2F03%2F2021-brightgreen)
-![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-4-yellow)
-![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-7-red)
+![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual-4-brightgreen)
+![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-01%2F04%2F2021-brightgreen)
+![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-5-yellow)
+![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-6-red)
 
 - :white_check_mark:  *Checkpoint* 1:  *Starting point*.
 
