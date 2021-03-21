@@ -226,6 +226,21 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 - En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
 
+```
+├── notebooks
+    │
+    ├── eda
+    │   ├── EDA_GEDA_Checkpoint1.ipynb
+    │   ├── chicomm.dbf
+    │   ├── chicomm.prj
+    │   ├── chicomm.shp
+    │   ├── chicomm.shx
+    |   └── itam_logo.png
+    │
+    ├── feature_engineering 
+    │
+```
+
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
 ---
@@ -565,5 +580,17 @@ Si el task corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 <p align = "left">
     <img src="images/fe.png" width="400" height="200" />
+    
+- En la ruta `notebooks/feature_engineering/Feature_Engineering_Checkpoint4.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 4*** del proyecto.
+
+```
+├── notebooks
+    │ 
+    ├── eda
+    │
+    ├── feature_engineering
+    |   └── Feature_Engineering_Checkpoint4.ipynb 
+    │
+```
 
 ---
