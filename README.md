@@ -149,7 +149,8 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ├── docs               <- Space for Sphinx documentation.
 │
 ├── notebooks          <- Jupyter notebooks.
-│   └── eda
+│   ├── eda
+│   └── feature_engineering
 │
 ├── images             <- Contains images used in the repository.
 │
@@ -175,6 +176,8 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
     |   └── general.py 
     │
     ├── etl       <- Scripts to transform data from raw to intermediate.
+    │   ├── task_almacenamiento.py
+    |   └── task_ingesta.py 
     │
     ├── pipeline  <- Functions used for the pipeline.
     |   └── ingesta_almacenamiento.py 
@@ -230,7 +233,7 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 ├── notebooks
     │
     ├── eda
-    │   ├── EDA_GEDA_Checkpoint1.ipynb
+    │   ├── EDA_GEDA_Checkpoint1.ipynb <- Notebook used for Checkpoint 1
     │   ├── chicomm.dbf
     │   ├── chicomm.prj
     │   ├── chicomm.shp
@@ -589,7 +592,7 @@ Si el task corrió de manera exitosa, el siguiente mensaje es desplegado:
     ├── eda
     │
     ├── feature_engineering
-    |   └── Feature_Engineering_Checkpoint4.ipynb 
+    |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Checkpoint 4
     │
 ```
 
