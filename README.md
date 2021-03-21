@@ -88,6 +88,15 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ![](./images/python-logo.png)
 
+## ¿Qué *IDE* utlizamos? 🪐 📓
+
+[***Jupyter.org***](https://jupyter.org/)
+
+[***Jupyter Notebook's GitHub page***](https://github.com/jupyter/notebook)
+
+<p align = "left">
+    <img src="images/jn_logo.png" width="300" height="300" />
+
 ---
 
 ***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
@@ -549,5 +558,12 @@ Tomar en cuenta:
 Si el task corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ![](./images/luigi_task_result.jpg)
+
+---
+
+## Sobre nuestro *Feature Engineering*
+
+<p align = "left">
+    <img src="images/fe.png" width="400" height="200" />
 
 ---
