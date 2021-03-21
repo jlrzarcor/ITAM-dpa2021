@@ -547,6 +547,6 @@ Tomar en cuenta:
 
 Si el task corrió de manera exitosa, el siguiente mensaje es desplegado:
 
-![](./images/luigi_task_result.jpeg)
+![](./images/luigi_task_result.jpg)
 
 ---
