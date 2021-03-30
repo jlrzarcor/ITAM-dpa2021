@@ -119,10 +119,10 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 *Inspection Date*.           | *Floating Timestamp*.| Fecha de la inspección.
 *Inspection Type*.           | Texto.               | Tipo de inspección, puede ser cualquiera de las siguientes: _canvass_, el tipo de inspección más común realizado con una frecuencia relativa al **riesgo del establecimiento**; _consultation_, es cuando la inspección se realiza por requerimiento del dueño previo a la apertura del establecimiento; _complaint_, se realiza una inspección en respuesta a una queja en contra del establecimiento; _license_, se realiza cuando el establecimiento lo requiere para recibir su licencia para operar; _suspect food poisoning_, se realiza en respuesta a una o más personas que presumiblemente hayan enfermado como resultado de haber comido en el establecimiento; _task-force inspection_, cuando la inspección se realiza a un bar o taverna.
 *Results*.                   | Texto.               | _Pass, pass with conditions, fail, out of business or not located_; '_pass_' implica que no se tienen violaciones críticas o severas (códigos de violación 1-14 y 15-29 respectivamente). '_pass with conditions_', se encontraton violaciones críticas o severas, pero fueron corregidas durante la inspección. '_fail_' implica que se tienen violaciones críticas o severas y que no se corrigieron durante la inspección.
-*Violations*.                | Texto.               |  Un establecimiento puede recibir más de una de las 45 distintas violaciones (código de violación 1 al 44 y 70). Pensar en como analizar esta variable.
-*Latitude*.                  | Número.              | Latitud del negocio.
-*Longitude*.                 | Número.              | Longitud del negocio.
-*Location*.                  | *Location*.          | Contiene la coordenada (longitud y latitud) del negocio.
+*Violations*.                | Texto.               |  Un establecimiento puede recibir más de una de las 45 distintas violaciones (código de violación 1 al 44 y 70).
+*Latitude*.                  | Número.              | Latitud del establecimiento.
+*Longitude*.                 | Número.              | Longitud del establecimiento.
+*Location*.                  | *Location*.          | Contiene la coordenada (longitud y latitud) del establecimiento.
 
 ---
 
