@@ -110,9 +110,9 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 **Variable**                 | **Tipo de dato**     | **¿Qué contiene?**
 -----------------------------| ---------------------| ------------------------------------------------------------------------------------
 *Inspection ID*.             | Número.              | *ID* correspondiente a la inspección.
-*DBA Name*.                  | Texto.               | _'Doing business as'_ Nombre legal del establecimiento.
-*AKA Name*.                  | Texto.               | _'Also known as'_ Nombre público como se conoce al establecimiento.
-*Licence*.                   | Número.              | Número único asignado al establecimiento con fines de licenciamiento.
+*DBA Name*.                  | Texto.               | _'Doing business as'_  Nombre legal del establecimiento.
+*AKA Name*.                  | Texto.               | _'Also known as'_  Nombre público como se conoce al establecimiento.
+*License*.                   | Número.              | Número único asignado al establecimiento con fines de licenciamiento.
 *Facility Type*.             | Texto.               | Cada establecimiento se etiqueta con alguno de los siguientes: *bakery, banquet hall, candy store, caterer, coffee shop, day care center (for ages less than 2), day care center (for ages 2 – 6), day care center (combo, for ages less than 2 and 2 – 6 combined), gas station, Golden Diner, grocery store, hospital, long term care center(nursing home), liquor store, mobile food dispenser, restaurant, paleteria, school,shelter, tavern, social club, wholesaler, or Wrigley Field Rooftop*.
 *Risk*.                      | Texto.               | Cada establecimiento se categoriza de acuerdo al riesgo de afectar la salud pública. 1 el más alto riesgo y 3 el menor. La frecuencia de las inspecciones está ligada a su nivel de riesgo.
 *Address, City, State, Zip*. | Texto.               | Dirección completa donde se localizan las instalaciones.
