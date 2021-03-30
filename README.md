@@ -24,7 +24,7 @@ Integrante | Alumno                         | Clave única
 ---
 
 👀  ![Watching](https://img.shields.io/badge/Watching-3-blue/?logo=GitHub&style=social)
-🌟  ![Stars](https://img.shields.io/badge/Stars-3-blue/?logo=GitHub&style=social)
+🌟  ![Stars](https://img.shields.io/badge/Stars-4-blue/?logo=GitHub&style=social)
 🔌  ![fork](https://img.shields.io/badge/Fork-2-blue/?logo=GitHub&style=social)
 
 ##
@@ -58,19 +58,20 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 El proyecto será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
 
-![Checkpoint_Actual](https://img.shields.io/badge/Checkpoint%20actual-3-brightgreen)
-![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-18%2F03%2F2021-brightgreen)
-![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-4-yellow)
-![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-7-red)
+![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-3-brightgreen)
+![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-4-blue)
+![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-01%2F04%2F2021-blue)
+![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-5-yellow)
+![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-6-red)
 
 - :white_check_mark:  *Checkpoint* 1:  *Starting point*.
 
 <sup><sub>**NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.</sup></sub>
 
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
-- :soon:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
-- :yellow_circle:  *Checkpoint* 4:  *Feature engineering*.
-- :red_circle:  *Checkpoint* 5:  Entrenamiento.
+- :white_check_mark:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
+- 🔵 :soon:  *Checkpoint* 4:  *Feature engineering*.
+- :yellow_circle:  *Checkpoint* 5:  Entrenamiento.
 - :red_circle:  *Checkpoint* 6:  *Bias & Fairness*.
 - :red_circle:  *Checkpoint* 7:  Predicción.
 - :red_circle:  *Checkpoint* 8:  Interpretabilidad.
@@ -86,6 +87,15 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 [***Python.org***](https://www.python.org/)
 
 ![](./images/python-logo.png)
+
+## ¿Qué *IDE* utlizamos? 🪐 📓
+
+[***Jupyter.org***](https://jupyter.org/)
+
+[***Jupyter Notebook's GitHub page***](https://github.com/jupyter/notebook)
+
+<p align = "left">
+    <img src="images/jn_logo.png" width="300" height="300" />
 
 ---
 
@@ -116,7 +126,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ---
 
-## ¿Qué buscamos contestar con nuestro modelo?
+## ¿Qué buscamos contestar con nuestro modelo? 🧐
 ![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
 
 ## Tomar en cuenta
@@ -139,7 +149,8 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ├── docs               <- Space for Sphinx documentation.
 │
 ├── notebooks          <- Jupyter notebooks.
-│   └── eda
+│   ├── eda
+│   └── feature_engineering
 │
 ├── images             <- Contains images used in the repository.
 │
@@ -165,6 +176,8 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
     |   └── general.py 
     │
     ├── etl       <- Scripts to transform data from raw to intermediate.
+    │   ├── task_almacenamiento.py
+    |   └── task_ingesta.py 
     │
     ├── pipeline  <- Functions used for the pipeline.
     |   └── ingesta_almacenamiento.py 
@@ -216,6 +229,22 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 - En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
 
+```
+├── notebooks
+    │
+    ├── eda
+    │   ├── EDA_GEDA_Checkpoint1.ipynb <- Notebook used for Checkpoint 1
+    │   ├── chicomm.dbf
+    │   ├── chicomm.prj
+    │   ├── chicomm.shp
+    │   ├── chicomm.shx
+    |   └── itam_logo.png
+    │
+    │
+    ├── feature_engineering 
+    │
+```
+
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
 ---
@@ -238,8 +267,10 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
-├── src               
+├── src
+    │
     ├── __init__.py
+    │
     │
     ├── utils
     |   └── general.py    
@@ -404,17 +435,17 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 ![DAG](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-DAG-blue)
 
-- Se permite tener más de 1 entrada y sólo 1 salida. **NO** se permite tener ciclos.
+- Se permite tener más de 1 entrada y sólo 1 salida al final del proceso. **NO** se permite tener ciclos.
 
 - Está conformado por:
 
-![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet) Cada arco nodo representa el *task* a ejecutar.
+![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet) Cada nodo representa el *task* a ejecutar.
 
 ![EP2](https://img.shields.io/badge/2.-Aristas%2Farcos-blueviolet) Cada arista la dirección de flujo.
 
 - Sigue 3 principios:
 
-![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet) Aunque un proceso se corra con los mismos parámetros múltiples ocasiones, la salida que se obtiene siempre es la misma. Esto implica que tampoco se generan salidas repetidas.
+![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet) Aunque un proceso se corra con los mismos parámetros en múltiples ocasiones, la salida que se obtiene siempre será la misma. Esto implica que tampoco se generan salidas repetidas.
 
 ![DP2](https://img.shields.io/badge/DAG--Principio%202-Direcci%C3%B3n-blueviolet) La dirección del grafo va en un sólo sentido.
 
@@ -434,9 +465,9 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 - `run()` : El código que se debe correr.
 
-- `input()` : Qué requiere de entrada la tarea y dónde se debe obtener.
+- `input()` : Qué requiere de entrada la tarea y de dónde se debe obtener.
 
-- `output()` : Qué salida genera la tarea y dónde se queda persistida. Éste siempre regresa un objeto de tipo `target`.
+- `output()` : Qué salida genera la tarea y dónde se queda persistida o guardada. Éste siempre regresa un objeto de tipo `target`.
 
 - `requires()` : Método con el que se define cómo está formado el grafo de dependencias entre tareas.
 
@@ -451,8 +482,10 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
-├── src               
+├── src
+    │
     ├── __init__.py
+    │
     │
     ├── utils    
     │
@@ -470,12 +503,11 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 ![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf)
 
-Es un ***Luigi Task*** que contiene una clase `class TaskStore(luigi.Task)` y ésta a su vez contiene:
+Es un ***Luigi Task*** que contiene una clase `class TaskStore(luigi.Task)` y ésta a su vez contiene los siguientes parámetros:
 
 - `bucket` = luigi.Parameter(default = "temp-dev-dpa")
 - `prc_path` = luigi.Parameter(default = "ingestion")
-- `todate` = datetime.date(datetime.today())
-- `year` = luigi.IntParameter(default = todate.year)
+- `year` = luigi.IntParameter(default = todate.year) 
 - `month` = luigi.IntParameter(default = todate.month)
 - `day` = luigi.IntParameter(default = todate.day)
 - `flg_i0_c1` = luigi.IntParameter(default = 1)
@@ -484,15 +516,14 @@ Y también manda a llamar las funciones:
 
 - `requires(self)` : Recibe año, mes, día y el *flag* obtenido en `flg_i0_c1`.
 - `run(self)` : Obtiene los datos almacenados en *S*3, los convierte en un archivo *json* y después los convierte en un archivo formato *pickle*.
-- `output(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings*.
+- `output(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings* para almacenarlos de manera ordenada en el *S*3.
 
 ##
 
 ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf)
 
-Es un ***Luigi Task*** que contiene una clase `class TaskIngest(luigi.Task)` y ésta a su vez contiene:
+Es un ***Luigi Task*** que contiene una clase `class TaskIngest(luigi.Task)` y ésta a su vez contiene los siguientes parámetros:
 
-- `todate` = datetime.date(datetime.today())
 - `year` = luigi.IntParameter(default = todate.year)
 - `month` = luigi.IntParameter(default = todate.month)
 - `day` = luigi.IntParameter(default = todate.day)
@@ -502,5 +533,73 @@ Y también manda a llamar las funciones:
 
 - `run(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings*.
 - `output(self)` : Regresa el *output path* que *Luigi* lee en su *local target*.
+
+##
+
+![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange)
+
+1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
+
+`ssh -i nombre_llave_.pem su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
+
+2. Clonar el repositorio del proyecto: 
+
+`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
+
+3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
+
+`pyenv install 3.7.4`.
+
+4. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
+
+5. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
+
+6. Posicionarse en la carpeta del repositorio clonado en el paso 2.
+
+7. Activar su ambiente virtual: `pyenv activate itam_dpa`.
+
+8. De ser necesario actualizar el repositorio clonado: `git pull`.
+
+9. Correr: `export PYTHONPATH=$PWD`.
+
+<sub><sup>**NOTA**: Del paso 1 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
+
+10. Correr: `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1`.
+
+Tomar en cuenta:
+
+- Tanto los meses como los días, no llevan un cero antes.
+
+- Después del *flag* se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
+
+- `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
+
+*e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
+
+`PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
+
+Si el task corrió de manera exitosa, el siguiente mensaje es desplegado:
+
+![](./images/luigi_task_result.jpg)
+
+---
+
+## Sobre nuestro *Feature Engineering*
+
+<p align = "left">
+    <img src="images/fe.png" width="400" height="200" />
+    
+- En la ruta `notebooks/feature_engineering/Feature_Engineering_Checkpoint4.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 4*** del proyecto.
+
+```
+├── notebooks
+    │
+    ├── eda
+    │
+    │
+    ├── feature_engineering
+    |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Checkpoint 4
+    │
+```
 
 ---

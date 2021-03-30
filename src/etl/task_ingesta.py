@@ -29,9 +29,9 @@ class TaskIngest(luigi.Task):
         client = ial.get_client()
 
         if self.flg_i0_c1 == 0:
-            data_i = ial.ingesta_inicial(client, delta_date = str_date , limit = 300)
+            data_i = ial.ingesta_inicial(client, delta_date = str_date , limit = 300000)
         else:
-            data_i = ial.ingesta_consecutiva(client, delta_date = str_date, limit = 3)
+            data_i = ial.ingesta_consecutiva(client, delta_date = str_date, limit = 1000)
         
         json_data = json.dumps(data_i, indent=4)
         
@@ -40,6 +40,6 @@ class TaskIngest(luigi.Task):
             output_file.write(json_data)
         
     def output(self):
-        str_file = "ingesta" + str(datetime.date(datetime(self.year,self.month,self.day)))        
+        str_file = "ingesta" + str(datetime.date(datetime(self.year,self.month,self.day))) + ".json"
         output_path = "./src/temp/TYPINGST={}/{}".format(self.flg_i0_c1, str_file)
         return luigi.local_target.LocalTarget(path=output_path)
