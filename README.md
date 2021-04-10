@@ -413,7 +413,7 @@ Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la se
 
 [***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)
 
-[**Luigi's GitHub page**](https://github.com/spotify/luigi)
+[**Luigi's GitHub page***](https://github.com/spotify/luigi)
 
 ![](./images/luigi.png)
 
