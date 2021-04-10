@@ -129,7 +129,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ## ¿Qué buscamos contestar con nuestro modelo? 🧐
 ![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
 
-## Tomar en cuenta
+## Tomar en cuenta :point_left:
 
 ![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
 
