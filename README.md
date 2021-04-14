@@ -5,7 +5,7 @@
 
 ---
 
-### Maestría en Ciencia de Datos, ITAM 🟢🟡🟢
+### Maestría en Ciencia de Datos, ITAM 🟢
 
 ### M. Sc. Liliana Millán Núñez
 
@@ -22,6 +22,8 @@ Integrante | Alumno                         | Clave única
 5          | Uriel Abraham Rangel Díaz      | 193921
 
 ---
+
+## Stats  :chart_with_upwards_trend:  :chart_with_downwards_trend:
 
 👀  ![Watching](https://img.shields.io/badge/Watching-3-blue/?logo=GitHub&style=social)
 🌟  ![Stars](https://img.shields.io/badge/Stars-4-blue/?logo=GitHub&style=social)
