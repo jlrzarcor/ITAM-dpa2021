@@ -5,7 +5,7 @@
 
 ---
 
-### Maestría en Ciencia de Datos, ITAM
+### Maestría en Ciencia de Datos, ITAM 🟢🟡🟢
 
 ### M. Sc. Liliana Millán Núñez
 
