@@ -29,6 +29,24 @@ Integrante | Alumno                         | Clave única
 
 ##
 
+## Tabla de contenido  :floppy_disk:
+
+1. [Acerca de este proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#Acerca-de-este-proyecto) :globe_with_meridians:
+2. [¿Cómo está dividido nuestro proyecto?](https://github.com/jlrzarcor/ITAM-dpa2021#¿Cómo-está-dividido-nuestro-proyecto?) :date: :pushpin:
+3. [¿Qué lenguaje utlizamos?](https://github.com/jlrzarcor/ITAM-dpa2021#¿Qué-lenguaje-utlizamos?) :pen:
+4. [¿Qué *IDE* utlizamos?](https://github.com/jlrzarcor/ITAM-dpa2021#¿Qué-*IDE*-utlizamos?) 🪐 📓
+5. [*Summary* de los datos](https://github.com/jlrzarcor/ITAM-dpa2021#*Summary*-de-los-datos) :checkered_flag:
+6. [¿Qué buscamos contestar con nuestro modelo?](https://github.com/jlrzarcor/ITAM-dpa2021#¿Qué-buscamos-contestar-con-nuestro-modelo?) 🧐
+7. [Tomar en cuenta](https://github.com/jlrzarcor/ITAM-dpa2021#Tomar-en-cuenta) :point_left:
+8. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#Estructura-básica-del-proyecto) :file_folder:
+9. [¿Cómo reproducir los resultados de este repositorio?](https://github.com/jlrzarcor/ITAM-dpa2021#¿Cómo-reproducir-los-resultados-de-este-repositorio?) :computer:
+10. [Sobre nuestro ***EDA***](https://github.com/jlrzarcor/ITAM-dpa2021#Sobre-nuestro-***EDA***) 🔵 🟡 :red_circle: 🟢 🟠
+11. [¿Cómo funciona nuestro proceso de ingestión?](https://github.com/jlrzarcor/ITAM-dpa2021#¿Cómo-funciona-nuestro-proceso-de-ingestión?) :fork_and_knife:
+12. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#Sobre-nuestro-*Data-Pipeline*) 🔬
+13. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#Sobre-nuestro-*Feature-Engineering*)  :hammer:
+
+##
+
 ## Acerca de este proyecto  :globe_with_meridians:
 
 ![](./images/cdp.png)
@@ -98,6 +116,8 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
     <img src="images/jn_logo.png" width="300" height="300" />
 
 ---
+
+## *Summary* de los datos  :checkered_flag:
 
 ***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
 
@@ -584,7 +604,7 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ---
 
-## Sobre nuestro *Feature Engineering*
+## Sobre nuestro *Feature Engineering*  :hammer:
 
 <p align = "left">
     <img src="images/fe.png" width="400" height="200" />
