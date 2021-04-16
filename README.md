@@ -385,7 +385,7 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
  
  ![Ejecución](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Ejecuci%C3%B3n%20del%20pipeline-yellowgreen)
  
-1. Posicionarse en la carpeta donde se hizo el clon.
+1. Posicionarse en la carpeta donde se hizo el clon del repositorio.
 2. Activar el entorno `pyenv` adecuado y exportar la variable de entorno `PYTHONPATH` (mencionado arriba).
 3. Ejecutar el comando `python`.
 4. Dentro de la terminal de python (>>>) ejecutar los siguientes comandos:
@@ -445,7 +445,7 @@ Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la se
 
 <sub><sup>**Fuente**:[***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)</sup></sub>
 
-Este orquestador es la herramienta que nos permite correr nuestro *data pipeline*, definiendo aspectos importantes como el cómo, el cúando y el con qué se debe correr cada proceso.
+Este orquestador es la herramienta que nos permite correr nuestro *data pipeline*, definiendo aspectos importantes del cómo, cúando y con qué se debe correr cada proceso.
 
 Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correrán) en el *pipeline*, ***Luigi*** utiliza una estructura de datos llamada ***DAG*** (***Directed Acyclic Graph***). Es una herramienta visual útil y que ilustra de manera clara los procesos que nuestro proyecto sigue.
 
