@@ -191,7 +191,9 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ├── setup.py
 │
 └── src                <- Source code for use in this project.
+    │
     ├── __init__.py    <- Makes src a Python module.
+    │
     │
     ├── utils      <- Functions used across the project.
     │   ├── constants.py
