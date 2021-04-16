@@ -622,7 +622,7 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
     │
     │
     ├── feature_engineering
-    |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Checkpoint 4
+    |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
     │
 ```
 
