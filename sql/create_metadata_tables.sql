@@ -8,7 +8,7 @@
 
 /* ================================= metadata task ingestion ================================= */
 
-DROP TABLE IF EXIST metadata.ingestion;
+DROP TABLE IF EXISTS metadata.ingestion;
 CREATE TABLE metadata.ingestion (
   fecha date,
   param_exec json,
