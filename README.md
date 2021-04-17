@@ -627,3 +627,45 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 ```
 
 ---
+
+Hasta este punto, hemos creado las primeras tareas de nuestro Pipeline (Ingesta y Almacenamiento). El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: Limpieza/Preprocesamiento y Feature Engineering. Para ello, se requiere configurar en AWS una infraestructura como la mostrada en la imagen siguiente:
+
+
+
+
+
+
+
+
+La configuración de cada instancia, así como de la RDS queda fuera del alcance de este readme, solo considere que debe tener acceso a través de Bastión a la EC2 y en la EC2 configurar un ambiente virtual como el que se explicó en la sección (xxx), así como debará clonar este repositorio (como se explica en la sección yyy).
+
+Debido a que ahora utilizaremos RDS para almacenar tablas de los metadatos generados en cada Task (incluyendo almacenamiento e ingesta), debemos tener credenciales que nos permitan entrar a la RDS. Las cuales se incorporarán a nuestro archivo credentials.yaml (ver sección cccc) , el cual se verá ahora de la siguiente forma:
+
+---
+s3:
+    aws_access_key_id: "de_tu_cuenta_de_AWS"
+    aws_secret_access_key: "de_tu_cuenta_de_AWS"
+food_inspections:
+    api_token: "de_tu app_token_del_prerrquisito_1"
+pg_service: #-> OJO FALTA LLENAR ESTA PARTE!
+    user: 
+```
+
+La ejecución del pipeline se realiza mediante las siguientes instrucciones:
+
+1. Desde tu terminal, acceder a la EC2 de tu infraestructura (i.e. ssh -o ServerAliveInterval=60 -i 'llave' 'usuario'@'ec2-34-223-44-201.us-west-2'.compute.amazonaws.com
+2. Activar el ambiente virtual que preciamente se instaló (i.e. pyenv activate itam_dpa)
+3. Posicionarse en la carpeta donde se clonó el repositorio
+4. Ejecutar el comando LuigiTask que se desee correr.
+
+A continuación se describen de forma general los Tasks de Luigi que hasta el momento se han creado y se da un ejemplo de cómo ejecutar cada uno, así como de los parámetros que utilizan:
+
+Ingesta: Task que se conecta a la BD de Chicago Food Inspections y realiza la consulta deseada.
+         Flags: --flg-i0-c1 (0 para ingesta inicial - 1 para ingesta consecutiva)
+         Comando para su ejecución: Se ejecuta por el Task de Almacenamiento
+
+Almacenamiento: Task que toma el archivo .pkl que se genera en el Task de Ingesta y lo almacena en el S3 de AWS.
+         Flags: --year, --month, --day año, mes y día que se quiere hacer la ingesta y almacenamiento.
+         Comando para su ejecución:
+
+PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1.
