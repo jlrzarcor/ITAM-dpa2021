@@ -636,7 +636,7 @@ La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
 Y en los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
 
-![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task_cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-task_feature__engineering.py-9cf).
+![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task_cleaning.py-9cf), ![Lt4](https://img.shields.io/badge/Task-task_feature__engineering.py-9cf),
 
 ![Lt5](https://img.shields.io/badge/Task-feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-cleaning__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-ingesta__metadata.py-blueviolet).
 
