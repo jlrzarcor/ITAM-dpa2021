@@ -670,6 +670,8 @@ Y en los **módulos** siguientes se integran las funciones que nos permitirán r
 
 Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
 
+***MODIFICAR DATOS DE LA INFRAESTRUCTURA***!!!!!!!
+
 ![](./images/infr_rqrts.jpg)
 
 <sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
