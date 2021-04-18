@@ -23,7 +23,7 @@ Integrante | Alumno                         | Clave única
 
 ---
 
-## Stats  :chart_with_upwards_trend:  :chart_with_downwards_trend:
+## *Stats*  :chart_with_upwards_trend:  :chart_with_downwards_trend:
 
 👀  ![Watching](https://img.shields.io/badge/Watching-3-blue/?logo=GitHub&style=social)
 🌟  ![Stars](https://img.shields.io/badge/Stars-4-blue/?logo=GitHub&style=social)
