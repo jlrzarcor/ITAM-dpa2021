@@ -501,7 +501,7 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
 
-`task_almacenamiento.py` y `task_ingesta.py`.
+![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf) y ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf).
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -564,7 +564,7 @@ Y también manda a llamar las funciones:
 
 1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
 
-`ssh -i nombre_llave_.pem su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
+`ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
 2. Clonar el repositorio del proyecto: 
 
@@ -626,18 +626,63 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
     │
 ```
 
----
+##
 
-Hasta este punto, hemos creado las primeras tareas de nuestro Pipeline (Ingesta y Almacenamiento). El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: Limpieza/Preprocesamiento y Feature Engineering. Para ello, se requiere configurar en AWS una infraestructura como la mostrada en la imagen siguiente:
+El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
 
+La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
+![](./images/md_str.jpg)
 
+Y en los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
 
+![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task_cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-task_feature__engineering.py-9cf).
 
+![Lt5](https://img.shields.io/badge/Task-feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-cleaning__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-ingesta__metadata.py-blueviolet).
 
+ :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
+```
+├── src
+    │
+    ├── __init__.py
+    │
+    │
+    ├── utils    
+    │
+    │
+    ├── etl
+    │   ├── task_almacenamiento.py
+    │   ├── task_ingesta.py 
+    │   ├── task_cleaning.py
+    │   ├── task_feature_engineering.py
+    │   ├── feature_engineering_metadata.py
+    │   ├── cleaning_metadata.py
+    │   ├── almacenamiento_metadata.py
+    |   └── ingesta_metadata.py
+    │
+    │
+    ├── pipeline
+    │
+```
 
-La configuración de cada instancia, así como de la RDS queda fuera del alcance de este readme, solo considere que debe tener acceso a través de Bastión a la EC2 y en la EC2 configurar un ambiente virtual como el que se explicó en la sección (xxx), así como debará clonar este repositorio (como se explica en la sección yyy).
+##
+
+Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
+
+![](./images/infr_rqrts.jpg)
+
+<sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
+
+##
+
+**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
+
+![](./images/dag.png)
+
+<sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
+
+##
 
 Debido a que ahora utilizaremos RDS para almacenar tablas de los metadatos generados en cada Task (incluyendo almacenamiento e ingesta), debemos tener credenciales que nos permitan entrar a la RDS. Las cuales se incorporarán a nuestro archivo credentials.yaml (ver sección cccc) , el cual se verá ahora de la siguiente forma:
 
