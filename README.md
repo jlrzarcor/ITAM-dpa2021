@@ -758,22 +758,3 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 ![](./images/luigi_task_result.jpg)
 
 ---
-
-***INSTRUCCIONES URIEL***
-
-1. Desde tu terminal, acceder a la EC2 de tu infraestructura (i.e. ssh -o ServerAliveInterval=60 -i 'llave' 'usuario'@'ec2-34-223-44-201.us-west-2'.compute.amazonaws.com
-2. Activar el ambiente virtual que preciamente se instaló (i.e. pyenv activate itam_dpa)
-3. Posicionarse en la carpeta donde se clonó el repositorio
-4. Ejecutar el comando LuigiTask que se desee correr.
-
-A continuación se describen de forma general los Tasks de Luigi que hasta el momento se han creado y se da un ejemplo de cómo ejecutar cada uno, así como de los parámetros que utilizan:
-
-Ingesta: Task que se conecta a la BD de Chicago Food Inspections y realiza la consulta deseada.
-         Flags: --flg-i0-c1 (0 para ingesta inicial - 1 para ingesta consecutiva)
-         Comando para su ejecución: Se ejecuta por el Task de Almacenamiento
-
-Almacenamiento: Task que toma el archivo .pkl que se genera en el Task de Ingesta y lo almacena en el S3 de AWS.
-         Flags: --year, --month, --day año, mes y día que se quiere hacer la ingesta y almacenamiento.
-         Comando para su ejecución:
-
-PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1.
