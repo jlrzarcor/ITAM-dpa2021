@@ -678,6 +678,8 @@ Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada 
 
 **Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
+***MODIFICAR IMAGEN***!!!!!!!!!!!
+
 ![](./images/dag.png)
 
 <sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
@@ -750,6 +752,8 @@ Tomar en cuenta:
 `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
+
+***MODIFICAR IMAGEN***!!!!!!!!!!!
 
 ![](./images/luigi_task_result.jpg)
 
