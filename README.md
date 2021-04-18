@@ -684,17 +684,26 @@ Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada 
 
 ##
 
-Debido a que ahora utilizaremos RDS para almacenar tablas de los metadatos generados en cada Task (incluyendo almacenamiento e ingesta), debemos tener credenciales que nos permitan entrar a la RDS. Las cuales se incorporarán a nuestro archivo credentials.yaml (ver sección cccc) , el cual se verá ahora de la siguiente forma:
+![](./images/aws_rds.png)
 
+Debido a que ahora utilizaremos *RDS* para almacenar tablas de los metadatos generados en cada *Task*, debemos contar con credenciales que nos permitan entrar a ésta. El archivo `credentials.yaml` debe contar con la siguiente estructura:
+
+```
 ---
 s3:
     aws_access_key_id: "de_tu_cuenta_de_AWS"
     aws_secret_access_key: "de_tu_cuenta_de_AWS"
 food_inspections:
-    api_token: "de_tu app_token_del_prerrquisito_1"
-pg_service: #-> OJO FALTA LLENAR ESTA PARTE!
-    user: 
+    api_token: "de_tu app_token_del_chicago_data_portal"
+pg_service:
+    user: "tu_postgres_user"
+    password: "tu_postgres_user_password"
+    host: "direccion_de_tu_RDS.us-west-2.rds.amazonaws.com"
+    port: 5432
+    dbname: "nombre_base_datos" 
 ```
+
+##
 
 La ejecución del pipeline se realiza mediante las siguientes instrucciones:
 
