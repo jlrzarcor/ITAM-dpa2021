@@ -16,3 +16,11 @@ CREATE TABLE metadata.ingestion (
   num_regs_ing int
 );
 COMMENT ON TABLE metadata.ingestion IS 'Almacena metadata de los datos ingestados';
+
+/* ================================ testing tables ================================= */
+
+DROP TABLE IF EXISTS metadata.test;
+CREATE TABLE metadata.test (
+  num_regs_ing int
+);
+COMMENT ON TABLE metadata.test IS 'Almacena metadata de los datos ingestados';
