@@ -606,6 +606,8 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ![](./images/luigi_task_result.jpg)
 
+<sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 3.</sup></sub>
+
 ---
 
 ## Sobre nuestro *Feature Engineering*  :hammer:
