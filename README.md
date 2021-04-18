@@ -7,7 +7,7 @@
 
 ### Maestría en Ciencia de Datos, ITAM 🟢
 
-### M. Sc. Liliana Millán Núñez
+### *M. Sc.* Liliana Millán Núñez
 
 ### Equipo 5
 
@@ -23,7 +23,7 @@ Integrante | Alumno                         | Clave única
 
 ---
 
-## Stats  :chart_with_upwards_trend:  :chart_with_downwards_trend:
+## *Stats*  :chart_with_upwards_trend:  :chart_with_downwards_trend:
 
 👀  ![Watching](https://img.shields.io/badge/Watching-3-blue/?logo=GitHub&style=social)
 🌟  ![Stars](https://img.shields.io/badge/Stars-4-blue/?logo=GitHub&style=social)
@@ -501,7 +501,7 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
 
-`task_almacenamiento.py` y `task_ingesta.py`.
+![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf) y ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf).
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -564,7 +564,7 @@ Y también manda a llamar las funciones:
 
 1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
 
-`ssh -i nombre_llave_.pem su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
+`ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
 2. Clonar el repositorio del proyecto: 
 
@@ -606,6 +606,8 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ![](./images/luigi_task_result.jpg)
 
+<sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 3.</sup></sub>
+
 ---
 
 ## Sobre nuestro *Feature Engineering*  :hammer:
@@ -626,46 +628,146 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
     │
 ```
 
----
+##
 
-Hasta este punto, hemos creado las primeras tareas de nuestro Pipeline (Ingesta y Almacenamiento). El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: Limpieza/Preprocesamiento y Feature Engineering. Para ello, se requiere configurar en AWS una infraestructura como la mostrada en la imagen siguiente:
+El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
 
+La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
+![](./images/md_str.jpg)
 
+Y en los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
 
+![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task_cleaning.py-9cf), ![Lt4](https://img.shields.io/badge/Task-task_feature__engineering.py-9cf),
 
+![Lt5](https://img.shields.io/badge/Task-feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-cleaning__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-ingesta__metadata.py-blueviolet).
 
+ :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
+```
+├── src
+    │
+    ├── __init__.py
+    │
+    │
+    ├── utils    
+    │
+    │
+    ├── etl
+    │   ├── task_almacenamiento.py
+    │   ├── task_ingesta.py 
+    │   ├── task_cleaning.py
+    │   ├── task_feature_engineering.py
+    │   ├── feature_engineering_metadata.py
+    │   ├── cleaning_metadata.py
+    │   ├── almacenamiento_metadata.py
+    |   └── ingesta_metadata.py
+    │
+    │
+    ├── pipeline
+    │
+```
 
-La configuración de cada instancia, así como de la RDS queda fuera del alcance de este readme, solo considere que debe tener acceso a través de Bastión a la EC2 y en la EC2 configurar un ambiente virtual como el que se explicó en la sección (xxx), así como debará clonar este repositorio (como se explica en la sección yyy).
+##
 
-Debido a que ahora utilizaremos RDS para almacenar tablas de los metadatos generados en cada Task (incluyendo almacenamiento e ingesta), debemos tener credenciales que nos permitan entrar a la RDS. Las cuales se incorporarán a nuestro archivo credentials.yaml (ver sección cccc) , el cual se verá ahora de la siguiente forma:
+Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
 
+***MODIFICAR DATOS DE LA INFRAESTRUCTURA***!!!!!!!
+
+![](./images/infr_rqrts.jpg)
+
+<sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
+
+##
+
+**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
+
+***MODIFICAR IMAGEN***!!!!!!!!!!!
+
+![](./images/dag.png)
+
+<sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
+
+##
+
+![](./images/aws_rds.png)
+
+Debido a que ahora utilizaremos *RDS* para almacenar tablas de los metadatos generados en cada *Task*, debemos contar con credenciales que nos permitan entrar a ésta. 
+
+El archivo `credentials.yaml` debe contar con la siguiente estructura:
+
+```
 ---
 s3:
     aws_access_key_id: "de_tu_cuenta_de_AWS"
     aws_secret_access_key: "de_tu_cuenta_de_AWS"
 food_inspections:
-    api_token: "de_tu app_token_del_prerrquisito_1"
-pg_service: #-> OJO FALTA LLENAR ESTA PARTE!
-    user: 
+    api_token: "de_tu app_token_del_chicago_data_portal"
+pg_service:
+    user: "tu_postgres_user"
+    password: "tu_postgres_user_password"
+    host: "direccion_de_tu_RDS.us-west-2.rds.amazonaws.com"
+    port: 5432
+    dbname: "nombre_base_datos" 
 ```
+##
 
-La ejecución del pipeline se realiza mediante las siguientes instrucciones:
+![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange)
 
-1. Desde tu terminal, acceder a la EC2 de tu infraestructura (i.e. ssh -o ServerAliveInterval=60 -i 'llave' 'usuario'@'ec2-34-223-44-201.us-west-2'.compute.amazonaws.com
-2. Activar el ambiente virtual que preciamente se instaló (i.e. pyenv activate itam_dpa)
-3. Posicionarse en la carpeta donde se clonó el repositorio
-4. Ejecutar el comando LuigiTask que se desee correr.
+1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
 
-A continuación se describen de forma general los Tasks de Luigi que hasta el momento se han creado y se da un ejemplo de cómo ejecutar cada uno, así como de los parámetros que utilizan:
+`ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
-Ingesta: Task que se conecta a la BD de Chicago Food Inspections y realiza la consulta deseada.
-         Flags: --flg-i0-c1 (0 para ingesta inicial - 1 para ingesta consecutiva)
-         Comando para su ejecución: Se ejecuta por el Task de Almacenamiento
+2. Clonar el repositorio del proyecto: 
 
-Almacenamiento: Task que toma el archivo .pkl que se genera en el Task de Ingesta y lo almacena en el S3 de AWS.
-         Flags: --year, --month, --day año, mes y día que se quiere hacer la ingesta y almacenamiento.
-         Comando para su ejecución:
+`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1.
+3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
+
+`pyenv install 3.7.4`.
+
+4. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
+
+5. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
+
+6. Posicionarse en la carpeta del repositorio clonado en el paso 2.
+
+7. Activar su ambiente virtual: `pyenv activate itam_dpa`.
+
+8. De ser necesario actualizar el repositorio clonado: `git pull`.
+
+9. Correr: `export PYTHONPATH=$PWD`.
+
+<sub><sup>**NOTA**: Del paso 1 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
+
+<sub><sup>De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`:</sup></sub>
+
+10. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
+
+- `psql -f create_schemas.sql`
+
+- `psql -f create_db.sql`
+
+- `psql -f create_metadata_tables.sql`
+
+11. Correr: `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1`.
+
+Tomar en cuenta:
+
+- Tanto los meses como los días, no llevan un cero antes.
+
+- Después del *flag* se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
+
+- `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
+
+*e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
+
+`PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
+
+Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
+
+***MODIFICAR IMAGEN***!!!!!!!!!!!
+
+![](./images/luigi_task_result.jpg)
+
+---
