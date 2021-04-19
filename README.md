@@ -121,9 +121,7 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ## *Summary* de los datos  :checkered_flag:
 
-***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
-
-![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-215%2C130-important)
+![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-219k-important)
 
 ![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
 
@@ -431,10 +429,6 @@ Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la se
 Este orquestador es la herramienta que nos permite correr nuestro *data pipeline*, definiendo aspectos importantes del cómo, cúando y con qué se debe correr cada proceso.
 
 Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correrán) en el *pipeline*, ***Luigi*** utiliza una estructura de datos llamada ***DAG*** (***Directed Acyclic Graph***). Es una herramienta visual útil y que ilustra de manera clara los procesos que nuestro proyecto sigue.
-
-**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
-
-![](./images/dag.png)
 
 ##
 
