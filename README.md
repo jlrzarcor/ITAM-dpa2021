@@ -216,9 +216,10 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
 ---
+
 ## ¿Cómo reproducir los resultados del *EDA*?  :computer:
 
-Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
+Si usted desea reproducir el *notebook* del *EDA*, lo que tiene que hacer es lo siguiente:
 
 1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando:
  
@@ -504,7 +505,45 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
     │
 ```
 
-##
+## ¿Cómo reproducir los resultados del *Feature Engineering*?  :computer:
+
+Si usted desea reproducir el *notebook* de *Feature Engineering*, lo que tiene que hacer es lo siguiente:
+
+1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando:
+ 
+`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
+
+![Reproducir_FE](https://img.shields.io/badge/PARA%20REPRODUCIR%20LOS%20RESULTADOS%20DE%20NUESTRO-Notebook__de__Feature__Engineering-inactive)
+
+2. Descargar el csv de esta [url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta: `/notebooks/feature_engineering`.
+
+3. **Opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando:
+
+`pyenv virtualenv 3.7.4 nombre_de_tu_environment`.
+
+  Activa el ambiente virtual con el siguiente comando: `pyenv activate nombre_de_tu_environment`
+
+  --> instalar ipykernel<br>
+  `pip install ipykernel`
+
+  --> hacer accesible el ambiente virtual al notebook de jupyter<br>
+  `python -m ipykernel install --user --name nombre_de_tu_environment --display-name nombre_de_tu_environment`
+  
+![Instalar_requirements](https://img.shields.io/badge/C%C3%93MO%20INSTALAR%20NUESTRO-requirements.txt-inactive)
+
+4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando:
+
+`pip install -r requirements.txt`.
+
+5. Abre tu terminal y desde ella entra al directorio raíz de este archivo.
+
+6. Corre el comando `jupyter notebook` (asegúrate de tener activo tu environment).
+
+7. Abre el archivo `Feature_Engineering_Checkpoint4.ipynb` y ya podrás operarlo sin problemas.
+
+---
+
+## *Data Governance*  :round_pushpin:  :ledger:
 
 El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
 
