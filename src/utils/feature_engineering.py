@@ -57,5 +57,14 @@ def feat_eng(df_clean):
                            cv = tscv)
     start_time = time.time()
     gs.fit(X_train, y_train)
+    best_rf = gs.best_estimator_
+    best_score = gs.best_estimator_.oob_score_
+    feature_importance = pd.DataFrame({'importance':\
+                                       best_rf.feature_importances_,\
+                                       'feature': variables_lista})
+    feature_importance=feature_importance.sort_values(by="importance", ascending=False)
+    fi_out = feature_importance.head(10)
+    time_exec = time.time() - start_time
+    train_data_shape = (X_train.shape,y_train.shape)
     print("Tiempo en ejecutar: ", time.time() - start_time)
-    return gs.best_estimator_.oob_score_
+    return best_score,fi_out,time_exec, train_data_shape

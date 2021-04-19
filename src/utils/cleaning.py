@@ -5,9 +5,10 @@ Created on Sat Apr 10 10:44:03 2021
 
 @author: urieluard
 """
+import os
 import pickle
+import datetime 
 import pandas as pd
-import numpy as np
 
 def standarize_column_strings(df, columns, excluded_punctuation=".,*¿?¡!"):
     for col in columns:
@@ -33,6 +34,9 @@ def cleaning(df):
         
     '''
     df = pickle.load(open("ingesta.pkl","rb"))
+    meta_raw_prev = df.shape
+    data_null_prev = df.isnull().sum().sum()
+    data_types_prev = df.dtypes
     # Variables de texto
     df['violations']= df['violations'].astype('object')
     df['violations_count'] = df.violations.str.count(r'\|')+1
@@ -113,5 +117,8 @@ def cleaning(df):
     df2=df2.rename(columns = {'facility_type_x':'facility_type'})
     df2.drop(['inspection_id','dba_name','address','city','state','latitude','longitude','location','facility_type_y','inspection_weekday','inspection_month'],axis = 1, inplace = True)
     pickle.dump(df2,open("df_clean.pkl","wb"))
-    return df2
+    meta_raw_after = df2.shape
+    data_null_after = df2.isnull().sum().sum()
+    data_types_after = df2.dtypes
+    return meta_raw_prev, data_null_prev, data_types_prev, meta_raw_after, data_null_after, data_types_after 
 
