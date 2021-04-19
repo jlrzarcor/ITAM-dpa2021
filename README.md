@@ -127,25 +127,6 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
 
-- **Variables con las que contamos inicialmente**:
-
-**Variable**                 | **Tipo de dato**     | **¿Qué contiene?**
------------------------------| ---------------------| ------------------------------------------------------------------------------------
-*Inspection ID*.             | Número.              | *ID* correspondiente a la inspección.
-*DBA Name*.                  | Texto.               | _'Doing business as'_  Nombre legal del establecimiento.
-*AKA Name*.                  | Texto.               | _'Also known as'_  Nombre público como se conoce al establecimiento.
-*License*.                   | Número.              | Número único asignado al establecimiento con fines de licenciamiento.
-*Facility Type*.             | Texto.               | Cada establecimiento se etiqueta con alguno de los siguientes: *bakery, banquet hall, candy store, caterer, coffee shop, day care center (for ages less than 2), day care center (for ages 2 – 6), day care center (combo, for ages less than 2 and 2 – 6 combined), gas station, Golden Diner, grocery store, hospital, long term care center(nursing home), liquor store, mobile food dispenser, restaurant, paleteria, school,shelter, tavern, social club, wholesaler, or Wrigley Field Rooftop*.
-*Risk*.                      | Texto.               | Cada establecimiento se categoriza de acuerdo al riesgo de afectar la salud pública. 1 el más alto riesgo y 3 el menor. La frecuencia de las inspecciones está ligada a su nivel de riesgo.
-*Address, City, State, Zip*. | Texto.               | Dirección completa donde se localizan las instalaciones.
-*Inspection Date*.           | *Floating Timestamp*.| Fecha de la inspección.
-*Inspection Type*.           | Texto.               | Tipo de inspección, puede ser cualquiera de las siguientes: _canvass_, el tipo de inspección más común realizado con una frecuencia relativa al **riesgo del establecimiento**; _consultation_, es cuando la inspección se realiza por requerimiento del dueño previo a la apertura del establecimiento; _complaint_, se realiza una inspección en respuesta a una queja en contra del establecimiento; _license_, se realiza cuando el establecimiento lo requiere para recibir su licencia para operar; _suspect food poisoning_, se realiza en respuesta a una o más personas que presumiblemente hayan enfermado como resultado de haber comido en el establecimiento; _task-force inspection_, cuando la inspección se realiza a un bar o taverna.
-*Results*.                   | Texto.               | _Pass, pass with conditions, fail, out of business or not located_; '_pass_' implica que no se tienen violaciones críticas o severas (códigos de violación 1-14 y 15-29 respectivamente). '_pass with conditions_', se encontraton violaciones críticas o severas, pero fueron corregidas durante la inspección. '_fail_' implica que se tienen violaciones críticas o severas y que no se corrigieron durante la inspección.
-*Violations*.                | Texto.               |  Un establecimiento puede recibir más de una de las 45 distintas violaciones (código de violación 1 al 44 y 70).
-*Latitude*.                  | Número.              | Latitud del establecimiento.
-*Longitude*.                 | Número.              | Longitud del establecimiento.
-*Location*.                  | *Location*.          | Contiene la coordenada (longitud y latitud) del establecimiento.
-
 ---
 
 ## ¿Qué buscamos contestar con nuestro modelo? 🧐
