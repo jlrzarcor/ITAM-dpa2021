@@ -80,8 +80,6 @@ Para consultar las modificaciones: [***Food Inspection Violations Changes***](ht
 
 ## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
 
-El proyecto será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
-
 ![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-3-brightgreen)
 ![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-4-blue)
 ![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-20%2F04%2F2021-blue)
