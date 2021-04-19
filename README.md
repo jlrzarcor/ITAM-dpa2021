@@ -46,6 +46,8 @@ Integrante | Alumno                         | Clave única
 11. [¿Cómo funciona nuestro proceso de ingestión?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-funciona-nuestro-proceso-de-ingesti%C3%B3n-fork_and_knife) :fork_and_knife:
 12. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
 13. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
+14. [¿Cómo reproducir los resultados del ***Feature Engineering***?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-reproducir-los-resultados-del-feature-engineering--computer)  💻
+15. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
 
 ##
 
@@ -544,6 +546,8 @@ Si usted desea reproducir el *notebook* de *Feature Engineering*, lo que tiene q
 ---
 
 ## *Data Governance*  :round_pushpin:  :ledger:
+
+![](./images/data_gov.png)
 
 El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
 
