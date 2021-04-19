@@ -208,7 +208,34 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ```
 
 ---
-## ¿Cómo reproducir los resultados de este repositorio?  :computer:
+
+## Sobre nuestro ***EDA***   🔵 🟡 :red_circle: 🟢 🟠
+
+<p align = "left">
+    <img src="images/eda.png" width="520" height="250" />
+
+- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
+
+```
+├── notebooks
+    │
+    ├── eda
+    │   ├── EDA_GEDA_Checkpoint1.ipynb <- Notebook used for Checkpoint 1
+    │   ├── chicomm.dbf
+    │   ├── chicomm.prj
+    │   ├── chicomm.shp
+    │   ├── chicomm.shx
+    |   └── itam_logo.png
+    │
+    │
+    ├── feature_engineering 
+    │
+```
+
+- En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
+
+---
+## ¿Cómo reproducir los resultados del *EDA*?  :computer:
 
 Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
 
@@ -243,33 +270,6 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 6. Corre el comando `jupyter notebook` (asegúrate de tener activo tu environment).
 
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
-
----
-
-## Sobre nuestro ***EDA***   🔵 🟡 :red_circle: 🟢 🟠
-
-<p align = "left">
-    <img src="images/eda.png" width="520" height="250" />
-
-- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
-
-```
-├── notebooks
-    │
-    ├── eda
-    │   ├── EDA_GEDA_Checkpoint1.ipynb <- Notebook used for Checkpoint 1
-    │   ├── chicomm.dbf
-    │   ├── chicomm.prj
-    │   ├── chicomm.shp
-    │   ├── chicomm.shx
-    |   └── itam_logo.png
-    │
-    │
-    ├── feature_engineering 
-    │
-```
-
-- En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
 ---
 
