@@ -41,8 +41,8 @@ Integrante | Alumno                         | Clave única
 6. [¿Qué buscamos contestar con nuestro modelo?](https://github.com/jlrzarcor/ITAM-dpa2021#qu%C3%A9-buscamos-contestar-con-nuestro-modelo-) 🧐
 7. [Tomar en cuenta](https://github.com/jlrzarcor/ITAM-dpa2021#tomar-en-cuenta-point_left) :point_left:
 8. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#estructura-b%C3%A1sica-del-proyecto--file_folder) :file_folder:
-9. [¿Cómo reproducir los resultados de este repositorio?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-reproducir-los-resultados-de-este-repositorio--computer) :computer:
-10. [Sobre nuestro ***EDA***](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-eda-----red_circle--) 🔵 🟡 :red_circle: 🟢 🟠
+9. [Sobre nuestro ***EDA***](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-eda-----red_circle--) 🔵 🟡 :red_circle: 🟢 🟠
+10. [¿Cómo reproducir los resultados del ***EDA***?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-reproducir-los-resultados-del-eda--computer) :computer:
 11. [¿Cómo funciona nuestro proceso de ingestión?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-funciona-nuestro-proceso-de-ingesti%C3%B3n-fork_and_knife) :fork_and_knife:
 12. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
 13. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
