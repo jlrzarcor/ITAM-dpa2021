@@ -474,6 +474,16 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 <sub><sup>**NOTA**: Estos métodos son opcionales, excepto 'run()'.</sup></sub>
 
+##
+
+**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
+
+***MODIFICAR IMAGEN***!!!!!!!!!!!
+
+![](./images/dag.png)
+
+<sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
+
 ---
 
 ## Sobre nuestro *Feature Engineering*  :hammer:
@@ -543,16 +553,6 @@ Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada 
 ![](./images/infr_rqrts.jpg)
 
 <sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
-
-##
-
-**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
-
-***MODIFICAR IMAGEN***!!!!!!!!!!!
-
-![](./images/dag.png)
-
-<sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
 
 ##
 
