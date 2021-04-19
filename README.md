@@ -640,7 +640,7 @@ Y en los **módulos** siguientes se integran las funciones que nos permitirán r
 
 ![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task_cleaning.py-9cf), ![Lt4](https://img.shields.io/badge/Task-task_feature__engineering.py-9cf),
 
-![Lt5](https://img.shields.io/badge/Task-feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-cleaning__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-ingesta__metadata.py-blueviolet).
+![Lt5](https://img.shields.io/badge/Task-feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-cleaning__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-task_ingestion_metadata.py-blueviolet).
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -661,7 +661,7 @@ Y en los **módulos** siguientes se integran las funciones que nos permitirán r
     │   ├── feature_engineering_metadata.py
     │   ├── cleaning_metadata.py
     │   ├── almacenamiento_metadata.py
-    |   └── ingesta_metadata.py
+    |   └── task_ingestion_metadata.py
     │
     │
     ├── pipeline
