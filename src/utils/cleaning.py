@@ -67,21 +67,7 @@ def cleaning(df):
     df['sin_wkd'] = np.sin(2*np.pi*df.inspection_weekday/WEEKDAY)
     df['cos_wkd'] = np.cos(2*np.pi*df.inspection_weekday/WEEKDAY)
     # Etiqueta
-    df_np1 = df[df['results'] == 'Fail']
-    df_np1['label_results'] = 0
-    df_np2 = df[df['results'] == 'Pass']
-    df_np2['label_results'] = 1
-    df_np3 = df[df['results'] == 'Pass w/ Conditions']
-    df_np3['label_results'] = 1
-    df_np4 = df[df['results'] == 'Business Not Located']
-    df_np4['label_results'] = 2
-    df_np5 = df[df['results'] == 'No Entry']
-    df_np5['label_results'] = 2
-    df_np6 = df[df['results'] == 'Not Ready']
-    df_np6['label_results'] = 2
-    df_np7 = df[df['results'] == 'Out of Business']
-    df_np7['label_results'] = 2
-    df = df_np1.append(df_np2).append(df_np3).append(df_np4).append(df_np5).append(df_np6).append(df_np7)
+    df['label_results'] = df['results'].apply(lambda x: 0 if x == 'Fail' else (1 if x in ['Pass','Pass w/Conditions'] else 2))
     # Imputación de datos
     df.drop(['violations'],axis = 1, inplace = True)
     df.drop(['results'], axis = 1, inplace = True)
