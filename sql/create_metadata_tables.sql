@@ -47,10 +47,11 @@ COMMENT ON TABLE metadata.cleaning IS 'Almacena metadata de la bd limpia';
 
 DROP TABLE IF EXISTS metadata.fe;
 CREATE TABLE metadata.fe (
+  nrows_ohe int,
+  ncols_ohe int,
   best_score real,
-  fi_out json,
   time_exec real,
-  df_shape varchar(10)
+  best_rf text
 );
 COMMENT ON TABLE metadata.fe IS 'Almacena metadata de feature engineering';
 
