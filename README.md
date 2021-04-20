@@ -614,7 +614,7 @@ pg_service:
 
 ## ¿Cómo ejecutar nuestro *pipeline*? ⚒️ 🚀 
 
-![L_pre](https://img.shields.io/badge/Luigi%20pipeline-Prerequisitos-red)
+![L_pre](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20ejecutar%20nuestro%20pipeline%3F-Prerrequisitos-yellow)
 
 - Tener creada la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
 
@@ -628,7 +628,7 @@ INSERTAR ESTRUCTURA DE .pg_service.conf
 
 ##
 
-![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange) 
+![Lt1_2](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20ejecutar%20nuestro%20pipeline%3F-Pasos-orange) 
 
 1. Tener en ejecución la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
 
