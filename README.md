@@ -197,7 +197,7 @@ Integrante | Alumno                         | Clave única
 
 ---
 
-## ¿Cómo reproducir los resultados del *EDA*?  :computer:
+### ¿Cómo reproducir los resultados del *EDA*?  :computer:
 
 Si usted desea reproducir el *notebook* del *EDA*, lo que tiene que hacer es lo siguiente:
 
@@ -485,7 +485,7 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
     │
 ```
 
-## ¿Cómo reproducir los resultados del *Feature Engineering*?  :computer:
+### ¿Cómo reproducir los resultados del *Feature Engineering*?  :computer:
 
 Si usted desea reproducir el *notebook* de *Feature Engineering*, lo que tiene que hacer es lo siguiente:
 
