@@ -60,7 +60,7 @@ Integrante | Alumno                         | Clave única
 
 - Las inspecciones se realizan por personal del Chicago Department of Public Health’s Food Protection Program siguiendo un procedimiento estandarizado.
 
-### *Summary* de los datos  :checkered_flag:
+### *Summary* de los datos  :checkered_flag: ![Actualizacion_Summary](https://img.shields.io/badge/Informaci%C3%B3n%20actualizada%20hasta%20el%20-19%2F04%2F2021-green)
 
 ![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-219k-important)
 
