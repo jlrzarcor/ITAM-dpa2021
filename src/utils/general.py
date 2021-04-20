@@ -67,3 +67,30 @@ def get_api_token(credentials_file):
     token = read_yaml(credentials_file)['food_inspections']
     
     return token
+
+
+# ================================= FUNCTION 4 ================================= #
+
+def get_pg_service(credentials_file):
+    """
+    Lee el archivo credentials.yaml y devuelve las credenciales 
+    del Role de RDS para la base de Chicago Food Inspections.
+    Se requiere que el archivo credentials.yaml contenga la siguiente 
+    información:
+    pg_service:
+        user= -docstring-
+        password= -docstring-
+        host= -docstring-
+        port= 5432
+        dbname= -docstring-
+    
+    inputs:
+        credentials_file: archivo con extensión .yaml
+    outputs:
+        Diccionario con las credenciales de la RDS
+    """
+    
+    pg_service = read_yaml(credentials_file)['pg_service']
+    
+    return pg_service
+
