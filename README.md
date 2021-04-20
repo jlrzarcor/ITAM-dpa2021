@@ -37,17 +37,14 @@ Integrante | Alumno                         | Clave única
 2. [¿Cómo está dividido nuestro proyecto?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-est%C3%A1-dividido-nuestro-proyecto---date-pushpin) :date: :pushpin:
 3. [¿Qué lenguaje utlizamos?](https://github.com/jlrzarcor/ITAM-dpa2021#qu%C3%A9-lenguaje-utlizamos-pen) :pen:
 4. [¿Qué *IDE* utlizamos?](https://github.com/jlrzarcor/ITAM-dpa2021#qu%C3%A9-ide-utlizamos--) 🪐 📓
-5. [*Summary* de los datos](https://github.com/jlrzarcor/ITAM-dpa2021#summary-de-los-datos--checkered_flag) :checkered_flag:
-6. [¿Qué buscamos contestar con nuestro modelo?](https://github.com/jlrzarcor/ITAM-dpa2021#qu%C3%A9-buscamos-contestar-con-nuestro-modelo-) 🧐
-7. [Tomar en cuenta](https://github.com/jlrzarcor/ITAM-dpa2021#tomar-en-cuenta-point_left) :point_left:
-8. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#estructura-b%C3%A1sica-del-proyecto--file_folder) :file_folder:
-9. [Sobre nuestro ***EDA***](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-eda-----red_circle--) 🔵 🟡 :red_circle: 🟢 🟠
-10. [¿Cómo reproducir los resultados del ***EDA***?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-reproducir-los-resultados-del-eda--computer) :computer:
-11. [¿Cómo funciona nuestro proceso de ingestión?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-funciona-nuestro-proceso-de-ingesti%C3%B3n-fork_and_knife) :fork_and_knife:
-12. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
-13. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
-14. [¿Cómo reproducir los resultados del ***Feature Engineering***?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-reproducir-los-resultados-del-feature-engineering--computer)  💻
-15. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
+5. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#estructura-b%C3%A1sica-del-proyecto--file_folder) :file_folder:
+6. [Sobre nuestro ***EDA***](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-eda-----red_circle--) 🔵 🟡 :red_circle: 🟢 🟠
+7. [¿Cómo reproducir los resultados del ***EDA***?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-reproducir-los-resultados-del-eda--computer) :computer:
+8. [¿Cómo funciona nuestro proceso de ingestión?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-funciona-nuestro-proceso-de-ingesti%C3%B3n-fork_and_knife) :fork_and_knife:
+9. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
+10. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
+11. [¿Cómo reproducir los resultados del ***Feature Engineering***?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-reproducir-los-resultados-del-feature-engineering--computer)  💻
+12. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
 
 ##
 
@@ -67,6 +64,21 @@ Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data
 * **Descripción:**  
   * La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en Chicago desde 01/01/2010 hasta la actualidad.
   * Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
+
+## *Summary* de los datos  :checkered_flag:
+
+![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-219k-important)
+
+![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
+
+## ¿Qué buscamos contestar con nuestro modelo? 🧐
+![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
+
+## Tomar en cuenta :point_left:
+
+![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
+
+![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos-Semanal-orange)
 
 ---
 
@@ -110,25 +122,6 @@ Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data
 
 <p align = "left">
     <img src="images/jn_logo.png" width="300" height="300" />
-
----
-
-## *Summary* de los datos  :checkered_flag:
-
-![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-219k-important)
-
-![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
-
----
-
-## ¿Qué buscamos contestar con nuestro modelo? 🧐
-![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
-
-## Tomar en cuenta :point_left:
-
-![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
-
-![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos-Semanal-orange)
 
 ---
 
