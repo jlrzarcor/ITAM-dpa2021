@@ -485,7 +485,8 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
     │
     │
     ├── feature_engineering
-    |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
+    │   ├── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
+    |   └── itam_logo.png
     │
 ```
 
@@ -572,6 +573,8 @@ Y en los **módulos** siguientes se integran las funciones que nos permitirán r
 ```
 
 ##
+
+## Infraestructura *AWS*
 
 Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
 
