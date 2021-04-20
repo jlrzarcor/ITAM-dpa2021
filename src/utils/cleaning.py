@@ -71,7 +71,7 @@ def cleaning(df):
     # Imputación de datos
     df.drop(['violations'],axis = 1, inplace = True)
     df.drop(['results'], axis = 1, inplace = True)
-    df.drop(df.loc[df['license'].isnull()].index, inplace=True)
+    df.drop(df.loc[df['license_'].isnull()].index, inplace=True)
     df.drop(df.loc[df['zip'].isnull()].index, inplace=True)
     df.drop(df.loc[df['label_results'] == 2].index, inplace=True)
     df['aka_name'] = df['aka_name'].fillna(df['dba_name'])
