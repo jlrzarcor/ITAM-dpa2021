@@ -17,10 +17,10 @@ zip varchar(10),
 inspection_date date,
 inspection_type varchar(60),
 violations_count int,
-label_results int,
 sin_mnth real,
 cos_mnth real,
 sin_wkd real,
-cos_wkd real
+cos_wkd real,
+label_results int
 );
 COMMENT ON TABLE procdata.limpieza IS 'Almacena en RDS la BD limpia';

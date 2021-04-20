@@ -29,14 +29,18 @@ COMMENT ON TABLE metadata.test IS 'Almacena metadata de los datos ingestados';
 
 DROP TABLE IF EXISTS metadata.cleaning;
 CREATE TABLE metadata.cleaning (
-  num_registros_antes_limpieza int,
-  num_registros_despues_limpieza int,
-  valores_nulos int,
-  tamano_df_limpio int,
-  fecha_ejecucion date,
-  executer varchar(10)
+  exec_date date,
+  exec_param json,
+  executer varchar(10),
+  source_path text,
+  nrows_prev int,
+  ncols_prev int,
+  nrows_after int,
+  ncols_after int,
+  nulls int
 );
 COMMENT ON TABLE metadata.cleaning IS 'Almacena metadata de la bd limpia';
+
 
 
 /* ================================= metadata feature engineering ================================= */
