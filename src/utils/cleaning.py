@@ -1,13 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr 10 10:44:03 2021
 
-@author: urieluard
-"""
 import os
 import pickle
-import datetime 
+import datetime
+import numpy as np 
 import pandas as pd
 
 def standarize_column_strings(df, columns, excluded_punctuation=".,*¿?¡!"):
@@ -33,6 +28,7 @@ def cleaning(df):
     outputs: Data Frame con las variables en formato adecuado (df_clean.pkl)
         
     '''
+    df = pickle.load(open("ingesta.pkl","rb"))
     meta_raw_prev = df.shape
     data_null_prev = df.isnull().sum().sum()
     data_types_prev = df.dtypes
@@ -119,5 +115,5 @@ def cleaning(df):
     meta_raw_after = df2.shape
     data_null_after = df2.isnull().sum().sum()
     data_types_after = df2.dtypes
-    return meta_raw_prev, data_null_prev, data_types_prev, meta_raw_after, data_null_after, data_types_after 
+    return df2, meta_raw_prev, data_null_prev, data_types_prev, meta_raw_after, data_null_after, data_types_after 
 
