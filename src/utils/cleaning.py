@@ -33,7 +33,6 @@ def cleaning(df):
     outputs: Data Frame con las variables en formato adecuado (df_clean.pkl)
         
     '''
-    df = pickle.load(open("ingesta.pkl","rb"))
     meta_raw_prev = df.shape
     data_null_prev = df.isnull().sum().sum()
     data_types_prev = df.dtypes
