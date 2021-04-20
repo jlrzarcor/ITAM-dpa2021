@@ -468,7 +468,9 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 ![](./images/dag.png)
 
-<sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
+<sup><sub>**NOTA 1**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
+
+<sup><sub>**NOTA 2**: Ver ["¿Cómo ejecutar nuestro *pipeline*?"](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) para poder ejecutar nuestros *tasks*.</sup></sub>
 
 ---
 
@@ -658,6 +660,8 @@ para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
 9. De ser necesario actualizar el repositorio clonado: `git pull`.
 
+<sub><sup>**NOTA**: Del paso 1 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
+
 10. Declar las variables de entorno con los comandos:
 
 ```
@@ -667,9 +671,7 @@ export PGSERVICE=nombre_de_tu_service
 
 11. Correr: `export PYTHONPATH=$PWD`.
 
-<sub><sup>**NOTA**: Del paso 1 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
-
-10. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
+12. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
 
 ```
 psql -f create_schemas.sql
@@ -677,7 +679,7 @@ psql -f create_db.sql
 psql -f create_metadata_tables.sql
 ```
 
-11. Correr: 
+13. Correr: 
 
 ```
 PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1
