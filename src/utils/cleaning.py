@@ -82,6 +82,7 @@ def cleaning(df):
     df['inspection_type']= df['inspection_type'].astype(str).str.lower()
     df = df[~df['state'].isin(['wi', 'ny', 'in'])]
     col_text = ['dba_name','aka_name']
+    df.rename(columns={'license_':'license'}, inplace=True)
     standarize_column_strings(df, col_text)
     df_dict_dummy = pd.DataFrame(df['aka_name'])
     df_dict_dummy['facility_type'] = df['facility_type']
@@ -101,4 +102,3 @@ def cleaning(df):
     nrows_after = df2.shape[0]
     ncols_after = df2.shape[1]
     return df2, nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev
-
