@@ -195,7 +195,7 @@ Integrante | Alumno                         | Clave única
 
 - En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
 
----
+##
 
 ### ¿Cómo reproducir los resultados del *EDA*?  :computer:
 
@@ -484,6 +484,8 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
     |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
     │
 ```
+
+##
 
 ### ¿Cómo reproducir los resultados del *Feature Engineering*?  :computer:
 
