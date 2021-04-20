@@ -113,5 +113,5 @@ def cleaning(df):
     pickle.dump(df2,open("df_clean.pkl","wb"))
     meta_raw_after = str(df2.shape[0])
     tamano_limpio = str(df2.shape[1])
-    return df2, meta_raw_prev, meta_raw_after, data_null_prev 
+    return df2, meta_raw_prev, meta_raw_after, data_null_prev, tamano_limpio
 
