@@ -464,8 +464,6 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 **Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
-***MODIFICAR IMAGEN***!!!!!!!!!!!
-
 ![](./images/dag.png)
 
 <sup><sub>**NOTA 1**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
@@ -701,9 +699,7 @@ PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-sc
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
-***MODIFICAR IMAGEN***!!!!!!!!!!!
-
-![](./images/luigi_task_result.jpg)
+![](./images/luigi_task_result8.png)
 
 <sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 4.</sup></sub>
 
