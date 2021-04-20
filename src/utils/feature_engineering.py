@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr 10 11:12:36 2021
-
-@author: urieluard
-"""
 import pickle
 import pandas as pd
 import numpy as np
@@ -12,7 +5,7 @@ import time
 from sklearn.model_selection import TimeSeriesSplit, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 
-def feat_eng(df_clean):
+def feat_eng(df_fe):
     '''
     Función que realiza la selección de los features que serán utilizdos para la clasificación
     
@@ -20,8 +13,7 @@ def feat_eng(df_clean):
     outputs: Data Frame con la matriz de diseño para el modelo (df_clean.pkl)
         
     '''
-    df_fe = pickle.load(open("df_clean.pkl","rb"))
-    
+     
     # Transformación a OHE
     df_fe = df_fe.sort_values(by='inspection_date', ascending=True)
     df_input = pd.DataFrame(df_fe[['label_risk','label_results','zip','facility_type']])
