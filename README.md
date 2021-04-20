@@ -574,7 +574,7 @@ Y en los **módulos** siguientes se integran las funciones que nos permitirán r
 
 ##
 
-## Infraestructura *AWS*
+### Infraestructura *AWS*
 
 Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
 
