@@ -52,29 +52,26 @@ Integrante | Alumno                         | Clave única
 
 ![](./images/cdp.png)
 
-Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
+- Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
 ![](./images/chicago_summary.jpg)
 
-<sup><sub>**NOTA**: *Screenshot* tomado el sábado 16 de enero. El número de observaciones probablemente será mayor.</sup></sub>
+- La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en *Chicago* desde el 01/01/2010.
 
-#### Conocimiento a priori de la información:
-* **_Title:_** *Food Inspections*
+- Las inspecciones se realizan por personal del Chicago Department of Public Health’s Food Protection Program siguiendo un procedimiento estandarizado.
 
-* **Descripción:**  
-  * La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en Chicago desde 01/01/2010 hasta la actualidad.
-  * Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
+<sup><sub>**NOTA**: *Screenshot* tomado el sábado 16 de enero de 2021, por lo que el número de observaciones de la base de datos probablemente ya sea mayor.</sup></sub>
 
-## *Summary* de los datos  :checkered_flag:
+### *Summary* de los datos  :checkered_flag:
 
 ![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-219k-important)
 
 ![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
 
-## ¿Qué buscamos contestar con nuestro modelo? 🧐
+### ¿Qué buscamos contestar con nuestro modelo? 🧐
 ![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
 
-## Tomar en cuenta :point_left:
+### Tomar en cuenta :point_left:
 
 ![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
 
