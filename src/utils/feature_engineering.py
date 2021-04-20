@@ -60,4 +60,4 @@ def feat_eng(df_fe):
     nrows_ohe = data_input_ohe.shape[0]
     ncols_ohe = data_input_ohe.shape[1]
     #print("Tiempo en ejecutar: ", time.time() - start_time)
-    return data_input_ohe, nrows_ohe, ncols_ohe, float(best_score), time_exec, str(best_rf)
+    return df_input, nrows_ohe, ncols_ohe, float(best_score), time_exec, str(best_rf)
