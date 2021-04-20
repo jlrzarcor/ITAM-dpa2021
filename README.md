@@ -670,14 +670,20 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ---
 
-![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange)
+## ¿Cómo ejecutar nuestro *pipeline*? ⚒️ 🚀 
 
 ![L_pre](https://img.shields.io/badge/Luigi%20pipeline-Prerequisitos-red)
 
 - Tener creada la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
 
+- Actualizar el [archivo *credentials.yaml*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#archivo-credentialsyaml) con las claves adecuadas.
 
+- Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
 
+```
+INSERTAR ESTRUCTURA DE .pg_service.conf
+```
 
+##
 
-
+![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange) 
