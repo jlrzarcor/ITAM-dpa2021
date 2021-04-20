@@ -462,7 +462,41 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 ##
 
-**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
+En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* y *tasks* de *metadata*:
+
+![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task_cleaning.py-9cf), ![Lt4](https://img.shields.io/badge/Task-task_feature__engineering.py-9cf),
+
+![Lt5](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-task__cleaning__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet).
+
+ :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
+
+```
+├── src
+    │
+    ├── __init__.py
+    │
+    │
+    ├── utils    
+    │
+    │
+    ├── etl
+    │   ├── task_almacenamiento.py
+    │   ├── task_ingesta.py 
+    │   ├── task_cleaning.py
+    │   ├── task_feature_engineering.py
+    │   ├── feature_engineering_metadata.py
+    │   ├── cleaning_metadata.py
+    │   ├── almacenamiento_metadata.py
+    |   └── task_ingestion_metadata.py
+    │
+    │
+    ├── pipeline
+    │
+```
+
+##
+
+**Y así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
 ![](./images/dag.png)
 
@@ -535,43 +569,29 @@ Si usted desea reproducir el *notebook* de *Feature Engineering*, lo que tiene q
 
 ![](./images/data_gov.png)
 
-El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
+Tiene la función de diseñar y garantizar los estándares que asuguren el flujo de información constante y calidad a través de los sistemas y fuentes de la empresa.
+
+El Gobierno de Datos conforma una unidad que funciona de forma coordinada para aumentar la eficiencia en el uso y gestión de la información.
+
+Se ocupa de:
+
+- Cumplir los objetivos relacionados con los datos de la empresa.
+
+- Gestión y administración de los datos como un activo estratégico de la organización.
+
+- Cumplimiento eficiente a reducir costos.
+
+- Planificar, establecer procesos, desarrollos y supervisar la gestión de datos para un uso óptimo.
+
+- Encontrar la tecnología adecuada para cubrir las distintas necesidades.
+
+##
+
+En este paso incorporamos dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
 
 La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
 ![](./images/md_str.jpg)
-
-Y en los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
-
-![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task_cleaning.py-9cf), ![Lt4](https://img.shields.io/badge/Task-task_feature__engineering.py-9cf),
-
-![Lt5](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-task__cleaning__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet).
-
- :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
-
-```
-├── src
-    │
-    ├── __init__.py
-    │
-    │
-    ├── utils    
-    │
-    │
-    ├── etl
-    │   ├── task_almacenamiento.py
-    │   ├── task_ingesta.py 
-    │   ├── task_cleaning.py
-    │   ├── task_feature_engineering.py
-    │   ├── feature_engineering_metadata.py
-    │   ├── cleaning_metadata.py
-    │   ├── almacenamiento_metadata.py
-    |   └── task_ingestion_metadata.py
-    │
-    │
-    ├── pipeline
-    │
-```
 
 ##
 
