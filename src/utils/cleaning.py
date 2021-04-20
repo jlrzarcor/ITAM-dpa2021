@@ -28,9 +28,10 @@ def cleaning(df):
     outputs: Data Frame con las variables en formato adecuado (df_clean.pkl)
         
     '''
-    df = pickle.load(open("ingesta.pkl","rb"))
-    meta_raw_prev = str(df.shape)
-    data_null_prev = str(df.isnull().sum().sum())
+    #df = pickle.load(open("ingesta.pkl","rb"))
+    nrows_prev = df.shape[0]
+    ncols_prev = df.shape[1]
+    data_null_prev = df.isnull().sum().sum()
     # Variables de texto
     df['violations']= df['violations'].astype('object')
     df['violations_count'] = df.violations.str.count(r'\|')+1
@@ -110,8 +111,8 @@ def cleaning(df):
     df2['facility_type_x'] = df2['facility_type_x'].fillna('restaurant')
     df2=df2.rename(columns = {'facility_type_x':'facility_type'})
     df2.drop(['inspection_id','dba_name','address','city','state','latitude','longitude','location','facility_type_y','inspection_weekday','inspection_month'],axis = 1, inplace = True)
-    pickle.dump(df2,open("df_clean.pkl","wb"))
-    meta_raw_after = str(df2.shape[0])
-    tamano_limpio = str(df2.shape[1])
-    return df2, meta_raw_prev, meta_raw_after, data_null_prev, tamano_limpio
+    #pickle.dump(df2,open("df_clean.pkl","wb"))
+    nrows_after = df2.shape[0]
+    ncols_after = df2.shape[1]
+    return df2, nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev
 
