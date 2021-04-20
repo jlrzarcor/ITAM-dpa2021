@@ -4,9 +4,7 @@
  * Script: Create tables for clean and processed data...
  */
 
-
-
-/* ================================= metadata task cleaning ================================= */
+/* ================================= procesamiento task cleaning ================================= */
 DROP TABLE IF EXISTS procdata.limpieza;
 CREATE TABLE procdata.limpieza (
 aka_name varchar(90),
@@ -24,3 +22,13 @@ cos_wkd real,
 label_results int
 );
 COMMENT ON TABLE procdata.limpieza IS 'Almacena en RDS la BD limpia';
+
+/* ================================= procesamiento task Feature Engineering ================================= */
+DROP TABLE IF EXISTS procdata.feat_eng;
+CREATE TABLE procdata.feat_eng (
+label_risk int,
+label_results int,
+zip varchar(10),
+facility_type text
+);
+COMMENT ON TABLE procdata.limpieza IS 'Almacena en RDS la BD con las variables del FE';
