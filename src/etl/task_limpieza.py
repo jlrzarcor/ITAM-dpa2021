@@ -18,7 +18,7 @@ from io import BytesIO
 
 # importing custom libraries
 import src.utils.constants as ks
-from src.utils.general2 import get_pg_service
+from src.utils.general import get_pg_service
 import src.pipeline.ingesta_almacenamiento as ial
 
 # Requires...
