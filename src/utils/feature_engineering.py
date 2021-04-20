@@ -55,8 +55,9 @@ def feat_eng(df_fe):
                                        best_rf.feature_importances_,\
                                        'feature': variables_lista})
     feature_importance=feature_importance.sort_values(by="importance", ascending=False)
-    fi_out = feature_importance.head(10)
+    #fi_out = feature_importance.head(10)
     time_exec = time.time() - start_time
-    train_data_shape = (X_train.shape,y_train.shape)
-    print("Tiempo en ejecutar: ", time.time() - start_time)
-    return best_score,fi_out,time_exec, train_data_shape
+    nrows_ohe = data_input_ohe.shape[0]
+    ncols_ohe = data_input_ohe.shape[1]
+    #print("Tiempo en ejecutar: ", time.time() - start_time)
+    return data_input_ohe, nrows_ohe, ncols_ohe, float(best_score), time_exec, str(best_rf)
