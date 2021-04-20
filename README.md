@@ -43,6 +43,7 @@ Integrante | Alumno                         | Clave única
 8. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
 9. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
 10. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
+11. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) 🛠️ 🚀
 
 ---
 
@@ -608,33 +609,59 @@ pg_service:
     port: 5432
     dbname: "nombre_base_datos" 
 ```
+
+---
+
+## ¿Cómo ejecutar nuestro *pipeline*? ⚒️ 🚀 
+
+![L_pre](https://img.shields.io/badge/Luigi%20pipeline-Prerequisitos-red)
+
+- Tener creada la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
+
+- Actualizar el [archivo *credentials.yaml*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#archivo-credentialsyaml) con las claves adecuadas.
+
+- Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
+
+```
+INSERTAR ESTRUCTURA DE .pg_service.conf
+```
+
 ##
 
-![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange)
+![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange) 
 
-1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
+1. Tener en ejecución la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
+
+2. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr:
 
 `ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
-2. Clonar el repositorio del proyecto: 
+3. Clonar el repositorio del proyecto: 
 
 `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
+4. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
 
 `pyenv install 3.7.4`.
 
-4. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
+5. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
 
-5. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
+6. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
 
-6. Posicionarse en la carpeta del repositorio clonado en el paso 2.
+7. Posicionarse en la carpeta del repositorio clonado en el paso 3.
 
-7. Activar su ambiente virtual: `pyenv activate itam_dpa`.
+8. Activar su ambiente virtual: `pyenv activate itam_dpa`.
 
-8. De ser necesario actualizar el repositorio clonado: `git pull`.
+9. De ser necesario actualizar el repositorio clonado: `git pull`.
 
-9. Correr: `export PYTHONPATH=$PWD`.
+10. Declar las variables de entorno con los comandos:
+
+```
+export PGSERVICEFILE=${HOME}/.pg_service.conf
+export PGSERVICE=nombre_de_tu_service
+```
+
+11. Correr: `export PYTHONPATH=$PWD`.
 
 <sub><sup>**NOTA**: Del paso 1 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
 
@@ -669,21 +696,3 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 <sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 4.</sup></sub>
 
 ---
-
-## ¿Cómo ejecutar nuestro *pipeline*? ⚒️ 🚀 
-
-![L_pre](https://img.shields.io/badge/Luigi%20pipeline-Prerequisitos-red)
-
-- Tener creada la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
-
-- Actualizar el [archivo *credentials.yaml*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#archivo-credentialsyaml) con las claves adecuadas.
-
-- Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
-
-```
-INSERTAR ESTRUCTURA DE .pg_service.conf
-```
-
-##
-
-![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange) 
