@@ -29,7 +29,7 @@ Integrante | Alumno                         | Clave única
 🌟  ![Stars](https://img.shields.io/badge/Stars-4-blue/?logo=GitHub&style=social)
 🔌  ![fork](https://img.shields.io/badge/Fork-2-blue/?logo=GitHub&style=social)
 
-##
+---
 
 ## Tabla de contenido  :floppy_disk:
 
@@ -44,7 +44,7 @@ Integrante | Alumno                         | Clave única
 9. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
 10. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
 
-##
+---
 
 ## Acerca de este proyecto  :globe_with_meridians:
 
@@ -108,6 +108,8 @@ Integrante | Alumno                         | Clave única
 [***Python.org***](https://www.python.org/)
 
 ![](./images/python-logo.png)
+
+---
 
 ## ¿Qué *IDE* utlizamos? 🪐 📓
 
@@ -656,8 +658,6 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 ***MODIFICAR IMAGEN***!!!!!!!!!!!
 
 ![](./images/luigi_task_result.jpg)
-
-##
 
 <sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 4.</sup></sub>
 
