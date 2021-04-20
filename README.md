@@ -590,6 +590,8 @@ Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada 
 
 Debido a que ahora utilizaremos *RDS* para almacenar tablas de los metadatos generados en cada *Task*, debemos contar con credenciales que nos permitan entrar a ésta. 
 
+### Archivo *credentials.yaml*
+
 El archivo `credentials.yaml` debe contar con la siguiente estructura:
 
 ```
@@ -667,3 +669,15 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 <sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 4.</sup></sub>
 
 ---
+
+![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange)
+
+![L_pre](https://img.shields.io/badge/Luigi%20pipeline-Prerequisitos-red)
+
+- Tener creada la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
+
+
+
+
+
+
