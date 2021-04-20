@@ -634,7 +634,11 @@ INSERTAR ESTRUCTURA DE .pg_service.conf
 
 2. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr:
 
-`ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
+```
+ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com
+``` 
+
+para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
 3. Clonar el repositorio del proyecto: 
 
@@ -667,13 +671,17 @@ export PGSERVICE=nombre_de_tu_service
 
 10. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
 
-- `psql -f create_schemas.sql`
+```
+psql -f create_schemas.sql
+psql -f create_db.sql
+psql -f create_metadata_tables.sql
+```
 
-- `psql -f create_db.sql`
+11. Correr: 
 
-- `psql -f create_metadata_tables.sql`
-
-11. Correr: `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1`.
+```
+PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1
+```
 
 Tomar en cuenta:
 
@@ -685,7 +693,9 @@ Tomar en cuenta:
 
 *e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
 
-`PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
+```
+PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0
+```
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
