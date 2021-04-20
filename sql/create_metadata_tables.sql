@@ -4,8 +4,6 @@
  * Script: Create tables for metadata...
  */
 
-
-
 /* ================================= metadata task ingestion ================================= */
 
 DROP TABLE IF EXISTS metadata.ingestion;
@@ -15,19 +13,25 @@ CREATE TABLE metadata.ingestion (
   usuario varchar(10),
   num_regs_ing int
 );
-COMMENT ON TABLE metadata.ingestion IS 'Almacena metadata de los datos ingestados';
+COMMENT ON TABLE metadata.ingestion IS 'Almacena metadata de los datos ingestados de la API Chicago Food Inspections';
 
-/* ================================ testing tables ================================= */
-/* To deprecate */
-DROP TABLE IF EXISTS metadata.test;
-CREATE TABLE metadata.test (
-  num_regs_ing int
+
+/* ================================= metadata task almacenamiento ================================= */
+
+DROP TABLE IF EXISTS metadata.almacenamiento;
+CREATE TABLE metadata.almacenamiento (
+fecha date,
+param_exec json,
+usuario varchar(10),
+num_regs_almac int,
+ruta_S3 text
 );
-COMMENT ON TABLE metadata.test IS 'Almacena metadata de los datos ingestados';
+COMMENT ON TABLE metadata.almacenamiento IS 'Almacena metadata de raw data';
 
-/* ================================= metadata cleaning ================================= */
 
-DROP TABLE IF EXISTS metadata.cleaning;
+/* ================================= metadata task limpieza y procesamiento ================================= */
+
+DROP TABLE IF EXISTS metadata.limpieza;
 CREATE TABLE metadata.cleaning (
   exec_date date,
   exec_param json,
@@ -43,10 +47,14 @@ COMMENT ON TABLE metadata.cleaning IS 'Almacena metadata de la bd limpia';
 
 
 
-/* ================================= metadata feature engineering ================================= */
+/* ================================= metadata task feature engineering ================================= */
 
-DROP TABLE IF EXISTS metadata.fe;
+DROP TABLE IF EXISTS metadata.feat_eng;
 CREATE TABLE metadata.fe (
+  exec_date date,
+  exec_param json,
+  executer varchar(10),
+  source_path text,
   nrows_ohe int,
   ncols_ohe int,
   best_score real,
@@ -54,16 +62,3 @@ CREATE TABLE metadata.fe (
   best_rf text
 );
 COMMENT ON TABLE metadata.fe IS 'Almacena metadata de feature engineering';
-
-
-/* ================================= metadata almacenamiento ================================= */
-
-DROP TABLE IF EXISTS metadata.almacenamiento;
-CREATE TABLE metadata.almacenamiento (
-fecha date,
-param_exec json,
-usuario varchar(10),
-num_regs_almac int,
-ruta_S3 text
-);
-COMMENT ON TABLE metadata.almacenamiento IS 'Almacena metadata de raw data';
