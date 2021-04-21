@@ -691,7 +691,11 @@ dbname=chicagofoodinsp
 
 <sup><sub>**NOTA**: *'alias_ servicio'* es el identificador de las credenciales especificadas de servicio.</sup></sub>
 
-El cual se debe colocar en el directorio raíz de la instancia *EC*2.
+El cual se debe colocar en el directorio raíz de la instancia *EC*2:
+
+```
+> Directorio del archivo en sistema: ~/.pg_service.conf
+```
 
 ##
 
