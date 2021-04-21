@@ -621,8 +621,6 @@ Se ocupa de:
 
 ##
 
-En este paso incorporamos dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
-
 La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
 ![](./images/md_str.jpg)
