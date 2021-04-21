@@ -13,7 +13,7 @@ from datetime import datetime
 
 # importing custom libraries
 import src.utils.constants as ks
-from src.utils.general2 import get_pg_service
+from src.utils.general import get_pg_service
 
 # Requires...
 from src.etl.task_limpieza import TaskCleaning

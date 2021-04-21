@@ -43,6 +43,7 @@ Integrante | Alumno                         | Clave única
 8. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
 9. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
 10. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
+11. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) 🛠️ 🚀
 
 ---
 
@@ -77,6 +78,10 @@ Integrante | Alumno                         | Clave única
 
 ![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos-Semanal-orange)
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
@@ -101,6 +106,10 @@ Integrante | Alumno                         | Clave única
 - :red_circle:  *Checkpoint* 9:  *API*. 
 - :red_circle:  *Checkpoint* 10: *Dashboard*.
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## ¿Qué lenguaje utlizamos? :pen:
@@ -110,6 +119,10 @@ Integrante | Alumno                         | Clave única
 [***Python.org***](https://www.python.org/)
 
 ![](./images/python-logo.png)
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -121,6 +134,10 @@ Integrante | Alumno                         | Clave única
 
 <p align = "left">
     <img src="images/jn_logo.png" width="300" height="300" />
+    
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -171,6 +188,10 @@ Integrante | Alumno                         | Clave única
     ├── pipeline  <- Functions used for the pipeline.
     |   └── ingesta_almacenamiento.py 
 ```
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -236,6 +257,10 @@ Si usted desea reproducir el *notebook* del *EDA*, lo que tiene que hacer es lo 
 6. Corre el comando `jupyter notebook` (asegúrate de tener activo tu environment).
 
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -390,6 +415,10 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 
 <sub><sup>**NOTA**: A partir del ***Checkpoint*** **3** la función 'guardar_ingesta' queda *deprecated*. Debido a que se encuentra contenida en el *pipeline* de *Luigi*.</sup></sub>
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## Sobre nuestro *Data Pipeline*  :microscope:
@@ -461,13 +490,51 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 ##
 
-**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
+En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* y *tasks* de *metadata*:
 
-***MODIFICAR IMAGEN***!!!!!!!!!!!
+![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task__limpieza.py-9cf), ![Lt4](https://img.shields.io/badge/Task-task__feature__engineering.py-9cf),
+
+![Lt5](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-task__limpieza__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet).
+
+ :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
+
+```
+├── src
+    │
+    ├── __init__.py
+    │
+    │
+    ├── utils    
+    │
+    │
+    ├── etl
+    │   ├── task_almacenamiento.py
+    │   ├── task_ingesta.py 
+    │   ├── task_limpieza.py
+    │   ├── task_feature_engineering.py
+    │   ├── task_feature_engineering_metadata.py
+    │   ├── task_limpieza_metadata.py
+    │   ├── task_almacenamiento_metadata.py
+    |   └── task_ingestion_metadata.py
+    │
+    │
+    ├── pipeline
+    │
+```
+
+##
+
+**Y así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
 ![](./images/dag.png)
 
-<sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
+<sup><sub>**NOTA 1**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
+
+<sup><sub>**NOTA 2**: Ver ["¿Cómo ejecutar nuestro *pipeline*?"](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) para poder ejecutar nuestros *tasks*.</sup></sub>
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -485,7 +552,8 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
     │
     │
     ├── feature_engineering
-    |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
+    │   ├── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
+    |   └── itam_logo.png
     │
 ```
 
@@ -527,57 +595,47 @@ Si usted desea reproducir el *notebook* de *Feature Engineering*, lo que tiene q
 
 7. Abre el archivo `Feature_Engineering_Checkpoint4.ipynb` y ya podrás operarlo sin problemas.
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## *Data Governance*  :round_pushpin:  :ledger:
 
 ![](./images/data_gov.png)
 
-El siguiente paso en nuestro proyecto consiste en incorporar dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
+Tiene la función de diseñar y garantizar los estándares que asuguren el flujo de información constante y calidad a través de los sistemas y fuentes de la empresa.
+
+El Gobierno de Datos conforma una unidad que funciona de forma coordinada para aumentar la eficiencia en el uso y gestión de la información.
+
+Se ocupa de:
+
+- Cumplir los objetivos relacionados con los datos de la empresa.
+
+- Gestión y administración de los datos como un activo estratégico de la organización.
+
+- Cumplimiento eficiente a reducir costos.
+
+- Planificar, establecer procesos, desarrollos y supervisar la gestión de datos para un uso óptimo.
+
+- Encontrar la tecnología adecuada para cubrir las distintas necesidades.
+
+##
+
+En este paso incorporamos dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
 
 La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
 ![](./images/md_str.jpg)
 
-Y en los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
-
-![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task_cleaning.py-9cf), ![Lt4](https://img.shields.io/badge/Task-task_feature__engineering.py-9cf),
-
-![Lt5](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-task__cleaning__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet).
-
- :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
-
-```
-├── src
-    │
-    ├── __init__.py
-    │
-    │
-    ├── utils    
-    │
-    │
-    ├── etl
-    │   ├── task_almacenamiento.py
-    │   ├── task_ingesta.py 
-    │   ├── task_cleaning.py
-    │   ├── task_feature_engineering.py
-    │   ├── feature_engineering_metadata.py
-    │   ├── cleaning_metadata.py
-    │   ├── almacenamiento_metadata.py
-    |   └── task_ingestion_metadata.py
-    │
-    │
-    ├── pipeline
-    │
-```
-
 ##
+
+### Infraestructura *AWS*
 
 Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
 
-***MODIFICAR DATOS DE LA INFRAESTRUCTURA***!!!!!!!
-
-![](./images/infr_rqrts.jpg)
+![](./images/infr_rqrts.jpeg)
 
 <sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
 
@@ -587,7 +645,9 @@ Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada 
 
 Debido a que ahora utilizaremos *RDS* para almacenar tablas de los metadatos generados en cada *Task*, debemos contar con credenciales que nos permitan entrar a ésta. 
 
-El archivo `credentials.yaml` debe contar con la siguiente estructura:
+### Actualización archivo *credentials.yaml*
+
+El archivo `credentials.yaml` debe actualizarse para contener la siguiente estructura:
 
 ```
 ---
@@ -603,45 +663,96 @@ pg_service:
     port: 5432
     dbname: "nombre_base_datos" 
 ```
+
 ##
 
-![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange)
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
-1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
+---
 
-`ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
+## ¿Cómo ejecutar nuestro *pipeline*? ⚒️ 🚀 
 
-2. Clonar el repositorio del proyecto: 
+![L_pre](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20ejecutar%20nuestro%20pipeline%3F-Prerrequisitos-yellow)
+
+- Tener creada la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
+
+- Actualizar el [archivo *credentials.yaml*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#actualizaci%C3%B3n-archivo-credentialsyaml) con las claves adecuadas.
+
+- Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
+
+```
+[alias_servicio]
+user=user_rol_postgres
+password=password_user_rol
+host=end_point_user_RDS
+port=5432
+dbname=chicagofoodinsp
+```
+
+<sup><sub>**NOTA**: *'alias_ servicio'* es el identificador de las credenciales especificadas de servicio.</sup></sub>
+
+El cual se debe colocar en el directorio raíz de la instancia *EC*2:
+
+```
+> Directorio del archivo en sistema: ~/.pg_service.conf
+```
+
+##
+
+![Lt1_2](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20ejecutar%20nuestro%20pipeline%3F-Pasos-orange) 
+
+1. Tener en ejecución la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
+
+2. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr:
+
+```
+ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com
+``` 
+
+para conectarse a la instancia *EC2* (*i.e.* su bastión).
+
+3. Clonar el repositorio del proyecto: 
 
 `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
+4. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
 
 `pyenv install 3.7.4`.
 
-4. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
+5. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
 
-5. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
+6. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
 
-6. Posicionarse en la carpeta del repositorio clonado en el paso 2.
+7. Posicionarse en la carpeta del repositorio clonado en el paso 3.
 
-7. Activar su ambiente virtual: `pyenv activate itam_dpa`.
+8. Activar su ambiente virtual: `pyenv activate itam_dpa`.
 
-8. De ser necesario actualizar el repositorio clonado: `git pull`.
+9. De ser necesario actualizar el repositorio clonado: `git pull`.
 
-9. Correr: `export PYTHONPATH=$PWD`.
+<sub><sup>**NOTA**: Del paso 2 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
 
-<sub><sup>**NOTA**: Del paso 1 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
+10. Declar las variables de entorno con los comandos:
 
-10. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
+```
+export PGSERVICEFILE=${HOME}/.pg_service.conf
+export PGSERVICE=nombre_de_tu_service
+export PYTHONPATH=$PWD
+```
 
-- `psql -f create_schemas.sql`
+11. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
 
-- `psql -f create_db.sql`
+```
+psql -f create_db.sql
+psql -f create_schemas.sql
+psql -f create_metadata_tables.sql
+psql -f create_procdata_tables.sql
+```
 
-- `psql -f create_metadata_tables.sql`
+12. En este punto ya se ejecutan los *tasks* de *Luigi*; iniciando por el último: 
 
-11. Correr: `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1`.
+```
+PYTHONPATH="." luigi --module 'src.etl.task_feature_engineering_metadata' TaskFeatEngMeta --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1
+```
 
 Tomar en cuenta:
 
@@ -651,16 +762,20 @@ Tomar en cuenta:
 
 - `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
 
-*e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
+*e.g.* Si queremos hacer la **ingesta inicial** del 5 de marzo de 2020 debemos correr:
 
-`PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
+```
+PYTHONPATH="." luigi --module 'src.etl.task_feature_engineering_metadata' TaskFeatEngMeta --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0
+```
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
-***MODIFICAR IMAGEN***!!!!!!!!!!!
-
-![](./images/luigi_task_result.jpg)
+![](./images/luigi_task_result8.png)
 
 <sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 4.</sup></sub>
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
