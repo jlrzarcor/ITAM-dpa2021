@@ -78,6 +78,10 @@ Integrante | Alumno                         | Clave única
 
 ![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos-Semanal-orange)
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
@@ -102,6 +106,10 @@ Integrante | Alumno                         | Clave única
 - :red_circle:  *Checkpoint* 9:  *API*. 
 - :red_circle:  *Checkpoint* 10: *Dashboard*.
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## ¿Qué lenguaje utlizamos? :pen:
@@ -111,6 +119,10 @@ Integrante | Alumno                         | Clave única
 [***Python.org***](https://www.python.org/)
 
 ![](./images/python-logo.png)
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -122,6 +134,10 @@ Integrante | Alumno                         | Clave única
 
 <p align = "left">
     <img src="images/jn_logo.png" width="300" height="300" />
+    
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -172,6 +188,10 @@ Integrante | Alumno                         | Clave única
     ├── pipeline  <- Functions used for the pipeline.
     |   └── ingesta_almacenamiento.py 
 ```
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -237,6 +257,10 @@ Si usted desea reproducir el *notebook* del *EDA*, lo que tiene que hacer es lo 
 6. Corre el comando `jupyter notebook` (asegúrate de tener activo tu environment).
 
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -391,6 +415,10 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 
 <sub><sup>**NOTA**: A partir del ***Checkpoint*** **3** la función 'guardar_ingesta' queda *deprecated*. Debido a que se encuentra contenida en el *pipeline* de *Luigi*.</sup></sub>
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## Sobre nuestro *Data Pipeline*  :microscope:
@@ -504,6 +532,10 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 <sup><sub>**NOTA 2**: Ver ["¿Cómo ejecutar nuestro *pipeline*?"](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) para poder ejecutar nuestros *tasks*.</sup></sub>
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## Sobre nuestro *Feature Engineering*  :hammer:
@@ -563,6 +595,10 @@ Si usted desea reproducir el *notebook* de *Feature Engineering*, lo que tiene q
 
 7. Abre el archivo `Feature_Engineering_Checkpoint4.ipynb` y ya podrás operarlo sin problemas.
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## *Data Governance*  :round_pushpin:  :ledger:
@@ -611,7 +647,7 @@ Debido a que ahora utilizaremos *RDS* para almacenar tablas de los metadatos gen
 
 ### Actualización archivo *credentials.yaml*
 
-El archivo `credentials.yaml` debe actualizar para contener con la siguiente estructura:
+El archivo `credentials.yaml` debe actualizarse para contener la siguiente estructura:
 
 ```
 ---
@@ -627,6 +663,10 @@ pg_service:
     port: 5432
     dbname: "nombre_base_datos" 
 ```
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -726,5 +766,9 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 ![](./images/luigi_task_result8.png)
 
 <sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 4.</sup></sub>
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
