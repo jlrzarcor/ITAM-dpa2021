@@ -510,11 +510,11 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     ├── etl
     │   ├── task_almacenamiento.py
     │   ├── task_ingesta.py 
-    │   ├── task_cleaning.py
+    │   ├── task_limpieza.py
     │   ├── task_feature_engineering.py
-    │   ├── feature_engineering_metadata.py
-    │   ├── cleaning_metadata.py
-    │   ├── almacenamiento_metadata.py
+    │   ├── task_feature_engineering_metadata.py
+    │   ├── task_limpieza_metadata.py
+    │   ├── task_almacenamiento_metadata.py
     |   └── task_ingestion_metadata.py
     │
     │
@@ -748,10 +748,10 @@ psql -f create_metadata_tables.sql
 psql -f create_procdata_tables.sql
 ```
 
-12. Correr: 
+12. En este punto ya se ejecutan los *tasks* de *Luigi*; iniciando por el último: 
 
 ```
-PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1
+PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' Task --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1
 ```
 
 Tomar en cuenta:
@@ -765,7 +765,7 @@ Tomar en cuenta:
 *e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
 
 ```
-PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0
+PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' task_feature_engineering.py --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0
 ```
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
