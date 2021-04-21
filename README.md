@@ -599,9 +599,7 @@ La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
 Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
 
-***MODIFICAR DATOS DE LA INFRAESTRUCTURA***!!!!!!!
-
-![](./images/infr_rqrts.jpg)
+![](./images/infr_rqrts.jpeg)
 
 <sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
 
@@ -643,7 +641,11 @@ pg_service:
 - Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
 
 ```
-INSERTAR ESTRUCTURA DE .pg_service.conf
+user=user_rol_postgres
+password=password_user_rol
+host=end_point_user_RDS
+port=5432
+dbname=chicagofoodinsp
 ```
 
 El cual se debe colocar en el directorio raíz de la instancia *EC*2.
