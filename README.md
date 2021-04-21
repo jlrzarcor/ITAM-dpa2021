@@ -541,7 +541,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 <p align = "left">
     <img src="images/fe.png" width="400" height="200" />
     
-- En la ruta `notebooks/feature_engineering/Feature_Engineering_Checkpoint4.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 4*** del proyecto.
+- En la ruta `notebooks/feature_engineering/Feature_Engineering2.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 4*** del proyecto.
 
 ```
 ├── notebooks
@@ -550,7 +550,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │
     │
     ├── feature_engineering
-    │   ├── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
+    │   ├── Feature_Engineering2.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
     |   └── itam_logo.png
     │
 ```
@@ -633,7 +633,9 @@ Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada 
 
 ![](./images/infr_rqrts.jpeg)
 
-<sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
+<sup><sub>**NOTA 1**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
+
+<sup><sub>**NOTA 2**: En la versión final del *README* esta estructura se indicará donde se hable de los requerimientos de *S3*.</sup></sub>
 
 ##
 
