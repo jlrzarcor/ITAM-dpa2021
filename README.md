@@ -681,12 +681,15 @@ pg_service:
 - Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
 
 ```
+[alias_servicio]
 user=user_rol_postgres
 password=password_user_rol
 host=end_point_user_RDS
 port=5432
 dbname=chicagofoodinsp
 ```
+
+<sup><sub>**NOTA**: *'alias_ servicio'* es el identificador de las credenciales especificadas de servicio.</sup></sub>
 
 El cual se debe colocar en el directorio raíz de la instancia *EC*2.
 
