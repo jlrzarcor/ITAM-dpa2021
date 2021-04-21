@@ -492,9 +492,7 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* y *tasks* de *metadata*:
 
-![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt3](https://img.shields.io/badge/Task-task__limpieza.py-9cf), ![Lt4](https://img.shields.io/badge/Task-task__feature__engineering.py-9cf),
-
-![Lt5](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet), ![Lt6](https://img.shields.io/badge/Task-task__limpieza__metadata.py-blueviolet), ![Lt7](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet) y ![Lt8](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet).
+![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt8](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet), ![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt7](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet), ![Lt3](https://img.shields.io/badge/Task-task__limpieza.py-9cf), ![Lt6](https://img.shields.io/badge/Task-task__limpieza__metadata.py-blueviolet), ![Lt4](https://img.shields.io/badge/Task-task__feature__engineering.py-9cf) y ![Lt5](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet).
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -622,8 +620,6 @@ Se ocupa de:
 - Encontrar la tecnología adecuada para cubrir las distintas necesidades.
 
 ##
-
-En este paso incorporamos dos actividades más: ![Lt3](https://img.shields.io/badge/Task-cleaning.py-9cf) y ![Lt4](https://img.shields.io/badge/Task-feature__engineering.py-9cf), así como guardar la *metadata* de cada uno de los *tasks* en *RDS*. 
 
 La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
