@@ -646,6 +646,8 @@ pg_service:
 INSERTAR ESTRUCTURA DE .pg_service.conf
 ```
 
+El cual se debe colocar en el directorio raíz de la instancia *EC*2.
+
 ##
 
 ![Lt1_2](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20ejecutar%20nuestro%20pipeline%3F-Pasos-orange) 
