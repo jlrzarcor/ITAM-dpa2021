@@ -4,4 +4,4 @@
  * Script: Create CFI dabase...
  */
 
-CREATE DATABASE db_cfi;
+CREATE DATABASE db_chicago_food_insp;
