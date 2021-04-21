@@ -636,7 +636,7 @@ pg_service:
 
 - Tener creada la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
 
-- Actualizar el [archivo *credentials.yaml*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#archivo-credentialsyaml) con las claves adecuadas.
+- Actualizar el [archivo *credentials.yaml*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#actualizaci%C3%B3n-archivo-credentialsyaml) con las claves adecuadas.
 
 - Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
 
