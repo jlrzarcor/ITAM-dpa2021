@@ -742,9 +742,10 @@ export PYTHONPATH=$PWD
 11. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
 
 ```
-psql -f create_schemas.sql
 psql -f create_db.sql
+psql -f create_schemas.sql
 psql -f create_metadata_tables.sql
+psql -f create_procdata_tables.sql
 ```
 
 12. Correr: 
