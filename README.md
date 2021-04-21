@@ -609,9 +609,9 @@ Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada 
 
 Debido a que ahora utilizaremos *RDS* para almacenar tablas de los metadatos generados en cada *Task*, debemos contar con credenciales que nos permitan entrar a ésta. 
 
-### Archivo *credentials.yaml*
+### Actualización archivo *credentials.yaml*
 
-El archivo `credentials.yaml` debe contar con la siguiente estructura:
+El archivo `credentials.yaml` debe actualizar para contener con la siguiente estructura:
 
 ```
 ---
