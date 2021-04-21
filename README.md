@@ -762,7 +762,7 @@ Tomar en cuenta:
 
 - `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
 
-*e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
+*e.g.* Si queremos hacer la **ingesta inicial** del 5 de marzo de 2020 debemos correr:
 
 ```
 PYTHONPATH="." luigi --module 'src.etl.task_feature_engineering_metadata' TaskFeatEngMeta --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0
