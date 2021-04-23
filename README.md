@@ -86,11 +86,11 @@ Integrante | Alumno                         | Clave única
 
 ## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
 
-![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-3-brightgreen)
-![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-4-blue)
-![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-20%2F04%2F2021-blue)
-![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-5-yellow)
-![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-6-red)
+![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-4-brightgreen)
+![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-5-blue)
+![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-27%2F04%2F2021-blue)
+![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-6-yellow)
+![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-5-red)
 
 - :white_check_mark:  *Checkpoint* 1:  *Starting point*.
 
@@ -98,9 +98,9 @@ Integrante | Alumno                         | Clave única
 
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
 - :white_check_mark:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
-- 🔵 :soon:  *Checkpoint* 4:  *Feature engineering*.
-- :yellow_circle:  *Checkpoint* 5:  Entrenamiento.
-- :red_circle:  *Checkpoint* 6:  *Bias & Fairness*.
+- :white_check_mark:  *Checkpoint* 4:  *Feature engineering*.
+- 🔵 :soon:  *Checkpoint* 5:  Entrenamiento.
+- :yellow_circle:  *Checkpoint* 6:  *Bias & Fairness*.
 - :red_circle:  *Checkpoint* 7:  Predicción.
 - :red_circle:  *Checkpoint* 8:  Interpretabilidad.
 - :red_circle:  *Checkpoint* 9:  *API*. 
