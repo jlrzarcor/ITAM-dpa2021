@@ -623,7 +623,7 @@ Se ocupa de:
 
 La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
-![](./images/md_str.jpg)
+![](./images/md_str.jpeg)
 
 ##
 
