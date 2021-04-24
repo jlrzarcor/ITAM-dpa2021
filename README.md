@@ -28,6 +28,7 @@ Integrante | Alumno                         | Clave única
 👀  ![Watching](https://img.shields.io/badge/Watching-3-blue/?logo=GitHub&style=social)
 🌟  ![Stars](https://img.shields.io/badge/Stars-4-blue/?logo=GitHub&style=social)
 🔌  ![fork](https://img.shields.io/badge/Fork-2-blue/?logo=GitHub&style=social)
+👥 👥 ![contributors](https://img.shields.io/badge/Contributors-4-blue/?logo=GitHub&style=social)
 
 ---
 
