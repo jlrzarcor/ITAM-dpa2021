@@ -492,7 +492,17 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* y *tasks* de *metadata*:
 
-![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt8](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet), ![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt7](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet), ![Lt3](https://img.shields.io/badge/Task-task__limpieza.py-9cf), ![Lt6](https://img.shields.io/badge/Task-task__limpieza__metadata.py-blueviolet), ![Lt4](https://img.shields.io/badge/Task-task__feature__engineering.py-9cf) y ![Lt5](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet).
+- ![Lt1](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingestion__unittest.py-blue), ![Lt3](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet)
+
+- ![Lt4](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt5](https://img.shields.io/badge/Task-task__almacenamiento__unittest.py-blue), ![Lt6](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet)
+
+- ![Lt7](https://img.shields.io/badge/Task-task__limpieza.py-9cf), ![Lt8](https://img.shields.io/badge/Task-task__limpieza__unittest.py-blue), ![Lt9](https://img.shields.io/badge/Task-task__limpieza__metadata.py-blueviolet)
+
+- ![Lt10](https://img.shields.io/badge/Task-task__feature__engineering.py-9cf), ![Lt11](https://img.shields.io/badge/Task-task__feature__engineering__unittest.py-blue), ![Lt12](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet)
+
+- ![Lt13](https://img.shields.io/badge/Task-task__entrenamiento.py-9cf), ![Lt14](https://img.shields.io/badge/Task-task__entrenamiento__unittest.py-blue), ![Lt15](https://img.shields.io/badge/Task-task__entrenamiento__metadata.py-blueviolet)
+
+- ![Lt16](https://img.shields.io/badge/Task-task__seleccion__modelo.py-9cf), ![Lt17](https://img.shields.io/badge/Task-task__seleccion__modelo__unittest.py-blue), ![Lt18](https://img.shields.io/badge/Task-task__seleccion__modelo__metadata.py-blueviolet)
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -510,10 +520,20 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │   ├── task_ingesta.py 
     │   ├── task_limpieza.py
     │   ├── task_feature_engineering.py
+    │   ├── task__entrenamiento.py
+    │   ├── task__seleccion_modelo.py
+    │   ├── task_almacenamiento_unittest.py
+    │   ├── task_ingesta_unittest.py 
+    │   ├── task_limpieza_unittest.py
+    │   ├── task_feature_engineering_unittest.py
+    │   ├── task__entrenamiento_unittest.py
+    │   ├── task__seleccion_modelo_unittest.py
     │   ├── task_feature_engineering_metadata.py
     │   ├── task_limpieza_metadata.py
     │   ├── task_almacenamiento_metadata.py
-    |   └── task_ingestion_metadata.py
+    │   ├── task_ingestion_metadata.py
+    │   ├── task__entrenamiento_metadata.py
+    |   └── task__seleccion_modelo_metadata.py
     │
     │
     ├── pipeline
