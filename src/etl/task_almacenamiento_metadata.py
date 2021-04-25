@@ -54,7 +54,7 @@ class TaskStoreMeta(CopyToTable):
 
     
     # RDS database table columns
-    columns = [("fecha", "date"), ("param_exec", "json"), ("usurio", "varchar"), ("num_regs_almac", "int"),("ruta_S3", "text")]
+    columns = [("fecha", "date"), ("param_exec", "json"), ("usuario", "varchar"), ("num_regs_almac", "int"),("ruta_S3", "text")]
 
     def rows(self):
         str_file = str(datetime.date(datetime(self.year, self.month, self.day))) + ".csv"

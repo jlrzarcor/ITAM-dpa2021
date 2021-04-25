@@ -28,6 +28,7 @@ Integrante | Alumno                         | Clave única
 👀  ![Watching](https://img.shields.io/badge/Watching-3-blue/?logo=GitHub&style=social)
 🌟  ![Stars](https://img.shields.io/badge/Stars-4-blue/?logo=GitHub&style=social)
 🔌  ![fork](https://img.shields.io/badge/Fork-2-blue/?logo=GitHub&style=social)
+👥  ![contributors](https://img.shields.io/badge/Contributors-4-blue/?logo=GitHub&style=social)
 
 ---
 
@@ -63,7 +64,7 @@ Integrante | Alumno                         | Clave única
 
 ### *Summary* de los datos  :checkered_flag: 
 
-![Actualizacion_Summary](https://img.shields.io/badge/Informaci%C3%B3n%20actualizada%20hasta%20el%20-19%2F04%2F2021-green)
+![Actualizacion_Summary](https://img.shields.io/badge/Informaci%C3%B3n%20actualizada%20hasta%20el%20-27%2F04%2F2021-green)
 
 ![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-219k-important)
 
@@ -86,11 +87,11 @@ Integrante | Alumno                         | Clave única
 
 ## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
 
-![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-3-brightgreen)
-![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-4-blue)
-![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-20%2F04%2F2021-blue)
-![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-5-yellow)
-![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-6-red)
+![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-4-brightgreen)
+![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-5-blue)
+![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-27%2F04%2F2021-blue)
+![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-6-yellow)
+![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-5-red)
 
 - :white_check_mark:  *Checkpoint* 1:  *Starting point*.
 
@@ -98,9 +99,9 @@ Integrante | Alumno                         | Clave única
 
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
 - :white_check_mark:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
-- 🔵 :soon:  *Checkpoint* 4:  *Feature engineering*.
-- :yellow_circle:  *Checkpoint* 5:  Entrenamiento.
-- :red_circle:  *Checkpoint* 6:  *Bias & Fairness*.
+- :white_check_mark:  *Checkpoint* 4:  *Feature engineering*.
+- 🔵 :soon:  *Checkpoint* 5:  Entrenamiento.
+- :yellow_circle:  *Checkpoint* 6:  *Bias & Fairness*.
 - :red_circle:  *Checkpoint* 7:  Predicción.
 - :red_circle:  *Checkpoint* 8:  Interpretabilidad.
 - :red_circle:  *Checkpoint* 9:  *API*. 
@@ -492,7 +493,17 @@ Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los sigui
 
 En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* y *tasks* de *metadata*:
 
-![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt8](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet), ![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt7](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet), ![Lt3](https://img.shields.io/badge/Task-task__limpieza.py-9cf), ![Lt6](https://img.shields.io/badge/Task-task__limpieza__metadata.py-blueviolet), ![Lt4](https://img.shields.io/badge/Task-task__feature__engineering.py-9cf) y ![Lt5](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet).
+- ![Lt1](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingestion__unittest.py-blue), ![Lt3](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet)
+
+- ![Lt4](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt5](https://img.shields.io/badge/Task-task__almacenamiento__unittest.py-blue), ![Lt6](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet)
+
+- ![Lt7](https://img.shields.io/badge/Task-task__limpieza.py-9cf), ![Lt8](https://img.shields.io/badge/Task-task__limpieza__unittest.py-blue), ![Lt9](https://img.shields.io/badge/Task-task__limpieza__metadata.py-blueviolet)
+
+- ![Lt10](https://img.shields.io/badge/Task-task__feature__engineering.py-9cf), ![Lt11](https://img.shields.io/badge/Task-task__feature__engineering__unittest.py-blue), ![Lt12](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet)
+
+- ![Lt13](https://img.shields.io/badge/Task-task__entrenamiento.py-9cf), ![Lt14](https://img.shields.io/badge/Task-task__entrenamiento__unittest.py-blue), ![Lt15](https://img.shields.io/badge/Task-task__entrenamiento__metadata.py-blueviolet)
+
+- ![Lt16](https://img.shields.io/badge/Task-task__seleccion__modelo.py-9cf), ![Lt17](https://img.shields.io/badge/Task-task__seleccion__modelo__unittest.py-blue), ![Lt18](https://img.shields.io/badge/Task-task__seleccion__modelo__metadata.py-blueviolet)
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -510,10 +521,20 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │   ├── task_ingesta.py 
     │   ├── task_limpieza.py
     │   ├── task_feature_engineering.py
+    │   ├── task__entrenamiento.py
+    │   ├── task__seleccion_modelo.py
+    │   ├── task_almacenamiento_unittest.py
+    │   ├── task_ingesta_unittest.py 
+    │   ├── task_limpieza_unittest.py
+    │   ├── task_feature_engineering_unittest.py
+    │   ├── task__entrenamiento_unittest.py
+    │   ├── task__seleccion_modelo_unittest.py
     │   ├── task_feature_engineering_metadata.py
     │   ├── task_limpieza_metadata.py
     │   ├── task_almacenamiento_metadata.py
-    |   └── task_ingestion_metadata.py
+    │   ├── task_ingestion_metadata.py
+    │   ├── task__entrenamiento_metadata.py
+    |   └── task__seleccion_modelo_metadata.py
     │
     │
     ├── pipeline
@@ -541,7 +562,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 <p align = "left">
     <img src="images/fe.png" width="400" height="200" />
     
-- En la ruta `notebooks/feature_engineering/Feature_Engineering_Checkpoint4.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 4*** del proyecto.
+- En la ruta `notebooks/feature_engineering/Feature_Engineering2.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 4*** del proyecto.
 
 ```
 ├── notebooks
@@ -550,7 +571,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │
     │
     ├── feature_engineering
-    │   ├── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
+    │   ├── Feature_Engineering2.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
     |   └── itam_logo.png
     │
 ```
@@ -623,7 +644,7 @@ Se ocupa de:
 
 La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
-![](./images/md_str.jpg)
+![](./images/md_str.jpeg)
 
 ##
 
@@ -633,7 +654,9 @@ Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada 
 
 ![](./images/infr_rqrts.jpeg)
 
-<sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
+<sup><sub>**NOTA 1**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
+
+<sup><sub>**NOTA 2**: En la versión final del *README* esta estructura se indicará donde se hable de los requerimientos de *S3*.</sup></sub>
 
 ##
 
