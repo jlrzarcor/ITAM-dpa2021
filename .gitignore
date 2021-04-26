@@ -141,3 +141,4 @@ dmypy.json
 notebooks_2
 conf/local/**
 uard/**
+notebooks/*.pkl

@@ -17,4 +17,10 @@ def train(df_fe):
     nrows_test = X_test.shape[0]
     meta_train = pd.DataFrame({'nrows_train' : nrows_train,
                            'nrows_test' : nrows_test}, index = [0])
-    return X_train, y_train, X_test, y_test, nrows_train, nrows_test
+    # Hacemos un solo DF para los Datasets de Entrenamiento y Prueba y con la etiqueta
+    X_train_1 = X_train_1.assign(Set = 'entrenamiento')
+    X_train_1 = X_train_1.assign(etiqueta = y_train)
+    X_test_1 = X_test_1.assign(Set = 'prueba')
+    X_test_1 = X_test_1.assign(etiqueta = y_test)
+    df_train_test = pd.concat([X_train_1, X_test_1], axis = 0)
+    return df_train_test, nrows_train, nrows_test
