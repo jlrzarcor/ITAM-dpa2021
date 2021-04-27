@@ -16,7 +16,7 @@ import src.utils.constants as ks
 from src.utils.general import get_pg_service
 
 # Requires...
-from src.etl.task_limpieza import TaskCleaning
+from src.etl.task_limpieza_unit_test import TaskCleaningUnitTest
 
 ### ---->>> Review in all pipeline remove unnecesary
 #from src.etl.task_ingestion_metadata import TaskIngestMeta
@@ -42,7 +42,7 @@ class TaskCleaningMeta(CopyToTable):
     flg_i0_c1 = luigi.IntParameter(default = 1)
     
     def requires(self):
-        return TaskCleaning(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)
+        return TaskCleaningUnitTest(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)
 
 
     # RDS database connection
