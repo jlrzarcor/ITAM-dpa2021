@@ -16,7 +16,7 @@ import src.utils.constants as ks
 from src.utils.general import get_pg_service
 
 # Requires...
-from src.etl.task_feature_engineering import TaskFeatEng
+from src.etl.task_feature_engineering_unit_test import TaskFeatEngUnitTest
 
 
 # ================================= LUIGI TASK ================================= #
@@ -37,7 +37,7 @@ class  TaskFeatEngMeta(CopyToTable):
     flg_i0_c1 = luigi.IntParameter(default = 1)
 
     def requires(self):
-        return  TaskFeatEng(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)
+        return  TaskFeatEngUnitTest(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)
 
     # RDS database connection
     pg = get_pg_service(ks.path)
