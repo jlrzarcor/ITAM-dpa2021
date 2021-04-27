@@ -2,6 +2,7 @@ from sklearn.model_selection import GridSearchCV, TimeSeriesSplit
 from sklearn.tree import DecisionTreeClassifier
 import time
 import pandas as pd
+import pickle
 
 def model(df_train_test):
     # Funciones para regresar el DataFrame con las etiquetas y los sets de entrenamiento y 
@@ -33,10 +34,23 @@ def model(df_train_test):
         gs.fit(X_train, y_train)
         #best estimator
         best_estimators.append(gs)
+    
+    # MEtadata:
     # Mejor modelo de árbol
     best_tree = best_estimators[0].best_estimator_
     # Tiempo de ejecución
     t_exec = time.time() - start_time
-    # Metadata de los modelos considerados en la selección
-    models = pd.DataFrame(grid_search_dict)
-    return best_tree, t_exec #, models
+    # Información de los modelos considerados en la selección
+    r = pd.DataFrame(best_estimators[0].cv_results_)
+    r = r.sort_values("rank_test_score")
+    lista = r.params.astype(str)
+    test_mod = "|".join(lista)
+    lista_2 = r.mean_test_score.astype(str)
+    mean_scores = "|".join(lista_2)
+    lista_3 = r.rank_test_score.astype(str)
+    rank_model = "|".join(lista_3)
+    # Persistir mejor modelo en .pkl
+    best_tree.fit(X_train, y_train)
+    pickle.dump(best_tree, open("best_model.pkl", 'wb'))
+    model_pkl = pickle.load(open("best_model.pkl","rb"))
+    return model_pkl, best_tree, t_exec, test_mod, mean_scores, rank_model

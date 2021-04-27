@@ -30,6 +30,7 @@ class TestIngest(marbles.core.TestCase):
         print(data)
         df = pd.read_json(data)
         t_exec = df.t_exec[0]
+        param_texec = 1
         
         try:
             self.assertGreater(t_exec, param_texec, note = "El procesamiento tardó más del tiempo esperado")

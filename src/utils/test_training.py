@@ -29,10 +29,11 @@ class TestIngest(marbles.core.TestCase):
         data = pd.read_csv('src/test/trans_file.csv', header = None).iloc[0,0]
         print(data)
         df = pd.read_json(data)
-        max_label = max(df.etiqueta)
+        n_labels = len(df.etiqueta.value_counts())
+        param_label = 2
         
         try:
-            self.assertGreater(max_label, param_label, note = "La etiqueta de la matriz de entrenamiento \
+            self.assertGreater(n_labels, param_label, note = "La etiqueta de la matriz de entrenamiento \
                                                                no es binaria")
             self.status = "TestPassed :)"
             self.test_meth = "Labels ok"
