@@ -23,13 +23,13 @@ def model(df_train_test):
     best_estimators = []
     # Magic loop
     tscv = TimeSeriesSplit(n_splits=3)
+    start_time = time.time()
     for algorithm in algorithms:
         estimator = estimators_dict[algorithm]
         grid_search_to_look = algorithms_dict[algorithm]
         grid_params = grid_search_dict[grid_search_to_look]
         gs = GridSearchCV(estimator, grid_params, scoring='precision', cv=tscv, n_jobs=-1)
         #train
-        start_time = time.time()
         gs.fit(X_train, y_train)
         #best estimator
         best_estimators.append(gs)
@@ -39,4 +39,4 @@ def model(df_train_test):
     t_exec = time.time() - start_time
     # Metadata de los modelos considerados en la selección
     models = pd.DataFrame(grid_search_dict)
-    return best_tree, t_exec, models
+    return best_tree, t_exec #, models
