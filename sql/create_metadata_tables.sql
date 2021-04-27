@@ -20,11 +20,11 @@ COMMENT ON TABLE metadata.ingestion IS 'Almacena metadata de los datos ingestado
 
 DROP TABLE IF EXISTS metadata.almacenamiento;
 CREATE TABLE metadata.almacenamiento (
-fecha date,
-param_exec json,
-usuario varchar(10),
-num_regs_almac int,
-ruta_S3 text
+  fecha date,
+  param_exec json,
+  usuario varchar(10),
+  num_regs_almac int,
+  ruta_S3 text
 );
 COMMENT ON TABLE metadata.almacenamiento IS 'Almacena metadata de raw data';
 
@@ -62,3 +62,18 @@ CREATE TABLE metadata.fe (
   best_rf text
 );
 COMMENT ON TABLE metadata.fe IS 'Almacena metadata de feature engineering';
+
+
+
+/* ================================= metadata test tasks passed ================================= */
+
+DROP TABLE IF EXISTS metadata.unittest;
+CREATE TABLE metadata.unittest (
+  test_meth varchar(17),
+  test_stat varchar(17),
+  test_msg varchar(23),
+  exec_date date,
+  exec_param json,
+  executer varchar(10)
+);
+COMMENT ON TABLE metadata.unittest IS 'Almacena metadatos de los test que aprobaron pass:); flag + para los test en task de luigi';
