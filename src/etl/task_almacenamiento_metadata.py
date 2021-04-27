@@ -16,9 +16,7 @@ import src.utils.constants as ks
 from src.utils.general import get_pg_service
 
 # Requires...
-from src.etl.task_ingesta import TaskIngest
-from src.etl.task_ingestion_metadata import TaskIngestMeta
-from src.etl.task_almacenamiento import TaskStore
+from src.etl.task_almacenamiento_unit_test import TaskStoreUnitTest
 
 
 
@@ -40,7 +38,7 @@ class TaskStoreMeta(CopyToTable):
     flg_i0_c1 = luigi.IntParameter(default = 1)
     
     def requires(self):
-        return TaskStore(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)
+        return TaskStoreUnitTest(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)
 
 
     # RDS database connection
