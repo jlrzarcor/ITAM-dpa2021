@@ -76,12 +76,5 @@ class TaskCleaningUnitTest(CopyToTable):
                            'exec_date': [self.todate], 'exec_param': [json.dumps(dic_par)],'executer': ['luigi']
                           })
 
-        if marble_obj.status == "TestPassed:)":
-            for row in df.itertuples(index = False):
-                yield row
-        else:
-            print("\n\n", marble_obj.err_msg.note, "\n\n\t", marble_obj.status, "\n\n")
-            print("\n\n\t\t *** SE COERCIONA EL TASK PARA ABORTAR EL PIPELINE DEBIDO A QUE RDS ENVÍA INFO AUNQUE NO PERSISTA...*** \n\n")
-            df2 = pd.DataFrame({'exec_date':'ABC'})
-            for row in df2.itertuples(index = False):
-                yield row
+        for row in df.itertuples(index = False):
+            yield row

@@ -50,7 +50,7 @@ COMMENT ON TABLE metadata.cleaning IS 'Almacena metadata de la bd limpia';
 /* ================================= metadata task feature engineering ================================= */
 
 DROP TABLE IF EXISTS metadata.feat_eng;
-CREATE TABLE metadata.fe (
+CREATE TABLE metadata.feat_eng (
   exec_date date,
   exec_param json,
   executer varchar(10),
@@ -61,7 +61,7 @@ CREATE TABLE metadata.fe (
   time_exec real,
   best_rf text
 );
-COMMENT ON TABLE metadata.fe IS 'Almacena metadata de feature engineering';
+COMMENT ON TABLE metadata.feat_eng IS 'Almacena metadata de feature engineering';
 
 
 

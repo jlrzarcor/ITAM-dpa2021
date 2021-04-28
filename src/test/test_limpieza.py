@@ -42,10 +42,6 @@ class TestCleaning(marbles.core.TestCase):
         init_date = datetime.date(datetime(2010, 1, 1)) 
         test_val = clean_data.iloc[0,0] > init_date
         
-        try:
-            self.assertTrue(test_val, note = "^^^^^^^^   Existen registros con fecha de inspección anterior a la fecha reportada por ChicagoFoodInspections   ^^^^^^^^\n")
-            self.status = "TestPassed:)"
-            self.test_meth = "test_min_date"
-        except BaseException as excepttest:
-            self.status = "TestFailed:("
-            self.err_msg = excepttest
+        self.assertTrue(test_val, note = "^^^^^^^^   Existen registros con fecha de inspección anterior a la fecha reportada por ChicagoFoodInspections   ^^^^^^^^\n")
+        self.status = "TestPassed:)"
+        self.test_meth = "test_min_date"

@@ -31,4 +31,4 @@ label_results int,
 zip varchar(10),
 facility_type text
 );
-COMMENT ON TABLE procdata.limpieza IS 'Almacena en RDS la BD con las variables del FE';
+COMMENT ON TABLE procdata.feat_eng IS 'Almacena en RDS la BD con las variables del FE';

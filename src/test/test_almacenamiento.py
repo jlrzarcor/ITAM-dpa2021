@@ -49,12 +49,8 @@ class TestStoredS3(marbles.core.TestCase):
         datos_cfi = pd.read_json(json_dump)
         df_sh = datos_cfi.shape
         
-        try:
-            self.assertEqual(df_sh[1], 17, note = "La tabla de ingesta inicial almacedada en AWS S3 no corresponde con el número de columnas esperado.")
-            self.status = "TestPassed:)"
-            self.test_meth = "test_num_col"
-        except Exception as excepttest:
-            self.status = "TestFailed:("
-            self.err_msg = excepttest
+        self.assertEqual(df_sh[1], 17, note = "La tabla de ingesta inicial almacedada en AWS S3 no corresponde con el número de columnas esperado.")
+        self.status = "TestPassed:)"
+        self.test_meth = "test_num_col"
         
         

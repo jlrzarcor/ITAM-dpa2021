@@ -25,7 +25,6 @@ from src.etl.task_feature_engineering import TaskFeatEng
 
 # ================================= LUIGI TASK ================================= #
 
-#class TaskFeatEngUnitTest(luigi.Task):
 class TaskFeatEngUnitTest(CopyToTable):
     
     # Variables
@@ -56,11 +55,8 @@ class TaskFeatEngUnitTest(CopyToTable):
     columns = [("test_meth", "varchar"), ("test_stat", "varchar"), ("test_msg", "varchar"),
                ("exec_date", "date"), ("exec_param", "json"), ("executer", "varchar")]
 
-#    def run(self):
     def rows(self):
         
-        
-        #dbname  user  password port host
         
         # Create a transfer file path to target unit test...
         os.system('echo ' + self.input().database + ',' + self.input().table + ',' + self.input().user + ',' +  self.input().password +
@@ -78,13 +74,6 @@ class TaskFeatEngUnitTest(CopyToTable):
         df = pd.DataFrame({'test_meth': [marble_obj.test_meth], 'test_stat': [marble_obj.status], 'test_msg': [marble_obj.err_msg],
                            'exec_date': [self.todate], 'exec_param': [json.dumps(dic_par)],'executer': ['luigi']
                           })
-        #print("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ", df)
-        if marble_obj.status == "TestPassed:)":
-            for row in df.itertuples(index = False):
-                yield row
-        else:
-            print("\n\n", marble_obj.err_msg.note, "\n\n\t", marble_obj.status, "\n\n")
-            print("\n\n\t\t *** SE COERCIONA EL TASK PARA ABORTAR EL PIPELINE DEBIDO A QUE RDS ENVÍA INFO AUNQUE NO PERSISTA...*** \n\n")
-            df2 = pd.DataFrame({'exec_date':'ABC'})
-            for row in df2.itertuples(index = False):
-                yield row
+
+        for row in df.itertuples(index = False):
+            yield row

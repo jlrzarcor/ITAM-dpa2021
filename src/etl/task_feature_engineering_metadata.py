@@ -49,7 +49,7 @@ class  TaskFeatEngMeta(CopyToTable):
     table = 'metadata.feat_eng'
 
     # RDS database table columns
-    columns = [("exec_date","date"), ("exec_param","json"), ("executer","varchar"), ("source_path","text"), ("nrow_ohe","int"),
+    columns = [("exec_date","date"), ("exec_param","json"), ("executer","varchar"), ("source_path","text"), ("nrows_ohe","int"),
                ("ncols_ohe","int"), ("best_score","real"), ("time_exec","real"), ("best_rf","text")]
 
     def rows(self):
