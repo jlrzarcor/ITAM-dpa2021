@@ -533,8 +533,8 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │   ├── task_limpieza_metadata.py
     │   ├── task_almacenamiento_metadata.py
     │   ├── task_ingestion_metadata.py
-    │   ├── task__entrenamiento_metadata.py
-    |   └── task__seleccion_modelo_metadata.py
+    │   ├── task_entrenamiento_metadata.py
+    |   └── task_modelo_metadata.py
     │
     │
     ├── pipeline
