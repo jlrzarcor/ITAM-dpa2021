@@ -543,6 +543,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 📂 Los *unit test* que realizamos para probar nuestro *data pipeline* se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
+```
 ├── src
     │
     ├── __init__.py
@@ -563,6 +564,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │
     ├── pipeline
     │
+ ```
 
 ##
 
