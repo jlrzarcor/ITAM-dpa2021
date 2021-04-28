@@ -826,7 +826,7 @@ Tomar en cuenta:
 
 - `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
 
-- Si se desea probar los *unit test* y que éstos marquen error, se debe reemplazar `force#_err` por `0`.
+- Si se desea probar los *unit test* y que éstos marquen error, se debe reemplazar el `1` a la derecha de `force#_err` por `0`.
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
