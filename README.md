@@ -792,10 +792,30 @@ psql -f create_metadata_tables.sql
 psql -f create_procdata_tables.sql
 ```
 
-12. En este punto ya se ejecutan los *tasks* de *Luigi*; iniciando por el último: 
+12. En este punto ya se ejecutan los *tasks* de *Luigi*: 
 
 ```
-PYTHONPATH="." luigi --module 'src.etl.task_training_metadata' TaskTrainMeta --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1
+**Limpieza**
+PYTHONPATH="." luigi --module 'src.etl.task_limpieza_metadata' TaskCleaningMeta --bucket tu_bucket_S3 --year 2021 --month 4
+--day 8 --flg-i0-c1 1 --force1_err 1 --local-scheduler
+```
+
+```
+**Feature Engineering**
+PYTHONPATH="." luigi --module 'src.etl.task_feature_engineering_metadata' TaskFeatEngMeta --bucket tu_bucket_S3 --year 2021 --month 4
+--day 8 --flg-i0-c1 1 --force2_err 1 --local-scheduler
+```
+
+```
+**Entrenamiento**
+PYTHONPATH="." luigi --module 'src.etl.task_training_metadata' TaskTrainMeta --bucket tu_bucket_S3 --year 2021 --month 4
+--day 8 --flg-i0-c1 1 --force3_err 1 --local-scheduler
+```
+
+```
+**Modelado**
+PYTHONPATH="." luigi --module 'src.etl.task_modelo_metadata' TaskModMeta --bucket tu_bucket_S3 --year 2021 --month 4
+--day 8 --flg-i0-c1 1 --force4_err 1 --local-scheduler
 ```
 
 Tomar en cuenta:
@@ -806,11 +826,7 @@ Tomar en cuenta:
 
 - `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
 
-*e.g.* Si queremos hacer la **ingesta inicial** del 5 de marzo de 2020 debemos correr:
-
-```
-PYTHONPATH="." luigi --module 'src.etl.task_training_metadata' TaskTrainMeta --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0
-```
+- Si se desea probar los *unit test* y que éstos marquen error, se debe reemplazar `force#_err` por `0`.
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
