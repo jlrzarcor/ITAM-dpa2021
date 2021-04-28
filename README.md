@@ -570,7 +570,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 **Y así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
-![](./images/dag.png)
+![](./images/dag.jpeg)
 
 <sup><sub>**NOTA 1**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
 
