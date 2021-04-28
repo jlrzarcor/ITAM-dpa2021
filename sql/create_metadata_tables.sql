@@ -93,3 +93,19 @@ CREATE TABLE metadata.training (
   S3_path text
 );
 COMMENT ON TABLE metadata.training IS 'Almacena metadata de la bd limpia';
+
+
+/* ================================= metadata task model ================================= */
+ 
+DROP TABLE IF EXISTS metadata.modelo;
+CREATE TABLE metadata.modelo (
+  exec_date date,
+  exec_param json,
+  executer varchar(10),
+  best_tree text,
+  exec_time real,
+  test_models text,
+  score text,
+  rank text
+);
+COMMENT ON TABLE metadata.modelo IS 'Almacena metadata del modelo';

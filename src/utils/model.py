@@ -50,7 +50,7 @@ def model(df_train_test):
     lista_3 = r.rank_test_score.astype(str)
     rank_model = "|".join(lista_3)
     # Persistir mejor modelo en .pkl
-    best_tree.fit(X_train, y_train)
-    pickle.dump(best_tree, open("best_model.pkl", 'wb'))
-    model_pkl = pickle.load(open("best_model.pkl","rb"))
-    return model_pkl, best_tree, t_exec, test_mod, mean_scores, rank_model
+    obj_model = best_tree.fit(X_train, y_train)
+#    pickle.dump(best_tree, open("best_model.pkl", 'wb'))
+#    model_pkl = pickle.load(open("best_model.pkl","rb"))
+    return obj_model, str(best_tree), t_exec, test_mod, mean_scores, rank_model
