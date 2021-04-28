@@ -677,7 +677,7 @@ La manera en que que estructuramos nuestros *tasks* es la siguiente:
 
 Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
 
-![](./images/infr_rqrts.jpeg)
+![](./images/infr_rqts.jpeg)
 
 <sup><sub>**NOTA 1**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
 
