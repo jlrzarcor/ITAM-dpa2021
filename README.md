@@ -527,7 +527,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │   ├── task_ingestion_unit_test.py 
     │   ├── task_limpieza_unit_test.py
     │   ├── task_feature_engineering_unit_test.py
-    │   ├── task_entrenamiento_unit_test.py
+    │   ├── task_training_unit_test.py
     │   ├── task_seleccion_modelo_unit_test.py
     │   ├── task_feature_engineering_metadata.py
     │   ├── task_limpieza_metadata.py
@@ -793,18 +793,6 @@ psql -f create_procdata_tables.sql
 ```
 
 12. En este punto ya se ejecutan los *tasks* de *Luigi*: 
-
-```
-**Limpieza**
-PYTHONPATH="." luigi --module 'src.etl.task_limpieza_metadata' TaskCleaningMeta --bucket tu_bucket_S3 --year 2021 --month 4
---day 8 --flg-i0-c1 1 --force1_err 1 --local-scheduler
-```
-
-```
-**Feature Engineering**
-PYTHONPATH="." luigi --module 'src.etl.task_feature_engineering_metadata' TaskFeatEngMeta --bucket tu_bucket_S3 --year 2021 --month 4
---day 8 --flg-i0-c1 1 --force2_err 1 --local-scheduler
-```
 
 ```
 **Entrenamiento**
