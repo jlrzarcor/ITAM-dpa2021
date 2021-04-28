@@ -81,9 +81,9 @@ class TaskTrain(luigi.Task):
         os.makedirs(output_path, exist_ok = True)
                
         dic_par = {'year':str(self.year),'month':str(self.month),'day':str(self.day),'flg_i0_c1':str(self.flg_i0_c1)}
-        df = pd.DataFrame({'fecha': [self.todate], 'param_exec': [json.dumps(dic_par)],'usuario': ['luigi'],
-                           'num_regs_almac': [len(df_train_test)], 'nrows_train': [nrows_train], 'nrows_test': [nrows_test],
-                           'ruta_S3': [path_S3]})
+        df = pd.DataFrame({'exec_date': [self.todate], 'exec_param': [json.dumps(dic_par)],'executer': ['luigi'],
+                           'num_regs_str': [len(df_train_test)], 'nrows_train': [nrows_train], 'nrows_test': [nrows_test],
+                           'S3_path': [path_S3]})
         df.to_csv(output_path + str_file_csv, index=False, header=False)
                 
     def output(self):

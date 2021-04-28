@@ -16,13 +16,12 @@ import src.utils.constants as ks
 from src.utils.general import get_pg_service
 
 # Requires...
-from src.etl.task_almacenamiento_unit_test import TaskStoreUnitTest
-
+from src.etl.task_training_unit_test import TaskTrainUnitTest
 
 
 # ================================= LUIGI TASK ================================= #
 
-class TaskStoreMeta(CopyToTable):
+class TaskTrainMeta(CopyToTable):
     
     # Variables
       # Transfer required variables
@@ -37,8 +36,10 @@ class TaskStoreMeta(CopyToTable):
     
     flg_i0_c1 = luigi.IntParameter(default = 1)
     
+    force3_err = luigi.IntParameter(default = 1)
+    
     def requires(self):
-        return TaskStoreUnitTest(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)
+        return TaskTrainUnitTest(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1, self.force3_err)
 
 
     # RDS database connection
@@ -48,15 +49,15 @@ class TaskStoreMeta(CopyToTable):
     host = pg['host']
     port = pg['port']
     database = pg['dbname']
-    table = 'metadata.almacenamiento'
-
+    table = 'metadata.training'
     
     # RDS database table columns
-    columns = [("fecha", "date"), ("param_exec", "json"), ("usuario", "varchar"), ("num_regs_almac", "int"),("ruta_S3", "text")]
+    columns = [("exec_date", "date"), ("exec_param", "json"), ("executer", "varchar"), ("num_regs_str", "int"),("nrows_train", "int"),
+               ("nrows_test", "int"), ("S3_path", "text")]
 
     def rows(self):
         str_file = str(datetime.date(datetime(self.year, self.month, self.day))) + ".csv"
-        output_path = "src/temp/metadata/almacenamiento/type={}/".format(self.flg_i0_c1)
+        output_path = "src/temp/metadata/training/type={}/".format(self.flg_i0_c1)
         data = pd.read_csv(output_path + str_file, header = None)
         for row in data.itertuples(index = False):
             yield row

@@ -77,3 +77,19 @@ CREATE TABLE metadata.unittest (
   executer varchar(10)
 );
 COMMENT ON TABLE metadata.unittest IS 'Almacena metadatos de los test que aprobaron pass:); flag + para los test en task de luigi';
+
+
+
+/* ================================= metadata task training ================================= */
+
+DROP TABLE IF EXISTS metadata.training;
+CREATE TABLE metadata.training (
+  exec_date date,
+  exec_param json,
+  executer varchar(10),
+  num_regs_str int,
+  nrows_train int,
+  nrows_test int,
+  S3_path text
+);
+COMMENT ON TABLE metadata.training IS 'Almacena metadata de la bd limpia';
