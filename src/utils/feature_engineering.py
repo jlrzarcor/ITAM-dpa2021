@@ -20,7 +20,7 @@ def feat_eng(df_fe):
     grupo1 = tipo.iloc[0:4,1].tolist()
     grupo2 = tipo.iloc[[5,6,7,11],1].tolist()
     df_fe['class'] = df_fe['facility_type'].apply(lambda x: x if x in grupo1 else ('daycare' if x in grupo2 else 'other'))
-    lev = pd.read_csv('levels.csv')
+    lev = pd.read_csv('zip_catalog.csv')
     lev['zip'] = lev['zip'].astype(str)
     lev.index = lev.zip
     dic = lev.level.to_dict()
