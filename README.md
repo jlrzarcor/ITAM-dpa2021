@@ -63,7 +63,7 @@ Integrante | Alumno                         | Clave única
 
 - La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en *Chicago* desde el 01/01/2010.
 
-- Las inspecciones se realizan por personal del Chicago Department of Public Health’s Food Protection Program siguiendo un procedimiento estandarizado.
+- Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
 
 ### *Summary* de los datos  :checkered_flag: 
 
