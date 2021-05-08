@@ -1,5 +1,6 @@
 import pickle
 import pandas as pd
+import numpy as np
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -11,7 +12,8 @@ from aequitas.plotting import Plot
 
 def bias_fair(modelo,df_train_test,df_fe):
     # Separamos los sets de entrenamiento y prueba
-    # Entrenamiento
+    
+    # Entrenamiento   
     X_train = df_train_test[df_train_test.Set == 'entrenamiento']
     y_train = X_train.etiqueta
     X_train = X_train.iloc[:,0:df_train_test.shape[1]-2]

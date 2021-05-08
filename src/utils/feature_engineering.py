@@ -47,7 +47,7 @@ def feat_eng(df_fe):
     hyper_param_grid = {'n_estimators': [300, 400], #'min_samples_leaf': [3,5,7],
                         'max_depth': [7, 10],
                         #'min_samples_split': [3],
-                        'max_features': [5, 10],
+                        'max_features': [3, 5, 6],
                         'criterion': ['gini']}
     # usamos TimeSeriesSplit para dividir respetando el orden cronológico
     tscv = TimeSeriesSplit(n_splits=3)

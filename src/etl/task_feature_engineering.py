@@ -55,7 +55,7 @@ class TaskFeatEng(CopyToTable):
     table = 'procdata.feat_eng'
 
     # RDS database table columns
-    columns = [("label_risk", "int"), ("label_results", "int"), ("zip", "varchar"), ("facility_type", "text")]
+    columns = [("label_risk", "int"), ("label_results", "int"), ("level", "varchar"), ("class", "text")]
     
     def rows(self):
         
