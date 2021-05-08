@@ -721,13 +721,85 @@ pg_service:
 
 ## Sesgos e Inequidades :open_hands:
 
+![](./images/bf.png)
+
+*Machine Learning* por naturaleza es discriminante, pues lo que hacemos es discriminar datos a través del uso de la estadística. 
+
+Esta discriminación puede ser un problema cuando:
+- Brinda **ventajas sistemáticas a grupos privilegiados**.
+- Brinda **desventajas sistemáticas a grupos no privilegiados**.
+
+Es de nuestro interés **identificar y cuantificar sesgos e inequidades en diferentes grupos**, para después mitigarlos y cuantificar las consecuencias en las métricas de dsempeño *off-line*.
+
+##
+
 ![](./images/aequitas.png)
 
 <sup><sub>**NOTA**: Imagen tomada del [***Aequitas' GitHub***](https://github.com/dssg/aequitas).</sup></sub>
 
+***Aequitas*** es un ***toolkit open source*** que utilizamos en nuestro proyecto medir sesgo e inequidad. Fue desarrollado por [***DSSG***](https://www.dssgfellowship.org/).
+
 [***Aequitas project website***](http://www.datasciencepublicpolicy.org/projects/aequitas/)
 
 [***Aequitas' GitHub***](https://github.com/dssg/aequitas)
+
+##
+
+![bf1](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFCu%C3%A1les%20son%20los%20atributos%20protegidos%3F-ff69b4)
+
+Realizamos dos ejercicios:
+
+![bf1_1](https://img.shields.io/badge/Atributos%20protegidos-Ejercicio%201-inactive)
+
+- Atributo protegido: `facility_type`.
+
+- Al existir 500 tipos de '*facility_type*', decidimos clasificar los grupos de mayor representación, obteniendo (por orden de mayor a menor representación) las siguientes categorías: 
+
+`restaurant`, `school`, `grocery store`, `children's services facility`, `day care` y `other`.
+
+<sup><sub>**NOTA**: '***other***' se creó debido a la heterogeneidad de establecimientos que ya no entraban en las categorías previas.</sup></sub>
+
+![bf1_2](https://img.shields.io/badge/Atributos%20protegidos-Ejercicio%202-inactive)
+
+- Atributo protegido: `zip`.
+
+- Creamos una tabla de códigos postales clasificados por 4 categorías de tipo de ingreso:
+
+`High`, `Low-mid`, `Downtown` y `other`.
+
+<sup><sub>**NOTA**: '***other***' se creó debido a que hay algunos códigos que se encuentran fuera del área de *Chicago* y de los cuales no contamos con su clasificación.</sup></sub>
+
+- Para la creación de estas 4 categorías nos apoyamos en este mapa:
+
+##
+
+![bf2](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20grupos%20de%20referencia%20tiene%20cada%20atributo%20protegido%3F-ff69b4)
+
+![bf2_1](https://img.shields.io/badge/Grupos%20de%20referencia-facility__type-inactive)
+
+- Grupo de referencia: `restaurant`.
+
+- **¿Por qué?** Porque es la que tiene mayor representación en la base de datos y el objetivo sería que no haya sesgo en las predicciones con etiqueta negativa hacia este tipo de establecimiento.
+
+![bf2_2](https://img.shields.io/badge/Grupos%20de%20referencia-zip-inactive)
+
+- Grupo de referencia: `Low-mid`.
+
+- **¿Por qué?** Porque el objetivo sería que no haya sesgo en las predicciones con etiqueta negativa hacia este tipo de zonas (con menor ingreso), que pudieran generar mayor disparidad respecto a las demás, tomando en cuenta que la cancelación de licencias de restaurantes puede afectar sensiblemente a la economía o el desarrollo de alguna zona.
+
+##
+
+![bf3](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFNuestro%20modelo%20es%20punitivo%20o%20asistivo%3F-ff69b4)
+
+- Nuestro modelo es `asistivo`.
+
+- **¿Por qué?**
+
+##
+
+![bf4](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20m%C3%A9tricas%20cuantificamos%2Focupamos%3F-ff69b4)
+
+##
 
 [Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
