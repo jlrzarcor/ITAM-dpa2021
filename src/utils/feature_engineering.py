@@ -4,6 +4,7 @@ import numpy as np
 import time 
 from sklearn.model_selection import TimeSeriesSplit, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
+import os
 
 def feat_eng(df_fe):
     '''
@@ -13,6 +14,7 @@ def feat_eng(df_fe):
     outputs: Data Frame con la matriz de diseño para el modelo (df_clean.pkl)
         
     '''
+    
     # Transformación de variables facility_type y zip
     tipo = pd.DataFrame(df_fe.facility_type.value_counts())
     tipo['name'] = tipo.index
@@ -20,11 +22,13 @@ def feat_eng(df_fe):
     grupo1 = tipo.iloc[0:4,1].tolist()
     grupo2 = tipo.iloc[[5,6,7,11],1].tolist()
     df_fe['class'] = df_fe['facility_type'].apply(lambda x: x if x in grupo1 else ('daycare' if x in grupo2 else 'other'))
-    lev = pd.read_csv('zip_catalog.csv')
+    lev = pd.read_csv(os.path.realpath('src/utils/zip_catalog.csv'))
     lev['zip'] = lev['zip'].astype(str)
     lev.index = lev.zip
     dic = lev.level.to_dict()
-    df_fe['level'] = df_fe['zip'].apply(lambda x: zips(x,lev,dic)) 
+    df_fe['level'] = df_fe['zip'].apply(lambda x: zips(x,lev,dic))
+    
+    
     # Transformación a OHE
     df_fe = df_fe.sort_values(by='inspection_date', ascending=True)
     df_input = pd.DataFrame(df_fe[['label_risk','label_results','level','class']])
@@ -66,9 +70,21 @@ def feat_eng(df_fe):
                                        best_rf.feature_importances_,\
                                        'feature': variables_lista})
     feature_importance=feature_importance.sort_values(by="importance", ascending=False)
+    
     #fi_out = feature_importance.head(10)
+    
     time_exec = time.time() - start_time
     nrows_ohe = data_input_ohe.shape[0]
     ncols_ohe = data_input_ohe.shape[1]
+    
     #print("Tiempo en ejecutar: ", time.time() - start_time)
+    
     return df_input, nrows_ohe, ncols_ohe, float(best_score), time_exec, str(best_rf)
+
+
+
+def zips(x,lev,dic):
+    if x in lev.zip.to_list():
+        return dic[x]
+    else:
+        return 'other'
