@@ -505,6 +505,8 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 - ![Lt16](https://img.shields.io/badge/Task-task__modelo.py-9cf), ![Lt17](https://img.shields.io/badge/Task-task__modelo__unit__test.py-blue), ![Lt18](https://img.shields.io/badge/Task-task__modelo__metadata.py-blueviolet)
 
+- ![Lt19](https://img.shields.io/badge/Task-task__biasfairness.py-9cf), ![Lt20](https://img.shields.io/badge/Task-task__biasfairness__unit__test.py-blue), ![Lt21](https://img.shields.io/badge/Task-task__biasfairness__metadata.py-blueviolet)
+
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
@@ -522,19 +524,22 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │   ├── task_limpieza.py
     │   ├── task_feature_engineering.py
     │   ├── task_training.py
-    │   ├── task_seleccion_modelo.py
+    │   ├── task_modelo.py
+    │   ├── task_biasfairness.py
     │   ├── task_almacenamiento_unit_test.py
     │   ├── task_ingestion_unit_test.py 
     │   ├── task_limpieza_unit_test.py
     │   ├── task_feature_engineering_unit_test.py
     │   ├── task_training_unit_test.py
-    │   ├── task_seleccion_modelo_unit_test.py
+    │   ├── task_modelo_unit_test.py
+    │   ├── task_biasfairness_unit_test.py
     │   ├── task_feature_engineering_metadata.py
     │   ├── task_limpieza_metadata.py
     │   ├── task_almacenamiento_metadata.py
     │   ├── task_ingestion_metadata.py
     │   ├── task_training_metadata.py
-    |   └── task_modelo_metadata.py
+    │   ├── task_modelo_metadata.py
+    |   └── task_biasfairness_metadata.py
     │
     │
     ├── pipeline
