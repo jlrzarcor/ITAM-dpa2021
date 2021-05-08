@@ -799,6 +799,18 @@ Realizamos dos ejercicios:
 
 ![bf4](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20m%C3%A9tricas%20cuantificamos%2Focupamos%3F-ff69b4)
 
+![bf4_1](https://img.shields.io/badge/M%C3%A9trica%201-Recall%20parity-inactive)
+
+- **Interpretación**: la probabilidad de clasificar una inspección como aprobada/fallida dado su `facility_type` o dado su `zip` y que realmente haya sido aprobada/fallida.
+
+- Seleccionamos la métrica porque al ser los negocios los usuarios del modelo, éstos cuentan con recursos limitados (personal, horas laborales, recursos económicos, etc) y queremos asegurarnos que estos recursos no sean utilizados innecesariamente para poner en orden al establecimiento de tal manera que esté listo para aprobar la inspección.
+
+![bf4_2](https://img.shields.io/badge/M%C3%A9trica%201-FOR%20Parity-inactive)
+
+- **Interpretación**: la probabilidad de que hayamos clasificado una inspección como fallida dada su `facility_type` o su `zip` y que la inspección sí haya aprobado.
+
+- Seleccionamos la métrica porque al ser los negocios los usuarios del modelo, nos interesa minimizar los posibles recursos que éstos inviertan en poner al establecimiento listo para la inspección, cuando realmente no sea necesario.
+
 ##
 
 [Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
