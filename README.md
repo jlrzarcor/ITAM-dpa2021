@@ -737,7 +737,7 @@ Es de nuestro interés **identificar y cuantificar sesgos e inequidades en difer
 
 <sup><sub>**NOTA**: Imagen tomada del [***Aequitas' GitHub***](https://github.com/dssg/aequitas).</sup></sub>
 
-***Aequitas*** es un ***toolkit open source*** que utilizamos en nuestro proyecto medir sesgo e inequidad. Fue desarrollado por [***DSSG***](https://www.dssgfellowship.org/).
+***Aequitas*** es un ***toolkit open source*** que utilizamos en nuestro proyecto para medir sesgo e inequidad. Fue desarrollado por [***DSSG***](https://www.dssgfellowship.org/).
 
 [***Aequitas project website***](http://www.datasciencepublicpolicy.org/projects/aequitas/)
 
