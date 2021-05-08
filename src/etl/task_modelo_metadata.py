@@ -40,7 +40,7 @@ class TaskModelMeta(CopyToTable):
     force4_err = luigi.IntParameter(default = 1)
     
     def requires(self):
-        return TaskModelUnitTest(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1, self.force3_err)
+        return TaskModelUnitTest(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1, self.force4_err)
 
 
     # RDS database connection
