@@ -28,7 +28,7 @@ DROP TABLE IF EXISTS procdata.feat_eng;
 CREATE TABLE procdata.feat_eng (
 label_risk int,
 label_results int,
-zip varchar(10),
-facility_type text
+level varchar(8),
+class text
 );
 COMMENT ON TABLE procdata.feat_eng IS 'Almacena en RDS la BD con las variables del FE';

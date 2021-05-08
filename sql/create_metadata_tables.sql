@@ -31,7 +31,7 @@ COMMENT ON TABLE metadata.almacenamiento IS 'Almacena metadata de raw data';
 
 /* ================================= metadata task limpieza y procesamiento ================================= */
 
-DROP TABLE IF EXISTS metadata.limpieza;
+DROP TABLE IF EXISTS metadata.cleaning;
 CREATE TABLE metadata.cleaning (
   exec_date date,
   exec_param json,
