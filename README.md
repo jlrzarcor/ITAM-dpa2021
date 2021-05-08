@@ -1,11 +1,11 @@
 # Proyecto - *Data Product Architecture* (Primavera 2021)
 
-# Maestría en Ciencia de Datos, ITAM 🟢
-
 <p align = "center">
     <img src="images/logo_itam.png" width="300" height="110" />
 
 ---
+
+### Maestría en Ciencia de Datos, ITAM 🟢
 
 ### *M. Sc.* Liliana Millán Núñez
 
