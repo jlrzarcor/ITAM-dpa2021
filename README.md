@@ -431,9 +431,11 @@ Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la se
 
 [***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)
 
-[***Luigi's GitHub page***](https://github.com/spotify/luigi)
+[***Luigi's GitHub***](https://github.com/spotify/luigi)
 
 ![](./images/luigi.png)
+
+<sub><sup>**NOTA**: Imagen tomada del [***Luigi's GitHub***](https://github.com/spotify/luigi).</sup></sub>
 
 ### ¿Qué es *Luigi*?
 
@@ -721,7 +723,11 @@ pg_service:
 
 ![](./images/aequitas.png)
 
-<sup><sub>**NOTA**: Imagen tomada del repositorio de [*Aequitas*](https://github.com/dssg/aequitas).</sup></sub>
+<sup><sub>**NOTA**: Imagen tomada del [***Aequitas' GitHub***](https://github.com/dssg/aequitas).</sup></sub>
+
+[***Aequitas project website***](http://www.datasciencepublicpolicy.org/projects/aequitas/)
+
+[***Aequitas' GitHub***](https://github.com/dssg/aequitas)
 
 [Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
