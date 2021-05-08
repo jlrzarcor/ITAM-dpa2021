@@ -44,7 +44,8 @@ Integrante | Alumno                         | Clave única
 8. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
 9. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
 10. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
-11. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) 🛠️ 🚀
+11. [Sesgos e Inequidades](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) :open_hands:
+12. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) 🛠️ 🚀
 
 ---
 
@@ -64,9 +65,9 @@ Integrante | Alumno                         | Clave única
 
 ### *Summary* de los datos  :checkered_flag: 
 
-![Actualizacion_Summary](https://img.shields.io/badge/Informaci%C3%B3n%20actualizada%20hasta%20el%20-27%2F04%2F2021-green)
+![Actualizacion_Summary](https://img.shields.io/badge/Informaci%C3%B3n%20actualizada%20hasta%20el%20-11%2F05%2F2021-green)
 
-![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-219k-important)
+![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-220k-important)
 
 ![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
 
@@ -87,11 +88,11 @@ Integrante | Alumno                         | Clave única
 
 ## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
 
-![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-4-brightgreen)
-![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-5-blue)
-![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-27%2F04%2F2021-blue)
-![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-6-yellow)
-![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-5-red)
+![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-5-brightgreen)
+![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-6-blue)
+![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-11%2F05%2F2021-blue)
+![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-7-yellow)
+![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-1-red)
 
 - :white_check_mark:  *Checkpoint* 1:  *Starting point*.
 
@@ -100,12 +101,9 @@ Integrante | Alumno                         | Clave única
 - :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
 - :white_check_mark:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
 - :white_check_mark:  *Checkpoint* 4:  *Feature engineering*.
-- 🔵 :soon:  *Checkpoint* 5:  Entrenamiento.
-- :yellow_circle:  *Checkpoint* 6:  *Bias & Fairness*.
-- :red_circle:  *Checkpoint* 7:  Predicción.
-- :red_circle:  *Checkpoint* 8:  Interpretabilidad.
-- :red_circle:  *Checkpoint* 9:  *API*. 
-- :red_circle:  *Checkpoint* 10: *Dashboard*.
+- :white_check_mark:  *Checkpoint* 5:  Entrenamiento.
+- 🔵 :soon:  *Checkpoint* 6:  *Bias & Fairness*.
+- :yellow_circle: 🔴  *Checkpoint* 7:  Predicción, interpretabilidad, *API* y *Dashboard*.
 
 ##
 
@@ -714,6 +712,16 @@ pg_service:
 ```
 
 ##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
+---
+
+## Sesgos e Inequidades :open_hands:
+
+![](./images/aequitas.png)
+
+<sup><sub>**NOTA**: Imagen tomada del repositorio de [*Aequitas*](https://github.com/dssg/aequitas).</sup></sub>
 
 [Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
