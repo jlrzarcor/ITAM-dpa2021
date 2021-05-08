@@ -725,9 +725,9 @@ pg_service:
 
 *Machine Learning* por naturaleza es discriminante, pues lo que hacemos es discriminar datos a través del uso de la estadística. 
 
-Esta discriminación puede ser un problema cuando:
-- Brinda **ventajas sistemáticas a grupos privilegiados**.
-- Brinda **desventajas sistemáticas a grupos no privilegiados**.
+Esta discriminación puede ser un problema cuando brinda:
+- **Ventajas sistemáticas a grupos privilegiados**.
+- **Desventajas sistemáticas a grupos no privilegiados**.
 
 Es de nuestro interés **identificar y cuantificar sesgos e inequidades en diferentes grupos**, para después mitigarlos y cuantificar las consecuencias en las métricas de dsempeño *off-line*.
 
