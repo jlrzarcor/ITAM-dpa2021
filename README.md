@@ -911,13 +911,13 @@ PYTHONPATH="." luigi --module 'src.etl.task_modelo_metadata' TaskModMeta --bucke
 
 Tomar en cuenta:
 
-- Tanto los meses como los días, no llevan un cero antes.
+:warning: Tanto los meses como los días, no llevan un cero antes.
 
-- Después del *flag* se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
+:warning:Después del *flag* se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
 
-- `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
+:warning: `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
 
-- Si se desea probar los *unit test* y que éstos marquen error, se debe reemplazar el `1` a la derecha de `force#_err` por `0`.
+:warning: Si se desea probar los *unit test* y que éstos marquen error, se debe reemplazar el `1` a la derecha de `force#_err` por `0`.
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
