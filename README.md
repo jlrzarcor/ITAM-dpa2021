@@ -67,11 +67,11 @@ Integrante | Alumno                         | Clave única
 
 ### *Summary* de los datos  :checkered_flag: 
 
-![Actualizacion_Summary](https://img.shields.io/badge/Informaci%C3%B3n%20actualizada%20hasta%20el%20-11%2F05%2F2021-green)
-
 ![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-220k-important)
 
 ![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
+
+<sup><sub>**NOTA**: Información actualizada hasta el '11/05/2021'.</sup></sub>
 
 ### ¿Qué buscamos contestar con nuestro modelo? 🧐
 ![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
