@@ -53,6 +53,8 @@ Integrante | Alumno                         | Clave única
 
 ![](./images/cdp.png)
 
+<sup><sub>**NOTA**: Imagen tomada de la página de [***Chicago Data Portal***](https://data.cityofchicago.org/).</sup></sub>
+
 - Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
 ![](./images/chicago_summary.jpg)
