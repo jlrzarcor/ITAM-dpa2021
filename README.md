@@ -36,16 +36,14 @@ Integrante | Alumno                         | Clave única
 
 1. [Acerca de este proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#acerca-de-este-proyecto--globe_with_meridians) :globe_with_meridians:
 2. [¿Cómo está dividido nuestro proyecto?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-est%C3%A1-dividido-nuestro-proyecto---date-pushpin) :date: :pushpin:
-3. [¿Qué lenguaje utlizamos?](https://github.com/jlrzarcor/ITAM-dpa2021#qu%C3%A9-lenguaje-utlizamos-pen) :pen:
-4. [¿Qué *IDE* utlizamos?](https://github.com/jlrzarcor/ITAM-dpa2021#qu%C3%A9-ide-utlizamos--) 🪐 📓
-5. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#estructura-b%C3%A1sica-del-proyecto--file_folder) :file_folder:
-6. [Sobre nuestro ***EDA***](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-eda-----red_circle--) 🔵 🟡 :red_circle: 🟢 🟠
-7. [¿Cómo funciona nuestro proceso de ingestión?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-funciona-nuestro-proceso-de-ingesti%C3%B3n-fork_and_knife) :fork_and_knife:
-8. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
-9. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
-10. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
-11. [Sesgos e Inequidades](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#sesgos-e-inequidades-open_hands) :open_hands:
-12. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) 🛠️ 🚀
+3. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#estructura-b%C3%A1sica-del-proyecto--file_folder) :file_folder:
+4. [Sobre nuestro ***EDA***](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-eda-----red_circle--) 🔵 🟡 :red_circle: 🟢 🟠
+5. [¿Cómo funciona nuestro proceso de ingestión?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-funciona-nuestro-proceso-de-ingesti%C3%B3n-fork_and_knife) :fork_and_knife:
+6. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
+7. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
+8. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
+9. [Sesgos e Inequidades](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#sesgos-e-inequidades-open_hands) :open_hands:
+10. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) 🛠️ 🚀
 
 ---
 
@@ -73,14 +71,28 @@ Integrante | Alumno                         | Clave única
 
 <sup><sub>**NOTA**: Información actualizada hasta el '11/05/2021'.</sup></sub>
 
+##
+
 ### ¿Qué buscamos contestar con nuestro modelo? 🧐
 ![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
+
+##
 
 ### Tomar en cuenta :point_left:
 
 ![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
 
 ![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos-Semanal-orange)
+
+##
+
+## ¿Qué lenguaje utlizamos? :pen:
+
+![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
+
+[***Python.org***](https://www.python.org/)
+
+![](./images/python-logo.png)
 
 ##
 
@@ -107,35 +119,6 @@ Integrante | Alumno                         | Clave única
 - 🔵 :soon:  *Checkpoint* 6:  *Bias & Fairness*.
 - :yellow_circle: 🔴  *Checkpoint* 7:  Predicción, interpretabilidad, *API* y *Dashboard*.
 
-##
-
-[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
-
----
-
-## ¿Qué lenguaje utlizamos? :pen:
-
-![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
-
-[***Python.org***](https://www.python.org/)
-
-![](./images/python-logo.png)
-
-##
-
-[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
-
----
-
-## ¿Qué *IDE* utlizamos? 🪐 📓
-
-[***Jupyter.org***](https://jupyter.org/)
-
-[***Jupyter Notebook's GitHub page***](https://github.com/jupyter/notebook)
-
-<p align = "left">
-    <img src="images/jn_logo.png" width="300" height="300" />
-    
 ##
 
 [Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
