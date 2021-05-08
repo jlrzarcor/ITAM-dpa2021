@@ -13,13 +13,13 @@
 
 ##
 
-Integrante | Alumno                         | Clave única
-:--------: | :----------------------------: | :---------:
-1          | Carlos Román López Sierra      | 197911
-2          | José Luis Zárate Cortés        | 183347
-3          | Octavio Fuentes Ortiz          | 150792
-4          | Patricia Urriza Arellano       | 152026
-5          | Uriel Abraham Rangel Díaz      | 193921
+***Team member***              | ***GitHub's username***
+:----------------------------: | :---------------------:
+Carlos Román López Sierra      | [Carlosrlpzi](https://github.com/Carlosrlpzi)
+José Luis Zárate Cortés        | [jlrzarcor](https://github.com/jlrzarcor)
+Octavio Fuentes Ortiz          | [fuentesortiz](https://github.com/fuentesortiz)
+Patricia Urriza Arellano       | [patyua](https://github.com/patyua)
+Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 ---
 
