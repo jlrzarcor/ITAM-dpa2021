@@ -13,7 +13,7 @@
 
 ##
 
-***Team member***              | ***GitHub's username***
+***Contributors***             | ***GitHub's username***
 :----------------------------: | :---------------------:
 Carlos Román López Sierra      | [Carlosrlpzi](https://github.com/Carlosrlpzi)
 José Luis Zárate Cortés        | [jlrzarcor](https://github.com/jlrzarcor)
@@ -86,7 +86,7 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 ##
 
-## ¿Qué lenguaje utlizamos? :pen:
+### ¿Qué lenguaje utlizamos? :pen:
 
 ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
 
