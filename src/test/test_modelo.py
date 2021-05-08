@@ -51,7 +51,8 @@ class TestModel(marbles.core.TestCase):
         comp_val = ""
         if pd.read_csv('src/test/trans_file.csv', header = None).iloc[0,1] == 1:
             comp_val = "<class 'sklearn.tree._classes.DecisionTreeClassifier'>"
-
+        print("\n\n", A, "\n\n",comp_val)
+        
         self.assertEqual(A, comp_val, note = "^^^^^^^^   El mejor modelo seleccionado no coincide con <class 'sklearn.tree._classes.DecisionTreeClassifier'>.    ^^^^^^^^\n")
         self.status = "TestPassed:)"
         self.test_meth = "test_score"
