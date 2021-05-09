@@ -874,7 +874,7 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ![](./images/luigi_task_result8.png)
 
-<sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 5.</sup></sub>
+<sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 6.</sup></sub>
 
 ##
 
