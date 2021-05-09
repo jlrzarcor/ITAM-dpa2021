@@ -64,6 +64,8 @@ def bias_fair(modelo,df_train_test,df_fe):
     # Metadata
     n_groups = len(metrics1.attribute_value) + len(metrics2.attribute_value)
     n_attribute = metrics.attribute_name.nunique()
-    
-    return df_labels, metrics, n_groups, n_attribute
+    prop_pos_pred = df_labels.predicted.sum()/len(df_labels.predicted)
+    prop_pos_real = df_labels.label.sum()/len(df_labels.label)
+        
+    return df_labels, metrics, n_groups, n_attribute, prop_pos_pred, prop_pos_real
     
