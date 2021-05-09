@@ -448,7 +448,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 - ![Lt16](https://img.shields.io/badge/Task-task__modelo.py-9cf), ![Lt17](https://img.shields.io/badge/Task-task__modelo__unit__test.py-blue), ![Lt18](https://img.shields.io/badge/Task-task__modelo__metadata.py-blueviolet)
 
-- ![Lt19](https://img.shields.io/badge/Task-task__biasfairness.py-9cf), ![Lt20](https://img.shields.io/badge/Task-task__biasfairness__unit__test.py-blue), ![Lt21](https://img.shields.io/badge/Task-task__biasfairness__metadata.py-blueviolet)
+- ![Lt19](https://img.shields.io/badge/Task-task__sesgos__inequidades.py-9cf), ![Lt20](https://img.shields.io/badge/Task-task__sesgos__inequidades__unit__test.py-blue), ![Lt21](https://img.shields.io/badge/Task-task__sesgos__inequidades__metadata.py-blueviolet)
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -688,7 +688,7 @@ Es de nuestro interés **identificar y cuantificar sesgos e inequidades en difer
 
 ##
 
-![bf1](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFCu%C3%A1les%20son%20los%20atributos%20protegidos%3F-ff69b4)
+![bf1](https://img.shields.io/badge/Pregunta%201-%C2%BFCu%C3%A1les%20son%20los%20atributos%20protegidos%3F-ff69b4)
 
 Realizamos dos ejercicios:
 
@@ -698,7 +698,7 @@ Realizamos dos ejercicios:
 
 - Al existir 500 tipos de '*facility_type*', decidimos clasificar los grupos de mayor representación, obteniendo (por orden de mayor a menor representación) las siguientes categorías: 
 
-`restaurant`, `school`, `grocery store`, `children's services facility`, `day care` y `other`.
+`restaurant`, `school`, `grocery store`, `children's services facility`, `daycare` y `other`.
 
 <sup><sub>**NOTA**: '***other***' se creó debido a la heterogeneidad de establecimientos que ya no entraban en las categorías previas.</sup></sub>
 
@@ -708,7 +708,7 @@ Realizamos dos ejercicios:
 
 - Creamos una tabla de códigos postales clasificados por 4 categorías de tipo de ingreso:
 
-`High`, `Low-mid`, `Downtown` y `other`.
+`high`, `low-mid`, `downtown` y `other`.
 
 <sup><sub>**NOTA**: '***other***' se creó debido a que hay algunos códigos que se encuentran fuera del área de *Chicago* y de los cuales no contamos con su clasificación.</sup></sub>
 
@@ -716,7 +716,7 @@ Realizamos dos ejercicios:
 
 ##
 
-![bf2](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20grupos%20de%20referencia%20tiene%20cada%20atributo%20protegido%3F-ff69b4)
+![bf2](https://img.shields.io/badge/Pregunta%202-%C2%BFQu%C3%A9%20grupos%20de%20referencia%20tiene%20cada%20atributo%20protegido%3F-ff69b4)
 
 ![bf2_1](https://img.shields.io/badge/Grupos%20de%20referencia-facility__type-inactive)
 
@@ -732,7 +732,7 @@ Realizamos dos ejercicios:
 
 ##
 
-![bf3](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFNuestro%20modelo%20es%20punitivo%20o%20asistivo%3F-ff69b4)
+![bf3](https://img.shields.io/badge/Pregunta%203-%C2%BFNuestro%20modelo%20es%20punitivo%20o%20asistivo%3F-ff69b4)
 
 - Nuestro modelo es `asistivo`.
 
@@ -740,7 +740,7 @@ Realizamos dos ejercicios:
 
 ##
 
-![bf4](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20m%C3%A9tricas%20cuantificamos%2Focupamos%3F-ff69b4)
+![bf4](https://img.shields.io/badge/Pregunta%204-%C2%BFQu%C3%A9%20m%C3%A9tricas%20cuantificamos%2Focupamos%3F-ff69b4)
 
 ![bf4_1](https://img.shields.io/badge/M%C3%A9trica%201-Recall%20parity-inactive)
 
