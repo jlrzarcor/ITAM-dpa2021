@@ -672,7 +672,7 @@ Esta discriminación puede ser un problema cuando brinda:
 - **Ventajas sistemáticas a grupos privilegiados**.
 - **Desventajas sistemáticas a grupos no privilegiados**.
 
-Es de nuestro interés **identificar y cuantificar sesgos e inequidades en diferentes grupos**, para después mitigarlos y cuantificar las consecuencias en las métricas de dsempeño *off-line*.
+Es de nuestro interés **identificar y cuantificar sesgos e inequidades en diferentes grupos**, para después mitigarlos y cuantificar las consecuencias en las métricas de desempeño *off-line*.
 
 ##
 
@@ -706,27 +706,35 @@ Realizamos dos ejercicios:
 
 - Atributo protegido: `zip`.
 
-- Creamos una tabla de códigos postales clasificados por 4 categorías de tipo de ingreso:
+- Creamos una tabla de códigos postales clasificados por 4 categorías de **tipo de ingreso**:
 
 `high`, `low-mid`, `downtown` y `other`.
 
 <sup><sub>**NOTA**: '***other***' se creó debido a que hay algunos códigos que se encuentran fuera del área de *Chicago* y de los cuales no contamos con su clasificación.</sup></sub>
 
-- Para la creación de estas 4 categorías nos apoyamos en este mapa:
+- Para la creación de estas 4 categorías nos apoyamos en los siguientes 2 mapas:
+
+![](./images/mapa1.jpg)
+
+<sup><sub>**Fuente**: [***Community Areas and Related Zip Codes***](https://www.chicago.gov/content/dam/city/sites/covid/reports/2020-04-24/ChicagoCommunityAreaandZipcodeMap.pdf).</sup></sub>
+
+![](./images/mapa2.png)
+
+<sup><sub>**Fuente**: [***Community Areas by Income***](https://voorheescenter.wordpress.com/2015/10/13/the-affordability-challenge-chicago-updates-the-affordable-requirements-ordinance/).</sup></sub>
 
 ##
 
 ![bf2](https://img.shields.io/badge/Pregunta%202-%C2%BFQu%C3%A9%20grupos%20de%20referencia%20tiene%20cada%20atributo%20protegido%3F-ff69b4)
 
-![bf2_1](https://img.shields.io/badge/Grupos%20de%20referencia-facility__type-inactive)
+![bf2_1](https://img.shields.io/badge/Atributo%20protegido-facility__type-inactive)
 
 - Grupo de referencia: `restaurant`.
 
 - **¿Por qué?** Porque es la que tiene mayor representación en la base de datos y el objetivo sería que no haya sesgo en las predicciones con etiqueta negativa hacia este tipo de establecimiento.
 
-![bf2_2](https://img.shields.io/badge/Grupos%20de%20referencia-zip-inactive)
+![bf2_2](https://img.shields.io/badge/Atributo%20protegido-zip-inactive)
 
-- Grupo de referencia: `Low-mid`.
+- Grupo de referencia: `low-mid`.
 
 - **¿Por qué?** Porque el objetivo sería que no haya sesgo en las predicciones con etiqueta negativa hacia este tipo de zonas (con menor ingreso), que pudieran generar mayor disparidad respecto a las demás, tomando en cuenta que la cancelación de licencias de restaurantes puede afectar sensiblemente a la economía o el desarrollo de alguna zona.
 
@@ -748,7 +756,7 @@ Realizamos dos ejercicios:
 
 - Seleccionamos la métrica porque al ser los negocios los usuarios del modelo, éstos cuentan con recursos limitados (personal, horas laborales, recursos económicos, etc) y queremos asegurarnos que estos recursos no sean utilizados innecesariamente para poner en orden al establecimiento de tal manera que esté listo para aprobar la inspección.
 
-![bf4_2](https://img.shields.io/badge/M%C3%A9trica%201-FOR%20Parity-inactive)
+![bf4_2](https://img.shields.io/badge/M%C3%A9trica%202-FOR%20Parity-inactive)
 
 - **Interpretación**: la probabilidad de que hayamos clasificado una inspección como fallida dada su `facility_type` o su `zip` y que la inspección sí haya aprobado.
 
@@ -805,23 +813,23 @@ para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
 `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-4. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
+4. Instalar '*pyenv*' en la instancia de procesamiento y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
 
 `pyenv install 3.7.4`.
 
-5. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
+5. Activar su ambiente virtual: `pyenv activate itam_dpa`.
 
-6. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
+6. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
 
-7. Posicionarse en la carpeta del repositorio clonado en el paso 3.
+7. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
 
-8. Activar su ambiente virtual: `pyenv activate itam_dpa`.
+8. Posicionarse en la carpeta del repositorio clonado en el paso 3.
 
 9. De ser necesario actualizar el repositorio clonado: `git pull`.
 
 <sub><sup>**NOTA**: Del paso 2 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
 
-10. Declar las variables de entorno con los comandos:
+10. Declarar las variables de entorno con los comandos:
 
 ```
 export PGSERVICEFILE=${HOME}/.pg_service.conf
