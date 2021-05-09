@@ -5,82 +5,88 @@
 
 ---
 
-### Maestría en Ciencia de Datos, ITAM
+### Maestría en Ciencia de Datos, ITAM 🟢
 
-### M. Sc. Liliana Millán Núñez
+### *M. Sc.* Liliana Millán Núñez
 
 ### Equipo 5
 
 ##
 
-Integrante | Alumno                         | Clave única
-:--------: | :----------------------------: | :---------:
-1          | Carlos Román López Sierra      | 197911
-2          | José Luis Zárate Cortés        | 183347
-3          | Octavio Fuentes Ortiz          | 150792
-4          | Patricia Urriza Arellano       | 152026
-5          | Uriel Abraham Rangel Díaz      | 193921
+***Contributors***             | ***GitHub's username***
+:----------------------------: | :---------------------:
+Carlos Román López Sierra      | [Carlosrlpzi](https://github.com/Carlosrlpzi)
+José Luis Zárate Cortés        | [jlrzarcor](https://github.com/jlrzarcor)
+Octavio Fuentes Ortiz          | [fuentesortiz](https://github.com/fuentesortiz)
+Patricia Urriza Arellano       | [patyua](https://github.com/patyua)
+Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 ---
+
+## *Stats*  :chart_with_upwards_trend:  :chart_with_downwards_trend:
 
 👀  ![Watching](https://img.shields.io/badge/Watching-3-blue/?logo=GitHub&style=social)
 🌟  ![Stars](https://img.shields.io/badge/Stars-4-blue/?logo=GitHub&style=social)
 🔌  ![fork](https://img.shields.io/badge/Fork-2-blue/?logo=GitHub&style=social)
+👥  ![contributors](https://img.shields.io/badge/Contributors-4-blue/?logo=GitHub&style=social)
 
-##
+---
+
+## Tabla de contenido  :floppy_disk:
+
+1. [Acerca de este proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#acerca-de-este-proyecto--globe_with_meridians) :globe_with_meridians:
+2. [¿Cómo está dividido nuestro proyecto?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-est%C3%A1-dividido-nuestro-proyecto---date-pushpin) :date: :pushpin:
+3. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#estructura-b%C3%A1sica-del-proyecto--file_folder) :file_folder:
+4. [Sobre nuestro ***EDA***](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-eda-----red_circle--) 🔵 🟡 :red_circle: 🟢 🟠
+5. [¿Cómo funciona nuestro proceso de ingestión?](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-funciona-nuestro-proceso-de-ingesti%C3%B3n-fork_and_knife) :fork_and_knife:
+6. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
+7. [Sobre nuestro *Feature Engineering*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-feature-engineering--hammer)  :hammer:
+8. [*Data Governance*](https://github.com/jlrzarcor/ITAM-dpa2021#data-governance--round_pushpin--ledger) 📍 📒
+9. [Sesgos e Inequidades](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#sesgos-e-inequidades-open_hands) :open_hands:
+10. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) 🛠️ 🚀
+
+---
 
 ## Acerca de este proyecto  :globe_with_meridians:
 
 ![](./images/cdp.png)
 
-Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
+<sup><sub>**NOTA**: Imagen tomada de la página de [***Chicago Data Portal***](https://data.cityofchicago.org/).</sup></sub>
+
+- Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
 ![](./images/chicago_summary.jpg)
 
-#### Conocimiento a priori de la información:
-* **_Title:_** *Food Inspections*
+<sup><sub>**NOTA**: *Screenshot* tomado el sábado 16 de enero de 2021, por lo que el número de observaciones de la base de datos probablemente ya sea mayor.</sup></sub>
 
-* **Descripción:**  
-  * La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en Chicago desde 01/01/2010 hasta la actualidad.
-  * Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
-  * Se debe precisar que el **01/07/2018 se realizaron modificaciones** a los procedimientos de inspección que afectan a los datos. Estructuralmente el *dataset* no será afectado. No obstante, la columna **_"Violations"_**, si bien aún contiene el número de violación, descripción y comentarios delimitando violaciones independientes con el "*pipe character*", las violaciones actuales se modificaron substancialmente. Debemos ser cuidadosos al analizar los datos en los posibles cambios de tendencia en el largo plazo.
-Para consultar las modificaciones: [***Food Inspection Violations Changes***](http://bit.ly/2yWd2JB).
-  * En adición, encontramos la modificación a los siguientes términos (**validar en la información**) [_2019 Chicago Food Code Major Changes_](https://www.cityofchicago.org/city/en/depts/cdph/provdrs/healthy_restaurants/svcs/food-protection-services.html.):
-     * _Potentially Hazardous Foods (PHF)" has been changed to “Time/Temperature Control for Safety Foods (TCS Foods)_"
-     * "_Critical Violation" has been changed to “Priority (P) Violation_"
-     * "_Serious Violation" has been changed to "Priority Foundation (PF)Violation_"
-     * "_Minor Violation" has been changed to "Core (C) Violation_"
-     * "_Corrected During Inspection (CDI)" has been changed to "Corrected on Site (COS)_"
+- La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en *Chicago* desde el 01/01/2010.
 
----
+- Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
 
-## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
+### *Summary* de los datos  :checkered_flag: 
 
-El proyecto será desarrollado a lo largo del semestre y será dividido en los siguientes ***Checkpoints***:
+![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-220k-important)
 
-![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-3-brightgreen)
-![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-4-blue)
-![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-01%2F04%2F2021-blue)
-![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-5-yellow)
-![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-6-red)
+![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
 
-- :white_check_mark:  *Checkpoint* 1:  *Starting point*.
+<sup><sub>**NOTA**: Información actualizada hasta el '11/05/2021'.</sup></sub>
 
-<sup><sub>**NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.</sup></sub>
+##
 
-- :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
-- :white_check_mark:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
-- 🔵 :soon:  *Checkpoint* 4:  *Feature engineering*.
-- :yellow_circle:  *Checkpoint* 5:  Entrenamiento.
-- :red_circle:  *Checkpoint* 6:  *Bias & Fairness*.
-- :red_circle:  *Checkpoint* 7:  Predicción.
-- :red_circle:  *Checkpoint* 8:  Interpretabilidad.
-- :red_circle:  *Checkpoint* 9:  *API*. 
-- :red_circle:  *Checkpoint* 10: *Dashboard*.
+### ¿Qué buscamos contestar con nuestro modelo? 🧐
+![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
 
----
+##
 
-## ¿Qué lenguaje utlizamos? :pen:
+### Tomar en cuenta :point_left:
+
+![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
+
+![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos-Semanal-orange)
+
+##
+
+### ¿Qué lenguaje utlizamos? :pen:
 
 ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
 
@@ -88,52 +94,34 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 
 ![](./images/python-logo.png)
 
-## ¿Qué *IDE* utlizamos? 🪐 📓
+##
 
-[***Jupyter.org***](https://jupyter.org/)
-
-[***Jupyter Notebook's GitHub page***](https://github.com/jupyter/notebook)
-
-<p align = "left">
-    <img src="images/jn_logo.png" width="300" height="300" />
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
-***Summary*** de los datos con los que trabajamos (hasta el día 16 de enero de 2021) para el ***Checkpoint 1***:
+## ¿Cómo está dividido nuestro proyecto?   :date: :pushpin:
 
-![Registros](https://img.shields.io/badge/N%C3%BAmero%20de%20registros-215%2C130-important)
+![Checkpoint_Entregados](https://img.shields.io/badge/Checkpoints%20entregados-5-brightgreen)
+![Checkpoints_Actual](https://img.shields.io/badge/Checkpoint%20actual-6-blue)
+![Entrega](https://img.shields.io/badge/Fecha%20de%20entrega-11%2F05%2F2021-blue)
+![Proximo](https://img.shields.io/badge/Pr%C3%B3ximo%20checkpoint-7-yellow)
+![Restantes](https://img.shields.io/badge/Checkpoints%20restantes-1-red)
 
-![Columnas](https://img.shields.io/badge/N%C3%BAmero%20de%20columnas-17-important)
+- :white_check_mark:  *Checkpoint* 1:  *Starting point*.
 
-- **Variables con las que contamos inicialmente**:
+<sup><sub>**NOTA**: Para el *checkpoint* 1, los datos los descargamos el sábado 16 de enero.</sup></sub>
 
-**Variable**                 | **Tipo de dato**     | **¿Qué contiene?**
------------------------------| ---------------------| ------------------------------------------------------------------------------------
-*Inspection ID*.             | Número.              | *ID* correspondiente a la inspección.
-*DBA Name*.                  | Texto.               | _'Doing business as'_ Nombre legal del establecimiento.
-*AKA Name*.                  | Texto.               | _'Also known as'_ Nombre público como se conoce al establecimiento.
-*Licence*.                   | Número.              | Número único asignado al establecimiento con fines de licenciamiento.
-*Facility Type*.             | Texto.               | Cada establecimiento se etiqueta con alguno de los siguientes: *bakery, banquet hall, candy store, caterer, coffee shop, day care center (for ages less than 2), day care center (for ages 2 – 6), day care center (combo, for ages less than 2 and 2 – 6 combined), gas station, Golden Diner, grocery store, hospital, long term care center(nursing home), liquor store, mobile food dispenser, restaurant, paleteria, school,shelter, tavern, social club, wholesaler, or Wrigley Field Rooftop*.
-*Risk*.                      | Texto.               | Cada establecimiento se categoriza de acuerdo al riesgo de afectar la salud pública. 1 el más alto riesgo y 3 el menor. La frecuencia de las inspecciones está ligada a su nivel de riesgo.
-*Address, City, State, Zip*. | Texto.               | Dirección completa donde se localizan las instalaciones.
-*Inspection Date*.           | *Floating Timestamp*.| Fecha de la inspección.
-*Inspection Type*.           | Texto.               | Tipo de inspección, puede ser cualquiera de las siguientes: _canvass_, el tipo de inspección más común realizado con una frecuencia relativa al **riesgo del establecimiento**; _consultation_, es cuando la inspección se realiza por requerimiento del dueño previo a la apertura del establecimiento; _complaint_, se realiza una inspección en respuesta a una queja en contra del establecimiento; _license_, se realiza cuando el establecimiento lo requiere para recibir su lecencia para operar; _suspect food poisoning_, se realiza en respuesta a una o más presonas que presumiblemente hayan enfermado como resultado de haber comido en el establecimiento; _task-force inspection_, cuando la inspección se realiza a un bar o taverna.
-*Results*.                   | Texto.               | _Pass, pass with conditions, fail, out of business or not located_; '_pass_' implica que no se tienen violaciones críticas o severas (códigos de violación 1-14 y 15-29 respectivamente). '_pass with conditions_', se encontraton violaciones críticas o severas, pero fueron corregidas durante la inspección. '_fail_' implica que se tienen violaciones críticas o severas y que no se corrigieron durante la inspección.
-*Violations*.                | Texto.               |  Un establecimiento puede recibir más de una de las 45 distintas violaciones (código de violación 1 al 44 y 70). Pensar en como analizar esta variable.
-*Latitude*.                  | Número.              | Latitud del negocio.
-*Longitude*.                 | Número.              | Longitud del negocio.
-*Location*.                  | *Location*.          | Contiene la coordenada (longitud y latitud) del negocio.
+- :white_check_mark:  *Checkpoint* 2:  Ingestión y almacenamiento.
+- :white_check_mark:  *Checkpoint* 3:  Pre-procesamiento y limpieza.
+- :white_check_mark:  *Checkpoint* 4:  *Feature engineering*.
+- :white_check_mark:  *Checkpoint* 5:  Entrenamiento.
+- 🔵 :soon:  *Checkpoint* 6:  *Bias & Fairness*.
+- :yellow_circle: 🔴  *Checkpoint* 7:  Predicción, interpretabilidad, *API* y *Dashboard*.
 
----
+##
 
-## ¿Qué buscamos contestar con nuestro modelo? 🧐
-![Objetivo](https://img.shields.io/badge/Pregunta%20anal%C3%ADtica%20a%20contestar%20con%20el%20modelo%20predictivo-%C2%BFEl%20establecimiento%20pasar%C3%A1%20o%20no%20la%20inspecci%C3%B3n%3F-orange)
-
-## Tomar en cuenta
-
-![Frecuencia](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20de%20los%20datos-Diaria-orange)
-
-![Producto](https://img.shields.io/badge/Frecuencia%20de%20actualizaci%C3%B3n%20del%20producto%20de%20datos-Semanal-orange)
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -169,7 +157,9 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
 ├── setup.py
 │
 └── src                <- Source code for use in this project.
+    │
     ├── __init__.py    <- Makes src a Python module.
+    │
     │
     ├── utils      <- Functions used across the project.
     │   ├── constants.py
@@ -183,10 +173,42 @@ El proyecto será desarrollado a lo largo del semestre y será dividido en los s
     |   └── ingesta_almacenamiento.py 
 ```
 
----
-## ¿Cómo reproducir los resultados de este repositorio?  :computer:
+##
 
-Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene que hacer es lo siguiente:
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
+---
+
+## Sobre nuestro ***EDA***   🔵 🟡 :red_circle: 🟢 🟠
+
+<p align = "left">
+    <img src="images/eda.png" width="520" height="250" />
+
+- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
+
+```
+├── notebooks
+    │
+    ├── eda
+    │   ├── EDA_GEDA_Checkpoint1.ipynb <- Notebook used for Checkpoint 1
+    │   ├── chicomm.dbf
+    │   ├── chicomm.prj
+    │   ├── chicomm.shp
+    │   ├── chicomm.shx
+    |   └── itam_logo.png
+    │
+    │
+    ├── feature_engineering 
+    │
+```
+
+- En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
+
+##
+
+### ¿Cómo reproducir los resultados del *EDA*?  :computer:
+
+Si usted desea reproducir el *notebook* del *EDA*, lo que tiene que hacer es lo siguiente:
 
 1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando:
  
@@ -220,32 +242,9 @@ Si usted desea reproducir los resultados mostrados en este trabajo, lo que tiene
 
 7. Abre el archivo `EDA_GEDA_Checkpoint1.ipynb` y ya podrás operarlo sin problemas.
 
----
+##
 
-## Sobre nuestro ***EDA***   🔵 🟡 :red_circle: 🟢 🟠
-
-<p align = "left">
-    <img src="images/eda.png" width="520" height="250" />
-
-- En la ruta `notebooks/eda/EDA_GEDA_Checkpoint1.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 1*** del proyecto.
-
-```
-├── notebooks
-    │
-    ├── eda
-    │   ├── EDA_GEDA_Checkpoint1.ipynb <- Notebook used for Checkpoint 1
-    │   ├── chicomm.dbf
-    │   ├── chicomm.prj
-    │   ├── chicomm.shp
-    │   ├── chicomm.shx
-    |   └── itam_logo.png
-    │
-    │
-    ├── feature_engineering 
-    │
-```
-
-- En la ruta `notebooks/eda/Food_Inspections.csv` deberá ser el archivo que descargaste de la liga mencionada anteriormente para poder utilizarse con el *notebook* de nuestro *EDA*.
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
@@ -296,7 +295,7 @@ Una vez que se ha realizado la ingesta inicial como la consecutiva, la informaci
 <p align = "left">
     <img src="images/aws_s3_logo.jpeg" width="620" height="200" />
 
-3.	Debe crear un archivo `.yaml` siguiendo la siguiente estructura: 
+3.	Debe crear un archivo `credentials.yaml` siguiendo la siguiente estructura: 
 
 ```
 ---
@@ -309,7 +308,7 @@ food_inspections:
 
 4.	Contar con un ambiente virtual de `pyenv` y tenerlo activo. Una vez posicionado dentro de éste, debe definir su variable de entorno `PYTHONPATH`. Debe abrir su terminal y posicionarse en la raíz del repositorio y ejecutar el comando `export PYTHONPATH=$PWD`.
 
-5.	Para poder generar las conexiones necesarias con los clientes, debe crear la carpeta `conf/local` donde deberá colocar su archivo `.yaml` (del prerrequisito 3). 
+5.	Para poder generar las conexiones necesarias con los clientes, debe crear la carpeta `conf/local` donde deberá colocar su archivo `credentials.yaml` (del prerrequisito 3). 
 
 ![Macroprocesos](https://img.shields.io/badge/Proceso%20de%20Ingesti%C3%B3n-Macroprocesos-yellowgreen)
 
@@ -317,9 +316,9 @@ Para iniciar con el **proceso de ingesta/almacenamiento** debe colocarse en la *
 
 ![M1](https://img.shields.io/badge/Macroproceso%201-Conexi%C3%B3n%20a%20la%20API%20con%20SODAPY%20y%20con%20AWS%20S3-red)
 
-- Estableceremos una **conexión** tipo "**cliente**" con la *API* del *Chicago Portal* llamando a nuestra función `get_client` (que se encuentra dentro de `ingesta_almacenamiento.py`), utilizando la **clase Socrata** de ***SODAPY***). Ésta a su vez llamará a la función `get_api_token` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credential.yaml` (descrito en `prerrequisitos`). Se retorna un cliente que podemos asignar a una variable `client`.
+- Estableceremos una **conexión** tipo "**cliente**" con la *API* del *Chicago Portal* llamando a nuestra función `get_client` (que se encuentra dentro de `ingesta_almacenamiento.py`), utilizando la **clase Socrata** de ***SODAPY***). Ésta a su vez llamará a la función `get_api_token` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credentials.yaml` (descrito en `prerrequisitos`). Se retorna un cliente que podemos asignar a una variable `client`.
 
-- Análogamente, establecemos una conexión con *AWS* en el servicio de *S3* del tipo `resource service client by name` llamando a nuestra función `get_s3_credentials()` (que se encuentra dentro de `ingesta_almacenamiento.py`), que a su vez llamará a la función `get_S3_credentials` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credential.yaml` y retorna las credenciales necesarias para establecer la conexión (se utiliza la clase ***Session*** de ***Boto3***). Se retorna un cliente que podemos asignar a una variable "***S3***".
+- Análogamente, establecemos una conexión con *AWS* en el servicio de *S3* del tipo `resource service client by name` llamando a nuestra función `get_s3_credentials()` (que se encuentra dentro de `ingesta_almacenamiento.py`), que a su vez llamará a la función `get_S3_credentials` (que se encuentra dentro de `general.py`) la cual leerá  el *token* desde el archivo `credentials.yaml` y retorna las credenciales necesarias para establecer la conexión (se utiliza la clase ***Session*** de ***Boto3***). Se retorna un cliente que podemos asignar a una variable "***S3***".
 
 ![M2](https://img.shields.io/badge/Macroproceso%202-Generar%20datos%20ingesta-red)
 
@@ -363,7 +362,7 @@ Para lo anterior, utilizaremos nuestra función `guardar_ingesta(my_bucket, buck
  
  ![Ejecución](https://img.shields.io/badge/Proceso%20de%20ingesti%C3%B3n-Ejecuci%C3%B3n%20del%20pipeline-yellowgreen)
  
-1. Posicionarse en la carpeta donde se hizo el clon.
+1. Posicionarse en la carpeta donde se hizo el clon del repositorio.
 2. Activar el entorno `pyenv` adecuado y exportar la variable de entorno `PYTHONPATH` (mencionado arriba).
 3. Ejecutar el comando `python`.
 4. Dentro de la terminal de python (>>>) ejecutar los siguientes comandos:
@@ -400,6 +399,10 @@ Al mandar llamar la librería `import src.utils.constants as ks`, se mandan llam
 
 <sub><sup>**NOTA**: A partir del ***Checkpoint*** **3** la función 'guardar_ingesta' queda *deprecated*. Debido a que se encuentra contenida en el *pipeline* de *Luigi*.</sup></sub>
 
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
 ---
 
 ## Sobre nuestro *Data Pipeline*  :microscope:
@@ -413,9 +416,11 @@ Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la se
 
 [***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)
 
-[**Luigi's GitHub page**](https://github.com/spotify/luigi)
+[***Luigi's GitHub***](https://github.com/spotify/luigi)
 
 ![](./images/luigi.png)
+
+<sub><sup>**NOTA**: Imagen tomada del [***Luigi's GitHub***](https://github.com/spotify/luigi).</sup></sub>
 
 ### ¿Qué es *Luigi*?
 
@@ -423,61 +428,27 @@ Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la se
 
 <sub><sup>**Fuente**:[***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)</sup></sub>
 
-Este orquestador es la herramienta que nos permite correr nuestro *data pipeline*, definiendo aspectos importantes como el cómo, el cúando y el con qué se debe correr cada proceso.
+Este orquestador es la herramienta que nos permite correr nuestro *data pipeline*, definiendo aspectos importantes del cómo, cúando y con qué se debe correr cada proceso.
 
 Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correrán) en el *pipeline*, ***Luigi*** utiliza una estructura de datos llamada ***DAG*** (***Directed Acyclic Graph***). Es una herramienta visual útil y que ilustra de manera clara los procesos que nuestro proyecto sigue.
 
-**Así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
-
-![](./images/dag.png)
-
 ##
 
-![DAG](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-DAG-blue)
+En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* y *tasks* de *metadata*:
 
-- Se permite tener más de 1 entrada y sólo 1 salida al final del proceso. **NO** se permite tener ciclos.
+- ![Lt1](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingestion__unit__test.py-blue), ![Lt3](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet)
 
-- Está conformado por:
+- ![Lt4](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf), ![Lt5](https://img.shields.io/badge/Task-task__almacenamiento__unit__test.py-blue), ![Lt6](https://img.shields.io/badge/Task-task__almacenamiento__metadata.py-blueviolet)
 
-![EP1](https://img.shields.io/badge/1.-V%C3%A9rtices%2Fnodos-blueviolet) Cada nodo representa el *task* a ejecutar.
+- ![Lt7](https://img.shields.io/badge/Task-task__limpieza.py-9cf), ![Lt8](https://img.shields.io/badge/Task-task__limpieza__unit__test.py-blue), ![Lt9](https://img.shields.io/badge/Task-task__limpieza__metadata.py-blueviolet)
 
-![EP2](https://img.shields.io/badge/2.-Aristas%2Farcos-blueviolet) Cada arista la dirección de flujo.
+- ![Lt10](https://img.shields.io/badge/Task-task__feature__engineering.py-9cf), ![Lt11](https://img.shields.io/badge/Task-task__feature__engineering__unit__test.py-blue), ![Lt12](https://img.shields.io/badge/Task-task__feature__engineering__metadata.py-blueviolet)
 
-- Sigue 3 principios:
+- ![Lt13](https://img.shields.io/badge/Task-task__training.py-9cf), ![Lt14](https://img.shields.io/badge/Task-task__training__unit__test.py-blue), ![Lt15](https://img.shields.io/badge/Task-task__training__metadata.py-blueviolet)
 
-![DP1](https://img.shields.io/badge/DAG--Principio%201-Idempotencia-blueviolet) Aunque un proceso se corra con los mismos parámetros en múltiples ocasiones, la salida que se obtiene siempre será la misma. Esto implica que tampoco se generan salidas repetidas.
+- ![Lt16](https://img.shields.io/badge/Task-task__modelo.py-9cf), ![Lt17](https://img.shields.io/badge/Task-task__modelo__unit__test.py-blue), ![Lt18](https://img.shields.io/badge/Task-task__modelo__metadata.py-blueviolet)
 
-![DP2](https://img.shields.io/badge/DAG--Principio%202-Direcci%C3%B3n-blueviolet) La dirección del grafo va en un sólo sentido.
-
-![DP3](https://img.shields.io/badge/DAG--Principio%203-Ac%C3%ADclico-blueviolet) La salida de un nodo no puede regresar a uno que ya fue procesado.
-
-##
-
-![L_aspectos](https://img.shields.io/badge/Aspectos%20importantes%20a%20considerar-Luigi-blue)
-
-***Luigi*** tiene 2 objetos principales para construir su ***DAG***:
-
-![LO1](https://img.shields.io/badge/Luigi--Objeto%201-Target-9cf) Dónde se sacan los datos que requiere un *task*.
-
-![LO2](https://img.shields.io/badge/Luigi--Objeto%202-Task-9cf) La tarea que queremos sea administrada.
-
-Para declarar un *task* en *Luigi* debemos tener un *script* que tenga los siguientes 4 métodos requeridos:
-
-- `run()` : El código que se debe correr.
-
-- `input()` : Qué requiere de entrada la tarea y de dónde se debe obtener.
-
-- `output()` : Qué salida genera la tarea y dónde se queda persistida o guardada. Éste siempre regresa un objeto de tipo `target`.
-
-- `requires()` : Método con el que se define cómo está formado el grafo de dependencias entre tareas.
-
-<sub><sup>**NOTA**: Estos métodos son opcionales, excepto 'run()'.</sup></sub>
-
-##
-
-En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso:
-
-`task_almacenamiento.py` y `task_ingesta.py`.
+- ![Lt19](https://img.shields.io/badge/Task-task__biasfairness.py-9cf), ![Lt20](https://img.shields.io/badge/Task-task__biasfairness__unit__test.py-blue), ![Lt21](https://img.shields.io/badge/Task-task__biasfairness__metadata.py-blueviolet)
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
@@ -492,104 +463,79 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     │
     ├── etl
     │   ├── task_almacenamiento.py
-    |   └── task_ingesta.py 
+    │   ├── task_ingesta.py 
+    │   ├── task_limpieza.py
+    │   ├── task_feature_engineering.py
+    │   ├── task_training.py
+    │   ├── task_modelo.py
+    │   ├── task_biasfairness.py
+    │   ├── task_almacenamiento_unit_test.py
+    │   ├── task_ingestion_unit_test.py 
+    │   ├── task_limpieza_unit_test.py
+    │   ├── task_feature_engineering_unit_test.py
+    │   ├── task_training_unit_test.py
+    │   ├── task_modelo_unit_test.py
+    │   ├── task_biasfairness_unit_test.py
+    │   ├── task_feature_engineering_metadata.py
+    │   ├── task_limpieza_metadata.py
+    │   ├── task_almacenamiento_metadata.py
+    │   ├── task_ingestion_metadata.py
+    │   ├── task_training_metadata.py
+    │   ├── task_modelo_metadata.py
+    |   └── task_biasfairness_metadata.py
     │
     │
     ├── pipeline
     │
 ```
 
-##
+📂 Los *unit test* que realizamos para probar nuestro *data pipeline* se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
-![Lt1](https://img.shields.io/badge/Task-task__almacenamiento.py-9cf)
-
-Es un ***Luigi Task*** que contiene una clase `class TaskStore(luigi.Task)` y ésta a su vez contiene los siguientes parámetros:
-
-- `bucket` = luigi.Parameter(default = "temp-dev-dpa")
-- `prc_path` = luigi.Parameter(default = "ingestion")
-- `year` = luigi.IntParameter(default = todate.year) 
-- `month` = luigi.IntParameter(default = todate.month)
-- `day` = luigi.IntParameter(default = todate.day)
-- `flg_i0_c1` = luigi.IntParameter(default = 1)
-
-Y también manda a llamar las funciones:
-
-- `requires(self)` : Recibe año, mes, día y el *flag* obtenido en `flg_i0_c1`.
-- `run(self)` : Obtiene los datos almacenados en *S*3, los convierte en un archivo *json* y después los convierte en un archivo formato *pickle*.
-- `output(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings* para almacenarlos de manera ordenada en el *S*3.
-
-##
-
-![Lt2](https://img.shields.io/badge/Task-task__ingesta.py-9cf)
-
-Es un ***Luigi Task*** que contiene una clase `class TaskIngest(luigi.Task)` y ésta a su vez contiene los siguientes parámetros:
-
-- `year` = luigi.IntParameter(default = todate.year)
-- `month` = luigi.IntParameter(default = todate.month)
-- `day` = luigi.IntParameter(default = todate.day)
-- `flg_i0_c1` = luigi.IntParameter(default = 1)
-    
-Y también manda a llamar las funciones:
-
-- `run(self)` : Le da formato a los parámetros de fecha y los convierte en *date-strings*.
-- `output(self)` : Regresa el *output path* que *Luigi* lee en su *local target*.
+```
+├── src
+    │
+    ├── __init__.py
+    │
+    │
+    ├── utils    
+    │
+    │
+    ├── etl
+    │
+    │
+    ├── test
+    │   ├── test_almacenamiento.py
+    │   ├── test_ingestion.py 
+    │   ├── test_limpieza.py
+    │   ├── test_feature_engineering.py
+    │
+    │
+    ├── pipeline
+    │
+ ```
 
 ##
 
-![Lt1_2](https://img.shields.io/badge/Luigi%20pipeline-%C2%BFC%C3%B3mo%20ejecutarlo%3F-%20orange)
+**Y así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
-1. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr 
+![](./images/dag.jpeg)
 
-`ssh -i nombre_llave_.pem su_usuario@ec2-44-229-15-253.us-west-2.compute.amazonaws.com` para conectarse a la instancia *EC2* (*i.e.* su bastión).
+<sup><sub>**NOTA 1**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
 
-2. Clonar el repositorio del proyecto: 
+<sup><sub>**NOTA 2**: Ver ["¿Cómo ejecutar nuestro *pipeline*?"](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) para poder ejecutar nuestros *tasks*.</sup></sub>
 
-`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
+##
 
-3. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
-
-`pyenv install 3.7.4`.
-
-4. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
-
-5. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
-
-6. Posicionarse en la carpeta del repositorio clonado en el paso 2.
-
-7. Activar su ambiente virtual: `pyenv activate itam_dpa`.
-
-8. De ser necesario actualizar el repositorio clonado: `git pull`.
-
-9. Correr: `export PYTHONPATH=$PWD`.
-
-<sub><sup>**NOTA**: Del paso 1 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
-
-10. Correr: `PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year año_deseado --month mes_deseado --day día_deseado --flg-i0-c1 0_ó_1`.
-
-Tomar en cuenta:
-
-- Tanto los meses como los días, no llevan un cero antes.
-
-- Después del *flag* se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
-
-- `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
-
-*e.g.* Si queremos hacer la ingesta inicial del 5 de marzo de 2020 debemos correr:
-
-`PYTHONPATH="." luigi --module 'src.etl.task_almacenamiento' TaskStore --local-scheduler --bucket nombre_de_su_bucketS3 --prc-path ingestion --year 2020 --month 3 --day 5 --flg-i0-c1 0`.
-
-Si el task corrió de manera exitosa, el siguiente mensaje es desplegado:
-
-![](./images/luigi_task_result.jpg)
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
 
-## Sobre nuestro *Feature Engineering*
+## Sobre nuestro *Feature Engineering*  :hammer:
 
 <p align = "left">
     <img src="images/fe.png" width="400" height="200" />
     
-- En la ruta `notebooks/feature_engineering/Feature_Engineering_Checkpoint4.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 4*** del proyecto.
+- En la ruta `notebooks/feature_engineering/Feature_Engineering2.ipynb` encontrarás el *notebook* que contiene los resultados encontrados en el ***checkpoint 4*** del proyecto.
 
 ```
 ├── notebooks
@@ -598,8 +544,332 @@ Si el task corrió de manera exitosa, el siguiente mensaje es desplegado:
     │
     │
     ├── feature_engineering
-    |   └── Feature_Engineering_Checkpoint4.ipynb <- Notebook used for Checkpoint 4
+    │   ├── Feature_Engineering2.ipynb <- Notebook used for Feature Engineering; Checkpoint 4
+    |   └── itam_logo.png
     │
 ```
+
+##
+
+### ¿Cómo reproducir los resultados del *Feature Engineering*?  :computer:
+
+Si usted desea reproducir el *notebook* de *Feature Engineering*, lo que tiene que hacer es lo siguiente:
+
+1. Clonar el repositorio en la dirección de su agrado dentro de su computadora con el comando:
+ 
+`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
+
+![Reproducir_FE](https://img.shields.io/badge/PARA%20REPRODUCIR%20LOS%20RESULTADOS%20DE%20NUESTRO-Notebook__de__Feature__Engineering-inactive)
+
+2. Descargar el csv de esta [url](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5) y colocarlo en la ruta: `/notebooks/feature_engineering`.
+
+3. **Opcional, requiere pyenv:** Genera el ambiente virtual para este proyecto con el comando:
+
+`pyenv virtualenv 3.7.4 nombre_de_tu_environment`.
+
+  Activa el ambiente virtual con el siguiente comando: `pyenv activate nombre_de_tu_environment`
+
+  --> instalar ipykernel<br>
+  `pip install ipykernel`
+
+  --> hacer accesible el ambiente virtual al notebook de jupyter<br>
+  `python -m ipykernel install --user --name nombre_de_tu_environment --display-name nombre_de_tu_environment`
+  
+![Instalar_requirements](https://img.shields.io/badge/C%C3%93MO%20INSTALAR%20NUESTRO-requirements.txt-inactive)
+
+4. Instalar el `requirements.txt` que se encuentra en el mismo directorio de este archivo `README.md` con el comando:
+
+`pip install -r requirements.txt`.
+
+5. Abre tu terminal y desde ella entra al directorio raíz de este archivo.
+
+6. Corre el comando `jupyter notebook` (asegúrate de tener activo tu environment).
+
+7. Abre el archivo `Feature_Engineering_Checkpoint4.ipynb` y ya podrás operarlo sin problemas.
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
+---
+
+## *Data Governance*  :round_pushpin:  :ledger:
+
+![](./images/data_gov.png)
+
+Tiene la función de diseñar y garantizar los estándares que asuguren el flujo de información constante y calidad a través de los sistemas y fuentes de la empresa.
+
+El Gobierno de Datos conforma una unidad que funciona de forma coordinada para aumentar la eficiencia en el uso y gestión de la información.
+
+Se ocupa de:
+
+- Cumplir los objetivos relacionados con los datos de la empresa.
+
+- Gestión y administración de los datos como un activo estratégico de la organización.
+
+- Cumplimiento eficiente a reducir costos.
+
+- Planificar, establecer procesos, desarrollos y supervisar la gestión de datos para un uso óptimo.
+
+- Encontrar la tecnología adecuada para cubrir las distintas necesidades.
+
+##
+
+La manera en que que estructuramos nuestros *tasks* es la siguiente:
+
+![](./images/md_str.png)
+
+##
+
+### Infraestructura *AWS*
+
+Para ello, se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
+
+![](./images/infr_rqts.jpeg)
+
+<sup><sub>**NOTA 1**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
+
+<sup><sub>**NOTA 2**: En la versión final del *README* esta estructura se indicará donde se hable de los requerimientos de *S3*.</sup></sub>
+
+##
+
+![](./images/aws_rds.png)
+
+Debido a que ahora utilizaremos *RDS* para almacenar tablas de los metadatos generados en cada *Task*, debemos contar con credenciales que nos permitan entrar a ésta. 
+
+### Actualización archivo *credentials.yaml*
+
+El archivo `credentials.yaml` debe actualizarse para contener la siguiente estructura:
+
+```
+---
+s3:
+    aws_access_key_id: "de_tu_cuenta_de_AWS"
+    aws_secret_access_key: "de_tu_cuenta_de_AWS"
+food_inspections:
+    api_token: "de_tu app_token_del_chicago_data_portal"
+pg_service:
+    user: "tu_postgres_user"
+    password: "tu_postgres_user_password"
+    host: "direccion_de_tu_RDS.us-west-2.rds.amazonaws.com"
+    port: 5432
+    dbname: "nombre_base_datos" 
+```
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
+---
+
+## Sesgos e Inequidades :open_hands:
+
+![](./images/bf.png)
+
+*Machine Learning* por naturaleza es discriminante, pues lo que hacemos es discriminar datos a través del uso de la estadística. 
+
+Esta discriminación puede ser un problema cuando brinda:
+- **Ventajas sistemáticas a grupos privilegiados**.
+- **Desventajas sistemáticas a grupos no privilegiados**.
+
+Es de nuestro interés **identificar y cuantificar sesgos e inequidades en diferentes grupos**, para después mitigarlos y cuantificar las consecuencias en las métricas de dsempeño *off-line*.
+
+##
+
+![](./images/aequitas.png)
+
+<sup><sub>**NOTA**: Imagen tomada del [***Aequitas' GitHub***](https://github.com/dssg/aequitas).</sup></sub>
+
+***Aequitas*** es un ***toolkit open source*** que utilizamos en nuestro proyecto para medir sesgo e inequidad. Fue desarrollado por [***DSSG***](https://www.dssgfellowship.org/).
+
+[***Aequitas project website***](http://www.datasciencepublicpolicy.org/projects/aequitas/)
+
+[***Aequitas' GitHub***](https://github.com/dssg/aequitas)
+
+##
+
+![bf1](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFCu%C3%A1les%20son%20los%20atributos%20protegidos%3F-ff69b4)
+
+Realizamos dos ejercicios:
+
+![bf1_1](https://img.shields.io/badge/Atributos%20protegidos-Ejercicio%201-inactive)
+
+- Atributo protegido: `facility_type`.
+
+- Al existir 500 tipos de '*facility_type*', decidimos clasificar los grupos de mayor representación, obteniendo (por orden de mayor a menor representación) las siguientes categorías: 
+
+`restaurant`, `school`, `grocery store`, `children's services facility`, `day care` y `other`.
+
+<sup><sub>**NOTA**: '***other***' se creó debido a la heterogeneidad de establecimientos que ya no entraban en las categorías previas.</sup></sub>
+
+![bf1_2](https://img.shields.io/badge/Atributos%20protegidos-Ejercicio%202-inactive)
+
+- Atributo protegido: `zip`.
+
+- Creamos una tabla de códigos postales clasificados por 4 categorías de tipo de ingreso:
+
+`High`, `Low-mid`, `Downtown` y `other`.
+
+<sup><sub>**NOTA**: '***other***' se creó debido a que hay algunos códigos que se encuentran fuera del área de *Chicago* y de los cuales no contamos con su clasificación.</sup></sub>
+
+- Para la creación de estas 4 categorías nos apoyamos en este mapa:
+
+##
+
+![bf2](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20grupos%20de%20referencia%20tiene%20cada%20atributo%20protegido%3F-ff69b4)
+
+![bf2_1](https://img.shields.io/badge/Grupos%20de%20referencia-facility__type-inactive)
+
+- Grupo de referencia: `restaurant`.
+
+- **¿Por qué?** Porque es la que tiene mayor representación en la base de datos y el objetivo sería que no haya sesgo en las predicciones con etiqueta negativa hacia este tipo de establecimiento.
+
+![bf2_2](https://img.shields.io/badge/Grupos%20de%20referencia-zip-inactive)
+
+- Grupo de referencia: `Low-mid`.
+
+- **¿Por qué?** Porque el objetivo sería que no haya sesgo en las predicciones con etiqueta negativa hacia este tipo de zonas (con menor ingreso), que pudieran generar mayor disparidad respecto a las demás, tomando en cuenta que la cancelación de licencias de restaurantes puede afectar sensiblemente a la economía o el desarrollo de alguna zona.
+
+##
+
+![bf3](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFNuestro%20modelo%20es%20punitivo%20o%20asistivo%3F-ff69b4)
+
+- Nuestro modelo es `asistivo`.
+
+- **¿Por qué?** De acuerdo a nuestra [pregunta analítica](https://github.com/jlrzarcor/ITAM-dpa2021#qu%C3%A9-buscamos-contestar-con-nuestro-modelo-) y tomando en cuenta que el producto de datos está orientado para que el uso sea por parte de los establecimientos y no por parte del Gobierno de *Chicago*, consideramos que el modelo le permitirá a los dueños de los establecimientos prevenir posibles multas o cancelaciones de licencia por incumplimiento, al momento de realizar consultas sobre si su establecimiento pasaría o no una inspección.
+
+##
+
+![bf4](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20m%C3%A9tricas%20cuantificamos%2Focupamos%3F-ff69b4)
+
+![bf4_1](https://img.shields.io/badge/M%C3%A9trica%201-Recall%20parity-inactive)
+
+- **Interpretación**: la probabilidad de clasificar una inspección como aprobada/fallida dado su `facility_type` o dado su `zip` y que realmente haya sido aprobada/fallida.
+
+- Seleccionamos la métrica porque al ser los negocios los usuarios del modelo, éstos cuentan con recursos limitados (personal, horas laborales, recursos económicos, etc) y queremos asegurarnos que estos recursos no sean utilizados innecesariamente para poner en orden al establecimiento de tal manera que esté listo para aprobar la inspección.
+
+![bf4_2](https://img.shields.io/badge/M%C3%A9trica%201-FOR%20Parity-inactive)
+
+- **Interpretación**: la probabilidad de que hayamos clasificado una inspección como fallida dada su `facility_type` o su `zip` y que la inspección sí haya aprobado.
+
+- Seleccionamos la métrica porque al ser los negocios los usuarios del modelo, nos interesa minimizar los posibles recursos que éstos inviertan en poner al establecimiento listo para la inspección, cuando realmente no sea necesario.
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
+
+---
+
+## ¿Cómo ejecutar nuestro *pipeline*? ⚒️ 🚀 
+
+![L_pre](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20ejecutar%20nuestro%20pipeline%3F-Prerrequisitos-yellow)
+
+- Tener creada la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
+
+- Actualizar el [archivo *credentials.yaml*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#actualizaci%C3%B3n-archivo-credentialsyaml) con las claves adecuadas.
+
+- Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
+
+```
+[alias_servicio]
+user=user_rol_postgres
+password=password_user_rol
+host=end_point_user_RDS
+port=5432
+dbname=chicagofoodinsp
+```
+
+<sup><sub>**NOTA**: *'alias_ servicio'* es el identificador de las credenciales especificadas de servicio.</sup></sub>
+
+El cual se debe colocar en el directorio raíz de la instancia *EC*2:
+
+```
+> Directorio del archivo en sistema: ~/.pg_service.conf
+```
+
+##
+
+![Lt1_2](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20ejecutar%20nuestro%20pipeline%3F-Pasos-orange) 
+
+1. Tener en ejecución la [Infraestructura de *AWS*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#infraestructura-aws).
+
+2. Abrir su terminal, posicionarse en la carpeta `/home/.ssh` y correr:
+
+```
+ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com
+``` 
+
+para conectarse a la instancia *EC2* (*i.e.* su bastión).
+
+3. Clonar el repositorio del proyecto: 
+
+`git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
+
+4. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
+
+`pyenv install 3.7.4`.
+
+5. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
+
+6. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
+
+7. Posicionarse en la carpeta del repositorio clonado en el paso 3.
+
+8. Activar su ambiente virtual: `pyenv activate itam_dpa`.
+
+9. De ser necesario actualizar el repositorio clonado: `git pull`.
+
+<sub><sup>**NOTA**: Del paso 2 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
+
+10. Declar las variables de entorno con los comandos:
+
+```
+export PGSERVICEFILE=${HOME}/.pg_service.conf
+export PGSERVICE=nombre_de_tu_service
+export PYTHONPATH=$PWD
+```
+
+11. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
+
+```
+psql -f create_db.sql
+psql -f create_schemas.sql
+psql -f create_metadata_tables.sql
+psql -f create_procdata_tables.sql
+```
+
+12. En este punto ya se ejecutan los *tasks* de *Luigi*: 
+
+```
+**Entrenamiento**
+PYTHONPATH="." luigi --module 'src.etl.task_training_metadata' TaskTrainMeta --bucket tu_bucket_S3 --year 2021 --month 4
+--day 8 --flg-i0-c1 1 --force3_err 1 --local-scheduler
+```
+
+```
+**Modelado**
+PYTHONPATH="." luigi --module 'src.etl.task_modelo_metadata' TaskModMeta --bucket tu_bucket_S3 --year 2021 --month 4
+--day 8 --flg-i0-c1 1 --force4_err 1 --local-scheduler
+```
+
+Tomar en cuenta:
+
+:warning: Tanto los meses como los días, no llevan un cero antes.
+
+:warning:Después del *flag* se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
+
+:warning: `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
+
+:warning: Si se desea probar los *unit test* y que éstos marquen error, se debe reemplazar el `1` a la derecha de `force#_err` por `0`.
+
+Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
+
+![](./images/luigi_task_result8.png)
+
+<sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 5.</sup></sub>
+
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
