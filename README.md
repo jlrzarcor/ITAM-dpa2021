@@ -434,7 +434,7 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 ##
 
-En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* y *tasks* de *metadata*:
+En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* de procesamiento, *tasks* de *metadata* y *tasks* de pruebas unitarias: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>uard
 
 - ![Lt1](https://img.shields.io/badge/Task-task__ingesta.py-9cf), ![Lt2](https://img.shields.io/badge/Task-task__ingestion__unit__test.py-blue), ![Lt3](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet)
 
@@ -672,7 +672,7 @@ Esta discriminación puede ser un problema cuando brinda:
 - **Ventajas sistemáticas a grupos privilegiados**.
 - **Desventajas sistemáticas a grupos no privilegiados**.
 
-Es de nuestro interés **identificar y cuantificar sesgos e inequidades en diferentes grupos**, para después mitigarlos y cuantificar las consecuencias en las métricas de dsempeño *off-line*.
+Es de nuestro interés **identificar y cuantificar sesgos e inequidades en diferentes grupos**, para después mitigarlos y cuantificar las consecuencias en las métricas de desempeño *off-line*. >>>>>>>> typo
 
 ##
 
@@ -688,6 +688,7 @@ Es de nuestro interés **identificar y cuantificar sesgos e inequidades en difer
 
 ##
 
+>>>>>>>>>>>>>>>>>>> Pregunta 1 [¿?]
 ![bf1](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFCu%C3%A1les%20son%20los%20atributos%20protegidos%3F-ff69b4)
 
 Realizamos dos ejercicios:
@@ -714,16 +715,25 @@ Realizamos dos ejercicios:
 
 - Para la creación de estas 4 categorías nos apoyamos en este mapa:
 
+>>>>>>>>>>>>>>>>>>>>>>> referencias
+
+[***Comunity Areas and related Zip Codes ***](https://www.chicago.gov/content/dam/city/sites/covid/reports/2020-04-24/ChicagoCommunityAreaandZipcodeMap.pdf)
+
+[***Comunity Areas by income ***](https://voorheescenter.wordpress.com/2015/10/13/the-affordability-challenge-chicago-updates-the-affordable-requirements-ordinance/)
+
 ##
 
+>>>>>>>>>>>>>>>>>>> Pregunta 2 [¿?]
 ![bf2](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20grupos%20de%20referencia%20tiene%20cada%20atributo%20protegido%3F-ff69b4)
 
+>>>>>>>>>>>>>>>>>>> Atributo protegido [facility_type]
 ![bf2_1](https://img.shields.io/badge/Grupos%20de%20referencia-facility__type-inactive)
 
 - Grupo de referencia: `restaurant`.
 
 - **¿Por qué?** Porque es la que tiene mayor representación en la base de datos y el objetivo sería que no haya sesgo en las predicciones con etiqueta negativa hacia este tipo de establecimiento.
 
+>>>>>>>>>>>>>>>>>>> Atributo protegido [zip]
 ![bf2_2](https://img.shields.io/badge/Grupos%20de%20referencia-zip-inactive)
 
 - Grupo de referencia: `Low-mid`.
@@ -732,6 +742,7 @@ Realizamos dos ejercicios:
 
 ##
 
+>>>>>>>>>>>>>>>>>>> Pregunta 3 [¿?]
 ![bf3](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFNuestro%20modelo%20es%20punitivo%20o%20asistivo%3F-ff69b4)
 
 - Nuestro modelo es `asistivo`.
@@ -740,14 +751,17 @@ Realizamos dos ejercicios:
 
 ##
 
+>>>>>>>>>>>>>>>>>>> Pregunta 4 [¿?]
 ![bf4](https://img.shields.io/badge/Sesgos%20e%20Inequidades-%C2%BFQu%C3%A9%20m%C3%A9tricas%20cuantificamos%2Focupamos%3F-ff69b4)
 
 ![bf4_1](https://img.shields.io/badge/M%C3%A9trica%201-Recall%20parity-inactive)
 
 - **Interpretación**: la probabilidad de clasificar una inspección como aprobada/fallida dado su `facility_type` o dado su `zip` y que realmente haya sido aprobada/fallida.
 
-- Seleccionamos la métrica porque al ser los negocios los usuarios del modelo, éstos cuentan con recursos limitados (personal, horas laborales, recursos económicos, etc) y queremos asegurarnos que estos recursos no sean utilizados innecesariamente para poner en orden al establecimiento de tal manera que esté listo para aprobar la inspección.
+- Seleccionamos la métrica porque al ser los establecimientos de comida los usuarios del modelo, éstos cuentan con recursos limitados (personal, horas laborales, recursos económicos, etc) y queremos asegurarnos que estos recursos no sean utilizados innecesariamente para poner en orden al establecimiento de tal manera que esté listo para aprobar la inspección.
 
+
+>>>>>>>>>>>>>>>>>>> Métrica 2 FOR parity
 ![bf4_2](https://img.shields.io/badge/M%C3%A9trica%201-FOR%20Parity-inactive)
 
 - **Interpretación**: la probabilidad de que hayamos clasificado una inspección como fallida dada su `facility_type` o su `zip` y que la inspección sí haya aprobado.
@@ -798,24 +812,24 @@ El cual se debe colocar en el directorio raíz de la instancia *EC*2:
 ```
 ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com
 ``` 
+>>>>>>redacción varios cambios
+para conectarse a la instancia *EC2* (*i.e.* su bastión o procesamiento).
 
-para conectarse a la instancia *EC2* (*i.e.* su bastión).
-
-3. Clonar el repositorio del proyecto: 
+3. Clonar el repositorio del proyecto en la EC2 de procesamiento: 
 
 `git clone <url del repositorio> <nombre que desea poner al repositorio dentro de su sistema>`.
 
-4. Instalar '*pyenv*' en el bastión y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
+4. Instalar '*pyenv*' en la instancia de procesamiento y crear un ambiente virtual llamado 'itam_dpa' que tenga ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python): 
 
 `pyenv install 3.7.4`.
 
-5. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
+5. Activar el ambiente creado en el punto anterior: `pyenv activate itam_dpa`.
 
-6. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
+6. Instalar '*pip*': `sudo apt install python3-pip`. Asegurarse que el usuario tiene privilegios de *sudo* (*super user*).
 
 7. Posicionarse en la carpeta del repositorio clonado en el paso 3.
 
-8. Activar su ambiente virtual: `pyenv activate itam_dpa`.
+8. Instalar nuestro *requirements.txt*: `pip install -r requirements.txt`. 
 
 9. De ser necesario actualizar el repositorio clonado: `git pull`.
 
@@ -838,18 +852,12 @@ psql -f create_metadata_tables.sql
 psql -f create_procdata_tables.sql
 ```
 
-12. En este punto ya se ejecutan los *tasks* de *Luigi*: 
+12. A partir de este punto ya podemos ejecutar los *tasks* de *Luigi*: 
 
 ```
-**Entrenamiento**
+**Bias y Fariness**
 PYTHONPATH="." luigi --module 'src.etl.task_training_metadata' TaskTrainMeta --bucket tu_bucket_S3 --year 2021 --month 4
 --day 8 --flg-i0-c1 1 --force3_err 1 --local-scheduler
-```
-
-```
-**Modelado**
-PYTHONPATH="." luigi --module 'src.etl.task_modelo_metadata' TaskModMeta --bucket tu_bucket_S3 --year 2021 --month 4
---day 8 --flg-i0-c1 1 --force4_err 1 --local-scheduler
 ```
 
 Tomar en cuenta:
@@ -866,7 +874,7 @@ Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ![](./images/luigi_task_result8.png)
 
-<sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 5.</sup></sub>
+<sub><sup>**NOTA**: Hasta aquí se considera el *checkpoint* 6.</sup></sub>
 
 ##
 
