@@ -74,8 +74,9 @@ class TaskCleaning(CopyToTable):
         datos = s3.meta.client.get_object(Bucket = buck_path, Key = key_path)
         body = datos['Body'].read()
         data_pkl = pickle.loads(body)
-        json_dump = json.dumps(data_pkl)
-        datos_cfi = pd.read_json(json_dump)
+        # json_dump = json.dumps(data_pkl). Consider to remove
+        # datos_cfi = pd.read_json(json_dump). Consider to remove
+        datos_cfi = pd.DataFrame(data_pkl)
         
         
         # Cleaning and Preprocessing of data.

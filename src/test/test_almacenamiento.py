@@ -45,8 +45,9 @@ class TestStoredS3(marbles.core.TestCase):
         datos = s3.meta.client.get_object(Bucket = buck_path, Key = key_path)
         body = datos['Body'].read()
         data_pkl = pickle.loads(body)
-        json_dump = json.dumps(data_pkl)
-        datos_cfi = pd.read_json(json_dump)
+        #json_dump = json.dumps(data_pkl). Consider to Remove 
+        #datos_cfi = pd.read_json(json_dump). Consider to Remove
+        datos_cfi = pd.DataFrame(data_pkl)
         df_sh = datos_cfi.shape
         
         self.assertEqual(df_sh[1], 17, note = "La tabla de ingesta inicial almacedada en AWS S3 no corresponde con el número de columnas esperado.")

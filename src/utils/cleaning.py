@@ -98,7 +98,7 @@ def cleaning(df):
     df2['facility_type_x'] = df2['facility_type_x'].fillna('restaurant')
     df2=df2.rename(columns = {'facility_type_x':'facility_type'})
     df2.drop(['inspection_id','dba_name','address','city','state','latitude','longitude','location','facility_type_y','inspection_weekday','inspection_month'],axis = 1, inplace = True)
-    #pickle.dump(df2,open("df_clean.pkl","wb"))
+    df2 = df2.dropna()
     nrows_after = df2.shape[0]
     ncols_after = df2.shape[1]
     return df2, nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev
