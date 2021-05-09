@@ -109,3 +109,21 @@ CREATE TABLE metadata.modelo (
   rank text
 );
 COMMENT ON TABLE metadata.modelo IS 'Almacena metadata del modelo';
+
+
+
+/* ================================= metadata task bias and fairness ================================= */
+
+DROP TABLE IF EXISTS metadata.biasfair;
+CREATE TABLE metadata.biasfair (
+  exec_date date,
+  exec_param json,
+  executer varchar(10),
+  num_regs int,
+  num_grps int,
+  num_atrib int,
+  prop_pos_pred real,
+  prop_pos_real real,
+  S3_store_path text
+);
+COMMENT ON TABLE metadata.biasfair IS 'Almacena metadata de la ejecución de Sesgo e Inequidad';
