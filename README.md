@@ -9,8 +9,6 @@
 
 ### *M. Sc.* Liliana Millán Núñez
 
-### Equipo 5
-
 ##
 
 ***Contributors***             | ***GitHub's username***
