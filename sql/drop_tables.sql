@@ -14,3 +14,4 @@ DROP TABLE IF EXISTS metadata.modelo;
 DROP TABLE IF EXISTS metadata.biasfair;
 DROP TABLE IF EXISTS procdata.limpieza;
 DROP TABLE IF EXISTS procdata.feat_eng;
+DROP TABLE IF EXISTS table_updates;
