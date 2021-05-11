@@ -4,7 +4,7 @@
  * Script: Drop single tables...
  */
 
-DROP TABLE IF EXISTS metadata.ingestion
+DROP TABLE IF EXISTS metadata.ingestion;
 DROP TABLE IF EXISTS metadata.almacenamiento;
 DROP TABLE IF EXISTS metadata.cleaning;
 DROP TABLE IF EXISTS metadata.feat_eng;
