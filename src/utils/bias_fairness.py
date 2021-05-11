@@ -24,13 +24,14 @@ def bias_fair(modelo,df_train_test,df_fe):
     predicted_scores = modelo.predict_proba(X_test)
     
     # Se conforma el DataFrame que necesita Aequitas para el sesgo e inequidad de la variable facility_type (class)
+    y_test2 = y_test.reset_index(drop=True)
     df_dummy = pd.DataFrame()
     df_dummy['scores'] = pd.Series(predicted_scores[:,1])
     df_dummy['predic'] = np.where(df_dummy['scores'] < 0.7,0,1)
     df_aeq = pd.DataFrame()
-    df_aeq['real'] = y_test
+    df_aeq['real'] = y_test2
     df_aeq['prediccion'] = df_dummy.predic
-    df_aeq['faciliy_type'] = df_fe['class'].tail(len(df_dummy.predic))
+    df_aeq['faciliy_type'] = df_fe['class'].tail(len(df_dummy.predic)).reset_index(drop=True)
     # Asignamos nuevos índices y los nombres de las columnas para que los reconozca la función
     df_aeq = df_aeq.reset_index(drop=True)
     df_aeq.columns = ['label_value','score','class']
@@ -42,9 +43,9 @@ def bias_fair(modelo,df_train_test,df_fe):
     
     # Se conforma el DataFrame que necesita Aequitas para el sesgo e inequidad de la variable zip (level)
     df_aeq2 = pd.DataFrame()
-    df_aeq2['real'] = y_test
+    df_aeq2['real'] = y_test2
     df_aeq2['prediccion'] = df_dummy.predic
-    df_aeq2['zip'] = df_fe['level'].tail(len(df_dummy.predic))
+    df_aeq2['zip'] = df_fe['level'].tail(len(df_dummy.predic)).reset_index(drop=True)
     # Asignamos nuevos índices y los nombres de las columnas para que los reconozca la función
     df_aeq2 = df_aeq2.reset_index(drop=True)
     df_aeq2.columns = ['label_value','score','level']
@@ -57,10 +58,11 @@ def bias_fair(modelo,df_train_test,df_fe):
     df_labels = pd.DataFrame()
     df_labels['scores'] = pd.Series(predicted_scores[:,1])
     df_labels['predicted'] = np.where(df_dummy['scores'] < 0.7,0,1)
-    df_labels['label'] = y_test
+    df_labels['label'] = y_test2
     
     metrics = pd.concat([metrics1,metrics2]).reset_index(drop = True)
-        
+    metrics = metrics.fillna(0)
+    
     # Metadata
     n_groups = len(metrics1.attribute_value) + len(metrics2.attribute_value)
     n_attribute = metrics.attribute_name.nunique()

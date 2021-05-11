@@ -38,14 +38,15 @@ class TaskBFUT(CopyToTable):
     year = luigi.IntParameter(default = todate.year)
     month = luigi.IntParameter(default = todate.month)
     day = luigi.IntParameter(default = todate.day)
-    
     flg_i0_c1 = luigi.IntParameter(default = 1)
     
-    force3_err = luigi.IntParameter(default = 1)
     force4_err = luigi.IntParameter(default = 1)
     
+    avg_prec = luigi.IntParameter(default = 60)
+
+    
     def requires(self):
-        return TaskBiasFair(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1, self.force3_err)
+        return TaskBiasFair(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1, self.force4_err)
     
     # RDS database connection
     pg = get_pg_service(ks.path)
@@ -62,8 +63,8 @@ class TaskBFUT(CopyToTable):
 
     def rows(self):
 
-        # Create a transfer file path to target unit test...
-        os.system('echo ' + self.input().path + ',' + str(self.force4_err) + ' > src/test/trans_file.csv')
+        # Create a transfer file path with S3 from LuigiTarget Model to target unit test...
+        os.system('echo ' + self.input().path + ',' + str(self.avg_prec) + ' > src/test/trans_file.csv')
 
         # Objects returned by test
         marble_obj = tsap.TestBiasFair()

@@ -95,21 +95,20 @@ class TaskBiasFair(luigi.Task):
     # Apply Bias&Fairness.
         df_labels, metrics_to_rds, n_grps, n_atrib, ppp, ppr = bias_fair(df_model, df_tt, df_fe)
         
-        print("\n\n +++++++ BIAS AND FAIRNESS ++++++++ \n\n", metrics_to_rds)
+        print("\n\n +++++++ BIAS AND FAIRNESS ++++++++ \n\n")
     
         with self.output().open('w') as f:
             pkl.dump(metrics_to_rds, f)
                     
     # Lineage. Creating Metadata @ .csv file
         str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
-
         
     # Set path to S3   
         str_file = "modelo-" + str_date + ".pkl"
         path_S3 = "s3://{}/biasandfair/YEAR={}/MONTH={}/DAY={}/{}".\
         format(self.bucket, self.year, self.month, self.day, str_file)        
         
-      # Lineage. Creating Metadata @ .csv file
+    # Lineage. Creating Metadata @ .csv file
         str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
            
         str_file_csv = str_date + ".csv"
@@ -130,6 +129,6 @@ class TaskBiasFair(luigi.Task):
         str_file = "biasandfair-" + str_date + ".pkl"
         output_path = "s3://{}/biasandfair/YEAR={}/MONTH={}/DAY={}/{}".\
         format(self.bucket, self.year, self.month, self.day, str_file)
-            
+        
         s3 = ial.get_luigi_s3client()
         return luigi.contrib.s3.S3Target(path = output_path, client = s3, format = luigi.format.Nop)

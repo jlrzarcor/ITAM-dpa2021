@@ -33,14 +33,12 @@ class TaskBFMeta(CopyToTable):
     year = luigi.IntParameter(default = todate.year)
     month = luigi.IntParameter(default = todate.month)
     day = luigi.IntParameter(default = todate.day)
-    
     flg_i0_c1 = luigi.IntParameter(default = 1)
     
-    force3_err = luigi.IntParameter(default = 1)
-    force4_err = luigi.IntParameter(default = 1)
-    
+    avg_prec = luigi.IntParameter(default = 0.6)
+        
     def requires(self):
-        return TaskBFUT(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1, self.force4_err)
+        return TaskBFUT(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1, self.avg_prec)
 
 
     # RDS database connection

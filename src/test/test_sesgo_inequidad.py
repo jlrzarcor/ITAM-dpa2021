@@ -48,12 +48,10 @@ class TestBiasFair(marbles.core.TestCase):
         datos = s3.meta.client.get_object(Bucket = buck_path, Key = key_path)
         body = datos['Body'].read()
         model_cfi = pickle.loads(body)
-        #avg_prec = model_cfi['precision'].mean()
-        avg_prec = 0.6 # Temporal by-pass
+        avg_prec = model_cfi['precision'].mean()
         
-        if pd.read_csv('src/test/trans_file.csv', header = None).iloc[0,1] == 0:
-            avg_prec = 0
+        req_prec = float(pd.read_csv('src/test/trans_file.csv', header = None).iloc[0,1])/100
         
-        self.assertGreaterEqual(avg_prec, 0.6 , note = "\n\n ^^^^^^^   La precision del modelo evluado está por debajo de lo esperado.   ^^^^^^^ \n\n")
+        self.assertGreaterEqual(avg_prec, req_prec , note = "\n\n %%%%%%%   La precision del mejor modelo evaluado está por debajo del parámetro esperado avg_prec.   %%%%%%% \n\n")
         self.status = "TestPassed:)"
         self.test_meth = "test_avg_prec"        
