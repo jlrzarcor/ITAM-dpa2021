@@ -805,7 +805,7 @@ El cual se debe colocar en el directorio raíz de la instancia *EC*2:
 ssh -i nombre_llave_.pem su_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com
 ``` 
 
-para conectarse a la instancia *EC2* (*i.e.* su bastión).
+para conectarse a la instancia *EC2* (procesamiento).
 
 3. Clonar el repositorio del proyecto: 
 
@@ -827,7 +827,7 @@ para conectarse a la instancia *EC2* (*i.e.* su bastión).
 
 <sub><sup>**NOTA**: Del paso 2 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
 
-10. Declarar las variables de entorno con los comandos:
+10. Declarar las variables de ambiente con los comandos:
 
 ```
 export PGSERVICEFILE=${HOME}/.pg_service.conf
@@ -835,38 +835,31 @@ export PGSERVICE=nombre_de_tu_service
 export PYTHONPATH=$PWD
 ```
 
-11. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes 3 comandos:
+11. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes comandos:
 
 ```
 psql -f create_db.sql
 psql -f create_schemas.sql
+psql -f drop_tables.sql
 psql -f create_metadata_tables.sql
 psql -f create_procdata_tables.sql
 ```
 
-12. En este punto ya se ejecutan los *tasks* de *Luigi*: 
+12. A partir de este punto ya se ejecutan los *tasks* de *Luigi*: 
 
 ```
-**Entrenamiento**
-PYTHONPATH="." luigi --module 'src.etl.task_training_metadata' TaskTrainMeta --bucket tu_bucket_S3 --year 2021 --month 4
---day 8 --flg-i0-c1 1 --force3_err 1 --local-scheduler
+***Bias & Fairness***
+PYTHONPATH="." luigi --module 'src.etl.task_sesgo_inequidades_metadata' TaskBFMeta --year 2021 --month 4 --day 11 --flg-i0-c1 1 --avg-prec 30 --bucket data-product-architecture-equipo-5
 ```
-
-```
-**Modelado**
-PYTHONPATH="." luigi --module 'src.etl.task_modelo_metadata' TaskModMeta --bucket tu_bucket_S3 --year 2021 --month 4
---day 8 --flg-i0-c1 1 --force4_err 1 --local-scheduler
-```
-
 Tomar en cuenta:
 
 :warning: Tanto los meses como los días, no llevan un cero antes.
 
-:warning:Después del *flag* se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
+:warning: Después del *flag* `--flg-i0-c1` se puede escribir 0 (ingesta inicial) ó 1 (ingesta consecutiva).
 
 :warning: `prc-path` es la ruta de la subcarpeta que almacena el proceso. Por *default* nosotros lo llamamos `ingestion`.
 
-:warning: Si se desea probar los *unit test* y que éstos marquen error, se debe reemplazar el `1` a la derecha de `force#_err` por `0`.
+:warning: Para probar el *unit test* de este *Task* y que marque un error, se debe indicar un valor entre 0 y 1 después del *flag* `--avg-prec` que sea mayor al promedio de la precisión que se reporte en la tabla de métricas (en general valores mayores 0.95 funcionan bien).
 
 Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
