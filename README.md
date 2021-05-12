@@ -861,7 +861,7 @@ Tomar en cuenta:
 
 :warning: Para probar el *unit test* de este *Task* y que marque un error, se debe indicar un valor entre 0 y 100 después del *flag* `--avg-prec` que sea mayor al promedio de la precisión por grupo que se reporte en la tabla de métricas (en general valores mayores 95 funcionan bien).
 
-Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
+- Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
 ![](./images/luigi_task_result21.jpeg)
 
