@@ -36,11 +36,11 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 ## Tabla de contenido  :floppy_disk:
 
-1. [Acerca de este proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#acerca-de-este-proyecto--globe_with_meridians) :globe_with_meridians:
-2. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#estructura-b%C3%A1sica-del-proyecto--file_folder) :file_folder:
-3. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope) 🔬
-4. [Sesgos e Inequidades](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#sesgos-e-inequidades-open_hands) :open_hands:
-5. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) 🛠️ 🚀
+1. [Acerca de este proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#acerca-de-este-proyecto--globe_with_meridians)
+2. [Estructura básica del proyecto](https://github.com/jlrzarcor/ITAM-dpa2021#estructura-b%C3%A1sica-del-proyecto--file_folder)
+3. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope)
+4. [Sesgos e Inequidades](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#sesgos-e-inequidades-open_hands)
+5. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-)
 
 ---
 
@@ -48,7 +48,7 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 <img src="images/cdp.png" />
 
-<center><sup><sub>**NOTA**: Imagen tomada de la página de [***Chicago Data Portal***](https://data.cityofchicago.org/).</sup></sub></center>
+<sup><sub>**NOTA**: Imagen tomada de la página de [***Chicago Data Portal***](https://data.cityofchicago.org/).</sup></sub>
 
 - Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
@@ -180,6 +180,12 @@ Para administrar el orden de las tareas (cómo nuestros distintos *tasks* correr
 
 ##
 
+La estructura de nuestro *pipeline* es la siguiente:
+
+![](./images/md_str.png)
+
+##
+
 En los **módulos** siguientes se integran las funciones que nos permitirán realizar todo el proceso de *tasks* y *tasks* de *metadata*:
 
 - ![Lt1](https://img.shields.io/badge/Task-task__ingesta.py-9cf) ![Lt2](https://img.shields.io/badge/Task-task__ingestion__unit__test.py-blue) ![Lt3](https://img.shields.io/badge/Task-task__ingestion__metadata.py-blueviolet)
@@ -234,10 +240,6 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
     ├── pipeline
     │
 ```
-
-La estructura de nuestros *tasks* es la siguiente:
-
-![](./images/md_str.png)
 
 📂 Los *unit test* que realizamos para probar nuestro *data pipeline* se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
