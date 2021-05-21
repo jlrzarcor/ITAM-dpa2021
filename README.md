@@ -52,10 +52,6 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 - Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
-![](./images/chicago_summary.jpg)
-
-<sup><sub>**NOTA**: *Screenshot* tomado el sábado 16 de enero de 2021, por lo que el número de observaciones de la base de datos probablemente ya sea mayor.</sup></sub>
-
 - La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en *Chicago* desde el 01/01/2010.
 
 - Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
@@ -85,11 +81,11 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 ### ¿Qué lenguaje utlizamos? :pen:
 
+<img src="images/python-logo.png" width="270" height="100" />
+
 ![Lenguaje_utilizado](https://img.shields.io/badge/Python-3.7.4-informational/?logo=Python)
 
 [***Python.org***](https://www.python.org/)
-
-<img src="images/python-logo.png" width="270" height="100" />
 
 ##
 
@@ -158,15 +154,15 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
     
 Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la secuencia que éstos deben seguir, utilizamos un orquestador llamado [***Luigi***](https://luigi.readthedocs.io/en/stable/).
 
+<img src="images/luigi.png" width="240" height="115" />
+
+<sub><sup>**NOTA**: Imagen tomada del [***Luigi's GitHub***](https://github.com/spotify/luigi).</sup></sub>
+
 ![Luigi_version](https://img.shields.io/badge/Luigi-3.0.2-brightgreen)
 
 [***Luigi's documentation***](https://luigi.readthedocs.io/en/stable/)
 
 [***Luigi's GitHub***](https://github.com/spotify/luigi)
-
-<img src="images/luigi.png" width="240" height="115" />
-
-<sub><sup>**NOTA**: Imagen tomada del [***Luigi's GitHub***](https://github.com/spotify/luigi).</sup></sub>
 
 ### ¿Qué es *Luigi*?
 
