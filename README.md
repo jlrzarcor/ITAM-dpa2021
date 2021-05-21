@@ -292,7 +292,7 @@ Es de nuestro interés **identificar y cuantificar sesgos e inequidades en difer
 
 ##
 
-![](./images/aequitas.png)
+<img src="images/aequitas.png" width="280" height="100" />
 
 <sup><sub>**NOTA**: Imagen tomada del [***Aequitas' GitHub***](https://github.com/dssg/aequitas).</sup></sub>
 
