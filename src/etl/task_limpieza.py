@@ -31,12 +31,12 @@ from src.utils.cleaning import cleaning
 
 class TaskCleaning(CopyToTable):
     
-    # Variables
-       # Transfer required variables
+ # Variables
+    # Transfer required variables
     bucket = luigi.Parameter(default = "data-product-architecture-equipo-5")
     prc_path = luigi.Parameter(default = "ingestion")
 
-       # luigi parameters
+    # luigi parameters
     todate = datetime.date(datetime.today())        
     year = luigi.IntParameter(default = todate.year)
     month = luigi.IntParameter(default = todate.month)
@@ -48,7 +48,7 @@ class TaskCleaning(CopyToTable):
         return {'A':TaskStore(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1),
                 'B':TaskStoreMeta(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)}
 
-    # RDS database connection
+ # RDS database connection
     pg = get_pg_service(ks.path)
     user = pg['user']
     password = pg['password']
@@ -57,19 +57,19 @@ class TaskCleaning(CopyToTable):
     database = pg['dbname']
     table = 'procdata.limpieza'
 
-    # RDS database table columns
-    columns = [("aka_name", "varchar"), ("license", "varchar"), ("facility_type", "varchar"), ("label_risk", "int"),
+ # RDS database table columns
+    columns = [("ingest_date", "date"),("aka_name", "varchar"), ("license", "varchar"), ("facility_type", "varchar"), ("label_risk", "int"),
                ("zip", "varchar"), ("inspection_date", "date"), ("inspection_type", "varchar"), ("violations_count", "int"),
                ("sin_mnth", "real"), ("cos_mnth", "real"), ("sin_wkd", "real"), ("cos_wkd", "real"), ("label_results", "int")]    
         
     def rows(self):
         
-        # Path from S3 client to open data @ S3
+     # Path from S3 client to open data @ S3
         S3_targ = self.input()['A'].path.split("/")
         buck_path = S3_targ[2]
         key_path = '/'.join(S3_targ[3:])
 
-        # Create a DataFrame from S3 data
+     # Create a DataFrame from S3 data
         s3 = ial.get_s3_resource()
         datos = s3.meta.client.get_object(Bucket = buck_path, Key = key_path)
         body = datos['Body'].read()
@@ -77,21 +77,23 @@ class TaskCleaning(CopyToTable):
         # json_dump = json.dumps(data_pkl). Consider to remove
         # datos_cfi = pd.read_json(json_dump). Consider to remove
         datos_cfi = pd.DataFrame(data_pkl)
-        
-        
-        # Cleaning and Preprocessing of data.
-        cleaned_df, nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev = cleaning(datos_cfi)
-        
-        print("\n\n****************\n\n",nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev)
 
-        # Lineage. Creating Metadata @ .csv file
-        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
-           
+        
+     # Cleaning and Preprocessing of data.
+        cleaned_df, nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev = cleaning(datos_cfi)
+        cleaned_df.insert(0, "ingest_date", datetime.date(datetime(self.year, self.month, self.day)))
+        
+        print("\n\n ======= ======= =======   ",nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev,
+              "   ======= ======= =======\n\n")
+
+     # Lineage. Creating Metadata @ .csv file
+        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))        
+        
         str_file_csv = str_date + ".csv"
         output_path = "src/temp/metadata/limpieza/type={}/".format(self.flg_i0_c1)
         os.makedirs(output_path, exist_ok = True)
         
-        # WORKING
+     # WORKING
         
         dic_par = {'year':str(self.year),'month':str(self.month),'day':str(self.day),'flg_i0_c1':str(self.flg_i0_c1)}
         
@@ -101,12 +103,9 @@ class TaskCleaning(CopyToTable):
         
         df.to_csv(output_path + str_file_csv, index=False, header=False)
 
-        # Write to cleaned data to RDS procdata.limpieza table
-        #print("\n\n<<<<<<<<<<<<<<<<<<<<<<<<<<<\n\n",cleaned_df.shape)
+     # Write to cleaned data to RDS procdata.limpieza table
         for row in cleaned_df.itertuples(index = False):
             yield row
 
 
-
-
-
+            

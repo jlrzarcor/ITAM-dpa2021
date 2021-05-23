@@ -29,7 +29,7 @@ class TestStoredS3(marbles.core.TestCase):
     status = ''
     err_msg = ''
 
-    __name__ = 'TestIngest'
+    __name__ = 'TestStoredS3'
     
     def test_num_col(self):
         

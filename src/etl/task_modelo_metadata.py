@@ -54,7 +54,7 @@ class TaskModelMeta(CopyToTable):
     
     # RDS database table columns
     columns = [("exec_date", "date"), ("exec_param", "json"), ("executer", "varchar"), ("best_tree", "text"),("exec_time", "real"),
-               ("test_models", "text"), ("score", "text"), ("rank", "text") ]
+               ("test_models", "text"), ("score", "text"), ("rank", "text"), ("S3_store_path", "text") ]
 
     def rows(self):
         str_file = str(datetime.date(datetime(self.year, self.month, self.day))) + ".csv"

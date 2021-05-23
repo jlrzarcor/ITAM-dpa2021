@@ -48,32 +48,34 @@ class TaskTrain(luigi.Task):
                 'B':TaskFeatEngMeta(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1)}
   
     def run(self):
+
+        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))        
         
       # Create a DataFrame from clean data from RDS db.
         conn = psycopg2.connect(dbname = self.input()['A'].database, user = self.input()['A'].user, password = self.input()['A'].password,
                                 port = self.input()['A'].port, host = self.input()['A'].host)
         
-        str_qry = "SELECT * FROM procdata.feat_eng;"
-        feature_eng = sqlio.read_sql_query(str_qry, conn)
+        str_qry = "SELECT * FROM procdata.feat_eng WHERE ingest_date between '2010-01-01' and '" + str_date + "';"
+        feat_eng_df = sqlio.read_sql_query(str_qry, conn)
+        feat_eng_df.drop(columns = ['ingest_date', 'aka_name', 'license'] , inplace=True, errors='raise')
         
       # Apply Training to data.
-        df_train_test, nrows_train, nrows_test = train(feature_eng)
+        df_train_test, nrows_train, nrows_test = train(feat_eng_df)
         
-        print("\n\n++++++++++++++++++ TRAINING ++++++++++++++++++\n\n", type(df_train_test), type(nrows_train), type(nrows_test),
-              nrows_train, nrows_test)
+        print("\n\n ======= ======= =======   TRAINING  ======= ======= ======= \n\n\t\t types of: df, nrows train and test and numbers",
+              type(df_train_test), type(nrows_train), type(nrows_test), nrows_train, nrows_test, "\n\n")
     
         with self.output().open('w') as f:
             pkl.dump(df_train_test, f)
                     
-    # Lineage. Creating Metadata @ .csv file
-        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
+     # Lineage. Creating Metadata @ .csv file
 
-    # Set path to S3   
+       # Set path to S3   
         str_file = "training-dataset-" + str_date + ".pkl"
-        path_S3 = "s3://{}/train/YEAR={}/MONTH={}/DAY={}/{}".\
+        S3_path = "s3://{}/train/YEAR={}/MONTH={}/DAY={}/{}".\
         format(self.bucket, self.year, self.month, self.day, str_file)        
         
-      # Lineage. Creating Metadata @ .csv file
+       # Lineage. Creating Metadata @ .csv file
         str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
            
         str_file_csv = str_date + ".csv"
@@ -83,7 +85,7 @@ class TaskTrain(luigi.Task):
         dic_par = {'year':str(self.year),'month':str(self.month),'day':str(self.day),'flg_i0_c1':str(self.flg_i0_c1)}
         df = pd.DataFrame({'exec_date': [self.todate], 'exec_param': [json.dumps(dic_par)],'executer': ['luigi'],
                            'num_regs_str': [len(df_train_test)], 'nrows_train': [nrows_train], 'nrows_test': [nrows_test],
-                           'S3_path': [path_S3]})
+                           'S3_path': [S3_path]})
         df.to_csv(output_path + str_file_csv, index=False, header=False)
                 
     def output(self):

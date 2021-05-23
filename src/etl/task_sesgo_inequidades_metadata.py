@@ -37,7 +37,7 @@ class TaskBFMeta(CopyToTable):
 
     force4_err = luigi.IntParameter(default = 1)    
     
-    avg_prec = luigi.IntParameter(default = 0.6)
+    avg_prec = luigi.IntParameter(default = 60)
         
     def requires(self):
         return TaskBFUT(self.bucket, self.prc_path, self.year, self.month, self.day, self.flg_i0_c1, self.force4_err, self.avg_prec)

@@ -67,7 +67,8 @@ class TaskModel(luigi.Task):
     # Apply Training to data.
         obj_model, best_tree, t_exec, test_models, mean_scores, rank_model = model(df_trained)
         
-        print("\n\n++++++++++++++++++ MODELING ++++++++++++++++++\n\n", type(obj_model), type(best_tree))
+        print("\n\n ======= ======= =======   MODELING  ======= ======= ======= \n\n\t obj_model, best tree", type(obj_model),
+              type(best_tree), "\n\n")
     
         with self.output().open('w') as f:
             pkl.dump(obj_model, f)
@@ -90,7 +91,7 @@ class TaskModel(luigi.Task):
         dic_par = {'year':str(self.year),'month':str(self.month),'day':str(self.day),'flg_i0_c1':str(self.flg_i0_c1)}
         df = pd.DataFrame({'exec_date': [self.todate], 'exec_param': [json.dumps(dic_par)],'executer': ['luigi'],
                            'best_tree': [best_tree], 'exec_time': [t_exec], 'test_models': [test_models], 'score': [mean_scores],
-                            'rank': [rank_model]}) #, 'S3_path': [path_S3]})
+                            'rank': [rank_model], 'S3_store_path': [path_S3]})
         df.to_csv(output_path + str_file_csv, index=False, header=False)
                 
     def output(self):
