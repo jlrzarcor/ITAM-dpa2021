@@ -78,6 +78,7 @@ def feat_eng(df_fe):
     ncols_ohe = data_input_ohe.shape[1]
     
     #print("Tiempo en ejecutar: ", time.time() - start_time)
+    df_input = pd.DataFrame(df_fe[['aka_name','license','label_risk','label_results','level','class']])
     
     return df_input, nrows_ohe, ncols_ohe, float(best_score), time_exec, str(best_rf)
 
