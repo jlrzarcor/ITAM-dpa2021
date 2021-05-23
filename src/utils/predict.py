@@ -5,7 +5,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 def predict(df_fe, model):
     var = df_fe[['aka_name', 'license']]
-    df_fe.drop(['date', 'aka_name', 'license'], axis=1, inplace=True)
+    df_fe.drop(['ingest_date', 'aka_name', 'license'], axis=1, inplace=True)
     data_input_ohe = pd.get_dummies(df_fe)
     etiqueta = data_input_ohe.label_results
     data_input_ohe= data_input_ohe.drop('label_results', axis = 1)
