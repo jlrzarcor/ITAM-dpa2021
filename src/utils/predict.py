@@ -3,8 +3,9 @@ import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.tree import DecisionTreeClassifier
 
-def predict(df_clean,df_fe, model):
-    df_fe.drop(['date'],axis = 1, inplace = True)
+def predict(df_fe, model):
+    var = df_fe[['aka_name', 'license']]
+    df_fe.drop(['date', 'aka_name', 'license'], axis=1, inplace=True)
     data_input_ohe = pd.get_dummies(df_fe)
     etiqueta = data_input_ohe.label_results
     data_input_ohe= data_input_ohe.drop('label_results', axis = 1)
@@ -28,7 +29,7 @@ def predict(df_clean,df_fe, model):
         
     predicted_scores = pd.DataFrame(model.predict_proba(data_input_ohe))
     predicted_scores['predic'] = np.where(predicted_scores[1] < 0.7,0,1)
-    salida = df_clean.iloc[data_input_ohe.index,[0,1]].reset_index()
+    salida = var.loc[data_input_ohe.index,['aka_name','license']].reset_index()
     salida['score'] = predicted_scores.iloc[:,1]
     salida['prediction'] = predicted_scores.iloc[:,2]
     return salida
