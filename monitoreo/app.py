@@ -8,16 +8,31 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 import pandas as pd
-import pickle as pkl
+from sqlalchemy import create_engine
+
+user = 'carlos'
+password = 'alan'
+host = 'rds-dpa-project.cudydvgqgf80.us-west-2.rds.amazonaws.com'
+port = '5432'
+dnname = 'chicagofoodinsp'
+url = 'posgresql://{}:{}@{}/{}'.format(user, password, host, port, dbname)
+
+connection = create_engine(url)
+
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+query_1 = 'SELECT * FROM predict;'
+
+df_query = pd.read_sql_query(query_1, connection)
+
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
-predic = pkl.load(open("df_predic.pkl", "rb"))
 
-fig = px.histogram(predic, x="prediction", color="prediction")
+
+fig = px.histogram(df_query, x="prediction", color="prediction")
 
 app.layout = html.Div(children=[
     html.H1(children='Distribución de scores de nuetra predicción'),
