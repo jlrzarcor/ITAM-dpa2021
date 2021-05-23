@@ -14,7 +14,7 @@ user = 'carlos'
 password = 'alan'
 host = 'rds-dpa-project.cudydvgqgf80.us-west-2.rds.amazonaws.com'
 port = '5432'
-dnname = 'chicagofoodinsp'
+dbname = 'chicagofoodinsp'
 url = 'posgresql://{}:{}@{}:{}/{}'.format(user, password, host, port, dbname)
 
 connection = create_engine(url)
