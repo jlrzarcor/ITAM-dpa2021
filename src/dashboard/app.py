@@ -15,7 +15,7 @@ password = 'alan'
 host = 'rds-dpa-project.cudydvgqgf80.us-west-2.rds.amazonaws.com'
 port = '5432'
 dbname = 'chicagofoodinsp'
-url = 'posgresql://{}:{}@{}:{}/{}'.format(user, password, host, port, dbname)
+url = 'postgresql://{}:{}@{}:{}/{}'.format(user, password, host, port, dbname)
 
 connection = create_engine(url)
 
@@ -24,7 +24,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-query_1 = 'SELECT * FROM predict;'
+query_1 = 'SELECT * FROM procdata.feat_eng;'
 
 df_query = pd.read_sql_query(query_1, connection)
 
@@ -32,7 +32,7 @@ df_query = pd.read_sql_query(query_1, connection)
 # see https://plotly.com/python/px-arguments/ for more options
 
 
-fig = px.histogram(df_query, x="prediction", color="prediction")
+fig = px.histogram(df_query, x="label_risk", color="label_risk")
 
 app.layout = html.Div(children=[
     html.H1(children='Distribución de scores de nuetra predicción'),
