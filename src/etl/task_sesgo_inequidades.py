@@ -58,6 +58,8 @@ class TaskBiasFair(luigi.Task):
     
     def run(self):
         
+        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
+        
     # Import Selected Model from AWS-S3
         # Path for S3 client to open data @ S3
         S3_targ = self.input()['A'].path
@@ -99,22 +101,31 @@ class TaskBiasFair(luigi.Task):
     
         with self.output().open('w') as f:
             pkl.dump(metrics_to_rds, f)
-                    
+
     # Lineage. Creating Metadata @ .csv file
-        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
+
+    # Set path to S3 to store Model scores
+        str_file = "model-scores-" + str_date + ".pkl"
+        path_S3 = "biasandfair/YEAR={}/MONTH={}/DAY={}/{}".\
+        format(self.year, self.month, self.day, str_file)        
+
+    # Store data Model Scores
+        s3 = ial.get_s3_resource()
+        pickle_buffer = pkl.dumps(df_labels)
+        s3.Object(self.bucket, path_S3).put(Body = pickle_buffer)
+
         
-    # Set path to S3   
+    # Lineage. Creating Metadata @ .csv file
+
+      # Set path to S3 to store bias and fairness metadata.  
         str_file = "biasandfair-" + str_date + ".pkl"
         path_S3 = "s3://{}/biasandfair/YEAR={}/MONTH={}/DAY={}/{}".\
         format(self.bucket, self.year, self.month, self.day, str_file)        
-        
-    # Lineage. Creating Metadata @ .csv file
-        str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
-           
+
         str_file_csv = str_date + ".csv"
         output_path = "src/temp/metadata/biasandfair/type={}/".format(self.flg_i0_c1)
         os.makedirs(output_path, exist_ok = True)
-        
+
         dic_par = {'year':str(self.year),'month':str(self.month),'day':str(self.day),'flg_i0_c1':str(self.flg_i0_c1)}
         df = pd.DataFrame({'exec_date': [self.todate], 'exec_param': [json.dumps(dic_par)],'executer': ['luigi'],
                            'num_regs': [df_labels.shape[0]], 'num_grps': [n_grps], 'num_atrib': [n_atrib],
