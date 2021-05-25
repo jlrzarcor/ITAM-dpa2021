@@ -21,10 +21,7 @@ COMMENT ON TABLE api.scores IS 'Almacenar las predicciones de S3 RDS para API';
 DROP TABLE IF EXISTS dsh.model;
 CREATE TABLE dsh.model (
     ingest_date date,
-    index int,
-    aka_name varchar(90),
-    license varchar(20),
-    score real,
-    prediction int
+    type varchar(1),
+    scores real
 );
 COMMENT ON TABLE dsh.model IS 'Almacenar las predicciones de S3 RDS para dashboard';

@@ -57,8 +57,7 @@ class TaskDashData(CopyToTable):
     table = 'dsh.model'
 
  # RDS database table columns
-    columns = [("ingest_date", "date"), ("index", "int"), ("aka_name", "varchar"), ("license", "varchar"),
-               ("score", "real"), ("prediction", "int")]
+    columns = [("ingest_date", "date"), ("type", "varchar"), ("scores", "real")]
         
     def rows(self):
 
@@ -80,26 +79,23 @@ class TaskDashData(CopyToTable):
 
 # ^ IMPORTANT:   --->>>Import Model Scores from AWS-S3 stored @biasandfairness. As We expect scores from model preidctions and we can´t persist twice in a single luigi task, We decided to persist model-scores into same S3 path as biasnand fairnes, thus We could be able to track it for deployment.        
 
-
     # ^ RDS database connection to get S3 last model path 
 
         pg_aux = get_pg_service(ks.path)
         conn = psycopg2.connect(dbname = pg_aux['dbname'], user = pg_aux['user'], password = pg_aux['password'],
                                 port = pg_aux['port'], host = pg_aux['host'])
         
-        str_qry = "SELECT S3_store_path FROM metadata.biasfair ORDER BY exec_date DESC LIMIT 1;"
+        str_qry = "SELECT S3_store_path FROM metadata.biasfair ORDER BY s3_store_path DESC FETCH FIRST ROW ONLY;"
         S3_targ = sqlio.read_sql_query(str_qry, conn)
         
-        print("\n\n ======= ======= =======   ruta modelo en S3 para predicciones   ======= ======= ======= \n\n", S3_targ.iloc[0,0],"\n\n")
+        print("\n\n ======= ======= =======   PREDICTIONS. Path S3 modelo predicts.   ======= ======= ======= \n\n", S3_targ.iloc[0,0],"\n\n")
         
     
         # Path for S3 client to open last model stored @ S3
         S3_targ_splt = S3_targ.iloc[0,0].split("/")
         buck_path = S3_targ_splt[2]
         key_path = '/'.join(S3_targ_splt[3:])
-        key_path = key_path.replace('biasandfair', 'model-scores')
-        
-        print("\n\n ======= ======= ======= ", key_path, "======= ======= ======= \n\n")
+        key_path = key_path.replace('/biasandfair', '/model-scores')
               
         # Load model
         s3 = ial.get_s3_resource()
@@ -107,14 +103,21 @@ class TaskDashData(CopyToTable):
         body = datos['Body'].read()
         df_model_SCORES = pickle.loads(body)
         
-        print("\n\n ======= ======= ======= ", df_model_SCORES.head(3), "======= ======= ======= \n\n")
-        print("\n\n ======= ======= ======= ", datos_cfi.head(3), "======= ======= ======= \n\n")
+        datos_cfi.drop(columns = ['index', 'aka_name', 'license', 'prediction'], inplace=True, errors='raise')
+        datos_cfi.insert(1, "type", 'c')
+        datos_cfi.rename(columns = {"score":"scores"}, inplace=True)
         
-                      
-                      
+        df_model_SCORES.drop(columns = ['predicted', 'label'], inplace=True, errors='raise')
+        ingest_date = S3_targ_splt[7].replace('.pkl', '')
+        ingest_date_ok = ingest_date.replace('biasandfair-', '')
+        df_model_SCORES.insert(0, "ingest_date", ingest_date_ok)
+        df_model_SCORES.insert(1, "type", 'm')
+
+        scores_dash = pd.concat([datos_cfi, df_model_SCORES], axis = 0)
+        
         
     # ^ Write predictions to RDS API table
-        for row in datos_cfi.itertuples(index = False):
+        for row in scores_dash.itertuples(index = False):
             yield row
 
 
