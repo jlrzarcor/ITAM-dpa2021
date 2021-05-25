@@ -11,6 +11,7 @@ import yaml
 import os
 
 # importing especific functions
+import pandas.io.sql as sqlio
 from luigi.contrib.postgres import CopyToTable
 from luigi.contrib.s3 import S3Target
 from datetime import datetime
@@ -53,7 +54,7 @@ class TaskDashData(CopyToTable):
     host = pg['host']
     port = pg['port']
     database = pg['dbname']
-    table = 'api.dash'
+    table = 'dsh.model'
 
  # RDS database table columns
     columns = [("ingest_date", "date"), ("index", "int"), ("aka_name", "varchar"), ("license", "varchar"),
@@ -63,21 +64,56 @@ class TaskDashData(CopyToTable):
 
         str_date = str(datetime.date(datetime(self.year, self.month, self.day)))
         
-     # Path from S3 client to open data @ S3
+    # ^ Path from S3 client to open data @ S3
         S3_targ = self.input()['A'].path.split("/")
         buck_path = S3_targ[2]
         key_path = '/'.join(S3_targ[3:])
 
-     # Create a DataFrame from S3 data
+    # ^ Create a DataFrame from S3 data
         s3 = ial.get_s3_resource()
         datos = s3.meta.client.get_object(Bucket = buck_path, Key = key_path)
         body = datos['Body'].read()
         data_pkl = pickle.loads(body)
         datos_cfi = pd.DataFrame(data_pkl)
         datos_cfi.insert(0, "ingest_date", datetime.date(datetime(self.year, self.month, self.day)))
+
+
+# ^ IMPORTANT:   --->>>Import Model Scores from AWS-S3 stored @biasandfairness. As We expect scores from model preidctions and we can´t persist twice in a single luigi task, We decided to persist model-scores into same S3 path as biasnand fairnes, thus We could be able to track it for deployment.        
+
+
+    # ^ RDS database connection to get S3 last model path 
+
+        pg_aux = get_pg_service(ks.path)
+        conn = psycopg2.connect(dbname = pg_aux['dbname'], user = pg_aux['user'], password = pg_aux['password'],
+                                port = pg_aux['port'], host = pg_aux['host'])
         
+        str_qry = "SELECT S3_store_path FROM metadata.biasfair ORDER BY exec_date DESC LIMIT 1;"
+        S3_targ = sqlio.read_sql_query(str_qry, conn)
         
-     # Write predictions to RDS API table
+        print("\n\n ======= ======= =======   ruta modelo en S3 para predicciones   ======= ======= ======= \n\n", S3_targ.iloc[0,0],"\n\n")
+        
+    
+        # Path for S3 client to open last model stored @ S3
+        S3_targ_splt = S3_targ.iloc[0,0].split("/")
+        buck_path = S3_targ_splt[2]
+        key_path = '/'.join(S3_targ_splt[3:])
+        key_path = key_path.replace('biasandfair', 'model-scores')
+        
+        print("\n\n ======= ======= ======= ", key_path, "======= ======= ======= \n\n")
+              
+        # Load model
+        s3 = ial.get_s3_resource()
+        datos = s3.meta.client.get_object(Bucket = self.bucket, Key = key_path)
+        body = datos['Body'].read()
+        df_model_SCORES = pickle.loads(body)
+        
+        print("\n\n ======= ======= ======= ", df_model_SCORES.head(3), "======= ======= ======= \n\n")
+        print("\n\n ======= ======= ======= ", datos_cfi.head(3), "======= ======= ======= \n\n")
+        
+                      
+                      
+        
+    # ^ Write predictions to RDS API table
         for row in datos_cfi.itertuples(index = False):
             yield row
 
