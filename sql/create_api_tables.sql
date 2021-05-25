@@ -18,8 +18,8 @@ COMMENT ON TABLE api.scores IS 'Almacenar las predicciones de S3 RDS para API';
 
 
 /* ================================= procesamiento dashboard data ================================= */
-DROP TABLE IF EXISTS api.dash;
-CREATE TABLE api.dash (
+DROP TABLE IF EXISTS dsh.model;
+CREATE TABLE dsh.model (
     ingest_date date,
     index int,
     aka_name varchar(90),
@@ -27,4 +27,4 @@ CREATE TABLE api.dash (
     score real,
     prediction int
 );
-COMMENT ON TABLE api.dash IS 'Almacenar las predicciones de S3 RDS para dashboard';
+COMMENT ON TABLE dsh.model IS 'Almacenar las predicciones de S3 RDS para dashboard';
