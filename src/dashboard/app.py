@@ -49,8 +49,8 @@ query_m = "Select * FROM dsh.model WHERE type = 'm' AND ingest_date = (select ma
 df_query_consec = pd.read_sql_query(query_c, connection)
 df_query_model = pd.read_sql_query(query_m, connection)
 
-fig = px.histogram(df_query_consec, x="score")
-fig2 = px.histogram(df_query_model, x="score")
+fig = px.histogram(df_query_consec, x="scores")
+fig2 = px.histogram(df_query_model, x="scores")
 
 app.layout = html.Div(children=[
     html.Div([
