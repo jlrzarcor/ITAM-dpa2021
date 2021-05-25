@@ -42,12 +42,15 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-query_1 = 'SELECT * FROM api.dash;'
+query_c = "Select * FROM dsh.model WHERE tipo = 'c' AND ingest_date = (select max(ingest_date) from dsh.model where tipo = 'c')"
+query_m = "Select * FROM dsh.model WHERE tipo = 'm' AND ingest_date = (select max(ingest_date) from dsh.model where tipo = 'm')"
+#query_m = "SELECT score FROM schema.modelo WHERE date BETWEEN '"+ query_0 +"' AND '"+ query_0 +"' AND type = 'm';"
 
-df_query = pd.read_sql_query(query_1, connection)
+df_query_consec = pd.read_sql_query(query_c, connection)
+df_query_model = pd.read_sql_query(query_m, connection)
 
-fig = px.histogram(df_query, x="score")
-fig2 = px.histogram(df_query, x="score")
+fig = px.histogram(df_query_consec, x="score")
+fig2 = px.histogram(df_query_model, x="score")
 
 app.layout = html.Div(children=[
     html.Div([
