@@ -1,6 +1,9 @@
 /* ******* Schema Creation *******
 
- Script: Create 2 schemas, metadata to store info and processed data result of cleaning, selecting and modeling.
+ Script: Create schemas:
+     > metadata to store info and processed data result of cleaning
+     > select model
+     > api and dashboard.
 */
 
 DROP SCHEMA IF EXISTS metadata CASCADE;
@@ -11,3 +14,6 @@ CREATE SCHEMA procdata;
 
 DROP SCHEMA IF EXISTS api CASCADE;
 CREATE SCHEMA api;
+
+DROP SCHEMA IF EXISTS dsh CASCADE;
+CREATE SCHEMA dsh;
