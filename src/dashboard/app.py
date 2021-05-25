@@ -42,8 +42,8 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-query_c = "Select * FROM dsh.model WHERE tipo = 'c' AND ingest_date = (select max(ingest_date) from dsh.model where tipo = 'c')"
-query_m = "Select * FROM dsh.model WHERE tipo = 'm' AND ingest_date = (select max(ingest_date) from dsh.model where tipo = 'm')"
+query_c = "Select * FROM dsh.model WHERE type = 'c' AND ingest_date = (select max(ingest_date) from dsh.model where type = 'c')"
+query_m = "Select * FROM dsh.model WHERE type = 'm' AND ingest_date = (select max(ingest_date) from dsh.model where type = 'm')"
 #query_m = "SELECT score FROM schema.modelo WHERE date BETWEEN '"+ query_0 +"' AND '"+ query_0 +"' AND type = 'm';"
 
 df_query_consec = pd.read_sql_query(query_c, connection)
