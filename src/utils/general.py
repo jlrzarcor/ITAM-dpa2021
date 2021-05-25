@@ -94,3 +94,25 @@ def get_pg_service(credentials_file):
     
     return pg_service
 
+
+
+# ================================= FUNCTION 5 ================================= #
+
+def get_db_conn_sql_alchemy(credentials_file):
+    """
+    Lee el archivo credentials.yaml y devuelve las credenciales 
+    del string para conectar con SQLAlchemy.
+    Se requiere que el archivo credentials.yaml contenga la siguiente 
+    información:
+    sql_alchemy:
+        string= -docstring-
+    
+    inputs:
+        credentials_file: archivo con extensión .yaml
+    outputs:
+        Diccionario con las credenciales SQLAlchemy
+    """
+    
+    sql_alchemy = read_yaml(credentials_file)['sql_alchemy']
+    
+    return sql_alchemy['conn']
