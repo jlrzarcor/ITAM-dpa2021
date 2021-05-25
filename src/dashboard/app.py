@@ -1,7 +1,8 @@
-# -*- coding: utf-8 -*-
+### Chicago Food Inspections, scores model vs consecutive API.
+### ITAM, Data Product Arquitecture, Spring 2021.
+### Paty Urriza, Octavio Fuentes, Uriel Rangel, Carlos Román, José Luis R. Zárate
 
-# Run this app with `python app.py` and
-# visit http://127.0.0.1:8050/ in your web browser.
+# ================================= LIBRARIES  ================================= #
 
 import dash
 import dash_core_components as dcc
@@ -13,15 +14,28 @@ from sqlalchemy import create_engine
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-user = 'octavio'
-password = 'alan'
-host = 'rds-dpa-project.cudydvgqgf80.us-west-2.rds.amazonaws.com'
-port = '5432'
-dbname = 'chicagofoodinsp'
-url = 'postgresql://{}:{}@{}:{}/{}'.format(user, password, host, port, dbname)
+# Special routing for importing custom libraries
 
+# Modify path
+old_path = os.getcwd()
+path = os.path.realpath('../..')
+
+# Get imports
+from src.utils.general import get_pg_service
+pg = get_pg_service(path + '/conf/local/credentials.yaml')
+
+#import src.utils.constants as ks
+#from src.utils.general import get_db_conn_sql_alchemy
+
+# Reset path
+os.path.realpath(old_path)
+
+
+# ================================= API ================================= #
+
+# Connection to RDS-Postgress chicagofoodinsp db
+url = 'postgresql://{}:{}@{}:{}/{}'.format(pg['user'], pg['password'], pg['host'], str(pg['port']), pg['dbname'])
 connection = create_engine(url)
-
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 

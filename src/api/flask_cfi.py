@@ -40,8 +40,8 @@ os.path.realpath(old_path)
 
 # Connection to RDS-Postgress chicagofoodinsp db
 #pg = get_pg_service('../../conf/local/credential.yaml')
-db_conn_str = 'postgresql://' + pg['user'] + ':' + pg['password'] + '@' + pg['host'] + ':' + str(pg['port']) + '/' + pg['dbname']
-
+#db_conn_str = 'postgresql://' + pg['user'] + ':' + pg['password'] + '@' + pg['host'] + ':' + str(pg['port']) + '/' + pg['dbname']
+db_conn_str = 'postgresql://{}:{}@{}:{}/{}'.format(pg['user'], pg['password'], pg['host'], str(pg['port']), pg['dbname'])
 
 
 # create flask app
