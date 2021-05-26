@@ -30,7 +30,7 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 **Mediante un algoritmo de clasificación, este proyecto tiene como objetivo ayudar a los establecimientos de comida de la ciudad de Chicago a contestar la pregunta analítica: ¿mi establecimiento pasará o no la inspección?**
 
-**Este producto de datos funciona de forma programática, pues cumpliendo el objetivo planteado, el establecimiento que utilice nuestro modelo predictivo, obtendrá una predicción sobre si pasará o no la inspección, para tener oportunidad de tomar acciones preventivas y/o correctivas, en función de la salida que genere el modelo.**
+**Este producto de datos funciona de forma programática, pues cumpliendo el objetivo planteado, el establecimiento que utilice nuestro modelo, obtendrá una predicción sobre si pasará o no la inspección, para tener oportunidad de tomar acciones preventivas y/o correctivas, en función de la salida que genere el modelo.**
 
 ---
 
@@ -52,7 +52,7 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 - Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
-- La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en *Chicago* desde el 01/01/2010.
+- La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en *Chicago* desde el enero de 2010.
 
 - Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
 
