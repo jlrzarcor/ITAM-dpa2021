@@ -505,12 +505,29 @@ Tomar en cuenta:
  
 ## Consultas a través de nuestra *api* :dart:
     
-![](./images/flask.jpeg)
+![](./images/flask.jpg)
     
 ![flask_version](https://img.shields.io/badge/Flask-0.12.2-informational/?logo=Flask)    
     
 [***Flask documentation***](https://flask.palletsprojects.com/en/2.0.x/)
     
+![api1](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20mandar%20a%20llamar%20nuestra%20api%3F-Pasos-orange)
+    
+Para poder utilizarla, se deben de seguir los siguientes pasos:    
+
+13. Posicionarse en la ruta: `src/api`.
+    
+14. Correr el comando: `export FLASK_APP=flask_cfi.py`.
+    
+15. Correr el comando: `flask run --host=0.0.0.0`.
+    
+16. En una terminal local, posicionarse en `.ssh` y correr el comando: `ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:5000:localhost:5000 octavio@ec2-44-234-189-74.us-west-2.compute.amazonaws.com`.
+    
+Después abrir el *browser* de tu preferencia y correr el comando `localhost:8888/`.
+    
+Una vez hecho lo anterior, la *api* se verá de la siguiente manera:
+    
+![](./images/api.jpg)    
     
 ---    
       
