@@ -108,8 +108,18 @@ class TaskDashData(CopyToTable):
         str_qry = "SELECT S3_store_path FROM metadata.biasfair ORDER BY s3_store_path DESC FETCH FIRST ROW ONLY;"
         S3_targ = sqlio.read_sql_query(str_qry, conn)
         
-        print("\n\n ======= ======= =======   PREDICTIONS. Path S3 modelo predicts.   ======= ======= ======= \n\n",
-              S3_targ.iloc[0,0],"\n\n")
+        print("\n\n ======= ======= =======   ENDING PIPELINE.   ======= ======= ======= \n\n")
+        print("\t                                   |>                                   ")
+        print("\t                                   |                                    ")
+        print("\t                                   |                                    ")
+        print("\t                   =======   ================   =======                 ")
+        print("\t           ======= =======                      ======= =======         ")
+        print("\t   ======= ======= =======   ================   ======= ======= ======= ")
+        print("\t   ======= ======= =======   ================   ======= ======= ======= ")
+        print("\t   ======= ======= =======   ====_______=====   ======= ======= ======= ")
+        print("\t   ======= ======= =======   ====|  |  |=====   ======= ======= ======= ")
+        print("\t   ======= ======= =======   ====|  |  |=====   ======= ======= ======= ")
+        print("\t   ======= ======= =======   ====|  |  |=====   ======= ======= ======= \n\n")
             
       # Path for S3 client to open last model stored @ S3
         S3_targ_splt = S3_targ.iloc[0,0].split("/")

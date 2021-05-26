@@ -75,8 +75,7 @@ class TaskFeatEng(CopyToTable):
         feat_eng_df, nrows_ohe, ncols_ohe, best_score, time_exec, best_rf = feat_eng(clean_data)
         feat_eng_df.insert(0, "ingest_date", datetime.date(datetime(self.year, self.month, self.day)))
         
-        print("\n\n ======= ======= =======   FEATURE ENGINEERING   ======= ======= =======\n\n\t\t\t",
-              type(feat_eng_df), nrows_ohe, ncols_ohe, best_score, time_exec, best_rf, "\n\n")
+        print("\n\n ======= ======= =======   FEATURE ENGINEERING   ======= ======= =======\n\n")
         
      # Lineage. Creating Metadata @ .csv file
            

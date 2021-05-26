@@ -76,8 +76,6 @@ class TaskAPIData(CopyToTable):
         datos_cfi = pd.DataFrame(data_pkl)
         datos_cfi.insert(0, "ingest_date", datetime.date(datetime(self.year, self.month, self.day)))
         
-        print(datos_cfi.head(3))
-        
      # Write predictions to RDS API table
         for row in datos_cfi.itertuples(index = False):
             yield row

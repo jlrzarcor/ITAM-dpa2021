@@ -83,8 +83,7 @@ class TaskCleaning(CopyToTable):
         cleaned_df, nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev = cleaning(datos_cfi)
         cleaned_df.insert(0, "ingest_date", datetime.date(datetime(self.year, self.month, self.day)))
         
-        print("\n\n ======= ======= =======   ",nrows_prev, ncols_prev, nrows_after, ncols_after, data_null_prev,
-              "   ======= ======= =======\n\n")
+        print("\n\n ======= ======= =======   CLEANING   ======= ======= =======\n\n")
 
      # Lineage. Creating Metadata @ .csv file
         str_date = str(datetime.date(datetime(self.year, self.month, self.day)))        
