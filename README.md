@@ -511,10 +511,10 @@ Tomar en cuenta:
     
 [***Flask documentation***](https://flask.palletsprojects.com/en/2.0.x/)
     
-![api1](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20mandar%20a%20llamar%20nuestra%20api%3F-Pasos-orange)
+Para hacer consultas de nuestro modelo predictivo, creamos una *api* utilizando *Flask*.
     
-Para poder utilizarla, se deben de seguir los siguientes pasos:    
-
+![api1](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20mandar%20a%20llamar%20nuestra%20api%3F-Pasos-orange)    
+    
 13. Posicionarse en la ruta: `src/api`.
     
 14. Correr el comando: `export FLASK_APP=flask_cfi.py`.
@@ -523,12 +523,28 @@ Para poder utilizarla, se deben de seguir los siguientes pasos:
     
 16. En una terminal local, posicionarse en `.ssh` y correr el comando: `ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:5000:localhost:5000 octavio@ec2-44-234-189-74.us-west-2.compute.amazonaws.com`.
     
-Después abrir el *browser* de tu preferencia y correr el comando `localhost:8888/`.
+Después abrir el *browser* de tu preferencia e ingresar a la siguiente dirección: `localhost:5000/`.
     
 Una vez hecho lo anterior, la *api* se verá de la siguiente manera:
     
-![](./images/api.jpg)    
+![](./images/api.png)    
     
 ---    
       
-##  Monitoreo del modelo :bar_chart:  
+##  Monitoreo del modelo :bar_chart:
+    
+![](./images/logo-plotly.png)
+    
+![plotly_version](https://img.shields.io/badge/Plotly-4.14.3-informational/?logo=Plotly)
+    
+[***Plotly documentation***](https://plotly.com/)    
+    
+![dash_version](https://img.shields.io/badge/Dash-0.21.1-informational/?logo=Dash)    
+    
+[***Dash documentation***](https://flask.palletsprojects.com/en/2.0.x/)    
+    
+![plotly](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20mandar%20a%20llamar%20nuestro%20dashboard%20de%20monitoreo%3F-Pasos-orange)
+    
+Para realizar el monitoreo de nuestro modelo, construimos un *dashboard* utilizando *Dash* de *Plotly*.    
+    
+---  
