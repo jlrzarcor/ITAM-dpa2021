@@ -535,6 +535,10 @@ La *api* cuenta con 2 *endpoints*:
     
 - `cfi_prediction_date` : Devuelve las predicciones realizadas en la fecha consultada.
     
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘    
+    
 ---    
       
 ##  Monitoreo del modelo :bar_chart:
@@ -565,6 +569,16 @@ Después abrir el *browser* de tu preferencia e ingresar a la siguiente direcci�
     
 Una vez hecho lo anterior, el *dashboard* se verá de la siguiente manera:
     
-![](./images/dashboard.png)    
+![](./images/dashboard.png)
+    
+El *dashboard* cuenta con 2 gráficas:
+    
+- La primera representa la distribución de los *scores* obtenidos en el último conjunto de predicciones realizadas.
+    
+- La segunda representa la distribución de los *scores* obtenidos con el último modelo entrenado.
+    
+##
+
+[Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘    
     
 ---  
