@@ -41,6 +41,8 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 3. [Sobre nuestro *Data Pipeline*](https://github.com/jlrzarcor/ITAM-dpa2021#sobre-nuestro-data-pipeline--microscope)
 4. [Sesgos e Inequidades](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#sesgos-e-inequidades-open_hands)
 5. [¿Cómo ejecutar nuestro *pipeline?*](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-)
+6. [Consultas a través de nuestra *api*](https://github.com/jlrzarcor/ITAM-dpa2021#consultas-a-trav%C3%A9s-de-nuestra-api-dart)
+7. [Monitoreo del modelo](https://github.com/jlrzarcor/ITAM-dpa2021#monitoreo-del-modelo-bar_chart)
 
 ---
 
@@ -501,7 +503,14 @@ Tomar en cuenta:
 
 ---
  
-## Consultas a través de nuestra *api* :dart:   
+## Consultas a través de nuestra *api* :dart:
+    
+![](./images/flask.jpeg)
+    
+![flask_version](https://img.shields.io/badge/Flask-0.12.2-informational/?logo=Flask)    
+    
+[***Flask documentation***](https://flask.palletsprojects.com/en/2.0.x/)
+    
     
 ---    
       
