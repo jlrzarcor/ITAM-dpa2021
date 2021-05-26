@@ -471,15 +471,21 @@ psql -f create_metadata_tables.sql
 psql -f create_procdata_tables.sql
 ```
 
-12. A partir de este punto ya se ejecutan los *tasks* de *Luigi*: 
+12. A partir de este punto ya se ejecutan los *tasks* de *Luigi*:
+    
+El siguiente *task* es para generar un modelo:    
+    
+`PYTHONPATH="." luigi --module 'src.etl.task_sesgo_inequidades_metadata' TaskBFMeta --bucket nombre_de_tu_bucket --year 2020 --month 12 --day 31 --flg-i0-c1 0 --local-scheduler`
+    
+El siguiente *task* se corre después del anterior para generar predicciones a partir del mejor modelo seleccionado:    
 
-```
-PYTHONPATH="." luigi --module 'src.pipeline.task_monitoreo_modelo' TaskDashData --bucket nombre_de_tu_bucket --year año_deseado --month mes_deseado --day dia_deseado --flg-i0-c1 1
-```
+`PYTHONPATH="." luigi --module 'src.pipeline.task_monitoreo_modelo' TaskDashData --bucket nombre_de_tu_bucket --year año_deseado --month mes_deseado --day dia_deseado --flg-i0-c1 1 --local-scheduler`
     
 :rotating_light: **NOTA**: Este comando  :point_up_2: ejecuta todos los *tasks* de nuestro *pipeline*. :rotating_light:
     
 Tomar en cuenta:
+    
+:warning: `--local-scheduler` se utiliza para no llamar `luigid`.  
 
 :warning: Tanto los meses como los días, no llevan un cero antes.
 
