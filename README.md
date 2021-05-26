@@ -521,7 +521,9 @@ Para hacer consultas de nuestro modelo predictivo, creamos una *api* utilizando 
     
 15. Correr el comando: `flask run --host=0.0.0.0`.
     
-16. En una terminal local, posicionarse en `.ssh` y correr el comando: `ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:5000:localhost:5000 nombre_usuario@ec2-direccion_instancia.us-west-2.compute.amazonaws.com`.
+16. En una terminal local, posicionarse en `.ssh` y correr el comando: 
+    
+`ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:5000:localhost:5000 nombre_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com`.
     
 Después abrir el *browser* de tu preferencia e ingresar a la siguiente dirección: `localhost:5000/`.
     
@@ -561,7 +563,9 @@ Para realizar el monitoreo de nuestro modelo, construimos un *dashboard* utiliza
     
 18. Correr el comando: `python3 app.py`.
     
-19. En una terminal local, posicionarse en `.ssh` y correr el comando: `ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:8050:localhost:8050 nombre_usuario@ec2-direccion_instancia.us-west-2.compute.amazonaws.com`. 
+19. En una terminal local, posicionarse en `.ssh` y correr el comando: 
+    
+`ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:8050:localhost:8050 nombre_usuario@ec2-direccion-de-la-EC2.us-west-2.compute.amazonaws.com`. 
     
 Después abrir el *browser* de tu preferencia e ingresar a la siguiente dirección: `localhost:8050/`.
     
