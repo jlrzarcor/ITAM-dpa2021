@@ -551,9 +551,7 @@ La *api* cuenta con 2 *endpoints*:
     
 ![dash_version](https://img.shields.io/badge/Dash-0.21.1-informational/?logo=Dash)    
     
-[***Dash documentation***](https://flask.palletsprojects.com/en/2.0.x/)    
-    
-![plotly](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20mandar%20a%20llamar%20nuestro%20dashboard%20de%20monitoreo%3F-Pasos-orange)
+[***Dash documentation***](https://flask.palletsprojects.com/en/2.0.x/)     
     
 Para realizar el monitoreo de nuestro modelo, construimos un *dashboard* utilizando *Dash* de *Plotly*.
     
