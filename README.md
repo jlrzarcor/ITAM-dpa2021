@@ -104,15 +104,11 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 │   ├── base           <- Space for shared configurations like parameters.
 │   └── local          <- Space for local configurations, usually credentials.
 │
-├── docs               <- Space for Sphinx documentation.
-│
 ├── notebooks          <- Jupyter notebooks.
 │   ├── eda
 │   └── feature_engineering
 │
 ├── images             <- Contains images used in the repository.
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
 ├── requirements.txt   <- The requirements file.
 │
