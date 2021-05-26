@@ -112,35 +112,32 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
-├── results            <- Intermediate analysis as HTML, PDF, LaTeX, etc.
-│
 ├── requirements.txt   <- The requirements file.
 │
 ├── .gitignore         <- Avoids uploading data, credentials, outputs, system files etc.
 │
-├── infrastructure
-│
-├── sql
-│
-├── setup.py
+├── sql                <- Contains scripts used to deploy RDS db.
 │
 └── src                <- Source code for use in this project.
     │
     ├── __init__.py    <- Makes src a Python module.
     │
     │
-    ├── utils      <- Functions used across the project.
-    │   ├── constants.py
-    |   └── general.py 
+    ├── api            <- Contains Python modules used for app deplyment.
     │
-    ├── etl       <- Scripts to transform data from raw to intermediate.
-    │   ├── task_almacenamiento.py
-    |   └── task_ingesta.py 
     │
-    ├── pipeline  <- Functions used for the pipeline.
-    |   └── ingesta_almacenamiento.py 
+    ├── dashboard      <- Contains Python modules used for dashboard deplyment.
+    │
+    │
+    ├── utils          <- Functions used across the project.
+    │
+    │
+    ├── etl            <- Scripts to transform data from raw to intermediate.
+    │
+    │
+    └── pipeline       <- Functions used for the pipeline.  
 ```
-
+   
 ##
 
 [Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
@@ -152,7 +149,7 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 <p align = "left">
     <img src="images/dp.png" width="220" height="220" />
     
-Nuestro proyecto está conformado por diferentes *pipelines*. Para ordenar la secuencia que éstos deben seguir, utilizamos un orquestador llamado [***Luigi***](https://luigi.readthedocs.io/en/stable/).
+Nuestro proyecto está conformado por diferentes *tasks*. Para ordenar la secuencia que éstos deben seguir, utilizamos un orquestador llamado [***Luigi***](https://luigi.readthedocs.io/en/stable/).
 
 <img src="images/luigi.png" width="240" height="115" />
 
@@ -197,44 +194,48 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 - ![Lt16](https://img.shields.io/badge/Task-task__modelo.py-9cf) ![Lt17](https://img.shields.io/badge/Task-task__modelo__unit__test.py-blue) ![Lt18](https://img.shields.io/badge/Task-task__modelo__metadata.py-blueviolet)
 
 - ![Lt19](https://img.shields.io/badge/Task-task__sesgos__inequidades.py-9cf) ![Lt20](https://img.shields.io/badge/Task-task__sesgos__inequidades__unit__test.py-blue) ![Lt21](https://img.shields.io/badge/Task-task__sesgos__inequidades__metadata.py-blueviolet)
+    
+- ![Lt22](https://img.shields.io/badge/Task-task_predicciones.py-9cf) ![Lt23](https://img.shields.io/badge/Task-task_predicciones_unit_test.py-blue) ![Lt24](https://img.shields.io/badge/Task-task_predicciones_metadata.py-blueviolet)
+    
+- ![Lt25](https://img.shields.io/badge/Task-task_api_almacenamiento.py-9cf)
+    
+- ![Lt26](https://img.shields.io/badge/Task-task_monitoreo_modelo.py-9cf)
 
  :open_file_folder: Se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
 
 ```
 ├── src
     │
-    ├── __init__.py
-    │
-    │
-    ├── utils    
-    │
-    │
     ├── etl
-    │   ├── task_almacenamiento.py
-    │   ├── task_ingesta.py 
-    │   ├── task_limpieza.py
-    │   ├── task_feature_engineering.py
-    │   ├── task_training.py
-    │   ├── task_modelo.py
-    │   ├── task_biasfairness.py
-    │   ├── task_almacenamiento_unit_test.py
-    │   ├── task_ingestion_unit_test.py 
-    │   ├── task_limpieza_unit_test.py
-    │   ├── task_feature_engineering_unit_test.py
-    │   ├── task_training_unit_test.py
-    │   ├── task_modelo_unit_test.py
-    │   ├── task_biasfairness_unit_test.py
-    │   ├── task_feature_engineering_metadata.py
-    │   ├── task_limpieza_metadata.py
-    │   ├── task_almacenamiento_metadata.py
-    │   ├── task_ingestion_metadata.py
-    │   ├── task_training_metadata.py
-    │   ├── task_modelo_metadata.py
-    |   └── task_biasfairness_metadata.py
-    │
+    │   ├── task_almacenamiento.py
+    │   ├── task_almacenamiento_metadata.py
+    │   ├── task_almacenamiento_unit_test.py
+    │   ├── task_feature_engineering.py
+    │   ├── task_feature_engineering_metadata.py
+    │   ├── task_feature_engineering_unit_test.py
+    │   ├── task_ingesta.py
+    │   ├── task_ingestion_metadata.py
+    │   ├── task_ingestion_unit_test.py
+    │   ├── task_limpieza.py
+    │   ├── task_limpieza_metadata.py
+    │   ├── task_limpieza_unit_test.py
+    │   ├── task_modelo.py
+    │   ├── task_modelo_metadata.py
+    │   ├── task_modelo_unit_test.py
+    │   ├── task_predicciones.py
+    │   ├── task_predicciones_metadata.py
+    │   ├── task_predicciones_unit_test.py
+    │   ├── task_sesgo_inequidades.py
+    │   ├── task_sesgo_inequidades_metadata.py
+    │   ├── task_sesgo_inequidades_unit_test.py
+    │   ├── task_training.py
+    │   ├── task_training_metadata.py
+    │   └── task_training_unit_test.py
     │
     ├── pipeline
-    │
+    │   ├── ingesta_almacenamiento.py
+    │   ├── task_api_almacenamiento.py
+    │   └── task_monitoreo_modelo.py
 ```
 
 📂 Los *unit test* que realizamos para probar nuestro *data pipeline* se encuentran ubicadas en la rama `main` dentro de la carpeta `src` de la siguiente manera:
@@ -242,24 +243,16 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 ```
 ├── src
     │
-    ├── __init__.py
-    │
-    │
-    ├── utils    
-    │
-    │
-    ├── etl
-    │
-    │
     ├── test
-    │   ├── test_almacenamiento.py
-    │   ├── test_ingestion.py 
-    │   ├── test_limpieza.py
-    │   ├── test_feature_engineering.py
-    │
-    │
-    ├── pipeline
-    │
+    │   ├── __init__.py
+    │   ├── test_almacenamiento.py
+    │   ├── test_feature_engineering.py
+    │   ├── test_ingestion.py
+    │   ├── test_limpieza.py
+    │   ├── test_modelo.py
+    │   ├── test_predicciones.py
+    │   ├── test_sesgo_inequidad.py
+    │   └── test_training.py
  ```
 
 ##
@@ -268,9 +261,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 ![](./images/dag.jpeg)
 
-<sup><sub>**NOTA 1**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
-
-<sup><sub>**NOTA 2**: Ver ["¿Cómo ejecutar nuestro *pipeline*?"](https://github.com/jlrzarcor/ITAM-dpa2021#c%C3%B3mo-ejecutar-nuestro-pipeline-%EF%B8%8F-) para poder ejecutar nuestros *tasks*.</sup></sub>
+<sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
 
 ##
 
@@ -304,7 +295,7 @@ Es de nuestro interés **identificar y cuantificar sesgos e inequidades en difer
 
 ##
 
-![bf1](https://img.shields.io/badge/%C2%BFCu%C3%A1les%20son%20los%20atributos%20protegidos%3F-ff69b4)
+![bf1](https://img.shields.io/badge/-%C2%BFCu%C3%A1les%20son%20los%20atributos%20protegidos%20de%20nuestro%20proyecto%3F-ff69b4)
 
 Realizamos dos ejercicios:
 
