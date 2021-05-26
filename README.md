@@ -521,19 +521,25 @@ Para hacer consultas de nuestro modelo predictivo, creamos una *api* utilizando 
     
 15. Correr el comando: `flask run --host=0.0.0.0`.
     
-16. En una terminal local, posicionarse en `.ssh` y correr el comando: `ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:5000:localhost:5000 octavio@ec2-44-234-189-74.us-west-2.compute.amazonaws.com`.
+16. En una terminal local, posicionarse en `.ssh` y correr el comando: `ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:5000:localhost:5000 nombre_usuario@ec2-direccion_instancia.us-west-2.compute.amazonaws.com`.
     
 Después abrir el *browser* de tu preferencia e ingresar a la siguiente dirección: `localhost:5000/`.
     
 Una vez hecho lo anterior, la *api* se verá de la siguiente manera:
     
-![](./images/api.png)    
+![](./images/api.png)
+    
+La *api* cuenta con 2 *endpoints*:
+    
+- `cfi_license` : Devuelve las predicciones del número de licencia del establecimiento consultado. 
+    
+- `cfi_prediction_date` : Devuelve las predicciones realizadas en la fecha consultada.
     
 ---    
       
 ##  Monitoreo del modelo :bar_chart:
-    
-![](./images/logo-plotly.png)
+ 
+<img src="images/logo-plotly.png" width="300" height="130" />    
     
 ![plotly_version](https://img.shields.io/badge/Plotly-4.14.3-informational/?logo=Plotly)
     
@@ -545,6 +551,20 @@ Una vez hecho lo anterior, la *api* se verá de la siguiente manera:
     
 ![plotly](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20mandar%20a%20llamar%20nuestro%20dashboard%20de%20monitoreo%3F-Pasos-orange)
     
-Para realizar el monitoreo de nuestro modelo, construimos un *dashboard* utilizando *Dash* de *Plotly*.    
+Para realizar el monitoreo de nuestro modelo, construimos un *dashboard* utilizando *Dash* de *Plotly*.
+    
+![dash1](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20mandar%20a%20llamar%20nuestro%20dashboard%20de%20monitoreo%3F-Pasos-orange)
+    
+17. Posicionarse en la ruta: `src/dashboard`.
+    
+18. Correr el comando: `python3 app.py`.
+    
+19. En una terminal local, posicionarse en `.ssh` y correr el comando: `ssh -o ServerAliveInterval=60 -i id_rsa -N -f -L localhost:8050:localhost:8050 nombre_usuario@ec2-direccion_instancia.us-west-2.compute.amazonaws.com`. 
+    
+Después abrir el *browser* de tu preferencia e ingresar a la siguiente dirección: `localhost:8050/`.
+    
+Una vez hecho lo anterior, el *dashboard* se verá de la siguiente manera:
+    
+![](./images/dashboard.png)    
     
 ---  
