@@ -259,7 +259,7 @@ En los **módulos** siguientes se integran las funciones que nos permitirán rea
 
 **Y así se ve el** ***DAG*** **de nuestro** ***data pipeline*** **orquestado en** ***Luigi***:
 
-![](./images/dag.jpeg)
+![](./images/dag.jpg)
 
 <sup><sub>**NOTA**: El color verde indica que los *tasks* corrieron de manera exitosa.</sup></sub>
 
@@ -377,7 +377,7 @@ Realizamos dos ejercicios:
 
 ## ¿Cómo ejecutar nuestro *pipeline*? ⚒️ 🚀 
 
-![L_pre](https://img.shields.io/badge/%C2%BFC%C3%B3mo%20ejecutar%20nuestro%20pipeline%3F-Prerrequisitos-yellow)
+![L_pre](https://img.shields.io/badge/Prerrequisitos-yellow)
 
 - Se requiere configurar en *AWS* una infraestructura como la mostrada en la imagen siguiente:
 
@@ -385,7 +385,7 @@ Realizamos dos ejercicios:
 
 <sup><sub>**NOTA**: La configuración de cada instancia, así como de la *RDS* queda fuera del alcance de este *README*.</sup></sub>
 
-- Debido a que utilizamos *RDS* para almacenar tablas de los metadatos generados en cada *Task*, debemos contar con credenciales que nos permitan entrar a ésta. Para esto, debemos crear un archivo `credentials.yaml` con las claves adecuadas, de tal manera que contenga la siguiente estructura:
+- Debido a que utilizamos *RDS* para almacenar tablas de los datos generados en algunos *Tasks*, debemos contar con credenciales que nos permitan entrar a ésta. Para ello, debemos crear un archivo `credentials.yaml` con las claves adecuadas, de tal manera que contenga la siguiente estructura:
 
 ```
 ---
@@ -401,6 +401,8 @@ pg_service:
     port: 5432
     dbname: "nombre_base_datos" 
 ```
+    
+El cual se debe colocar en la carpeta `conf/local`.
 
 - Crear el archivo de configuración `.pg_service.conf` para el servicio *Postgres*:
 
@@ -453,8 +455,6 @@ para conectarse a la instancia *EC2* (procesamiento).
 
 9. De ser necesario actualizar el repositorio clonado: `git pull`.
 
-<sub><sup>**NOTA**: Del paso 2 al paso 9, fueron indicados previamente en el README, sin embargo, se vuelven a mencionar en caso de que alguien los necesite de nuevo.</sup></sub>
-
 10. Declarar las variables de ambiente con los comandos:
 
 ```
@@ -466,9 +466,9 @@ export PYTHONPATH=$PWD
 11. De igual manera, es necesario crear la infraestructura de tablas en `psql` para almacenar la metadata. Para lo anterior, debe tener acceso a la *RDS* como usuario `postgres`. Posicionarse en la carpeta `/sql` y correr los siguientes comandos:
 
 ```
+psql -f create_api_tables.sql
 psql -f create_db.sql
 psql -f create_schemas.sql
-psql -f drop_tables.sql
 psql -f create_metadata_tables.sql
 psql -f create_procdata_tables.sql
 ```
@@ -476,9 +476,11 @@ psql -f create_procdata_tables.sql
 12. A partir de este punto ya se ejecutan los *tasks* de *Luigi*: 
 
 ```
-***Bias & Fairness***
-PYTHONPATH="." luigi --module 'src.etl.task_sesgo_inequidades_metadata' TaskBFMeta --year 2021 --month 4 --day 11 --flg-i0-c1 1 --avg-prec 30 --bucket data-product-architecture-equipo-5
+PYTHONPATH="." luigi --module 'src.pipeline.task_monitoreo_modelo' TaskDashData --bucket nombre_de_tu_bucket --year año_deseado --month mes_deseado --day dia_deseado --flg-i0-c1 1
 ```
+    
+:rotating_light: **NOTA**: Este comando  :point_up_2: ejecuta todos los *tasks* de nuestro *pipeline*. :rotating_light:
+    
 Tomar en cuenta:
 
 :warning: Tanto los meses como los días, no llevan un cero antes.
@@ -491,10 +493,16 @@ Tomar en cuenta:
 
 - Si el *task* corrió de manera exitosa, el siguiente mensaje es desplegado:
 
-![](./images/luigi_task_result21.jpeg)
+![](./images/luigi_task_result25.png)
 
 ##
 
 [Volver a 'Tabla de Contenido'](https://github.com/jlrzarcor/ITAM-dpa2021/blob/main/README.md#tabla-de-contenido--floppy_disk) 💾 🔘
 
 ---
+ 
+## Consultas a través de nuestra *api* :dart:   
+    
+---    
+      
+##  Monitoreo del modelo :bar_chart:  
