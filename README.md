@@ -54,7 +54,7 @@ Uriel Abraham Rangel Díaz      | [urieluard](https://github.com/urieluard)
 
 - Trabajamos con la base de datos de [***Chicago Food Inspections***](https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5).
 
-- La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en *Chicago* desde el enero de 2010.
+- La información se obtiene de las inspecciones de restaurantes y otros establecimientos de comida en *Chicago* desde enero de 2010.
 
 - Las inspecciones se realizan por personal del ***Chicago Department of Public Health’s Food Protection Program*** siguiendo un procedimiento estandarizado.
 
